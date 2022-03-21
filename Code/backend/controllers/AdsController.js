@@ -3,11 +3,19 @@ const Ads = require("../models/AdvertismentModel");
 
  const addAds = (req, res)=>{
 
-  const {contactName,email,phone} = req.body;
+  const {type,town,AgentRef,heading,description,sizeOfArea,priceRate,availability,contactName,email,phone} = req.body;
   
 
   const newAd = new Ads({
 
+      type,
+      town,
+      AgentRef,
+      heading,
+      description,
+      sizeOfArea,
+      priceRate,
+      availability,  
       contactName,
       email,
       phone,
