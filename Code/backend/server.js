@@ -34,6 +34,7 @@ app.get("/", (req, res) => {
 app.use("/api/store", storeRoutes);
 app.use("/api/Ads", require("./routes/AdsRoutes"));
 
+
 app.listen(PORT, () => {
   logger.info(`Server is running on PORT: ${PORT}`);
 });
