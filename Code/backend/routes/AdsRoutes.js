@@ -16,12 +16,12 @@ router.get("/all", getAds);
 //@desc Add an ads
 router.post("/", addAds);
 
-//@route PUT api/employee/:id
-//@desc Update an employee
+//@route PUT api/Ads/:id
+//@desc Update an Ads
 router.put("/:id", updateAds);
 
-//@route DELETE api/employee/:id
-//@desc delete an employee
+//@route DELETE api/Ads/:id
+//@desc delete an Ads
 router.delete("/:id", removeAds)
 
 module.exports = router;
