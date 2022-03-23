@@ -89,6 +89,14 @@ function AdvertiserForm() {
       <input type="email" className="form-control" id="inputEmail3"/>
     </div>
   </div>
+  <br/>
+  <form>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Input images of your proprty :</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1"/>
+  </div>
+  <br/>
+</form>
   <div className="row mb-3">
     <div className="col-sm-10 offset-sm-2">
       <div className="form-check">
