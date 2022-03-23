@@ -30,10 +30,18 @@ const createProduct = (req, res) => {
 };
 
 const deleteProduct = (req, res) => {
-  Product.deleteOne({ _id: req.params.pid }, function (err) {
+  Product.deleteOne({ _id: req.params.pid }, (err) => {
     if (err) return handleError(err);
 
     res.status(204).json({ status: "Product deleted!" });
+  });
+};
+
+const getSingleItem = (req, res) => {
+  Product.findById(req.params.pid, (err, data) => {
+    if (err) return handleError(err);
+
+    res.status(204).json({ product: data });
   });
 };
 
@@ -42,4 +50,5 @@ module.exports = {
   createProduct,
   fetchProductsByCategory,
   deleteProduct,
+  getSingleItem,
 };
