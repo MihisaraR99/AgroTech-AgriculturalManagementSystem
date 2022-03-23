@@ -38,10 +38,12 @@ const deleteProduct = (req, res) => {
 };
 
 const getSingleItem = (req, res) => {
+  console.log(req.params.pid);
+
   Product.findById(req.params.pid, (err, data) => {
     if (err) return handleError(err);
 
-    res.status(204).json({ product: data });
+    res.status(200).json({ product: data });
   });
 };
 
