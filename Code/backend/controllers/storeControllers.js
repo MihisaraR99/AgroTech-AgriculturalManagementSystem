@@ -11,6 +11,17 @@ const fetchAllProducts = (req, res) => {
   });
 };
 
+const fetchProductsByCategory = (req, res) => {
+  Product.find({ category: req.params.category }, (err, docs) => {
+    if (!err) {
+      res.status(200).json({ products: docs });
+    } else {
+      res.status(500).json({ error: err });
+      throw err;
+    }
+  });
+};
+
 const createProduct = (req, res) => {
   Product.create(req.body, (err, data) => {
     if (err) res.status(500).json({ error: err });
@@ -18,4 +29,17 @@ const createProduct = (req, res) => {
   });
 };
 
-module.exports = { fetchAllProducts, createProduct };
+const deleteProduct = (req, res) => {
+  Product.deleteOne({ _id: req.params.pid }, function (err) {
+    if (err) return handleError(err);
+
+    res.status(204).json({ status: "Product deleted!" });
+  });
+};
+
+module.exports = {
+  fetchAllProducts,
+  createProduct,
+  fetchProductsByCategory,
+  deleteProduct,
+};
