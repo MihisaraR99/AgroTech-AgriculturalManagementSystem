@@ -1,40 +1,40 @@
-import React from "react";
-import { useNavigate } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import axios from "axios";
 import "./Store.css";
+import StoreProductSingle from "./StoreProductSingle";
 
 const StoreProducts = () => {
-  const navigate = useNavigate();
+  let params = useParams();
+  const [products, setProducts] = useState(undefined);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/store/products/${params.category}`)
+      .then((res) => {
+        setProducts(res.data.products);
+      });
+  }, []);
 
   return (
     <div className="store-container">
-      <h1 class="display-2 p-4">Fruits</h1>
+      <h1 class="display-2 p-4">
+        {params.category.replace(/\w\S*/g, function (txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        })}
+      </h1>
 
       <div className="products-list row p-4">
-        <div className="product-card">
-          <div className="product-image">
-            <img src="/images/store/img4.jpg" alt="product" />
-          </div>
-
-          <div
-            className="product-title"
-            style={{ color: "#6d6d6d", textAlign: "center" }}
-          >
-            <hr
-              style={{
-                border: "none",
-                borderBottom: "1px solid #333",
-              }}
+        {products &&
+          products.map((prod) => (
+            <StoreProductSingle
+              key={prod._id}
+              img={prod.img}
+              title={prod.title}
+              price={prod.price}
+              id={prod._id}
             />
-            <p style={{ fontSize: "18px", margin: "0", color: "#333" }}>
-              <b>Sample Title</b>
-            </p>
-            <p style={{ fontSize: "24px", color: "#12af39" }}>
-              <b>$35</b>
-            </p>
-
-            <button className="details-button btn btn-success">Details</button>
-          </div>
-        </div>
+          ))}
       </div>
     </div>
   );

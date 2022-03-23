@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import "./Store.css";
 
 const StoreProductsDetails = () => {
   const [quantity, setQuantity] = useState(0);
+  const [product, setProduct] = useState();
+  let params = useParams();
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/store/product/${params.id}`)
+      .then((res) => {
+        setProduct(res.data.product);
+      });
+  }, [params]);
 
   return (
     <div className="mx-vw-100 vh-100 d-flex">
@@ -11,40 +24,28 @@ const StoreProductsDetails = () => {
           <div class="row">
             <div class="col-4">
               <div className="store-products-top text-secondary">
-                <p> Home > Products > Sample Product 1 </p>
+                <p> Home > Products > {product && product.name} </p>
               </div>
               {/* Image */}
 
               <img
                 className="product-details-img"
                 style={{ objectFit: "cover" }}
-                src="/images/store/img4.jpg"
+                src={product && product.image}
                 alt=""
               />
             </div>
 
             <div class="col-8">
               <div className="h-100 d-flex flex-column justify-content-center">
-                <h4>Dark yellow lace cut out swing dress</h4>
+                <h4>{product && product.name}</h4>
                 <h2 className="my-3" style={{ color: "#3f3f3f" }}>
-                  $84.00
+                  ${product && product.price}
                 </h2>
 
-                <h6 style={{ color: "#777" }}>
-                  Sed egestas, ante et vulputate volutpat, eros pede semper est,
-                  vitae luctus metus libero eu augue. Morbi purus libero,
-                  faucibus adipiscing. Sed lectus.
-                </h6>
+                <h6 style={{ color: "#777" }}>{product && product.smallDes}</h6>
 
-                <p className="my-3">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged.
-                </p>
+                <p className="my-3">{product && product.longDes}</p>
 
                 <div className="quantity-area col-4 my-3">
                   <label className="form-label">Choose your quantity:</label>
@@ -62,7 +63,12 @@ const StoreProductsDetails = () => {
                 </div>
 
                 <div className="col-4 my-3">
-                  <button className="btn product-details-buy-now w-100">
+                  <button
+                    onClick={() => {
+                      navigate("/store/order/store-order-create");
+                    }}
+                    className="btn product-details-buy-now w-100"
+                  >
                     Buy Now
                   </button>
                 </div>
