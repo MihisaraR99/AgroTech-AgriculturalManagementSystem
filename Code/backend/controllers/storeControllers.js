@@ -1,5 +1,21 @@
+const Product = require("../models/ProductModel");
+
 const fetchAllProducts = (req, res) => {
-  res.status(200).json({ products: "success" });
+  Product.find({}, (err, docs) => {
+    if (!err) {
+      res.status(200).json({ products: docs });
+    } else {
+      res.status(500).json({ error: err });
+      throw err;
+    }
+  });
 };
 
-module.exports = { fetchAllProducts };
+const createProduct = (req, res) => {
+  Product.create(req.body, (err, data) => {
+    if (err) res.status(500).json({ error: err });
+    res.status(201).json(data);
+  });
+};
+
+module.exports = { fetchAllProducts, createProduct };
