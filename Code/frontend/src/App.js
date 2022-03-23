@@ -7,6 +7,8 @@ import AllServices from "./components/AllServices";
 import StoreHome from "./components/Store/StoreHome";
 import StoreProducts from "./components/Store/StoreProducts";
 import StoreProductsDetails from "./components/Store/StoreProductsDetails";
+import StoreOrderForm from "./components/Store/StoreOrderForm";
+import StoreAddProductForm from "./components/Store/StoreAddProductForm";
 
 function App() {
   return (
@@ -22,6 +24,14 @@ function App() {
         <Route
           path="/store/products/:category/:id"
           element={<StoreProductsDetails />}
+        />
+        <Route
+          path="/store/order/store-order-create"
+          element={<StoreOrderForm />}
+        />
+        <Route
+          path="/store/product/add-product"
+          element={<StoreAddProductForm />}
         />
       </Routes>
       <Footer />
