@@ -19,23 +19,21 @@ const StoreAddProductForm = () => {
       longDes,
     };
 
-    console.log(product);
-
     axios
       .post("http://localhost:8000/api/store/products", product)
-      .then((response) => console.log(response));
+      .then((response) => alert("Product Added Successfully"));
   };
 
   return (
-    <div className="store-add-product d-flex align-items-center flex-column justify-content-center">
+    <div className="store-add-product py-4 d-flex align-items-center flex-column justify-content-center">
       <h2 className="display-6"> Add Product to Store </h2>
       <small id="emailHelp" className="form-text text-muted">
         Enter the details of the new product
       </small>
 
-      <div className="store-add-product-form-inner">
+      <div className="store-add-product-form-inner  py-4">
         <form>
-          <div className="form-group my-4">
+          <div className="form-group my-2">
             <label className="my-1">Name</label>
             <input
               type="email"

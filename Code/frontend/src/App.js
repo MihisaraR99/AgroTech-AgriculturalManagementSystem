@@ -20,7 +20,6 @@ function App() {
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
         <Route path="/store/products/:category" element={<StoreProducts />} />
-        <Route path="/store/products/:category" element={<StoreProducts />} />
         <Route
           path="/store/products/:category/:id"
           element={<StoreProductsDetails />}

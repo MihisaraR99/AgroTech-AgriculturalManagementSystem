@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const StoreHome = () => {
   return (
@@ -16,51 +17,63 @@ const StoreHome = () => {
       {/* Categories */}
 
       <div className="categories p-4">
-        <h1 className="my-4"> Categories </h1>
+        <h1 className="my-4 display-6"> Categories </h1>
 
         <div className="category-list row gy-4">
           <div className="category col-3">
-            <img
-              src="https://i.ibb.co/jLFzMwR/Cat1.jpg"
-              style={{
-                width: "300px",
-                height: "500px",
-              }}
-              alt=""
-            />
+            <Link to="/store/products/vegetables">
+              <img
+                src="https://i.ibb.co/jLFzMwR/Cat1.jpg"
+                style={{
+                  width: "300px",
+                  height: "500px",
+                  cursor: "pointer",
+                }}
+                alt=""
+              />
+            </Link>
           </div>
 
           <div className="category col-3">
-            <img
-              src="https://i.ibb.co/jJqxM2X/Cat2.jpg"
-              style={{
-                width: "300px",
-                height: "500px",
-              }}
-              alt=""
-            />
+            <Link to="/store/products/fruits">
+              <img
+                src="https://i.ibb.co/jJqxM2X/Cat2.jpg"
+                style={{
+                  width: "300px",
+                  height: "500px",
+                  cursor: "pointer",
+                }}
+                alt=""
+              />
+            </Link>
           </div>
 
           <div className="category col-3">
-            <img
-              src="https://i.ibb.co/Y8Jj926/Cat3.jpg"
-              style={{
-                width: "300px",
-                height: "500px",
-              }}
-              alt=""
-            />
+            <Link to="/store/products/fertilizers">
+              <img
+                src="https://i.ibb.co/Y8Jj926/Cat3.jpg"
+                style={{
+                  width: "300px",
+                  height: "500px",
+                  cursor: "pointer",
+                }}
+                alt=""
+              />
+            </Link>
           </div>
 
           <div className="category col-3">
-            <img
-              src="https://i.ibb.co/VYrLn1z/Cat4.jpg"
-              style={{
-                width: "300px",
-                height: "500px",
-              }}
-              alt=""
-            />
+            <Link to="/store/products/machinery">
+              <img
+                src="https://i.ibb.co/VYrLn1z/Cat4.jpg"
+                style={{
+                  width: "300px",
+                  height: "500px",
+                  cursor: "pointer",
+                }}
+                alt=""
+              />
+            </Link>
           </div>
         </div>
       </div>
