@@ -7,6 +7,7 @@ const cors = require("cors");
 // Import routes to here
 const storeRoutes = require("./routes/storeRoutes");
 const AdsRoutes = require("./routes/AdsRoutes");
+const HAppointment = require("./routes/HAppointmentRoutes");
 
 const app = express();
 dotenv.config();
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 // Implement the routes from here
 app.use("/api/store", storeRoutes);
 app.use("/api/Ads", require("./routes/AdsRoutes"));
+app.use("/api/app", HAppointment);
 
 
 app.listen(PORT, () => {

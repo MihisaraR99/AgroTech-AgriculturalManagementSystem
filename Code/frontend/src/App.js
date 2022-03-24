@@ -6,6 +6,9 @@ import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
 import AdvertiserForm from "./components/Ads/AdvertiserForm";
 import PropertyCatalog from "./components/Ads/PropertyCatalog";
+import AddAppointments from "./components/HealthCare/AddAppointments";
+import Allappointments from  "./components/HealthCare/Allappointments";
+
 
 function App() {
   return (
@@ -15,6 +18,10 @@ function App() {
         <Route path="/" element={<AllServices />} />
         <Route path="/adform" element={<AdvertiserForm />} />
         <Route path="/properties" element={<PropertyCatalog />} />
+        <Route path="/Appointments" element= {<AddAppointments/>}/>
+        <Route path="/AllAppointment" element= {<Allappointments/>}/>
+        
+        
       </Routes>
       <Footer />
     </BrowserRouter>
