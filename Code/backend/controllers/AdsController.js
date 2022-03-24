@@ -40,19 +40,21 @@ const getAds = async (req, res) => {
   }
 }
 
-const updateAds = async (res,req) => {
-  const adID = req.params.id;
+const updateAds = async (req,res) => {
+  const advID = req.params.id;
   try{
-    const ad = await Ads.findById(adID);
+    const id = await Ads.findById(advID);
 
-    if(!ad){
+    if(!id){
        return res.status(404).json("There is no Ad");
     }
 
     const {type,town,AgentRef,heading,description,sizeOfArea,priceRate,availability,contactName,email,phone} = req.body;
-    const ads = await Ads.findByIdAndUpdate(adID,{type,town,AgentRef,heading,description,sizeOfArea,priceRate,availability,contactName,email,phone});
+    const adsr = await Ads.findByIdAndUpdate(advID,{type,town,AgentRef,heading,description,sizeOfArea,priceRate,availability,contactName,email,phone});
 
-    res.status(200).json(ads);
+    res.status(201).json({
+      "updated":true
+    })
   }
   catch(error){
     res.status(400).json(error.message);
