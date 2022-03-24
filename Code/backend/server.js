@@ -4,8 +4,10 @@ const logger = require("pino")();
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+
 // Import routes to here
 const storeRoutes = require("./routes/storeRoutes");
+const courseRoutes=require("./routes/courseRoutes");
 const AdsRoutes = require("./routes/AdsRoutes");
 
 const app = express();
@@ -28,10 +30,11 @@ app.get("/", (req, res) => {
   res.status(200).json({ messsage: "Server is running!" });
 });
 
+
 // Implement the routes from here
 app.use("/api/store", storeRoutes);
+app.use("/api/course",require("./routes/courseRoutes"));
 app.use("/api/Ads", require("./routes/AdsRoutes"));
-
 
 app.listen(PORT, () => {
   logger.info(`Server is running on PORT: ${PORT}`);
