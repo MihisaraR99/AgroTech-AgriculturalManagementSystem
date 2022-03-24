@@ -13,6 +13,7 @@ const CandidateRoutes = require("./routes/CandidateRoutes");
 const ApplyforVacancyRoutes = require("./routes/ApplyforVacancyRoutes");
 const ApplyforGuidanceRoutes = require("./routes/ApplyforGuidanceRoutes");
 const AddVacanciesRoutes = require("./routes/AddVacanciesRoutes");
+const AddGuidanceProgramsRoutes = require("./routes/AddGuidanceProgramsRoutes");
 
 const app = express();
 dotenv.config();
@@ -43,6 +44,7 @@ app.use("/api/Ads", require("./routes/AdsRoutes"));
 app.use("/api/Applyvacancies", require("./routes/ApplyforVacancyRoutes"));
 app.use("/api/Applyguidances", require("./routes/ApplyforGuidanceRoutes"));
 app.use("/api/AddVacancies",require("./routes/AddVacanciesRoutes"));
+app.use("/api/AddGuidances",require("./routes/AddGuidanceProgramsRoutes"));
 app.use("/api/Candidate",require("./routes/CandidateRoutes"));
 
 app.listen(PORT, () => {
