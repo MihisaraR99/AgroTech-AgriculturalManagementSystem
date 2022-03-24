@@ -12,9 +12,9 @@ function AllServices() {
         </p>
       </div>
       <ul className="list-group list-group-flush">
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">A second item</li>
-        <li className="list-group-item">A third item</li>
+        <li className="list-group-item">Add Products</li>
+        <li className="list-group-item">Company Requirments</li>
+        <li className="list-group-item">Stock Details</li>
       </ul>
       <div className="card-body">
         <Link to="/" className="card-link">
