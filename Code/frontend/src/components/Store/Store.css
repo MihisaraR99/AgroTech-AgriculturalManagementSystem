@@ -28,7 +28,7 @@
   overflow: hidden;
   padding: 0;
   width: 300px !important;
-  height: 470px !important;
+  height: 450px !important;
   background-color: rgb(255, 255, 255) !important;
 }
 
@@ -47,6 +47,13 @@
   border-radius: 20px;
   width: 50%;
   background-color: #12af39;
+  border: none;
+}
+
+.details-button-danger {
+  border-radius: 20px;
+  width: 50%;
+  background-color: red !important;
   border: none;
 }
 

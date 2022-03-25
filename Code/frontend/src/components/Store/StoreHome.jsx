@@ -17,9 +17,9 @@ const StoreHome = () => {
       {/* Categories */}
 
       <div className="categories p-4">
-        <h1 className="my-4 display-6"> Categories </h1>
+        <h1 className="my-4 display-6 px-5"> Categories </h1>
 
-        <div className="category-list row gy-4">
+        <div className="category-list row gy-4 px-5">
           <div className="category col-3">
             <Link to="/store/products/vegetables">
               <img

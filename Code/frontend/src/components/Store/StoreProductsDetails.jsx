@@ -30,14 +30,17 @@ const StoreProductsDetails = () => {
 
               <img
                 className="product-details-img"
-                style={{ objectFit: "cover" }}
+                style={{
+                  objectFit: "cover",
+                  height: "500px",
+                }}
                 src={product && product.image}
                 alt=""
               />
             </div>
 
             <div class="col-8">
-              <div className="h-100 d-flex flex-column justify-content-center">
+              <div className="h-100 my-4 d-flex flex-column justify-content-center">
                 <h4>{product && product.name}</h4>
                 <h2 className="my-3" style={{ color: "#3f3f3f" }}>
                   ${product && product.price}
