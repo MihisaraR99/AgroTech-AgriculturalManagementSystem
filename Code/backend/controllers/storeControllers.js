@@ -37,9 +37,24 @@ const deleteProduct = (req, res) => {
   });
 };
 
-const getSingleItem = (req, res) => {
-  console.log(req.params.pid);
+const updateProduct = async (req, res) => {
+  const pid = req.params.pid;
 
+  try {
+    let product = await Product.findById(candidateId);
+
+    if (!product) {
+      return res.status(404).json({ updated: "Product not found" });
+    }
+
+    product = await Product.findByIdAndUpdate(pid, req.body);
+    res.status(201).json({ updated: "Product updated successfully" });
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
+};
+
+const getSingleItem = (req, res) => {
   Product.findById(req.params.pid, (err, data) => {
     if (err) return handleError(err);
 
@@ -53,4 +68,5 @@ module.exports = {
   fetchProductsByCategory,
   deleteProduct,
   getSingleItem,
+  updateProduct,
 };
