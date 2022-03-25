@@ -41,7 +41,7 @@ const updateProduct = async (req, res) => {
   const pid = req.params.pid;
 
   try {
-    let product = await Product.findById(candidateId);
+    let product = await Product.findById(pid);
 
     if (!product) {
       return res.status(404).json({ updated: "Product not found" });
