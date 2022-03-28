@@ -1,45 +1,39 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import bg3 from "./img/bg3.jpg";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-function PropertyCatalog() {
+
+
+const PropertyCatalog = () => {
+  
+  const [ads, setAds] = useState(undefined);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/Ads/all`)
+      .then((res) => {
+        setAds(res.data);
+      });
+
+    console.log(ads);
+  }, []);
+  
+
+
   return (
 <div className='col-md-8 mt-4 mx-auto'>
-<ul className="nav" style={{ marginLeft: "35rem" }}>
-  <li className="nav-item">
-    <a className="nav-link active" href="#">Login</a>
+<ul className="nav" style={{ marginLeft: "35rem", backgroundColor:"#1bb004"}}>
+  <li className="nav-item" >
+    <a className="nav-link active" href="#" style={{color:"#ffffff"}}>Login</a>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Register</a>
+    <a className="nav-link" href="#" style={{color:"#ffffff"}}>Register</a>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Post Your Ads</a>
+    <a className="nav-link" href="#" style={{color:"#ffffff"}}>Post Your Ads</a>
   </li>
 </ul><br/>
-    <div className="btn-group" style={{ marginLeft: "40rem" }}>
-  <button type="button" className="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Radius
-  </button>
-  <div className="dropdown-menu">
-    <Link className="dropdown-item" to={"#"}>Action</Link>
-    <Link className="dropdown-item" to={"#"}>Another action</Link>
-    <Link className="dropdown-item" to={"#"}>Something else here</Link>
-    <div className="dropdown-divider"></div>
-    <Link className="dropdown-item" to={"#"}>Separated link</Link>
-  </div>
-</div>
-<div className="btn-group" style={{ marginLeft: "1rem" }}>
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Price range
-  </button>
-  <div className="dropdown-menu">
-    <Link className="dropdown-item" to={"#"}>Action</Link>
-    <Link className="dropdown-item" to={"#"}>Another action</Link>
-    <Link className="dropdown-item" to={"#"}>Something else here</Link>
-    <div className="dropdown-divider"></div>
-    <Link className="dropdown-item" to={"#"}>Separated link</Link>
-  </div>
-</div>
+
+
 <br/><br/>
 <div className="input-group" style={{ width: "18rem" }}>
   <input type="search" className="form-control rounded" placeholder="Type" aria-label="Search" aria-describedby="search-addon" />
@@ -57,16 +51,25 @@ function PropertyCatalog() {
 <br/>
 <br/>
 
-    <div className="card" style={{ width: "18rem" }}>
-    <img className="card-img-top" src={bg3} alt="Card image cap"/>
+<div className="products-list row p-5">
+        {ads &&
+          ads.map((ad) => (
+            <div className="card" style={{ width: "18rem", margin: "1rem" }}>
     <div className="card-body">
-      <h5 className="card-title">Rs.3.2M Per Acre</h5>
-      <p className="card-text">Description of the land</p>
+    <div className="product-image">
+        <img src={ad.img} alt="product" />
+      </div>
+      <h5 className="card-title">{ad.title}</h5>
+      <p className="card-text">{ad.type}</p>
+      <p className="card-text">{ad.price}</p>
+      <p className="card-text">{ad.sizeOfArea}</p>
     </div>
     <div className="card-body">
       
     </div>
   </div>
+          ))}
+      </div>
   </div>
   );
 }
