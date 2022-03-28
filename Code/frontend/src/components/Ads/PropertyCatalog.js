@@ -61,7 +61,7 @@ const PropertyCatalog = () => {
       </div>
       <h5 className="card-title">{ad.title}</h5>
       <p className="card-text">{ad.type}</p>
-      <p className="card-text">{ad.price}</p>
+      <p className="card-text">{ad.priceRate}</p>
       <p className="card-text">{ad.sizeOfArea}</p>
     </div>
     <div className="card-body">
