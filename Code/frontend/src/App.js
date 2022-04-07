@@ -9,6 +9,7 @@ import PropertyCatalog from "./components/Ads/PropertyCatalog";
 import DisplayAd from "./components/Ads/DisplayAd";
 import AdvertiserLogin from "./components/Ads/AdvertiserLogin"
 import AdminViewAds from "./components/Ads/AdminViewAds";
+import AdminUpdateAds from "./components/Ads/AdminUpdateAds"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/DisplayAd" element={<DisplayAd />} />
         <Route path="/AdverLogin" element={<AdvertiserLogin />} />
         <Route path="/AdminView" element={<AdminViewAds />} />
+        <Route path="/AdminUpdate" element={<AdminUpdateAds />} />
       </Routes>
       <Footer />
     </BrowserRouter>
