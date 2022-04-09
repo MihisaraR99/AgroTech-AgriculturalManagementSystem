@@ -5,6 +5,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
+
+// Products Components
+import AddProduct from "./components/Product/Product_Manager/AddProduct";
+import AllProducts from "./components/Product/Product_Manager/AllProducts";
+import CompanyRequest from "./components/Product/User_Company/CompanyRequests";
+
+// Ads Components
 import AdvertiserForm from "./components/Ads/AdvertiserForm";
 import PropertyCatalog from "./components/Ads/PropertyCatalog";
 import DisplayAd from "./components/Ads/DisplayAd";
@@ -30,6 +37,11 @@ function App() {
         <Route path="/edit/:id" element= {<EditReport/>}    />
         <Route path="/rep/:id"  element= {<ReportDetails/>} />
         <Route path="/" element={<AllServices />} />
+
+        <Route path="/add" element= {<AddProduct/>}/>
+        <Route path="/productSee" element= {<AllProducts/>}/>
+        <Route path="/company" element= {<CompanyRequest/>}/>
+        
         <Route path="/adform" element={<AdvertiserForm />} />
         <Route path="/properties" element={<PropertyCatalog />} />
         <Route path="/DisplayAd" element={<DisplayAd />} />

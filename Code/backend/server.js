@@ -5,8 +5,11 @@ const bodyPaser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+
 // Import routes to here
 const storeRoutes = require("./routes/storeRoutes");
+const wholesaleRoutes = require("./routes/wholesaleRoutes");
+const CompanyRequest = require("./routes/Pr_companyRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const courseRoutes=require("./routes/courseRoutes");
 const AdsRoutes = require("./routes/AdsRoutes");
@@ -30,7 +33,7 @@ mongoose.connect(process.env.DB_URL, {
 
 const connection = mongoose.connection;
 connection.once("open", () => {
-  logger.info("Mongodb connected successfully");
+  logger.info(" Mongodb connected successfully");
 });
 
 app.get("/", (req, res) => {
@@ -40,6 +43,8 @@ app.get("/", (req, res) => {
 
 // Implement the routes from here
 app.use("/api/store", storeRoutes);
+app.use("/api/wholesale", wholesaleRoutes);
+app.use("/api/companyRequest", CompanyRequest);
 app.use("/api/lab",labRoutes);
 app.use("/api/Addevent",require("./routes/eventRoutes"));
 app.use("/api/course",require("./routes/courseRoutes"));
