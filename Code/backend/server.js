@@ -3,10 +3,12 @@ const dotenv = require("dotenv");
 const logger = require("pino")();
 const mongoose = require("mongoose");
 const cors = require("cors");
+const eventModel = require('./models/eventsModel')
 
 
 // Import routes to here
 const storeRoutes = require("./routes/storeRoutes");
+const eventRoutes = require("./routes/eventRoutes");
 const courseRoutes=require("./routes/courseRoutes");
 const AdsRoutes = require("./routes/AdsRoutes");
 const CandidateRoutes = require("./routes/CandidateRoutes");
@@ -20,6 +22,7 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 
+app.use(express.json());
 const PORT = process.env.PORT || 8000;
 
 mongoose.connect(process.env.DB_URL, {
@@ -38,8 +41,8 @@ app.get("/", (req, res) => {
 
 // Implement the routes from here
 app.use("/api/store", storeRoutes);
+app.use("/api/Addevent",require("./routes/eventRoutes"));
 app.use("/api/course",require("./routes/courseRoutes"));
-
 app.use("/api/Ads", require("./routes/AdsRoutes"));
 app.use("/api/Applyvacancies", require("./routes/ApplyforVacancyRoutes"));
 app.use("/api/Applyguidances", require("./routes/ApplyforGuidanceRoutes"));
