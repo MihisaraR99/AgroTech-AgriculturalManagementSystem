@@ -6,6 +6,13 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
 
+// Store Components
+import StoreHome from "./components/Store/StoreHome";
+import StoreProducts from "./components/Store/StoreProducts";
+import StoreProductsDetails from "./components/Store/StoreProductsDetails";
+import StoreOrderForm from "./components/Store/StoreOrderForm";
+import StoreAddProductForm from "./components/Store/StoreAddProductForm";
+
 // Products Components
 import AddProduct from "./components/Product/Product_Manager/AddProduct";
 import AllProducts from "./components/Product/Product_Manager/AllProducts";
@@ -38,6 +45,22 @@ function App() {
         <Route path="/rep/:id"  element= {<ReportDetails/>} />
         <Route path="/" element={<AllServices />} />
 
+        {/* Store Routes */}
+        <Route path="/store" element={<StoreHome />} />
+        <Route path="/store/products/:category" element={<StoreProducts />} />
+        <Route
+          path="/store/products/product/:id"
+          element={<StoreProductsDetails />}
+        />
+        <Route
+          path="/store/order/store-order-create"
+          element={<StoreOrderForm />}
+        />
+        <Route
+          path="/store/product/add-product"
+          element={<StoreAddProductForm />}
+        />
+            
         <Route path="/add" element= {<AddProduct/>}/>
         <Route path="/productSee" element= {<AllProducts/>}/>
         <Route path="/company" element= {<CompanyRequest/>}/>
