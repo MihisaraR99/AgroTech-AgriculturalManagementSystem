@@ -21,12 +21,12 @@ const PropertyCatalog = () => {
 
   return (
 <div className='col-md-8 mt-4 mx-auto'>
-<ul className="nav" style={{ marginLeft: "35rem", backgroundColor:"#1bb004"}}>
+<ul className="nav" style={{ marginLeft: "35rem", backgroundColor:"#1bb004", border:"2px solid black"}}>
   <li className="nav-item" >
-    <a className="nav-link active" href="#" style={{color:"#ffffff"}}>Login</a>
+    <a className="nav-link active" href="#" style={{color:"#ffffff", marginRight: "20px"}}>Login</a>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#" style={{color:"#ffffff"}}>Register</a>
+    <a className="nav-link" href="#" style={{color:"#ffffff", marginRight: "20px"}}>Register</a>
   </li>
   <li className="nav-item">
     <a className="nav-link" href="#" style={{color:"#ffffff"}}>Post Your Ads</a>
@@ -51,10 +51,10 @@ const PropertyCatalog = () => {
 <br/>
 <br/>
 
-<div className="products-list row p-5">
+<div className="products-list row p-5" style={{backgroundColor:"#D3D3D3"}}>
         {ads &&
           ads.map((ad) => (
-            <div className="card" style={{ width: "18rem", margin: "1rem" }}>
+            <div className="card" style={{ width: "22rem", margin: "1rem" }}>
     <div className="card-body">
     <div className="product-image">
         <img src={ad.img} alt="product" />

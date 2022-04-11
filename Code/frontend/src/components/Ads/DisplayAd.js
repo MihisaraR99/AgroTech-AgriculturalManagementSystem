@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Culti from "./img/Culti.jpg";
+import adformback from "./img/adformback.png";
 
 function DisplayAd() {
   return (
-      <div>
+      <div style={{backgroundImage: "url(" + { adformback } + ")"}}>
           <br/>
           <div class="d-grid gap-2 d-md-block">
   <button class="btn btn-primary" type="button" style={{marginLeft:"22rem"}}>Back</button>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import landsale from "./img/landsale.png";
 
 const AdvertiserForm = () => {
   const [type, setType] = useState("Something else here");
@@ -42,10 +43,17 @@ const AdvertiserForm = () => {
   };
 
   return (
-    <div className="col-md-8 mt-4 mx-auto" style={{ fontWeight: "bold" }}>
-      <h1>Advertiser Form</h1>
+    <div style={{}}>
+      <br/>
+      <h1 style={{fontFamily: "sans-serif", fontSize: "100px", textAlign:"center"}}>Advertiser Form</h1>
+      <br/>
+      <div >
+      
+      </div>
+    <div className="col-md-8 mt-4 mx-auto" style={{ fontWeight: "bold" , fontFamily: "sans-serif", border: "3px solid green", margin: "2px"}}>
+      
       <br />
-      <form onSubmit={sendData}>
+      <form onSubmit={sendData} style={{margin: "20px"}}>
         <br />
         <div className="row mb-3">
           <label class="col-sm-2 col-form-label">Type</label>
@@ -113,10 +121,10 @@ const AdvertiserForm = () => {
         <div className="row mb-3">
           <label class="col-sm-2 col-form-label">Town</label>
           <div className="col-sm-10">
-            <input
+            <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              id="inputEmail3"
+              
               onChange={(e) => {
                 setTown(e.target.value);
               }}
@@ -128,10 +136,10 @@ const AdvertiserForm = () => {
             AgentRef
           </label>
           <div className="col-sm-10">
-            <input
+            <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              id="inputEmail3"
+              
               onChange={(e) => {
                 setAgentRef(e.target.value);
               }}
@@ -143,10 +151,10 @@ const AdvertiserForm = () => {
             Heading
           </label>
           <div className="col-sm-10">
-            <input
+            <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              id="inputEmail3"
+              
               onChange={(e) => {
                 setheading(e.target.value);
               }}
@@ -158,10 +166,10 @@ const AdvertiserForm = () => {
             Description
           </label>
           <div className="col-sm-10">
-            <input
+            <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              id="inputEmail3"
+              
               onChange={(e) => {
                 setdescription(e.target.value);
               }}
@@ -173,10 +181,10 @@ const AdvertiserForm = () => {
             Size of Area
           </label>
           <div className="col-sm-10">
-            <input
+            <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              id="inputEmail3"
+              
               onChange={(e) => {
                 setsizeOfArea(e.target.value);
               }}
@@ -188,10 +196,10 @@ const AdvertiserForm = () => {
             Price Rate
           </label>
           <div className="col-sm-10">
-            <input
+            <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              id="inputEmail3"
+             
               onChange={(e) => {
                 setpriceRate(e.target.value);
               }}
@@ -204,10 +212,10 @@ const AdvertiserForm = () => {
             Contact Name
           </label>
           <div className="col-sm-10">
-            <input
+            <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              id="inputEmail3"
+              
               onChange={(e) => {
                 setcontactName(e.target.value);
               }}
@@ -219,7 +227,7 @@ const AdvertiserForm = () => {
             Email
           </label>
           <div className="col-sm-10">
-            <input
+            <input style={{backgroundColor:"#D3D3D3"}}
               type="email"
               className="form-control"
               id="inputEmail3"
@@ -234,7 +242,7 @@ const AdvertiserForm = () => {
             Phone
           </label>
           <div className="col-sm-10">
-            <input
+            <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
               id="inputEmail3"
@@ -247,7 +255,7 @@ const AdvertiserForm = () => {
         <br />
         <div className="form-group my-4">
           <label className="my-1">Image</label>
-          <input
+          <input style={{backgroundColor:"#D3D3D3"}}
             type="text"
             className="form-control"
             placeholder="Image"
@@ -260,13 +268,14 @@ const AdvertiserForm = () => {
 
         <button
           type="submit"
-          class="btn btn-primary"
-          style={{ backgroundColor: "#1bb004", alignItems: "center" }}
+          className="btn btn-primary"
+          style={{ backgroundColor: "#1bb004"}}
           onClick={sendData}
         >
           Submit
         </button>
       </form>
+    </div>
     </div>
   );
 };
