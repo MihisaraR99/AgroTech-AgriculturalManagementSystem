@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import img1 from '../../assets/slide1.jpg'
-import img2 from '../../assets/slide2.jpg'
-import img3 from '../../assets/slide3.jpg'
-import plant from'../../assets/plants.jpg'
-import animal from'../../assets/animals.jpg'
-import seed from'../../assets/seed.jpg'
-import agrieng from'../../assets/filedeng.jpg'
-import field from'../../assets/field.jpg'
+import img1 from './eduimgs/slide1.jpg'
+import img2 from './eduimgs/slide2.jpg'
+import img3 from './eduimgs/slide3.jpg'
+import plant from'./eduimgs//plants.jpg'
+import animal from'./eduimgs/animals.jpg'
+import seed from'./eduimgs/seed.jpg'
+import agrieng from'./eduimgs/filedeng.jpg'
+import field from'./eduimgs/field.jpg'
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
