@@ -60,11 +60,11 @@ function App() {
           path="/store/product/add-product"
           element={<StoreAddProductForm />}
         />
-            
+          
         <Route path="/add" element= {<AddProduct/>}/>
         <Route path="/productSee" element= {<AllProducts/>}/>
         <Route path="/company" element= {<CompanyRequest/>}/>
-        
+          {/* Ads Routes */}
         <Route path="/adform" element={<AdvertiserForm />} />
         <Route path="/properties" element={<PropertyCatalog />} />
         <Route path="/DisplayAd" element={<DisplayAd />} />
