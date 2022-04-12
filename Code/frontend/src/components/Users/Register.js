@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Register = () => {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
   return (
     <div class="container min-vw-100 max-vw-100 vw-100 vh-100 min-vh-100">
       <div class="row  w-100 h-100 d-flex align-items-center justify-content-center">
