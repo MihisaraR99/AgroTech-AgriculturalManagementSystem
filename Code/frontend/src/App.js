@@ -1,5 +1,4 @@
 import React from "react";
-import axios from 'axios';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -61,16 +60,16 @@ function App() {
           element={<StoreAddProductForm />}
         />
           
-        <Route path="/add" element= {<AddProduct/>}/>
-        <Route path="/productSee" element= {<AllProducts/>}/>
-        <Route path="/company" element= {<CompanyRequest/>}/>
+        <Route path="/Ads/add" element= {<AddProduct/>}/>
+        <Route path="/Ads/productSee" element= {<AllProducts/>}/>
+        <Route path="/Ads/company" element= {<CompanyRequest/>}/>
           {/* Ads Routes */}
-        <Route path="/adform" element={<AdvertiserForm />} />
-        <Route path="/properties" element={<PropertyCatalog />} />
-        <Route path="/DisplayAd" element={<DisplayAd />} />
-        <Route path="/AdverLogin" element={<AdvertiserLogin />} />
-        <Route path="/AdminView" element={<AdminViewAds />} />
-        <Route path="/AdminUpdate" element={<AdminUpdateAds />} />
+        <Route path="/Ads/adform" element={<AdvertiserForm />} />
+        <Route path="/Ads/properties" element={<PropertyCatalog />} />
+        <Route path="/Ads/DisplayAd" element={<DisplayAd />} />
+        <Route path="/Ads/AdverLogin" element={<AdvertiserLogin />} />
+        <Route path="/Ads/AdminView" element={<AdminViewAds />} />
+        <Route path="/Ads/AdminUpdate" element={<AdminUpdateAds />} />
       </Routes>
       <Footer />
     </BrowserRouter>

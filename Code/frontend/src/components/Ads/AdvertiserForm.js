@@ -27,7 +27,7 @@ const AdvertiserForm = () => {
       contactName,
       email,
       phone,
-      image: img,
+      img,
     };
 
     axios
