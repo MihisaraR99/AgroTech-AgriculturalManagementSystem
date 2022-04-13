@@ -4,6 +4,8 @@ function VacancyAdmin(){
     return(
        <body class="adminbody">
 <div class="container-xl">
+<div class="h1 text-center text-dark" id="pageHeaderTitle">Vacancies Admin Dashboard</div>
+
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
