@@ -15,7 +15,7 @@ const [Quentity,setqueantity] = useState("");
 
 function sendcompanyData(e){
     e.preventDefault();
-    alert("Going to add new product");
+    alert("Going to add company request ");
 
     const newProduct = {
       Company_Id,
@@ -28,7 +28,7 @@ function sendcompanyData(e){
     }
    
     axios.post("http://localhost:8000/api/companyRequest/add",newProduct).then(()=>{
-      alert("Product Added");
+      alert("Compny Reques Added");
 
      
     }).catch((err)=>{
