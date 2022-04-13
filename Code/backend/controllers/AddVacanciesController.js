@@ -4,8 +4,9 @@ const addVacancy = (req, res) => {
   const {
     vacancyNo,
     jobTitle,
-    location,
     jobDescription,
+    jobImage,
+    publishedDate,
   } = req.body;
 
   console.log(req.body);
@@ -13,8 +14,9 @@ const addVacancy = (req, res) => {
   const newVacancy= new Vacancy({
     vacancyNo,
     jobTitle,
-    location,
     jobDescription,
+    jobImage,
+    publishedDate,
   });
 
   newVacancy
@@ -49,7 +51,11 @@ const updateVacancy = async (req, res) => {
 
     const {vacancyNo,jobTitle,location,jobDescription} = req.body;
     
-    const vacanci = await Vacancy.findByIdAndUpdate(vacancyId, {vacancyNo,jobTitle,location,jobDescription});
+    const vacanci = await Vacancy.findByIdAndUpdate(vacancyId, {vacancyNo,jobTitle,jobDescription,jobImage,publishedDate});
+
+    res.status(201).json({
+      "Updated": true
+    })
 
   } catch (error) { 
     res.status(400).json(error.message);

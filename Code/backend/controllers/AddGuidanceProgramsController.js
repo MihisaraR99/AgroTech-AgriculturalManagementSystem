@@ -5,6 +5,8 @@ const addGuidance = (req, res) => {
     programNo,
     programName,
     programDescription,
+    programImage,
+    publishedDate,
   } = req.body;
 
   console.log(req.body);
@@ -12,7 +14,9 @@ const addGuidance = (req, res) => {
   const newGuidance = new Guidance({
    programNo,
    programName,
-   programDescription
+   programDescription,
+   programImage,
+   publishedDate,
   });
 
   newGuidance
@@ -47,7 +51,7 @@ const updateGuidance = async (req, res) => {
 
     const {programNo,programName,programDescription} = req.body;
     
-    const progr = await Guidance.findByIdAndUpdate(guidanceId, {programNo,programName,programDescription});
+    const progr = await Guidance.findByIdAndUpdate(guidanceId, {programNo,programName,programDescription,programImage,publishedDate});
 
     res.status(201).json({
       "Updated": true

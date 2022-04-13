@@ -53,6 +53,10 @@ const updateCandidate = async (req, res) => {
     
     const candi = await Candidate.findByIdAndUpdate(candidateId, {name_with_initials,name_in_full,date_of_birth,nic,address,mobile,email,linked_in_profile,ordinarylevel,advancedlevel,degree});
 
+    res.status(201).json({
+      "Updated": true
+    })
+
   } catch (error) { 
     res.status(400).json(error.message);
   }
