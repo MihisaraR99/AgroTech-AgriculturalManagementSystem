@@ -1,10 +1,22 @@
 import React from "react";
 
+import { useState } from "react/cjs/react.production.min";
+
 export default function AddAppointments(){
-    return(
+   
+
+      /*Create state
+      const[AppointmentNo,setAppointment] = useState("");
+      const[CustomerName,setEmail] = useState("");
+      const[NIC,setNIC] = useState("");
+      const[AnimalType,setAnimalType] = useState("");
+      const[ContactNo,setConatcNo] = useState("");
         
-      
-      
+      function sendAppointmentData(e){
+        
+      }
+      */
+      return(
       <div className="container">
         <h1> Get an Appointment</h1>
         <form>
