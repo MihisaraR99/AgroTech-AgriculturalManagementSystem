@@ -1,64 +1,90 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const navigate = useNavigate();
+
+  const onRegister = async () => {
+    const user = {
+      full_name: name,
+      email,
+      password,
+    };
+
+    const { res, status } = await axios.post(
+      "http://localhost:8000/api/users/sign-up",
+      user
+    );
+
+    if (status === 201) {
+      navigate("/login");
+    }
+  };
 
   return (
-    <div class="container min-vw-100 max-vw-100 vw-100 vh-100 min-vh-100">
-      <div class="row  w-100 h-100 d-flex align-items-center justify-content-center">
-        <div class="col  w-100 h-100 d-flex align-items-center justify-content-center">
+    <div className="container min-vw-100 max-vw-100 vw-100 vh-100 min-vh-100">
+      <div className="row  w-100 h-100 d-flex align-items-center justify-content-center">
+        <div className="col  w-100 h-100 d-flex align-items-center justify-content-center">
           <form className="jumbotron">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">
+            <div className="mb-3">
+              <label for="exampleInputEmail1" className="form-label">
                 Full Name
               </label>
               <input
                 type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
+                className="form-control"
                 style={{ width: "600px" }}
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
               />
             </div>
 
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">
+            <div className="mb-3">
+              <label for="exampleInputEmail1" className="form-label">
                 Email address
               </label>
               <input
                 type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
+                className="form-control"
                 style={{ width: "600px" }}
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
             </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">
+            <div className="mb-3">
+              <label for="exampleInputPassword1" className="form-label">
                 Password
               </label>
               <input
                 type="password"
-                class="form-control"
-                id="exampleInputPassword1"
+                className="form-control"
                 style={{ width: "600px" }}
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
+
+              <small id="emailHelp" className="form-text">
+                Your password will be encrypted automatically
+              </small>
             </div>
-            <div class="mb-3 form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-            </div>
+
             <button
-              type="submit"
-              class="btn btn-primary btn-block w-100 mt-4"
+              type="button"
+              className="btn btn-primary btn-block w-100 mt-4"
               style={{ backgroundColor: "#12af39" }}
+              onClick={onRegister}
             >
-              Submit
+              Create Account
             </button>
           </form>
         </div>

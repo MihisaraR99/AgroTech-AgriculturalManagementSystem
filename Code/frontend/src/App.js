@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -34,8 +34,17 @@ import EditReport from "./components/EditReport";
 import ReportDetails from "./components/ReportDetails";
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
+import axios from "axios";
 
 function App() {
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/users/current", { withCredentials: true })
+      .then((data) => {
+        console.log(data);
+      });
+  }, []);
+
   return (
     <BrowserRouter>
       <Header />
