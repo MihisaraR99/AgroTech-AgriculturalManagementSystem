@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/Header";
+import Navigator from "./components/Navigator/Navigator";
 import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
 
@@ -47,7 +48,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
+      <Navigator />
       <Routes>
         <Route path="/rep" element={<AllReports />} />
         <Route path="/add" element={<AddReport />} />
