@@ -3,9 +3,10 @@ const dotenv = require("dotenv");
 const logger = require("pino")();
 const mongoose = require("mongoose");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
+const expressSession = require("express-session");
 
 // Import routes to here
+const userRoutes = require("./routes/userManageRoutes");
 const storeRoutes = require("./routes/storeRoutes");
 const wholesaleRoutes = require("./routes/wholesaleRoutes");
 const CompanyRequest = require("./routes/Pr_companyRoutes");
@@ -21,10 +22,28 @@ const labRoutes = require("./routes/labRoutes.js");
 
 const app = express();
 dotenv.config();
-app.use(cors());
-app.use(express.json());
-app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
+app.use(express.json());
+app.set("trust proxy", 1);
+const sessSettings = expressSession({
+  path: "/",
+  secret: "oursecret",
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    sameSite: false,
+    secure: false,
+    maxAge: 360000,
+  },
+});
+
+app.use(sessSettings);
 const PORT = process.env.PORT || 8000;
 
 mongoose.connect(process.env.DB_URL, {
@@ -41,6 +60,7 @@ app.get("/", (req, res) => {
 });
 
 // Implement the routes from here
+app.use("/api/users", userRoutes);
 app.use("/api/store", storeRoutes);
 app.use("/api/wholesale", wholesaleRoutes);
 app.use("/api/companyRequest", CompanyRequest);
