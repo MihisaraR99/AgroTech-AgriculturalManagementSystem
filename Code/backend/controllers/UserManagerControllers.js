@@ -36,7 +36,11 @@ const loginUser = (req, res) => {
 };
 
 const currentUser = (req, res) => {
-  return res.status(200).json(req.session.user);
+  if (req.session.user) {
+    res.status(200).json(req.session.user);
+  } else {
+    res.status(401).json({ error: "User not found" });
+  }
 };
 
 module.exports = {
