@@ -1,6 +1,5 @@
 import React,{useState} from "react";
-import img3 from "../images/img3.jpg";
-import img6 from "../images/img6.jpg";
+import img6 from "../images/img11.jpg";
 import axios from "axios";
 
 
@@ -50,8 +49,7 @@ return(
                     //backgroundColor: "#5b665a",
                     //backgroundImage: "url(img1.png)",
                     //backgroundImage: "url(../images/img5.jpg)",
-                    marginLeft: "15%",
-                    marginTop: "5px",
+                    marginLeft: "1%",
                     color:"white",
                     width:"1100px",
                     marginRight:"80%", 
@@ -65,13 +63,12 @@ return(
                   
                     //backgroundColor: "black",
                     width:"600px",
-                    margin:"1px",
                     padding: "50px 50px 20px 50px",
                     //borderRadius: "30px",
                     //border:"2px solid #3fd921",
                     color:"black"
                    }}>
-    <h2>Add Products</h2>
+    <h2 style={{color:"white" , fontSize:"50px" }}>Add Products</h2>
 
     <div class="form-group" >
        <div >

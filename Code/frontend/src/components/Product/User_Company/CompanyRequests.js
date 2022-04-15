@@ -1,5 +1,7 @@
 import React,{useState} from "react";
 import img2 from "../images/img2.jpg";
+import img1 from "../images/img1.jpg";
+import './Company.css';
 import axios from "axios";
 
 export default function CompanyRequest(){
@@ -41,14 +43,17 @@ function sendcompanyData(e){
 
 
     return(
-      <center>
-      <div style={{ backgroundColor: "#badec6" }}>
-      <div className="upper-images max-vh-100 row gx-3" >
-        <img style={{ width: "100%" ,height:"500px" }}
-          src={img2}
-          className="image" 
-        />
       
+      <center>
+
+      <div style={{  backgroundImage: `url(${img2})`,backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat', }}>
+      
+      <div className="upper-images max-vh-100 row gx-3" >
+<img style={{ width: "100%" ,height:"200px" }}
+  src={img1}
+  className="image" 
+/></div>
      
 
       <div class="container "  style={{ 
@@ -153,7 +158,7 @@ function sendcompanyData(e){
       </form>
     </div>
     </div>
-    </div>
+  
     </center>
           )
 }

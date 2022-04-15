@@ -23,7 +23,7 @@ export default function AllProducts(){
 
       const onDelete= (id)=>{
          alert("Going to delete " + id);
-          axios.delete(`http://localhost:8000/api/companyRequest/delete/${id}`).then((res)=>{
+          axios.delete(`http://localhost:8000/api/companyRequest/delete/${id}`).then(()=>{
              alert("Deleted succesfully");
          
           })
@@ -40,9 +40,7 @@ return(
 <div 
 className="product-title"
 style={{ 
-// backgroundColor: "rgb(0,0,0,0.5)",
-// backgroundImage: "url(/img1.png)"
-//backgroundColor: "black ",
+
 border:"0.5px solid rgba(150, 168, 156)",
 marginLeft: "2%",
 marginTop: "70px",
@@ -53,6 +51,7 @@ width:"450px",
 padding: "5px",}}>
 
 <div className="inputdiv"
+  
  style={{ 
     //backgroundColor: "black",
     //border: "1px solid white",
@@ -62,9 +61,12 @@ padding: "5px",}}>
     position:"center",
     //border:"2px solid black",
     padding: " 5px 5px 5px", }}>
-    <p style={{ fontSize: "20px",textAlign:"left"}}>
-     Index-<b>{index+1}</b>
+        <div style={{border: "1px ",width:"400px",height:"50px",borderRadius: "30px", float:"center",boxShadow: " 10px 10px 5px rgba(150, 168, 156)",marginBottom:"30px"}}>
+        <p style={{ fontSize: "20px",textAlign:"center"}}>
+     Request No -<b>{index+1}</b>
     </p>
+        </div>
+   
     <p style={{ fontSize: "20px",textAlign:"left" }}>
      Company Id-<b>{company.Company_Id}</b>
     </p>
