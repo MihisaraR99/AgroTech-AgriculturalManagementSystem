@@ -4,7 +4,7 @@ import axios from "axios";
 
 //import {getAllProducts} from '../../../services/productManagementService'
 
-import {getAllappointments} from '../../Services/HealthCareServices'
+import {getAllappointments} from '../HealthCare/Allappointments'
 
 export default function AllProducts(){
 
