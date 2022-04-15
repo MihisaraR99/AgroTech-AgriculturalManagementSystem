@@ -1,11 +1,12 @@
 import React, {useState,useEffect} from "react";
+
 //import axios from "axios";
 //import PropTypes from 'prop-types'
 
 // import AddProduct from "./AddProduct";
 
-import {getAllProducts} from '../../../services/productManagementService'
-import {getAllCompany} from '../../../services/productManagementService'
+import {getAllProducts} from '../productManagementService'
+
 
 
 export default function AllProducts(){
@@ -26,7 +27,7 @@ export default function AllProducts(){
             <table className ="table">
                  <thead>
                      <tr>
-                      
+                     <th scope ="col">Product No</th> 
                       <th scope ="col">Product ID</th> 
                       <th scope ="col">Product Name</th> 
                       <th scope ="col">Quantity(Kg)</th> 
@@ -35,18 +36,18 @@ export default function AllProducts(){
                     </tr> 
                 </thead> 
                 <tbody>  
-            {products && products.map((product)=>{
+            {products && products.map((product,index)=>{
                 return(
                     
                   
                  
                    <tr >
-                  
+                   <td>{index+1}</td>
                    <td>{product. PId}</td>
                    <td>{product.PName}</td>
                    <td>{product.Quentity}</td>
                    <td>
-                            <a className ="btn btn-warning"  href="#">
+                            <a className ="btn btn-warning"  href={ `/productUpdate/${product.index}`}>
                                 <i className="fas fa-edit"></i>&nbsp;EDIT
                             </a>
                             &nbsp; 

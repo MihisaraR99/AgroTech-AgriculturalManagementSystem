@@ -12,6 +12,7 @@ import AllCompanyRequest from "./components/Product/User_Company/AllCompanyReque
 import UpdateProducts from "./components/Product/Product_Manager/UpdateProducts";
 import StockDetails from "./components/Product/Product_Manager/StockDetails";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,8 +23,9 @@ function App() {
         <Route path="/productSee" element= {<AllProducts/>}/>
         <Route path="/company" element= {<CompanyRequest/>}/>
         <Route path="/companySee" element= {<AllCompanyRequest/>}/>
-        <Route path="/productUpdate" element= {<UpdateProducts/>}/>
+        <Route path="/productUpdate/:id" element= {<UpdateProducts/>}/>
         <Route path="/stock" element= {<StockDetails/>}/>
+      
       </Routes>
       <Footer />
     </BrowserRouter>

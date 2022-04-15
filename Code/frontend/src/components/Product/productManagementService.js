@@ -26,3 +26,5 @@ export const getAllCompany = async () =>{
         return false;
     }
 }
+
+

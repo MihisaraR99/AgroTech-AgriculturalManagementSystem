@@ -4,14 +4,12 @@ import React, {useState,useEffect} from "react";
 
 // import AddProduct from "./AddProduct";
 
-import {getAllProducts} from '../../../services/productManagementService'
-import {getAllCompany} from '../../../services/productManagementService'
-
+import {getAllProducts} from '../productManagementService'
 
 export default function AllProducts(){
 
     const [products, setProducts] = useState([]);
-    const [company, setRequest] = useState([]);
+
 
     useEffect(()=>{
         getAllProducts().then((data)=>{
@@ -20,20 +18,10 @@ export default function AllProducts(){
         })
         
     },[])
-
-    useEffect(()=>{
-        getAllCompany().then((data)=>{
-            console.log("data>>", data.data.existingPosts)
-            setRequest(data.data.existingPosts)
-        })
-        
-    },[])
-
-
     
 
     return(
-        <div>
+        <div >
             <h1>All Products</h1>
             <table className ="table">
                  <thead>

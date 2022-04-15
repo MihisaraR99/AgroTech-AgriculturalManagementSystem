@@ -1,9 +1,11 @@
 import React, {useState,useEffect} from "react";
-//import axios from "axios";
+//import img1 from "./img1.png";
+import axios from "axios";
 //import PropTypes from 'prop-types'
 
 
-import {getAllCompany} from '../../../services/productManagementService'
+import {getAllCompany} from '../productManagementService';
+
 
 export default function AllProducts(){
 
@@ -16,51 +18,86 @@ export default function AllProducts(){
         })
         
     },[])
+     
+    
 
-    return(
-        <div>
-            <h1>All Company Requests</h1>
-            <table className ="table">
-            <thead>
-                     <tr>
-                      <th scope ="col">Company Id</th>
-                      <th scope ="col">Contact Name</th>
-                      <th scope ="col">Company Email</th>
-                      <th scope ="col">Contact Number</th>    
-                      <th scope ="col">Product ID</th> 
-                      <th scope ="col">Product Name</th>   
-                    </tr> 
-            </thead> 
-            <tbody>       
-            {company && company.map((company)=>{
-                return(
-                   <tr>
-                   
-                   <td>{company.Company_Id}</td>
-                   <td>{company.Contact_Name}</td>
-                   <td>{company.Company_Email}</td>
-                   <td>{company.Company_contactNo}</td>
-                   <td>{company.Product_Id}</td>
-                   <td>{company.Product_Name}</td>
-                   <td>BsFillCheckSquareFill
-                            <a className ="btn btn-warning"  href="#">
-                                <i className="fas fa-edit"></i>&nbsp;Confirm
-                            </a>
-                            &nbsp; 
-                            <a className ="btn btn-danger" href="#" >
-                                <i className="far fa-trash-alt"></i>&nbsp;DELETE
-                            </a>
-                    </td>
-                   </tr>
-                
-                  );
-            })
-             
-            }
-            </tbody> 
-            </table>
-        </div>
-    )    
+      const onDelete= (id)=>{
+         alert("Going to delete " + id);
+          axios.delete(`http://localhost:8000/api/companyRequest/delete/${id}`).then((res)=>{
+             alert("Deleted succesfully");
+         
+          })
+    };
+
+return(
+  <div>
+    <center><h1>All Company Requests</h1> 
+        <div class="row">
+            {company && company.map((company,index)=>(
+              <div class="col-4">
+                          
+
+<div 
+className="product-title"
+style={{ 
+// backgroundColor: "rgb(0,0,0,0.5)",
+// backgroundImage: "url(/img1.png)"
+//backgroundColor: "black ",
+border:"0.5px solid rgba(150, 168, 156)",
+marginLeft: "2%",
+marginTop: "70px",
+color:"white",
+borderRadius: "30px",
+boxShadow: " 10px 10px 5px rgba(150, 168, 156)",
+width:"450px",
+padding: "5px",}}>
+
+<div className="inputdiv"
+ style={{ 
+    //backgroundColor: "black",
+    //border: "1px solid white",
+    width:"400px",
+    color:"black",
+    margin: "2px",
+    position:"center",
+    //border:"2px solid black",
+    padding: " 5px 5px 5px", }}>
+    <p style={{ fontSize: "20px",textAlign:"left"}}>
+     Index-<b>{index+1}</b>
+    </p>
+    <p style={{ fontSize: "20px",textAlign:"left" }}>
+     Company Id-<b>{company.Company_Id}</b>
+    </p>
+    <p style={{ fontSize: "20px",textAlign:"left" }}>
+    Product Name-<b> {company.Product_Name}</b>
+    </p>
+    <p style={{ fontSize: "20px",textAlign:"left"}}>
+     Company Email-<b> {company.Company_Email}</b>
+    </p>
+    <p style={{ fontSize: "20px",textAlign:"left" }}>
+     Contact No-<b>{company.Company_contactNo}</b>
+    </p>
+    </div>
+
+<tr> 
+<td>
+ <a className ="btn btn-warning"  href="#" >
+    <i className="fas fa-edit"></i>&nbsp;Confirm</a>&nbsp; 
+
+<a className ="btn btn-danger"  onClick={()=> onDelete(company.Company_Id)}>
+    <i className="far fa-trash-alt"></i>&nbsp;DELETE</a>
+</td>
+</tr>
+</div>
+</div>
+                  
+    
+
+     ))}
+  </div></center>
+ </div> 
+        
+  )    
 }
 
 
