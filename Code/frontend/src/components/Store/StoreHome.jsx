@@ -1,7 +1,17 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import StoreProductSingle from "./StoreProductSingle";
 
 const StoreHome = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8000/api/store/products`).then((res) => {
+      setProducts(res.data.products);
+    });
+  }, []);
+
   return (
     <div className="vw-100 min-vh-100" style={{ backgroundColor: "#F5F5F5" }}>
       {/* Upper Images */}
@@ -75,6 +85,22 @@ const StoreHome = () => {
               />
             </Link>
           </div>
+        </div>
+      </div>
+
+      <div className="latest-store-items p-4">
+        <h1 className="my-4 display-6 px-5"> Categories </h1>
+        <div className="products-list row p-5">
+          {products &&
+            products.map((prod) => (
+              <StoreProductSingle
+                key={prod._id}
+                img={prod.image}
+                title={prod.name}
+                price={prod.price}
+                id={prod._id}
+              />
+            ))}
         </div>
       </div>
     </div>
