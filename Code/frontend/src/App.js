@@ -9,6 +9,7 @@ import Courseadmin from "./components/educationComponents/Courseadmin";
 import Coursehome from "./components/educationComponents/Coursehome";
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,7 +18,7 @@ function App() {
         <Route path="/" element={<AllServices />} />
         <Route path="/courseadmin" element={<Courseadmin />} />
         <Route path="/coursehome" element={<Coursehome />} />
-       
+   
 
       </Routes>
       <Footer/>
