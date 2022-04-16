@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import "./App.css";
+import "./components/HealthCare/Health.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
@@ -10,6 +10,8 @@ import PropertyCatalog from "./components/Ads/PropertyCatalog";
 import AddAppointments from "./components/HealthCare/AddAppointments";
 import AllappointmentsVet from  "./components/HealthCare/AllappointmentsVet";
 import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
+import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
+
 
 
 
@@ -22,8 +24,10 @@ function App() {
         <Route path="/adform" element={<AdvertiserForm />} />
         <Route path="/properties" element={<PropertyCatalog />} />
         <Route path="/Appointments" element= {<AddAppointments/>}/>
-        <Route path="/AllAppointmentVet" element= {<AllappointmentsVet/>}/>
-        <Route path="/AllappointmentsManager" element= {<AllappointmentsManager/>}/>
+        <Route path="/HVet" element= {<AllappointmentsVet/>}/>
+        <Route path="/HManager" element= {<AllappointmentsManager/>}/>
+        <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
+       
         
       </Routes>
       <Footer />
