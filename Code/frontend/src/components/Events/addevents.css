@@ -1,4 +1,4 @@
-#upload {
+ #upload {
     opacity: 0;
 }
 
@@ -17,7 +17,7 @@
 
 .image-area::before {
     content: 'Uploaded image result';
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-weight: bold;
     text-transform: uppercase;
     position: absolute;
@@ -37,9 +37,9 @@
     margin:0;
     padding: 0;
 }
-body{
+.backgroundevent{
 
-    
+   background-image: url(./event images/background.jpg);
     background-position:center;
     background-size: cover;
     font-family: sans-serif;
@@ -61,8 +61,8 @@ body{
     margin: auto;
 
 }
-form{
-    background-image: url(./addeventform.jpg);
+#form{
+    
     padding: 10px;
 
 }
@@ -70,8 +70,19 @@ form{
 #event_id{
         width: 100%;
         height: 100px;
+        font-size: 18px;
 
 }
+
+.eve1{
+    margin-left: 25px;
+   
+  width:125px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .event_id{
     position: relative;
     left: 200px;
@@ -86,15 +97,64 @@ form{
 
 }
 .name{
+  margin-left: 25px;
+  margin-top: 30px;
+  width:125px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 700;
 
+
+   
+}
+
+.startdate{
     position: relative;
-    left:200px;
-    top:-37px ;
+    left: 200px;
+    top: -37px;
     line-height: 40px;
-    border-radius:6px ;
+    border-radius: 6px;
     padding: 0 22px;
     font-size: 16px;
+
 }
+
+.starttime{
+
+    position: relative;
+    left: 417px;
+    top: -80px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+
+.enddate{
+    position: relative;
+    left: 200px;
+    top: -37px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+
+}
+
+.endtime{
+    position: relative;
+    left: 417px;
+    top: -80px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+
+}
+
+
 .firstlaybel{
 
     position: relative;
@@ -118,6 +178,8 @@ form{
     color: #555;
 }
 .secondlaybel{
+
+   
     position: relative;
     color: #e5e5e5;
     text-transform: capitalize;
@@ -125,3 +187,127 @@ form{
     left:203px;
     top: -36px;
 }
+
+
+
+.seconddlaybel{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left:203px;
+    top: -45px;
+}
+.thirdlaybel{
+    position:relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left:175px;
+    top: -45px;
+}
+.fourthlaybel{
+
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left:203px;
+    top: -45px;
+
+}
+
+.fifthlaybel{
+
+    position:relative;
+    padding: 312px;
+    padding-top: 50px;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left:175px;
+    top: -45px;
+
+}
+
+.eventq{
+    margin-left: 25px;
+    margin-top: 10px;
+    width:250px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 700;
+    
+}
+
+.form-check{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.form-check2{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.venue{
+
+   
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width: px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: #555;
+}
+.venue1{
+    margin-left: 25px;
+    margin-top: 10px;
+    width:250px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 700;
+
+}
+.intro{
+
+    font-weight: 700;
+    font-size: 16px;
+
+}
+.submitbutton{
+
+   
+        background: #048f26;
+        color: white;
+        border-style: outset;
+        border-color: #088318;
+        height: 50px;
+        width: 100px;
+        font: bold15px arial,sans-serif;
+        text-shadow: none;
+        border-radius: 10px;
+        margin-left: 350px;
+}
+.category1{
+
+    margin-left: 25px;
+    margin-top: 10px;
+    width:250px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 700;
+}
+.option{
+    position: relative;
+    left: 200px;
+    top: -37px;
+    line-height: 40px;
+    width: px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;  
+} 

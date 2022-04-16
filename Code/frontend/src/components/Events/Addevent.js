@@ -3,7 +3,7 @@ import './addevents.css';
 
 const Addevent = () => {
   return (
-    <div>Addevent
+    <div class="backgroundevent">
 
 
 <div>
@@ -16,16 +16,19 @@ const Addevent = () => {
   <form>
 
 <div id="event_id">
-<h2>Event_Id</h2>
+<h2 class="eve1">Event_Id</h2>
 <input class="event_id" type="text" name="Event_Id"></input><br></br>
 <laybel class="firstlaybel">Event Id</laybel>
 
+</div>
+<div>
 <h2 class="name">Event Name</h2>
 <input class="evename" type="text" name="Event_Name"></input><br></br>
 <laybel class="secondlaybel">Event Name</laybel>
 
 </div>
-<h2 class="name">Category</h2>
+
+<h2 class="category1">Category</h2>
 <select class="option" name="Category">
 <option disabled="disabled" selected="selected">Choose category</option>
 <option>Agricultural event</option>
@@ -33,7 +36,7 @@ const Addevent = () => {
 
 </select>
 
-<h2 class="name">Start Date/Time</h2>
+<h2 class="name">StartDate/Time</h2>
 <input class="startdate" type="text" name="Start_Date"></input><br></br>
 <laybel class="seconddlaybel">Start Date</laybel>
 <input class="starttime" type="text" name="Start_Time"></input><br></br>
@@ -41,27 +44,45 @@ const Addevent = () => {
 
 <h2 class="name">End Date/Time</h2>
 <input class="enddate" type="text" name="End_Date"></input><br></br>
-<laybel class="secondlaybel">End Date</laybel>
+<laybel class="fourthlaybel">End Date</laybel>
 <input class="endtime" type="text" name="End_Time"></input><br></br>
-<laybel class="thirdlaybel" >End time</laybel>
+<laybel class="fifthlaybel" >End time</laybel>
 
-<h2 id="event">All Day Event?</h2>
-<label class="radio">
-<input class="radio-one" type="radio" checked="checked" name=""></input>
-  <span class="checkmark"></span>
-  YES
-</label>
 
-<label class="radio">
-<input class="radio-two" type="radio"  name=""></input>
-  <span class="checkmark"></span>
-  NO
-</label>
+<h2 class="eventq">All Day Event?</h2>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+  <label class="form-check-label" for="flexRadioDefault1">
+    YES
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+  <label class="form-check-label" for="flexRadioDefault2">
+    NO
+  </label>
+  
+</div>
+<h2 class="eventq">Virtual Event?</h2>
+<div class="form-check2">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+  <label class="form-check-labe2" for="flexRadioDefault2">
+    YES
+  </label>
+</div>
+<div class="form-check2">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+  <label class="form-check-labe2" for="flexRadioDefault2">
+    NO
+  </label>
+  
+</div>
 
-<h2 class="name">Venue</h2>
+
+<h2 class="venue1">Venue</h2>
 <input class="venue" type="text" name="venue"></input><br></br>
 
-<span>Today, there are many industry events promoted and advertised out there. And it’s getting more and more challenging for people to decide what event to attend and what event to skip.
+<span class="intro">Today, there are many industry events promoted and advertised out there. And it’s getting more and more challenging for people to decide what event to attend and what event to skip.
    If you want to grab the attention of prospective attendees, you should explain how they can personally benefit from participating in your event.</span>
 
    <div class="row py-4">
@@ -83,7 +104,7 @@ const Addevent = () => {
         </div>
     </div>
 
-    <button type="submit">Register</button>
+    <button class="submitbutton" type="submit">Register</button>
 
   </form>
 

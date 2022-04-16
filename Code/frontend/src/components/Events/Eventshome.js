@@ -223,7 +223,7 @@ const Eventshome = () => {
             </div>
 
              </div>
-             <p>Solid</p>
+             
 <hr class="solid"/>
 
              <div class="event-type2">
