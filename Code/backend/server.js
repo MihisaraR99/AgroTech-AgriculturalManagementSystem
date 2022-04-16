@@ -13,6 +13,8 @@ const CompanyRequest = require("./routes/Pr_companyRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const AdsRoutes = require("./routes/AdsRoutes");
+
+const HealthCareAppointmentRoutes = require("./routes/HealthCareAppointmentRoutes");
 const CandidateRoutes = require("./routes/CandidateRoutes");
 const ApplyforVacancyRoutes = require("./routes/ApplyforVacancyRoutes");
 const ApplyforGuidanceRoutes = require("./routes/ApplyforGuidanceRoutes");
@@ -65,6 +67,9 @@ app.use("/api/store", storeRoutes);
 app.use("/api/wholesale", wholesaleRoutes);
 app.use("/api/companyRequest", CompanyRequest);
 app.use("/api/lab", labRoutes);
+
+// Health Care Appointments
+app.use("/api/app", HealthCareAppointmentRoutes);
 app.use("/api/Addevent", require("./routes/eventRoutes"));
 app.use("/api/course", require("./routes/courseRoutes"));
 app.use("/api/Ads", require("./routes/AdsRoutes"));

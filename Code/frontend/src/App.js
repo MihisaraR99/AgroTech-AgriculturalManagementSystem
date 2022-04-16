@@ -29,6 +29,10 @@ import AdminUpdateAds from "./components/Ads/AdminUpdateAds"
 import AdvertiserDetails from "./components/Ads/AdvertiserDetails"
 
 
+// Appointments Components - Healthcare
+import AddAppointments from "./components/HealthCare/AddAppointments";
+import Allappointments from  "./components/HealthCare/Allappointments";
+
 // Lab Components
 import AddReport from "./components/AddReport";
 import AllReports from "./components/AllReports";
@@ -54,6 +58,13 @@ function App() {
         <Route path="/rep/:id" element={<ReportDetails />} />
         <Route path="/" element={<AllServices />} />
 
+        <Route path="/adform" element={<AdvertiserForm />} />
+        <Route path="/properties" element={<PropertyCatalog />} />
+
+          {/* Health Care Appointments Routes */}
+        <Route path="/Appointments" element= {<AddAppointments/>}/>
+        <Route path="/AllAppointment" element= {<Allappointments/>}/>
+
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
         <Route path="/store/products/:category" element={<StoreProducts />} />
@@ -73,6 +84,7 @@ function App() {
         <Route path="/Ads/add" element={<AddProduct />} />
         <Route path="/Ads/productSee" element={<AllProducts />} />
         <Route path="/Ads/company" element={<CompanyRequest />} />
+          
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />
         <Route path="/Ads/properties" element={<PropertyCatalog />} />
