@@ -8,7 +8,9 @@ import AllServices from "./components/AllServices";
 import AdvertiserForm from "./components/Ads/AdvertiserForm";
 import PropertyCatalog from "./components/Ads/PropertyCatalog";
 import AddAppointments from "./components/HealthCare/AddAppointments";
-import Allappointments from  "./components/HealthCare/Allappointments";
+import AllappointmentsVet from  "./components/HealthCare/AllappointmentsVet";
+import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
+
 
 
 function App() {
@@ -20,8 +22,8 @@ function App() {
         <Route path="/adform" element={<AdvertiserForm />} />
         <Route path="/properties" element={<PropertyCatalog />} />
         <Route path="/Appointments" element= {<AddAppointments/>}/>
-        <Route path="/AllAppointment" element= {<Allappointments/>}/>
-        
+        <Route path="/AllAppointmentVet" element= {<AllappointmentsVet/>}/>
+        <Route path="/AllappointmentsManager" element= {<AllappointmentsManager/>}/>
         
       </Routes>
       <Footer />
