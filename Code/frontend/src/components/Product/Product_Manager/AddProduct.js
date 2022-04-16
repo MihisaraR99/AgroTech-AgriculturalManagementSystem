@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function AddProduct(){
 
-  /*create state*/
+  /*01--create state*/
 const [SId,setsid] = useState("");
 const [SEmail,setsEmail] = useState("");
 const [ScontactNo,setcono] = useState("");
@@ -13,6 +13,7 @@ const [PId,setpid] = useState("");
 const [PName,setpname] = useState("");
 const [Quentity,setQno] = useState("");
 
+/*02--add*/
 function sendData(e){
     e.preventDefault();
     alert("Going to add new product");
@@ -26,6 +27,7 @@ function sendData(e){
       Quentity
     }
    
+    /*url*/
     axios.post("http://localhost:8000/api/wholesale/add",newProduct).then(()=>{
       alert("Product Added");
 
@@ -36,15 +38,13 @@ function sendData(e){
     })
 }
 
+
+
 return(
   <center>
      <div style={{  backgroundImage: `url(${img6})`,backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat', }}>
    
-     
-
-    
- 
   <div class="container "  style={{ 
                     //backgroundColor: "#5b665a",
                     //backgroundImage: "url(img1.png)",
@@ -56,10 +56,10 @@ return(
                     padding: "50px 50px 20px 50px"}}>
                       
                     
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
-    
-  <form class="form-horizontal" onSubmit={sendData}  style={{ 
+  
+<form class="form-horizontal" onSubmit={sendData}  style={{ 
                   
                     //backgroundColor: "black",
                     width:"600px",
@@ -121,7 +121,7 @@ return(
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10" >
-        <button type="submit"  class="btn btn-success"  style={{width:"200px",}}>Submit</button>
+        <button type="submit"  class="btn btn-success"  style={{width:"200px", backgroundColor:"black"}}>Submit</button>
       </div>
     </div>
 

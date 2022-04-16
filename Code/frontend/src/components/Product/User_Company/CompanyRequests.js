@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import img2 from "../images/img2.jpg";
+import img2 from "../images/img16.jpg";
 import img1 from "../images/img1.jpg";
 import './Company.css';
 import axios from "axios";
@@ -48,19 +48,13 @@ function sendcompanyData(e){
 
       <div style={{  backgroundImage: `url(${img2})`,backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat', }}>
-      
-      <div className="upper-images max-vh-100 row gx-3" >
-<img style={{ width: "100%" ,height:"200px" }}
-  src={img1}
-  className="image" 
-/></div>
+    
      
 
       <div class="container "  style={{ 
                         //backgroundColor: "#5b665a",
                         //backgroundImage: "url(img1.png)",
                         marginLeft: "15%",
-                        marginTop: "30px",
                         color:"white",
                         width:"1100px",
                         padding: "40px 40px 10px 40px"}}>
@@ -90,7 +84,7 @@ function sendcompanyData(e){
         <div class="form-group">
           
           <div >          
-            <input type="text" class="form-control" id="SEmail" placeholder="Company Contact Number" name="semail" style={{ backgroundColor: " white", width:"500px",padding:"10px",marginTop:"5px",borderTop:"2px solid #3fd921"}}  onChage={(e)=>{
+            <input type="text" class="form-control" id="SEmail" placeholder="Company Contact Name" name="semail" style={{ backgroundColor: " white", width:"500px",padding:"10px",marginTop:"5px",borderTop:"2px solid #3fd921"}}  onChage={(e)=>{
                  setcontactname(e.target.value);
             }}/>
           </div>

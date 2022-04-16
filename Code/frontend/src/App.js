@@ -13,6 +13,7 @@ import CompanyRequest from "./components/Product/User_Company/CompanyRequests";
 import AllCompanyRequest from "./components/Product/User_Company/AllCompanyRequest";
 import UpdateProducts from "./components/Product/Product_Manager/UpdateProducts";
 import StockDetails from "./components/Product/Product_Manager/StockDetails";
+import ProductBill from "./components/Product/User_Company/ProductBill";
 
 // Ads Components
 import AdvertiserForm from "./components/Ads/AdvertiserForm";
@@ -44,10 +45,11 @@ function App() {
         <Route path="/productadd" element= {<AddProduct/>}/>
         <Route path="/productSee" element= {<AllProducts/>}/>
         <Route path="/companyadd" element= {<CompanyRequest/>}/>
-
         <Route path="/companySee" element= {<AllCompanyRequest/>}/>
         <Route path="/productUpdate/:id" element= {<UpdateProducts/>}/>
         <Route path="/stock" element= {<StockDetails/>}/>
+        <Route path="/productBill" element={<ProductBill/>}/>
+
       
         
         <Route path="/adform" element={<AdvertiserForm />} />

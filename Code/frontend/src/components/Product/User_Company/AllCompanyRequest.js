@@ -22,10 +22,9 @@ export default function AllProducts(){
     
 
       const onDelete= (id)=>{
-         alert("Going to delete " + id);
           axios.delete(`http://localhost:8000/api/companyRequest/delete/${id}`).then(()=>{
              alert("Deleted succesfully");
-         
+             //getAllCompany();
           })
     };
 
@@ -86,7 +85,7 @@ padding: "5px",}}>
  <a className ="btn btn-warning"  href="#" >
     <i className="fas fa-edit"></i>&nbsp;Confirm</a>&nbsp; 
 
-<a className ="btn btn-danger"  onClick={()=> onDelete(company.Company_Id)}>
+<a className ="btn btn-danger"  onClick={()=> onDelete(company._id)}>
     <i className="far fa-trash-alt"></i>&nbsp;DELETE</a>
 </td>
 </tr>
