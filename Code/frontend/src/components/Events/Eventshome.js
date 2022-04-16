@@ -12,7 +12,7 @@ import agri8 from "./event images/agri8.jpg";
 const Eventshome = () => {
   return (
  <>
-
+<div class="homebackgroundgg">
         <div class="header">
         <div class="img-parent">
             <img  src={agri5} alt=""></img>
@@ -417,7 +417,7 @@ const Eventshome = () => {
 
 </div>
   
-
+</div>
 
      </>
 	
@@ -426,7 +426,7 @@ const Eventshome = () => {
  
 
 
-  
+
   
     
   );
