@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
@@ -23,13 +24,13 @@ const PropertyCatalog = () => {
 <div className='col-md-8 mt-4 mx-auto'>
 <ul className="nav" style={{ marginLeft: "35rem", backgroundColor:"#1bb004", border:"2px solid black"}}>
   <li className="nav-item" >
-    <a className="nav-link active" href="#" style={{color:"#ffffff", marginRight: "20px"}}>Login</a>
+    <Link className="nav-link active" to="/Ads/AdverLogin" style={{color:"#ffffff", marginRight: "20px"}}>Login</Link>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#" style={{color:"#ffffff", marginRight: "20px"}}>Register</a>
+    <Link className="nav-link" to="/Ads/adform" style={{color:"#ffffff", marginRight: "20px"}}>Register</Link>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#" style={{color:"#ffffff"}}>Post Your Ads</a>
+    <Link className="nav-link" to="/Ads/adform" style={{color:"#ffffff"}}>Post Your Ads</Link>
   </li>
 </ul><br/>
 

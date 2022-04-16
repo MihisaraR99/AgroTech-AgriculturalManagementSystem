@@ -64,7 +64,7 @@ const AdminViewAds = () => {
 
       <button className="btn btn-success">
         {" "}
-        <Link to="/adform" style={{ extDecoration: "none", color: "white" }}>
+        <Link to="/Ads/adform" style={{ extDecoration: "none", color: "white" }}>
           Create New Advertisment
         </Link>
       </button>
