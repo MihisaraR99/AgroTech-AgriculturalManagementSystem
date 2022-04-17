@@ -34,9 +34,14 @@ import AllReports from "./components/AllReports";
 import DeleteReport from "./components/DeleteReport";
 import EditReport from "./components/EditReport";
 import ReportDetails from "./components/ReportDetails";
+
+// User Components
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
+import Profile from "./components/Users/Profile";
+
 import axios from "axios";
+
 
 function App() {
   useEffect(() => {}, []);
@@ -87,6 +92,7 @@ function App() {
         {/* Users */}
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </BrowserRouter>
