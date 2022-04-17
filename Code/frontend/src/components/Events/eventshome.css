@@ -1,10 +1,10 @@
-.container {
+.EventsHomecontainer {
     margin-top: 50px;
     padding-left: 200px;
     opacity: 0.9;
 }
 
-.btn:hover {
+.eventshomebtn:hover {
     color: rgb(235, 238, 63);
     opacity:0.3;
 }
@@ -15,7 +15,7 @@
     outline: 0px
 }
 
-.form-control {
+.eventshomeformcontrol {
     border: 1px solid #f8c146
 }
 

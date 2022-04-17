@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
 import Addevent from "./components/Events/Addevent";
 import Eventshome from "./components/Events/Eventshome";
+import EventAdmin from "./components/Events/EventAdmin";
+import Eventdetail from "./components/Events/Eventdetail";
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<AllServices />} />
         <Route path="/events/add" element={<Addevent />}  /> 
         <Route path="/events/home" element={<Eventshome />} />
+        <Route path="/events/admin" element={<EventAdmin/>} />
+        <Route path="/events/detail"element={<Eventdetail/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>

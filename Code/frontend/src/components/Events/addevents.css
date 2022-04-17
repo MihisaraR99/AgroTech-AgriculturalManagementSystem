@@ -39,7 +39,7 @@
 }
 .backgroundevent{
 
-   background-image: url(./event images/background.jpg);
+   background-image: url(./eventimages/background.jpg);
     background-position:center;
     background-size: cover;
     font-family: sans-serif;
@@ -61,12 +61,12 @@
     margin: auto;
 
 }
-#form{
+/*#form{
     
     padding: 10px;
 
 }
-
+*/
 #event_id{
         width: 100%;
         height: 100px;

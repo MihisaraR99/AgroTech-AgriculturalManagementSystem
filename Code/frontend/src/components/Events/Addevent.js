@@ -8,7 +8,7 @@ const Addevent = () => {
 
 <div>
 
-<div class="regform"><h1>Event Registration </h1></div>
+<div class="regform"><h1>Add New Event</h1></div>
 
 </div>
 

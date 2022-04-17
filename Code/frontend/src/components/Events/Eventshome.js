@@ -1,15 +1,16 @@
 import React from 'react'
 import './eventshome.css';
-import agri5 from "./event images/agri5.jpg";
-import agri from "./event images/agri.jpg";
-import agri4 from "./event images/agri4.jpg";
-import agri2 from "./event images/agri2.jpg";
-import agri7 from "./event images/agri7.jpg";
-import agri8 from "./event images/agri8.jpg";
+import agri5 from "./eventimages/agri5.jpg";
+import agri from "./eventimages/agri.jpg";
+import agri4 from "./eventimages/agri4.jpg";
+import agri2 from "./eventimages/agri2.jpg";
+import agri7 from "./eventimages/agri7.jpg";
+import agri8 from "./eventimages/agri8.jpg";
 
 
 
 const Eventshome = () => {
+	
   return (
  <>
 <div class="homebackgroundgg">
@@ -24,8 +25,8 @@ const Eventshome = () => {
         <div class="container justify-content-center">
     <div class="row">
         <div class="col-md-8">
-            <div class="input-group mb-3"> <input type="text" class="form-control input-text" placeholder="Search for Events...." aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-                <div class="input-group-append"> <button class="btn btn-outline-warning btn-lg" type="button"><i class="fa fa-search"></i></button> </div>
+            <div class="input-group mb-3"> <input type="text" class="form-control eventshomeformcontrol input-text" placeholder="Search for Events...." aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                <div class="input-group-append"> <button class="btn eventshomebtn btn-outline-warning btn-lg" type="button"><i class="fa fa-search"></i></button> </div>
             </div>
         </div>
     </div>
@@ -46,7 +47,7 @@ const Eventshome = () => {
          <p></p>
 <hr class="solid"/>
      </div>
-     <div class="container event">
+     <div class="EventsHomecontainer event">
 
          <div class="row justify-content-center text-center">
              <div class="offset-sm-1 col-sm-5">
@@ -85,7 +86,7 @@ const Eventshome = () => {
 								</div>
 							</div>
 		                </section>
-                        <a href="">join</a>
+                        <a href="" >join</a>
 
 </div>
 
