@@ -25,9 +25,8 @@ import PropertyCatalog from "./components/Ads/PropertyCatalog";
 import DisplayAd from "./components/Ads/DisplayAd";
 import AdvertiserLogin from "./components/Ads/AdvertiserLogin";
 import AdminViewAds from "./components/Ads/AdminViewAds";
-import AdminUpdateAds from "./components/Ads/AdminUpdateAds"
-import AdvertiserDetails from "./components/Ads/AdvertiserDetails"
-
+import AdminUpdateAds from "./components/Ads/AdminUpdateAds";
+import AdvertiserDetails from "./components/Ads/AdvertiserDetails";
 
 // Lab Components
 import AddReport from "./components/AddReport";
@@ -76,10 +75,14 @@ function App() {
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />
         <Route path="/Ads/properties" element={<PropertyCatalog />} />
-        <Route path="/Ads/DisplayAd" element={<DisplayAd />} />
         <Route path="/Ads/AdverLogin" element={<AdvertiserLogin />} />
         <Route path="/Ads/AdminView" element={<AdminViewAds />} />
-        <Route path="/Ads/AdminUpdate" element={<AdminUpdateAds />} />
+        <Route
+          path="/Ads/edit/:id/:town/:agentRef/:heading/:description/:sizeofArea/:priceRate/:contactName/:email/:phone/:image"
+          element={<AdminUpdateAds />}
+        />
+        <Route path="/Ads/:id" element={<DisplayAd />} />
+
         <Route path="/Ads/AdverDetails" element={<AdvertiserDetails />} />
         {/* Users */}
         <Route path="/login" element={<Login />} />

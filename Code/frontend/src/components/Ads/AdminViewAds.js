@@ -45,7 +45,14 @@ const AdminViewAds = () => {
                 <td>{adr.priceRate}</td>
                 <td>{adr.sizeOfArea}</td>
                 <td>
-                  <Link className="btn btn-warning" to={`/Ads/${adr._id}`}>
+                  <Link
+                    className="btn btn-warning"
+                    to={`/Ads/edit/${adr._id}/${adr.town}/${adr.AgentRef}/${
+                      adr.heading
+                    }/${adr.description}/${adr.sizeOfArea}/${adr.priceRate}/${
+                      adr.contactName
+                    }/${adr.email}/${adr.phone}/${encodeURIComponent(adr.img)}`}
+                  >
                     <i className="fas fa-edit"></i>&nbsp;Edit
                   </Link>
                   &nbsp;
@@ -64,12 +71,15 @@ const AdminViewAds = () => {
 
       <button className="btn btn-success">
         {" "}
-        <Link to="/Ads/adform" style={{ extDecoration: "none", color: "white" }}>
+        <Link
+          to="/Ads/adform"
+          style={{ extDecoration: "none", color: "white" }}
+        >
           Create New Advertisment
         </Link>
-        <br/>
+        <br />
       </button>
-      <br/>
+      <br />
     </div>
   );
 };
