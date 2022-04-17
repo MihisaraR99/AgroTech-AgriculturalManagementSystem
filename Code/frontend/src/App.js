@@ -25,9 +25,8 @@ import PropertyCatalog from "./components/Ads/PropertyCatalog";
 import DisplayAd from "./components/Ads/DisplayAd";
 import AdvertiserLogin from "./components/Ads/AdvertiserLogin";
 import AdminViewAds from "./components/Ads/AdminViewAds";
-import AdminUpdateAds from "./components/Ads/AdminUpdateAds"
-import AdvertiserDetails from "./components/Ads/AdvertiserDetails"
-
+import AdminUpdateAds from "./components/Ads/AdminUpdateAds";
+import AdvertiserDetails from "./components/Ads/AdvertiserDetails";
 
 // Lab Components
 import AddReport from "./components/AddReport";
@@ -38,6 +37,7 @@ import ReportDetails from "./components/ReportDetails";
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import axios from "axios";
+import StorePaymentScreen from "./components/Store/StorePaymentScreen";
 
 function App() {
   useEffect(() => {}, []);
@@ -65,6 +65,9 @@ function App() {
           path="/store/order/store-order-create"
           element={<StoreOrderForm />}
         />
+
+        <Route path="/store/order/payment" element={<StorePaymentScreen />} />
+
         <Route
           path="/store/product/add-product"
           element={<StoreAddProductForm />}
