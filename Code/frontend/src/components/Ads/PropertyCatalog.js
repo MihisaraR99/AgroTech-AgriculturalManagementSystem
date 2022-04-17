@@ -29,9 +29,17 @@ const PropertyCatalog = () => {
           src="https://th.bing.com/th/id/R.414f0016399d8a7af8ceb1030ee66281?rik=Gcv2%2f7iMfLKn8g&pid=ImgRaw&r=0"
           alt=""
         />
+        <div class="middle">
+    <div class="text"><p>Lands To Buy..</p></div>
+   <p className="para">Search our selection of land plots for sale in Sri Lanka. 
+     Our fast-growing portfolio of properties brings you closer to your ideal home. 
+     Every project is monitored and handled by detail-oriented team members 
+     committed to serving our customers with the highest possible service to guarantee you find your dream farm.</p>
+     <button class="buttonserv"><span>Discover</span></button> 
+  </div>
       </div>
 
-<div className='col-md-8 mt-4 mx-auto'>
+<div className='col-md-8 mt-4 mx-auto' style={{marginBottom:"40px"}}>
   
 <br/>
 
