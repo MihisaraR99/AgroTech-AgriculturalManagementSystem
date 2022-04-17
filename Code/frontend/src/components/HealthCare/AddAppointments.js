@@ -47,20 +47,27 @@ function sendAppointment(e){
       return(
        <>  
 
-          <section className="addapp">
+
             <div className="container mt-5">
+              <div className="row">
+                <div className="col-sm">
               <div className= "addapp_content">
                 <div className="addapp-form">
                   <h2 className="form-title"> Get an Appointment</h2><br/>
+                  <div className="row">
+                  <div className="col col-6">
+
+                  <div className="App-form">
+                   
                   <form className="get-appointment" id="appointment-form"
                   onSubmit={sendAppointment}>
 
 
-                    <div class="form-group">
+                    <div className="form-group d-flex justify-content-around">
                     <label htmlFor="name">
                       <i class="zmdi zmdi-account material-icons-name zmdi-hc-2x"></i>
                     </label>
-                    <input type="text" name="name" id="name" autoComplete="off"
+                    <input  type="text" name="name" id="name" autoComplete="off"
                       placeholder="Your Name" onChange={(e)=>{
                         setCustomerName(e.target.value);
                   }}
@@ -69,7 +76,7 @@ function sendAppointment(e){
                     </div>
                     <br/>
 
-                    <div class="form-group">
+                    <div class="form-group d-flex justify-content-around">
                     <label htmlFor="NIC">
                       <i class="zmdi zmdi-assignment-account material-icons-name zmdi-hc-2x"></i>
                     </label>
@@ -82,7 +89,7 @@ function sendAppointment(e){
                     </div>
                     <br/>
 
-                    <div class="form-group">
+                    <div class="form-group d-flex justify-content-around">
                     <label htmlFor="AnimalType">
                       <i class="zmdi zmdi-face material-icons-name zmdi-hc-2x"></i>
                     </label>
@@ -95,7 +102,7 @@ function sendAppointment(e){
                     </div>
                     <br/>
 
-                    <div class="form-group">
+                    <div class="form-group d-flex justify-content-around">
                     <label htmlFor="ContactNo">
                       <i class="zmdi zmdi-phone-in-talk material-icons-name zmdi-hc-2x"></i>
                     </label>
@@ -108,7 +115,7 @@ function sendAppointment(e){
                     </div>
                     <br/>
 
-                    <div class="form-group">
+                    <div class="form-group d-flex justify-content-around">
                     <label htmlFor="Address">
                       <i class="zmdi zmdi-home material-icons-name zmdi-hc-2x"></i>
                     </label>
@@ -121,7 +128,7 @@ function sendAppointment(e){
                     </div>
                     <br/>
 
-                    <div class="form-group">
+                    <div class="form-group d-flex justify-content-around">
                     <label htmlFor="Date">
                       <i class="zmdi zmdi-calendar material-icons-name zmdi-hc-2x"></i>
                     </label>
@@ -134,7 +141,7 @@ function sendAppointment(e){
                     </div>
                     <br/>
 
-                    <div class="form-group">
+                    <div class="form-group d-flex justify-content-around">
                     <label htmlFor="Time">
                       <i class="zmdi zmdi-time material-icons-name zmdi-hc-2x"></i>
                     </label>
@@ -147,27 +154,35 @@ function sendAppointment(e){
                     </div>
                     <br/>
 
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                        <label class="form-check-label" for="exampleCheck1">I accept the Terms of Use & Privacy Policy</label>
-                    </div>
-
-                    <div className="form-group form-button">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div className="form-group form-button"
+>
+                      <button type="submit" class="btn btn-primary ">Submit</button>
                     </div>
 
                   </form>
-                </div>     
+                  </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+              </div>
+                <div className="col-sm">
+
+
+                        
                     <div className="appointment-image">
                       <figure>
+                      <div className="col col-6">
                         <img src={AddApp} alt="getAppointment pic"/>
+                      </div> 
                       </figure>
                       <NavLink to="../HealthCare/MyAppointment" className="appointment-image-link">I am already get an appointment</NavLink>
+                    </div>
                     </div>
 
               </div>  
             </div>
-          </section>
+          
         </>     
             
               

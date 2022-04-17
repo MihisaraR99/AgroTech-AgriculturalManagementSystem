@@ -11,10 +11,11 @@ const AdvertismentSchema = new Schema({
     description:String,
     sizeOfArea:Number,
     priceRate:Number,
-    availability:String,
     contactName:String,
     email:String,
     phone:String,
+    img:String
+
     
 });
 

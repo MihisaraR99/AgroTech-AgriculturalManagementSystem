@@ -1,29 +1,27 @@
-const express = require("express");
-const PostAppointment = require("../models/HealthCareM/HAppointmentModel");
+const express = require('express');
+const PostCompanyReq = require('../models/Pr_companyModel');
 
 const router = express.Router();
 
-//Add Appointments
-
-
-router.post('/add',(req,res) =>{
-    let newPost = new PostAppointment(req.body);
-    newPost.save((err) =>{
+//Add Products
+router.post('/add',(req,res)=>{
+    let newPost = new PostCompanyReq(req.body);
+    newPost.save((err)=>{
         if(err){
             return res.status(400).json({
                 error:err
             });
         }
         return res.status(200).json({
-            success: "Appointment Saved Successfully"
+            success: "Add Product Saved Successfully"
         });
     });
 });
 
-//Get Appointment
+//Read Products
 
 router.get('/read',(req,res)=>{
-    PostAppointment.find().exec((err,PostAppointment)=>{
+    PostCompanyReq.find().exec((err,PostCompanyReq)=>{
         if(err){
             return res.status(400).json({
                 error:err
@@ -32,14 +30,14 @@ router.get('/read',(req,res)=>{
         }
         return res.status(200).json({
             success:true,
-            existingPosts: PostAppointment
+            existingPosts:PostCompanyReq
         });
     });
 });
 
-//Delete Appointments
+//Delete Products
 router.delete('/delete/:id',(req,res)=>{
-    PostAppointment.findByIdAndRemove(req.params.id).exec((err,deletePro)=>{
+    PostCompanyReq.findByIdAndRemove(req.params.id).exec((err,deletePro)=>{
         if(err) return res.status(400).json({
             message:"Deleted Unsuccess",err
         });
@@ -49,9 +47,10 @@ router.delete('/delete/:id',(req,res)=>{
     });
 });
 
-//Update Appointments
+
+//Update Products
 router.put('/update/:id',(req,res)=>{
-    PostAppointment.findByIdAndUpdate(
+    PostCompanyReq.findByIdAndUpdate(
         req.params.id,{
             $set:req.body
         },
@@ -68,7 +67,4 @@ router.put('/update/:id',(req,res)=>{
     );
 });
 
-
-
 module.exports = router;
-
