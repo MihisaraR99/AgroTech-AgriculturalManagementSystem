@@ -23,6 +23,14 @@ const PropertyCatalog = () => {
 <div >
 <br/>
 
+<div className="upper-images">
+        <img
+          className="ecommerce-slide"
+          src="https://th.bing.com/th/id/R.414f0016399d8a7af8ceb1030ee66281?rik=Gcv2%2f7iMfLKn8g&pid=ImgRaw&r=0"
+          alt=""
+        />
+      </div>
+
 <div className='col-md-8 mt-4 mx-auto'>
   
 <br/>
