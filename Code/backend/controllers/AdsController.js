@@ -13,6 +13,7 @@ const addAds = (req, res) => {
     contactName,
     email,
     phone,
+    img,
   } = req.body;
 
   const newAd = new Ads({
@@ -27,6 +28,7 @@ const addAds = (req, res) => {
     contactName,
     email,
     phone,
+    img,
   });
 
   newAd
@@ -69,6 +71,8 @@ const updateAds = async (req, res) => {
       contactName,
       email,
       phone,
+      img,
+      
     } = req.body;
     const adsr = await Ads.findByIdAndUpdate(advID, {
       type,
@@ -82,6 +86,7 @@ const updateAds = async (req, res) => {
       contactName,
       email,
       phone,
+      img,
     });
 
     res.status(201).json({

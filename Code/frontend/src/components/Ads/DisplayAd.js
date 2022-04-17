@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Culti from "./img/Culti.jpg";
+import adformback from "./img/adformback.png";
 
 function DisplayAd() {
+
+  const [ads, setAds] = useState(undefined);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/Ads/all`)
+      .then((res) => {
+        setAds(res.data);
+      });
+
+    console.log(ads);
+  }, []);
+
+
   return (
-      <div>
+    <div>
+    {ads &&
+       ads.map((ad) => (
+      <div style={{backgroundImage: "url(" + { adformback } + ")"}}>
           <br/>
           <div class="d-grid gap-2 d-md-block">
   <button class="btn btn-primary" type="button" style={{marginLeft:"22rem"}}>Back</button>
@@ -14,7 +33,7 @@ function DisplayAd() {
         <br/>
         
         <br/>
-  <img src={Culti} class="rounded" alt="..." style={{ width: "40rem" }} />
+  <img src={ad.img} class="rounded" alt="..." style={{ width: "40rem" }} />
   <br/>
   <br/>
   <div className="btn-group" style={{ marginLeft: "30rem" }}>
@@ -35,13 +54,13 @@ function DisplayAd() {
   <p className="mb-0">Availability : </p>
 </blockquote>
 <blockquote class="blockquote">
-  <p className="mb-0">Area of Land : </p>
+  <p className="mb-0">Area of Land :{ad.sizeOfArea} </p>
 </blockquote>
 <blockquote class="blockquote" style={{float: "right"}}>
-  <p className="mb-0">AgentRef : </p>
+  <p className="mb-0">AgentRef : {ad.AgentRef}</p>
 </blockquote>
 <blockquote class="blockquote">
-  <p className="mb-0">Offered for : </p>
+  <p className="mb-0">Offered for :{ad.heading} </p>
 </blockquote>
 </div>
 <br/>
@@ -49,13 +68,11 @@ function DisplayAd() {
 <div style={{marginRight: "19rem"}}>
 <h1 style={{marginRight: "4.5rem"}}>Property Details</h1>
 <br/>
-<p>details details detail details detail detail detail detail</p>
-<p>details details detail details detail detail detail detail</p>
-<p>details details detail details detaildetaildetail detail </p>
+<p>{ad.description}</p>
 </div>
 <br/>
 <div className="container p-3 my-3 bg-dark text-white">
-  <h1>Contact Advertiser</h1>
+  <h1>Contact Advertiser {ad.contactName}</h1>
 </div>
 <div className='col-md-8 mt-4 mx-auto'>
 <form>
@@ -90,6 +107,8 @@ function DisplayAd() {
    Send Message
   </button>
 </div>
+</div>
+))}
 </div>
   );
 }
