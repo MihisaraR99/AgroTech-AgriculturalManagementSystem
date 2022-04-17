@@ -20,18 +20,8 @@ const PropertyCatalog = () => {
 
 
   return (
-<div className='col-md-8 mt-4 mx-auto'>
-<ul className="nav" style={{ marginLeft: "35rem", backgroundColor:"#1bb004", border:"2px solid black"}}>
-  <li className="nav-item" >
-    <Link className="nav-link active" to="/Ads/AdverLogin" style={{color:"#ffffff", marginRight: "20px"}}>Login</Link>
-  </li>
-  <li className="nav-item">
-    <Link className="nav-link" to="/Ads/adform" style={{color:"#ffffff", marginRight: "20px"}}>Register</Link>
-  </li>
-  <li className="nav-item">
-    <Link className="nav-link" to="/Ads/adform" style={{color:"#ffffff"}}>Post Your Ads</Link>
-  </li>
-</ul><br/>
+<div >
+<br/>
 
 <div className='col-md-8 mt-4 mx-auto'>
   
@@ -57,7 +47,7 @@ const PropertyCatalog = () => {
 <div className="products-list row p-5" style={{backgroundColor:"#D3D3D3"}}>
         {ads &&
           ads.map((ad) => (
-            <div className="card" style={{ width: "15rem", margin: "1rem", height:"rem" }}>
+            <div className="card" style={{ width: "15rem", margin: "1rem", height:"20rem" }}>
     <div className="card-body">
     <div className="product-image" style={{height:"10rem"}}>
         <img src={ad.img} alt="product"/>
@@ -66,7 +56,7 @@ const PropertyCatalog = () => {
       <p className="card-title">{ad.title}</p>
       <p className="card-type">{ad.type}</p>
       <p className="card-area">{ad.sizeOfArea} Perches</p>
-      <Link className="card-link" to={`/Ads/DisplayAd`}>more..</Link>
+      <Link className="card-link" to={`/Ads/DisplayAd/${ad._id}`}>more..</Link>
     </div>
     <div className="card-body">
     </div>
