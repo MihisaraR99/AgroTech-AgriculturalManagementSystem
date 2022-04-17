@@ -18,7 +18,7 @@ const AdminViewAds = () => {
   };
 
   return (
-    <div className="col-md-8 mt-4 mx-auto">
+    <div className="col-md-8 mt-4 mx-auto" style={{marginBottom:"20px"}}>
       <table className="table table-hover" style={{ marginTop: "40px" }}>
         <thead>
           <tr>

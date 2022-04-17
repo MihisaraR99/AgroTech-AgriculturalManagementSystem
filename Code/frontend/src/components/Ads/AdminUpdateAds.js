@@ -99,24 +99,24 @@ class AdminUpdateAds extends Component {
 
   render() {
     return (
-      <div className="col-md-8 mt-4 mx-auto">
+      <div className="col-md-8 mt-4 mx-auto" style={{marginBottom:"40px",marginTop:"200px"}}>
         <h1
-          className="h3 mb-3 font-weight-normal"
           style={{
             color: "#111",
             fontFamily: "Helavetica Neue",
-            fontSize: "200px",
+            fontSize: "100px",
             fontWeight: "bold",
             letterSpacing: "-1px",
+            marginBottom:"50px",
             lineHeight: "1",
             textAlign: "center",
           }}
         >
-          Edit Member
+          Edit Advertisment
         </h1>
-        <form className="needs-validation" noValidate>
+        <form className="needs-validation">
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>Town</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">Town</span>
             <input
               type="text"
               className="form-control"
@@ -128,7 +128,7 @@ class AdminUpdateAds extends Component {
           </div>
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>AgentRef</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">AgentRef</span>
             <input
               type="text"
               className="form-control"
@@ -140,7 +140,7 @@ class AdminUpdateAds extends Component {
           </div>
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>Heading</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">Heading</span>
             <input
               type="text"
               className="form-control"
@@ -152,8 +152,9 @@ class AdminUpdateAds extends Component {
           </div>
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>Description</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">Description</span>
             <input
+            style={{height:"100px"}}
               type="text"
               className="form-control"
               name="description"
@@ -164,7 +165,7 @@ class AdminUpdateAds extends Component {
           </div>
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>Size_of_Area</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">Size of Area</span>
             <input
               type="text"
               className="form-control"
@@ -176,7 +177,7 @@ class AdminUpdateAds extends Component {
           </div>
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>PriceRate</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">Price Rate</span>
             <input
               type="text"
               className="form-control"
@@ -188,7 +189,7 @@ class AdminUpdateAds extends Component {
           </div>
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>ContactName</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">Contact Name</span>
             <input
               type="text"
               className="form-control"
@@ -200,7 +201,7 @@ class AdminUpdateAds extends Component {
           </div>
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>Email</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">Email</span>
             <input
               type="email"
               className="form-control"
@@ -212,7 +213,7 @@ class AdminUpdateAds extends Component {
           </div>
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>Phone</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">Phone</span>
             <input
               type="text"
               className="form-control"
@@ -224,7 +225,7 @@ class AdminUpdateAds extends Component {
           </div>
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
-            <label style={{ marginBottom: "5px" }}>Image</label>
+          <span class="bg-secondary p-1 px-4 rounded text-white">Image</span>
             <input
               type="text"
               className="form-control"
@@ -236,7 +237,7 @@ class AdminUpdateAds extends Component {
           </div>
 
           <button
-            className="btn btn-success"
+            className="btn btn-warning"
             type="submit"
             style={{ marginTop: "15px" }}
             onClick={this.onSubmit}
