@@ -15,6 +15,7 @@ import UpdateProducts from "./components/Product/Product_Manager/UpdateProducts"
 import StockDetails from "./components/Product/Product_Manager/StockDetails";
 import ProductBill from "./components/Product/User_Company/ProductBill";
 
+
 // Ads Components
 import AdvertiserForm from "./components/Ads/AdvertiserForm";
 import PropertyCatalog from "./components/Ads/PropertyCatalog";
@@ -30,28 +31,28 @@ import DeleteReport  from "./components/DeleteReport";
 import EditReport    from "./components/EditReport";
 import ReportDetails from "./components/ReportDetails";
 
+
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Routes> 
+        <Route path="/" element={<AllServices />} />
         <Route path="/rep"      element= {<AllReports/>}    />
         <Route path="/add"      element= {<AddReport/>}     />
         <Route path="/del"      element= {<DeleteReport/>}  />
         <Route path="/edit/:id" element= {<EditReport/>}    />
         <Route path="/rep/:id"  element= {<ReportDetails/>} />
-        <Route path="/" element={<AllServices />} />
 
         <Route path="/productadd" element= {<AddProduct/>}/>
         <Route path="/productSee" element= {<AllProducts/>}/>
         <Route path="/companyadd" element= {<CompanyRequest/>}/>
         <Route path="/companySee" element= {<AllCompanyRequest/>}/>
-        <Route path="/productUpdate/:id" element= {<UpdateProducts/>}/>
+        <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
         <Route path="/stock" element= {<StockDetails/>}/>
         <Route path="/productBill" element={<ProductBill/>}/>
-
       
-        
+      
         <Route path="/adform" element={<AdvertiserForm />} />
         <Route path="/properties" element={<PropertyCatalog />} />
         <Route path="/DisplayAd" element={<DisplayAd />} />

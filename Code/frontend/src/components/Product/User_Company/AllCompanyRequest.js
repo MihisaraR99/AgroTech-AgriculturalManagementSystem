@@ -37,30 +37,10 @@ return(
                           
 
 <div 
-className="product-title"
-style={{ 
+className="product-title">
 
-border:"0.5px solid rgba(150, 168, 156)",
-marginLeft: "2%",
-marginTop: "70px",
-color:"white",
-borderRadius: "30px",
-boxShadow: " 10px 10px 5px rgba(150, 168, 156)",
-width:"450px",
-padding: "5px",}}>
-
-<div className="inputdiv"
-  
- style={{ 
-    //backgroundColor: "black",
-    //border: "1px solid white",
-    width:"400px",
-    color:"black",
-    margin: "2px",
-    position:"center",
-    //border:"2px solid black",
-    padding: " 5px 5px 5px", }}>
-        <div style={{border: "1px ",width:"400px",height:"50px",borderRadius: "30px", float:"center",boxShadow: " 10px 10px 5px rgba(150, 168, 156)",marginBottom:"30px"}}>
+<div className="inputdiv">
+     <div className="inputdiv1">
         <p style={{ fontSize: "20px",textAlign:"center"}}>
      Request No -<b>{index+1}</b>
     </p>
