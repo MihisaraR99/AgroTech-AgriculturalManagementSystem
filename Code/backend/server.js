@@ -4,12 +4,12 @@ const logger = require("pino")();
 const bodyPaser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
- 
+
 // Import routes to here
 const storeRoutes = require("./routes/storeRoutes");
 
 //IT20612696 Senanayake D.B
-const labRoutes = require('./routes/labRoutes.js');
+const labRoutes = require("./routes/labRoutes.js");
 
 const app = express();
 dotenv.config();
@@ -32,9 +32,9 @@ app.get("/", (req, res) => {
 
 // Implement the routes from here
 app.use("/api/store", storeRoutes);
-app.use("/api/lab",labRoutes);
+app.use("/api/lab", labRoutes);
 app.listen(PORT, () => {
   logger.info(`Server is running on PORT: ${PORT}`);
 });
-      //Implement the routes from Lab IT20612696 Senanayake D.B
-      //app.use("/reports",labRoutes);
+//Implement the routes from Lab IT20612696 Senanayake D.B
+//app.use("/reports",labRoutes);

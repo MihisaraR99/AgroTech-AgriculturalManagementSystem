@@ -7,25 +7,30 @@ import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
 
 //IT20612696 Senanayake D.B
-import AddReport     from "./components/AddReport";
-import AllReports    from "./components/AllReports";
-import DeleteReport  from "./components/DeleteReport";
-import EditReport    from "./components/EditReport";
-import ReportDetails from "./components/ReportDetails";
+import AddReport     from "./components/labComponent/AddReport";
+import AllReports    from "./components/labComponent/AllReports";
+import EditReport    from "./components/labComponent/EditReport";
+import ReportDetails from "./components/labComponent/ReportDetails";
+import UserAllReports from "./components/labComponent/UserAllReports"
+import UserReportDetails from "./components/labComponent/UserReportDetails";
+ 
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+     <Header/>
       <Routes> 
         <Route path="/rep"      element= {<AllReports/>}    />
         <Route path="/add"      element= {<AddReport/>}     />
-        <Route path="/del"      element= {<DeleteReport/>}  />
         <Route path="/edit/:id" element= {<EditReport/>}    />
         <Route path="/rep/:id"  element= {<ReportDetails/>} />
         <Route path="/"         element= {<AllServices/>}   />
+        <Route path="/Ulabs"    element = {<UserAllReports/>}   /> 
+        <Route path="/URepDet/:id"    element = {<UserReportDetails/>}   /> 
+       
       </Routes>
-      <Footer />
+      <Footer/>
+ 
     </BrowserRouter>
   );
 }
