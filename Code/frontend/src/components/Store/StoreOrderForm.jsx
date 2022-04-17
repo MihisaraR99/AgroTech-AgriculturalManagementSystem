@@ -1,6 +1,98 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const StoreOrderForm = () => {
+  const { product: paramsProduct, quantity, price } = useParams();
+  const [subTotal, setSubTotal] = useState("");
+  const [delivery, setDelivery] = useState("");
+  const [product, setProduct] = useState();
+  const [user, setUser] = useState();
+  const navigate = useNavigate();
+
+  const [order, setOrder] = useState({
+    firstName: "",
+    lastName: "",
+    address1: "",
+    address2: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    product: "",
+    quantity: "",
+    total: "",
+    user: "",
+  });
+
+  useEffect(() => {
+    const subTotal = Number(quantity) * Number(price);
+    const delivery = (subTotal * 6.5) / 100;
+
+    setSubTotal(subTotal);
+    setDelivery(delivery);
+
+    setOrder((order) => {
+      return {
+        ...order,
+        total: Number(subTotal + delivery),
+        product: paramsProduct,
+        quantity: quantity,
+      };
+    });
+
+    axios
+      .get(`http://localhost:8000/api/store/product/${paramsProduct}`)
+      .then((res) => {
+        setProduct(res.data.product);
+      });
+
+    console.log("Use effect");
+  }, [paramsProduct, price, quantity]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/users/current`, { withCredentials: true })
+      .then((res) => {
+        setUser(res.data);
+
+        setOrder((order) => {
+          return {
+            ...order,
+            user: res.data._id,
+          };
+        });
+      })
+      .catch((error) => {
+        console.log("User not found");
+      });
+  }, []);
+
+  const onFormChange = (e) => {
+    const { name, value } = e.target;
+
+    setOrder({
+      ...order,
+      [name]: value,
+    });
+  };
+
+  const navigateToCheckout = () => {
+    navigate("/store/order/payment");
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8000/api/store/orders", order)
+      .then((res) => {
+        alert("Order created");
+      })
+      .catch((errr) => {
+        console.log("Error");
+      });
+  };
+
   return (
     <div className="p-5 store-container store-order-form-page d-flex align-items-start justify-content-center">
       <div className="store-form-outer-layer">
@@ -16,13 +108,25 @@ const StoreOrderForm = () => {
             <label for="inputEmail4" class="form-label">
               First Name
             </label>
-            <input type="text" class="form-control" />
+            <input
+              type="text"
+              class="form-control"
+              value={order.firstName}
+              name="firstName"
+              onChange={onFormChange}
+            />
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">
               Last Name
             </label>
-            <input type="text" class="form-control" />
+            <input
+              type="text"
+              class="form-control"
+              value={order.lastName}
+              name="lastName"
+              onChange={onFormChange}
+            />
           </div>
           <div class="col-12">
             <label for="inputAddress" class="form-label">
@@ -32,6 +136,9 @@ const StoreOrderForm = () => {
               type="text"
               class="form-control"
               placeholder="1234 Main St"
+              value={order.address1}
+              name="address1"
+              onChange={onFormChange}
             />
           </div>
           <div class="col-12">
@@ -43,36 +150,57 @@ const StoreOrderForm = () => {
               class="form-control"
               id="inputAddress2"
               placeholder="Apartment, studio, or floor"
+              value={order.address2}
+              name="address2"
+              onChange={onFormChange}
             />
           </div>
           <div class="col-md-6">
             <label for="inputCity" class="form-label">
               City
             </label>
-            <input type="text" class="form-control" id="inputCity" />
+            <input
+              type="text"
+              class="form-control"
+              id="inputCity"
+              value={order.city}
+              name="city"
+              onChange={onFormChange}
+            />
           </div>
           <div class="col-md-4">
             <label for="inputState" class="form-label">
               State
             </label>
-            <input type="text" class="form-control" id="inputCity" />
+            <input
+              type="text"
+              class="form-control"
+              value={order.state}
+              name="state"
+              onChange={onFormChange}
+              id="inputCity"
+            />
           </div>
           <div class="col-md-2">
             <label for="inputZip" class="form-label">
               Zip
             </label>
-            <input type="text" class="form-control" id="inputZip" />
+            <input
+              type="text"
+              value={order.zipCode}
+              name="zipCode"
+              onChange={onFormChange}
+              id="inputCity"
+              class="form-control"
+            />
           </div>
+          <div class="col-12"></div>
           <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck" />
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
-            </div>
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn store-order-form-button ">
+            <button
+              type="submit"
+              onClick={onSubmit}
+              class="btn store-order-form-button "
+            >
               Place Order
             </button>
           </div>
@@ -81,11 +209,11 @@ const StoreOrderForm = () => {
 
       <div className="store-bought-product mx-4">
         <div className="store-bought-product-item d-flex">
-          <img src="https://i.ibb.co/19JrPDb/FruitImg.jpg" alt="fruit" />
+          <img src={product?.image} alt="fruit" />
 
           <div className="mx-4">
-            <p> Test Product item bought </p>
-            <p> Quantity: 4 </p>
+            <p> {product?.name} </p>
+            <p> Quantity: {quantity} </p>
           </div>
         </div>
 
@@ -97,9 +225,9 @@ const StoreOrderForm = () => {
             <p> Delivery Fee (6.5%) </p>
           </div>
 
-          <div className="pricing-labels-store">
-            <p> $40 </p>
-            <p> $6 </p>
+          <div className="pricing-labels-store ">
+            <p className="text-right"> $ {subTotal && subTotal} </p>
+            <p> $ {delivery && delivery} </p>
           </div>
         </div>
 
@@ -111,7 +239,7 @@ const StoreOrderForm = () => {
           </div>
 
           <div className="pricing-labels-store">
-            <p> $46 </p>
+            <p> ${order.total}</p>
           </div>
         </div>
       </div>

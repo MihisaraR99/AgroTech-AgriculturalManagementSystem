@@ -51,13 +51,13 @@ const StorePaymentScreen = () => {
         <div class="collapse" id="collapseExample1">
           <div class="col-12">
             <label for="inputAddress" class="form-label">
-              Address
+              Enter your paypal email
             </label>
             <input
               type="text"
               class="form-control"
               id="inputAddress"
-              placeholder="1234 Main St"
+              placeholder="user@paypal.com"
             />
 
             <button className="btn store-order-form-button mt-3">
@@ -70,31 +70,31 @@ const StorePaymentScreen = () => {
           <form class="row g-3">
             <div class="col-md-5">
               <label for="inputEmail4" class="form-label">
-                Email
+                Card Number
               </label>
               <input type="email" class="form-control" id="inputEmail4" />
             </div>
             <div class="col-md-3">
               <label for="inputPassword4" class="form-label">
-                Password
+                Expiration
               </label>
               <input type="password" class="form-control" id="inputPassword4" />
             </div>
             <div class="col-md-4">
               <label for="inputPassword4" class="form-label">
-                Password
+                CVV
               </label>
               <input type="password" class="form-control" id="inputPassword4" />
             </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">
-                Address
+                Owner's Name
               </label>
               <input
                 type="text"
                 class="form-control"
                 id="inputAddress"
-                placeholder="1234 Main St"
+                placeholder="John Doe"
               />
             </div>
 
@@ -115,7 +115,7 @@ const StorePaymentScreen = () => {
 
         <div>
           <h5> 4546546546546546465 </h5>
-          <p> 24 </p>
+          <p> $24 </p>
           <p> 2020/05/20 </p>
         </div>
       </div>
