@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import landsale from "./img/landsale.png";
+import adformback2 from "./img/adformback2.jpg";
+
 
 const AdvertiserForm = () => {
   const [type, setType] = useState("Something else here");
@@ -43,9 +44,10 @@ const AdvertiserForm = () => {
   };
 
   return (
-    <div style={{}}>
+    <div style={{  backgroundImage: `url(${adformback2})`,backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat', }}>
       <br/>
-      <h1 style={{fontFamily: "sans-serif", fontSize: "100px", textAlign:"center"}}>Advertiser Form</h1>
+      <h1 style={{fontFamily: "Georgia" ,fontSize: "100px", textAlign:"center", color:"white"}}>Advertiser Form</h1>
       <br/>
       <div >
       
@@ -56,7 +58,7 @@ const AdvertiserForm = () => {
       <form onSubmit={sendData} style={{margin: "20px"}}>
         <br />
         <div className="row mb-3">
-          <label class="col-sm-2 col-form-label">Type</label>
+          <label class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>Type</label>
           <div className="col-sm-10">
             <div class="dropdown">
               <a
@@ -119,7 +121,7 @@ const AdvertiserForm = () => {
           </div>
         </div>
         <div className="row mb-3">
-          <label class="col-sm-2 col-form-label">Town</label>
+          <label class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>Town</label>
           <div className="col-sm-10">
             <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
@@ -132,7 +134,7 @@ const AdvertiserForm = () => {
           </div>
         </div>
         <div className="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
             AgentRef
           </label>
           <div className="col-sm-10">
@@ -147,7 +149,7 @@ const AdvertiserForm = () => {
           </div>
         </div>
         <div className="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
             Heading
           </label>
           <div className="col-sm-10">
@@ -162,7 +164,7 @@ const AdvertiserForm = () => {
           </div>
         </div>
         <div className="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
             Description
           </label>
           <div className="col-sm-10">
@@ -177,7 +179,7 @@ const AdvertiserForm = () => {
           </div>
         </div>
         <div className="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
             Size of Area
           </label>
           <div className="col-sm-10">
@@ -192,7 +194,7 @@ const AdvertiserForm = () => {
           </div>
         </div>
         <div className="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
             Price Rate
           </label>
           <div className="col-sm-10">
@@ -208,7 +210,7 @@ const AdvertiserForm = () => {
         </div>
 
         <div className="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
             Contact Name
           </label>
           <div className="col-sm-10">
@@ -223,7 +225,7 @@ const AdvertiserForm = () => {
           </div>
         </div>
         <div className="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
             Email
           </label>
           <div className="col-sm-10">
@@ -238,7 +240,7 @@ const AdvertiserForm = () => {
           </div>
         </div>
         <div className="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
             Phone
           </label>
           <div className="col-sm-10">
@@ -254,7 +256,7 @@ const AdvertiserForm = () => {
         </div>
         <br />
         <div className="form-group my-4">
-          <label className="my-1">Image</label>
+          <label className="my-1" style={{color:"#D3D3D3"}}>Image</label>
           <input style={{backgroundColor:"#D3D3D3"}}
             type="text"
             className="form-control"

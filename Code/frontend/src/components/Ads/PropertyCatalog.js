@@ -72,7 +72,8 @@ const PropertyCatalog = () => {
       <p className="card-title">{ad.title}</p>
       <p className="card-type">{ad.type}</p>
       <p className="card-area">{ad.sizeOfArea} Perches</p>
-      <Link className="card-link" to={`/Ads/DisplayAd/${ad._id}`}>more..</Link>
+      <Link className="card-link"to={`/Ads/Ad/${ad._id}/${ad.town}/${ad.AgentRef}/${ad.heading}/${ad.description}/${ad.sizeOfArea}/${ad.priceRate}/${ad.contactName}/${ad.email}/${ad.phone}/${encodeURIComponent(ad.img)}`}
+      style={{ textDecoration: "none" }}>more..</Link>
     </div>
     <div className="card-body">
     </div>
