@@ -2,6 +2,7 @@ const Apply = require("../models/ApplyforVacancyModel");
 
 const addApply = (req, res) => {
   const {
+    position,
     name_with_init,
     namefull,
     dob,
@@ -13,11 +14,13 @@ const addApply = (req, res) => {
     Ordinarylevel,
     Advancedlevel,
     Degree,
+    CV,
   } = req.body;
 
   console.log(req.body);
 
   const newApply = new Apply({
+    position,
     name_with_init,
     namefull,
     dob,
@@ -29,6 +32,7 @@ const addApply = (req, res) => {
     Ordinarylevel,
     Advancedlevel,
     Degree,
+    CV,
   });
 
   newApply

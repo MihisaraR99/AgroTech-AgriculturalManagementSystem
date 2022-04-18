@@ -1,8 +1,18 @@
-import react from "react";
-import {link} from "react-router-dom"
+import react,{useState, useEffect} from "react";
+import {Link} from "react-router-dom";
+import axios from "axios"; 
+
 function VacancyAdmin(){
+    const [vacancy, setVacancy] = useState([])
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/AddVacancies/all").then(res => {
+           setVacancy(res.data);
+           console.log(res.data);
+        })		
+        }, []) 
+
     return(
-       <body class="adminbody">
+    <body class="adminbody">
 <div class="container-xl">
 <div class="h1 text-center text-dark" id="pageHeaderTitle">Vacancies Admin Dashboard</div>
 
@@ -28,42 +38,19 @@ function VacancyAdmin(){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-status="active">
-                        <td>1</td>
-                        <td>Vegetable Supplier</td>
-                        <td><span class="label label-success">We are looking for a fresh Vegetable Suppliers. We are collect vegetables for our priducts and online store. The suppliers should be able to supply vegetables for our requiremenets. This opportunity is yours. Apply Quickly. Condtions apply.</span></td>
-                        <td>"https://www.simonbaynes.net/assets/template/images/york_fruit_and_veg.jpg"</td>
-                        <td>Wed, April 11th 2022</td>
-                        <td><a href="#" class="btn btn-sm manage">Manage</a> </td>
-                       
-                    </tr>
-                    <tr data-status="inactive">
-                        <td>2</td>
-                        <td>Fruit Supplier</td>
-                        <td><span class="label label-success">We are looking for a fresh Fruit Suppliers. We are collect fruits for our priducts and online store. The suppliers should be able to supply fruits for our requiremenets. This opportunity is yours. Apply Quickly. Condtions apply.</span></td>
-                        <td>"https://static.toiimg.com/photo/84969948.cms"</td>
-                        <td>Wed, April 11th 2022</td>
-                        <td><a href="#" class="btn btn-sm manage">Manage</a> </td>
-                       
-                    </tr>
-                    <tr data-status="active">
-                        <td>3</td>
-                        <td>Veterinarian</td>
-                        <td><span class="label label-success">We are Looking for a Qualified and Experinced Veterinarian for our Animal Health Care Department. Two Vacancies are here. Apply now for the valuable opportunity to work with a us.</span></td>
-                        <td>"https://www.indiaeducation.net/imagesvr_ce/8982/iStock_000009819502Small.jpg"</td>
-                        <td>Wed, April 11th 2022</td>
-                        <td><a href="#" class="btn btn-sm manage">Manage</a> </td>
-                       
-                        
-                    </tr>
-                    <tr data-status="expired">
-                        <td>4</td>
-                        <td>Warehouse Manager</td>
-                        <td><span class="label label-success">We are looking for an Experinced and Qualified Warehouse Manager for our Negombo Plant. Apply Now for work with us.</span></td>
-                        <td>"https://www.autotrainingcentre.com/wp-content/uploads/2017/03/The-Skills-Grads-of-Auto-Service-College-Should-Have-to-be-a-Warehouse-Manager.jpg" alt="Image Title"</td>
-                        <td>Wed, April 11th 2022</td>
-                        <td><a href="#" class="btn btn-sm manage">Manage</a> </td>
-                    </tr>
+                   
+                {vacancy && vacancy.map((vaca, i) => (
+                             <tr data-status="active">
+                                <td>{vaca._id}</td>
+                                <td>{vaca.jobTitle}</td>
+                                <td><span class="label label-success">{vaca.jobDescription}</span></td>
+                                <td>{vaca.jobImage}</td>
+                                <td>{vaca.publishedDate}</td>
+                                <td><button class="btn btn-sm manage"> Delete</button></td>
+                                <td><button class="btn btn-sm manage"  > <Link to={`/UpdateVacancy/${vaca._id}`} > Update </Link>  </button></td>
+                             </tr>
+
+                         ))}
                    
                 </tbody>
             </table>

@@ -1,6 +1,16 @@
-import react from "react";
-import {link} from "react-router-dom"
+import react,{useState, useEffect} from "react";
+import {Link} from "react-router-dom";
+import axios from "axios"; 
+
 function GuidanceAdmin(){
+    const [guidance, setGuidance] = useState([])
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/AddGuidances/all").then(res => {
+           setGuidance(res.data);
+           console.log(res.data);
+        })		
+        }, []) 
+
     return(
         <body class="adminbody">
         <div class="container-xl">
@@ -28,33 +38,19 @@ function GuidanceAdmin(){
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-status="active">
-                                <td>1</td>
-                                <td>Product Development Training Program</td>
-                                <td><span class="label label-success">Product Development Training Programs is conduct for develop your skills and get many experiences in development stratergies. You can follow this program to develop your knowledege on product development.</span></td>
-                                <td>"http://jungleworks.com/wp-content/uploads/2020/12/shutterstock_700890880.jpg"</td>
-                                <td>Wed, April 13th 2022</td>
-                                <td><a href="#" class="btn btn-sm manage">Manage</a> </td>
-                               
-                            </tr>
-                            <tr data-status="inactive">
-                                <td>2</td>
-                                <td>Analytical Chemist Training Program</td>
-                                <td><span class="label label-success">This program is conduct for improve analytical skills of the people who are working in analytical feilds. You can get many experiences by following this program and you can develop your analytical skills. We provide the best training for you.</span></td>
-                                <td>"https://www.limg.lk/resources/30/banner.jpg"</td>
-                                <td>Fri, April 15th 2020</td>
-                                <td><a href="#" class="btn btn-sm manage">Manage</a> </td>
-                               
-                            </tr>
-                            <tr data-status="active">
-                                <td>3</td>
-                                <td>Heavy Machinery Training Program</td>
-                                <td><span class="label label-success">We are plan to conduct Heavy Machinery Training Program in collaboration of HI-TEC Lanka Heavy Machinery Training Accademy. This will be a promotional program and fully discounted training program. Conditions Apply.</span></td>
-                                <td>"https://image.made-in-china.com/202f0j00JiLUsrqwwCby/Zoomlion-Agriculture-Machinery-Rice-Combine-Harvester.jpg"</td>
-                                <td>Sat, April 16th 2022</td>
-                                <td><a href="#" class="btn btn-sm manage">Manage</a> </td>
-                                 
-                            </tr>
+
+                        {guidance && guidance.map((guide, i) => (
+                             <tr data-status="active">
+                                <td>{guide._id}</td>
+                                <td>{guide.programName}</td>
+                                <td><span class="label label-success">{guide.programDescription}</span></td>
+                                <td>{guide.programImage}</td>
+                                <td>{guide.publishedDate}</td>
+                                <td><button class="btn btn-sm manage"> Delete</button></td>
+                                <td><button class="btn btn-sm manage"  > <Link to={`/UpdateGuidance/${guide._id}`} > Update </Link>  </button></td>
+                             </tr>
+
+                         ))}
                         
                         </tbody>
                     </table>

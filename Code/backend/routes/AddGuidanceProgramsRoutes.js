@@ -4,11 +4,14 @@ const {
   addGuidance,
   updateGuidance,
   removeGuidance,
+  getsingleguidance,
  
 } = require("../controllers/AddGuidanceProgramsController");
 const router = express.Router();
 
 router.get("/all", getguidance);
+
+router.get("/:id", getsingleguidance);
 
 router.post("/", addGuidance);
 

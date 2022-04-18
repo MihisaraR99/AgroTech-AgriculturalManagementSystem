@@ -9,6 +9,7 @@ const addApplyGuidance = (req, res) => {
     mobile_g,
     email_g,
     program,
+    Ordinarylevel,
     
   } = req.body;
 
@@ -22,6 +23,7 @@ const addApplyGuidance = (req, res) => {
     mobile_g,
     email_g,
     program,
+    Ordinarylevel,
   });
 
   newApplyGuidance

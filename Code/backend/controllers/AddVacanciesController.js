@@ -39,6 +39,16 @@ const getvacancy = async (req, res) => {
   }
 };
 
+const getsinglevacancy = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const vacancy = await Vacancy.findById(id);
+    res.status(200).json(vacancy);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
+
 const updateVacancy = async (req, res) => {
   const vacancyId = req.params.id;
 
@@ -49,7 +59,7 @@ const updateVacancy = async (req, res) => {
       return res.status(404).json("There is a no Vacancy");
     }
 
-    const {vacancyNo,jobTitle,location,jobDescription} = req.body;
+    const {vacancyNo,jobTitle,jobDescription,jobImage,publishedDate} = req.body;
     
     const vacanci = await Vacancy.findByIdAndUpdate(vacancyId, {vacancyNo,jobTitle,jobDescription,jobImage,publishedDate});
 
@@ -84,6 +94,7 @@ const removeVacancy = async (req, res) => {
 module.exports = {
   addVacancy,
   getvacancy,
+  getsinglevacancy,
   updateVacancy,
   removeVacancy,
 };

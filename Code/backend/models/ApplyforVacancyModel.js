@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const ApplyforVacancySchema = mongoose.Schema({
+    position:String,
     name_with_init:String,
     namefull:String,
     dob:String,
@@ -12,6 +13,7 @@ const ApplyforVacancySchema = mongoose.Schema({
     Ordinarylevel:String,
     Advancedlevel:String,
     Degree:String,
+    CV:String,
     
 });
 
