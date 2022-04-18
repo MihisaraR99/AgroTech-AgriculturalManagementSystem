@@ -39,7 +39,7 @@ import Register from "./components/Users/Register";
 import axios from "axios";
 import StorePaymentScreen from "./components/Store/StorePaymentScreen";
 import StoreAdminOrders from "./components/Store/StoreAdminOrders";
-import StoreAdminProductsEdit from "./components/Store/StoreAdminOrdersEdit";
+import StoreAdminProductsEdit from "./components/Store/StoreAdminProductsEdit";
 
 function App() {
   useEffect(() => {}, []);
