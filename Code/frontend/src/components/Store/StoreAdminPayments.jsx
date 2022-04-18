@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Store.css";
 
-const StoreAdminOrders = () => {
-  const [orders, setOrders] = useState([]);
+const StoreAdminPayments = () => {
+  const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/store/orders`).then((res) => {
-      setOrders(res.data.orders);
+    axios.get(`http://localhost:8000/api/store/payments`).then((res) => {
+      setPayments(res.data.payments);
     });
   }, []);
 
@@ -18,24 +18,22 @@ const StoreAdminOrders = () => {
         <table class="table m-4 store-orders-container">
           <thead>
             <tr>
-              <th scope="col">Order ID</th>
-              <th scope="col">Customer Name</th>
-              <th scope="col">Amount</th>
+              <th scope="col">Payment ID</th>
+              <th scope="col">Payee Name</th>
+              <th scope="col">Payment Status</th>
               <th scope="col">Date</th>
             </tr>
           </thead>
           <tbody>
-            {orders &&
-              orders.map((order) => (
+            {payments &&
+              payments.map((payment) => (
                 <tr>
                   <th scope="row" style={{ width: "300px" }}>
-                    {order._id}
+                    {payment._id}
                   </th>
-                  <td>
-                    {order.firstName} {order.lastName}
-                  </td>
-                  <td>$ {order.total}</td>
-                  <td style={{ width: "300px" }}>{order.createdAt}</td>
+                  <td>{payment.paidBy}</td>
+                  <td>$ {payment.amount}</td>
+                  <td style={{ width: "300px" }}>{payment.createdAt}</td>
                 </tr>
               ))}
           </tbody>
@@ -45,4 +43,4 @@ const StoreAdminOrders = () => {
   );
 };
 
-export default StoreAdminOrders;
+export default StoreAdminPayments;
