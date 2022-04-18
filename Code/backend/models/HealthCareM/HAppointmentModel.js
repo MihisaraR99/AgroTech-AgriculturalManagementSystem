@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
-      AppointmentNo:{
-          type: String
-      }, 
+      
        CustomerName:{
           type:String
       },
@@ -15,7 +13,17 @@ const postSchema = new mongoose.Schema({
       },
        ContactNo:{
            type:String
-       }
+      },
+       Address:{
+        type: String
+      },
+      Date:{
+        type: String
+      },
+      Time:{
+        type: String
+    }  
+
 
 });
 

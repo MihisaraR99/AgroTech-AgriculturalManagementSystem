@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
+import "./components/HealthCare/Health.css";
 import Header from "./components/Header";
 import Navigator from "./components/Navigator/Navigator";
 import Footer from "./components/Footer";
@@ -35,7 +36,11 @@ import AdvertiserDetails from "./components/Ads/AdvertiserDetails";
 
 // Appointments Components - Healthcare
 import AddAppointments from "./components/HealthCare/AddAppointments";
-import Allappointments from  "./components/HealthCare/Allappointments";
+import AllappointmentsVet from  "./components/HealthCare/AllappointmentsVet";
+import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
+import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
+
+
 
 // Lab Components
 import AddReport from "./components/AddReport";
@@ -91,7 +96,10 @@ function App() {
 
           {/* Health Care Appointments Routes */}
         <Route path="/Appointments" element= {<AddAppointments/>}/>
-        <Route path="/AllAppointment" element= {<Allappointments/>}/>
+        <Route path="/HVet" element= {<AllappointmentsVet/>}/>
+        <Route path="/HManager" element= {<AllappointmentsManager/>}/>
+        <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
+        <Route path="/AllAppointment" element= {<AddAppointments/>}/>
 
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
@@ -129,6 +137,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
