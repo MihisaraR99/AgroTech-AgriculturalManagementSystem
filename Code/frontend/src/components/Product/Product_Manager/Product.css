@@ -101,24 +101,25 @@ tr.td11:nth-child(even):hover{
 
 /*stock table*/
 th.t12{
-        background-color: rgb(76, 220, 56);
+        background-color: #36e365;
         padding: 25px;
         padding-right: 20px;
         font-size: 20px;
         margin: 25px;
-        color: white;
+        color: rgb(5, 5, 5);
         border-color: none;
 }
 
 tr.tr12:nth-child(odd){
-        background-color: rgb(155, 154, 155);
+        background-color: #bff2bf;
         padding: 15px;
         margin: 20px;
         border-color: none;
 }
 
 tr.tr12:nth-child(even){
-        background-color: rgb(103, 103, 102);
+        padding: 15px;
+        background-color: #99e6b3;
         padding: 15px;
         border-color: none;
 }

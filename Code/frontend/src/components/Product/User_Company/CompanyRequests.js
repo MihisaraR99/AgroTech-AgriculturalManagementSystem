@@ -16,6 +16,7 @@ const [Product_Id,setproductid] = useState("");
 const [Product_Name,setproname] = useState("");
 const [Quentity,setqueantity] = useState("");
 
+
 function sendcompanyData(e){
     e.preventDefault();
     alert("Going to add company request ");
@@ -45,8 +46,8 @@ function sendcompanyData(e){
     return(
       
       <center>
-        <div >
-          <div className="maindiv1" style={{/*border:"1px solid black"*/ margin:"20px"}} >
+        <div>
+          <div className="maindiv1" style={{/*border:"1px solid black",*/ margin:"20px"}} >
              
             <div class="container12" >
 
