@@ -62,11 +62,14 @@ function App() {
           element={<StoreProductsDetails />}
         />
         <Route
-          path="/store/order/store-order-create"
+          path="/store/order/store-order-create/:product/:quantity/:price"
           element={<StoreOrderForm />}
         />
 
-        <Route path="/store/order/payment" element={<StorePaymentScreen />} />
+        <Route
+          path="/store/order/payment/:orderId"
+          element={<StorePaymentScreen />}
+        />
 
         <Route
           path="/store/product/add-product"
