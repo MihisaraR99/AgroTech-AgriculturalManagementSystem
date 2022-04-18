@@ -13,7 +13,7 @@
 }
 
 .store-add-product-form-inner {
-  width: 500px;
+  width: 700px;
 }
 
 .product-details-img {
@@ -157,4 +157,9 @@
 
 .store-orders-container table {
   overflow: hidden;
+}
+
+.store-admin-edit-form {
+  background: #fff;
+  border-radius: 8px;
 }
