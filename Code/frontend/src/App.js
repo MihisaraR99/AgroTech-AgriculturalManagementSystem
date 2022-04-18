@@ -63,24 +63,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
-      <Routes> 
-        <Route path="/" element={<AllServices />} />
-        <Route path="/rep"      element= {<AllReports/>}    />
-        <Route path="/add"      element= {<AddReport/>}     />
-        <Route path="/del"      element= {<DeleteReport/>}  />
-        <Route path="/edit/:id" element= {<EditReport/>}    />
-        <Route path="/rep/:id"  element= {<ReportDetails/>} />
-          
-       {/* <Header /> */}
-        <Route path="/productadd" element= {<AddProduct/>}/>
-        <Route path="/productSee" element= {<AllProducts/>}/>
-        <Route path="/companyadd" element= {<CompanyRequest/>}/>
-        <Route path="/companySee" element= {<AllCompanyRequest/>}/>
-        <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
-        <Route path="/stock" element= {<StockDetails/>}/>
-        <Route path="/productBill" element={<ProductBill/>}/>
-      
+  
       {/* <Header /> */}
       <Navigator />
       <Routes>
@@ -120,6 +103,15 @@ function App() {
         <Route path="/Ads/add" element={<AddProduct />} />
         <Route path="/Ads/productSee" element={<AllProducts />} />
         <Route path="/Ads/company" element={<CompanyRequest />} />
+
+        {/* Product Routes  */}
+        <Route path="/productadd" element= {<AddProduct/>}/>
+        <Route path="/productSee" element= {<AllProducts/>}/>
+        <Route path="/companyadd" element= {<CompanyRequest/>}/>
+        <Route path="/companySee" element= {<AllCompanyRequest/>}/>
+        <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
+        <Route path="/stock" element= {<StockDetails/>}/>
+        <Route path="/productBill" element={<ProductBill/>}/>
           
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />

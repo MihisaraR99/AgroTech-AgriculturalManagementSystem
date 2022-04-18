@@ -29,7 +29,7 @@ useEffect(()=>{
 /*02--add*/
 function sendAppointment(e){
   e.preventDefault();
-  alert("Going to add new Appointment");
+  alert("Update Appointment");
 
   const newAppointment = {
     CustomerName,
