@@ -24,7 +24,6 @@ import UpdateProducts from "./components/Product/Product_Manager/UpdateProducts"
 import StockDetails from "./components/Product/Product_Manager/StockDetails";
 import ProductBill from "./components/Product/User_Company/ProductBill";
 
-
 // Ads Components
 import AdvertiserForm from "./components/Ads/AdvertiserForm";
 import PropertyCatalog from "./components/Ads/PropertyCatalog";
@@ -36,11 +35,9 @@ import AdvertiserDetails from "./components/Ads/AdvertiserDetails";
 
 // Appointments Components - Healthcare
 import AddAppointments from "./components/HealthCare/AddAppointments";
-import AllappointmentsVet from  "./components/HealthCare/AllappointmentsVet";
+import AllappointmentsVet from "./components/HealthCare/AllappointmentsVet";
 import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
 import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
-
-
 
 // Lab Components
 import AddReport from "./components/AddReport";
@@ -49,40 +46,39 @@ import DeleteReport from "./components/DeleteReport";
 import EditReport from "./components/EditReport";
 import ReportDetails from "./components/ReportDetails";
 
-
 // User Components
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import Profile from "./components/Users/Profile";
-
 import axios from "axios";
-
 
 function App() {
   useEffect(() => {}, []);
 
   return (
     <BrowserRouter>
-     {/* <Header /> */}
+      {/* <Header /> */}
       <Navigator />
-      <Routes> 
-        <Route path="/" element={<AllServices />} />
-        <Route path="/rep"      element= {<AllReports/>}    />
-        <Route path="/add"      element= {<AddReport/>}     />
-        <Route path="/del"      element= {<DeleteReport/>}  />
-        <Route path="/edit/:id" element= {<EditReport/>}    />
-        <Route path="/rep/:id"  element= {<ReportDetails/>} />
-          
-       {/* <Header /> */}
-        <Route path="/productadd" element= {<AddProduct/>}/>
-        <Route path="/productSee" element= {<AllProducts/>}/>
-        <Route path="/companyadd" element= {<CompanyRequest/>}/>
-        <Route path="/companySee" element= {<AllCompanyRequest/>}/>
-        <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
-        <Route path="/stockDetails" element= {<StockDetails/>}/>
-        <Route path="/productBill" element={<ProductBill/>}/>
-         
       <Routes>
+        <Route path="/" element={<AllServices />} />
+        <Route path="/rep" element={<AllReports />} />
+        <Route path="/add" element={<AddReport />} />
+        <Route path="/del" element={<DeleteReport />} />
+        <Route path="/edit/:id" element={<EditReport />} />
+        <Route path="/rep/:id" element={<ReportDetails />} />
+
+        {/* <Header /> */}
+        <Route path="/productadd" element={<AddProduct />} />
+        <Route path="/productSee" element={<AllProducts />} />
+        <Route path="/companyadd" element={<CompanyRequest />} />
+        <Route path="/companySee" element={<AllCompanyRequest />} />
+        <Route
+          path="/productUpdate/:id/:name/:quantity"
+          element={<UpdateProducts />}
+        />
+        <Route path="/stockDetails" element={<StockDetails />} />
+        <Route path="/productBill" element={<ProductBill />} />
+
         <Route path="/rep" element={<AllReports />} />
         <Route path="/add" element={<AddReport />} />
         <Route path="/del" element={<DeleteReport />} />
@@ -93,12 +89,12 @@ function App() {
         <Route path="/adform" element={<AdvertiserForm />} />
         <Route path="/properties" element={<PropertyCatalog />} />
 
-          {/* Health Care Appointments Routes */}
-        <Route path="/Appointments" element= {<AddAppointments/>}/>
-        <Route path="/HVet" element= {<AllappointmentsVet/>}/>
-        <Route path="/HManager" element= {<AllappointmentsManager/>}/>
-        <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
-        <Route path="/AllAppointment" element= {<AddAppointments/>}/>
+        {/* Health Care Appointments Routes */}
+        <Route path="/Appointments" element={<AddAppointments />} />
+        <Route path="/HVet" element={<AllappointmentsVet />} />
+        <Route path="/HManager" element={<AllappointmentsManager />} />
+        <Route path="/HMUpdate" element={<UpdateAppointmentManager />} />
+        <Route path="/AllAppointment" element={<AddAppointments />} />
 
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
@@ -119,16 +115,19 @@ function App() {
         <Route path="/Ads/add" element={<AddProduct />} />
         <Route path="/Ads/productSee" element={<AllProducts />} />
         <Route path="/Ads/company" element={<CompanyRequest />} />
-        
+
         {/*Product Routes*/}
-        <Route path="/productadd" element= {<AddProduct/>}/>
-        <Route path="/productSee" element= {<AllProducts/>}/>
-        <Route path="/companyadd" element= {<CompanyRequest/>}/>
-        <Route path="/companySee" element= {<AllCompanyRequest/>}/>
-        <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
-        <Route path="/stock" element= {<StockDetails/>}/>
-        <Route path="/productBill" element={<ProductBill/>}/>
-          
+        <Route path="/productadd" element={<AddProduct />} />
+        <Route path="/productSee" element={<AllProducts />} />
+        <Route path="/companyadd" element={<CompanyRequest />} />
+        <Route path="/companySee" element={<AllCompanyRequest />} />
+        <Route
+          path="/productUpdate/:id/:name/:quantity"
+          element={<UpdateProducts />}
+        />
+        <Route path="/stock" element={<StockDetails />} />
+        <Route path="/productBill" element={<ProductBill />} />
+
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />
         <Route path="/Ads/properties" element={<PropertyCatalog />} />
@@ -145,7 +144,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
-
       </Routes>
       <Footer />
     </BrowserRouter>
