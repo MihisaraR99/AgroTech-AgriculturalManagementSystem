@@ -9,6 +9,8 @@ const {
   createOrder,
   createPayment,
   getSingleOrder,
+  getOrders,
+  getPayments,
 } = require("../controllers/storeControllers");
 
 const router = express.Router();
@@ -20,7 +22,9 @@ router.put("/products/:pid", updateProduct);
 router.delete("/products/:pid", deleteProduct);
 router.get("/product/:pid", getSingleItem);
 router.post("/orders", createOrder);
+router.get("/orders", getOrders);
 router.get("/order/:id", getSingleOrder);
 router.post("/payment", createPayment);
+router.get("/payments", getPayments);
 
 module.exports = router;

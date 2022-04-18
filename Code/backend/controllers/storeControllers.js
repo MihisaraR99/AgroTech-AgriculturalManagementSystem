@@ -72,6 +72,17 @@ const createOrder = (req, res) => {
   });
 };
 
+const getOrders = (req, res) => {
+  StoreOrder.find({}, (err, docs) => {
+    if (!err) {
+      res.status(200).json({ orders: docs });
+    } else {
+      res.status(500).json({ error: err });
+      throw err;
+    }
+  });
+};
+
 const getSingleOrder = (req, res) => {
   console.log(req.params.id);
   StoreOrder.findById(req.params.id, (err, data) => {
@@ -88,6 +99,17 @@ const createPayment = (req, res) => {
   });
 };
 
+const getPayments = (req, res) => {
+  StorePayment.find({}, (err, docs) => {
+    if (!err) {
+      res.status(200).json({ payments: docs });
+    } else {
+      res.status(500).json({ error: err });
+      throw err;
+    }
+  });
+};
+
 module.exports = {
   fetchAllProducts,
   createProduct,
@@ -98,4 +120,6 @@ module.exports = {
   createOrder,
   createPayment,
   getSingleOrder,
+  getOrders,
+  getPayments,
 };
