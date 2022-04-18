@@ -59,15 +59,19 @@ const Navigator = () => {
                         </a>
                         <ul className="dropdown">
                           <li>
-                            <Link to="/store/store-admin-orders">
-                              <a>Store Admin</a>
+                            <Link to="/store/store-admin-products">
+                              <a>Store Products Admin</a>
                             </Link>
                           </li>
                           <li>
-                            <a href="#">Menu Two</a>
+                            <Link to="/store/store-admin-orders">
+                              <a>Store Orders Admin</a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="#">Menu Three</a>
+                            <Link to="/store/store-admin-payments">
+                              <a>Store Payments Admin</a>
+                            </Link>
                           </li>
                           <li>
                             <a href="#">Menu Four</a>

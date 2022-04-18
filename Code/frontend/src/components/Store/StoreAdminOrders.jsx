@@ -15,7 +15,10 @@ const StoreAdminOrders = () => {
   return (
     <div className="store-container vh-100 d-flex justify-content-center p-5">
       <div className=" w-100">
-        <table class="table m-4 store-orders-container">
+        <h3> Store Order Admin </h3>
+        <p> These are the orders recived inside this month </p>
+
+        <table class="table mt-4 store-orders-container">
           <thead>
             <tr>
               <th scope="col">Order ID</th>

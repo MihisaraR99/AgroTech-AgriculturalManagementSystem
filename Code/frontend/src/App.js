@@ -38,8 +38,8 @@ import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import axios from "axios";
 import StorePaymentScreen from "./components/Store/StorePaymentScreen";
-import StoreAdminProducts from "./components/Store/StoreAdminProducts";
 import StoreAdminProductsEdit from "./components/Store/StoreAdminProductsEdit";
+import StoreAdminProducts from "./components/Store/StoreAdminProducts";
 import StoreAdminOrders from "./components/Store/StoreAdminOrders";
 import StoreAdminPayments from "./components/Store/StoreAdminPayments";
 
