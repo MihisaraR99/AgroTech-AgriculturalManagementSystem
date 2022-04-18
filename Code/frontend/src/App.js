@@ -73,7 +73,7 @@ function App() {
           path="/store/product/add-product"
           element={<StoreAddProductForm />}
         />
-
+         {/* Product Routes */}
         <Route path="/Ads/add" element={<AddProduct />} />
         <Route path="/Ads/productSee" element={<AllProducts />} />
         <Route path="/Ads/company" element={<CompanyRequest />} />
