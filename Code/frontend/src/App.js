@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
+import "./components/HealthCare/Health.css";
 import Header from "./components/Header";
 import Navigator from "./components/Navigator/Navigator";
 import Footer from "./components/Footer";
@@ -35,7 +36,11 @@ import AdvertiserDetails from "./components/Ads/AdvertiserDetails";
 
 // Appointments Components - Healthcare
 import AddAppointments from "./components/HealthCare/AddAppointments";
-import Allappointments from  "./components/HealthCare/Allappointments";
+import AllappointmentsVet from  "./components/HealthCare/AllappointmentsVet";
+import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
+import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
+
+
 
 // Lab Components
 import AddReport from "./components/AddReport";
@@ -58,7 +63,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+     {/* <Header /> */}
+      <Navigator />
       <Routes> 
         <Route path="/" element={<AllServices />} />
         <Route path="/rep"      element= {<AllReports/>}    />
@@ -75,9 +81,7 @@ function App() {
         <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
         <Route path="/stockDetails" element= {<StockDetails/>}/>
         <Route path="/productBill" element={<ProductBill/>}/>
-      
-      {/* <Header /> */}
-      <Navigator />
+         
       <Routes>
         <Route path="/rep" element={<AllReports />} />
         <Route path="/add" element={<AddReport />} />
@@ -91,7 +95,10 @@ function App() {
 
           {/* Health Care Appointments Routes */}
         <Route path="/Appointments" element= {<AddAppointments/>}/>
-        <Route path="/AllAppointment" element= {<Allappointments/>}/>
+        <Route path="/HVet" element= {<AllappointmentsVet/>}/>
+        <Route path="/HManager" element= {<AllappointmentsManager/>}/>
+        <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
+        <Route path="/AllAppointment" element= {<AddAppointments/>}/>
 
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
@@ -112,6 +119,15 @@ function App() {
         <Route path="/Ads/add" element={<AddProduct />} />
         <Route path="/Ads/productSee" element={<AllProducts />} />
         <Route path="/Ads/company" element={<CompanyRequest />} />
+        
+        {/*Product Routes*/}
+        <Route path="/productadd" element= {<AddProduct/>}/>
+        <Route path="/productSee" element= {<AllProducts/>}/>
+        <Route path="/companyadd" element= {<CompanyRequest/>}/>
+        <Route path="/companySee" element= {<AllCompanyRequest/>}/>
+        <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
+        <Route path="/stock" element= {<StockDetails/>}/>
+        <Route path="/productBill" element={<ProductBill/>}/>
           
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />
@@ -129,6 +145,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
