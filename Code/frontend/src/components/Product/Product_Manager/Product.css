@@ -1,0 +1,47 @@
+.text11{
+        margin-Top:50px;
+        margin-Bottom:20px;
+        width:30%;
+        margin-Left:20%;
+        box-Shadow: 10px 10px 5px rgba(150, 168, 156);
+}
+.container22{
+                margin-Left: 1%;
+                color:white;
+                width:1100px;
+                margin-Right:80% ;
+                padding: 50px 50px 20px 50px; 
+}
+.form-horizontal22{
+                width:600px;
+                padding:50px 50px 20px 50px;
+                color:black;
+                margin: 10px;
+}
+.h2topic22{
+        color:white;
+         font-Size:50px;  
+}
+
+.formcontrol22{
+         background-Color:  white;
+          width:500px;
+          padding:10px;
+          margin-Top:5px;
+          box-Shadow: 4px 2px 2px rgba(63, 217, 33);
+          border-color: "none";
+}
+
+.btnbtnsuccess{
+        width:200px;
+        background-Color:black;
+        margin-Bottom:10px;
+        border:none;
+}
+input.input33{
+      
+                width:100%;
+                height:300px;
+                border-Block-Color: black;
+            
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./Admins.css";
 
 const AdminViewAds = () => {
   const [adsr, setAdsr] = useState(undefined);
@@ -18,7 +19,7 @@ const AdminViewAds = () => {
   };
 
   return (
-    <div className="col-md-8 mt-4 mx-auto">
+    <div className="col-md-8 mt-4 mx-auto" style={{marginBottom:"20px"}}>
       <table className="table table-hover" style={{ marginTop: "40px" }}>
         <thead>
           <tr>
@@ -45,7 +46,14 @@ const AdminViewAds = () => {
                 <td>{adr.priceRate}</td>
                 <td>{adr.sizeOfArea}</td>
                 <td>
-                  <Link className="btn btn-warning" to={`/edit/${adr._id}`}>
+                  <Link
+                    className="btn btn-warning"
+                    to={`/Ads/edit/${adr._id}/${adr.town}/${adr.AgentRef}/${
+                      adr.heading
+                    }/${adr.description}/${adr.sizeOfArea}/${adr.priceRate}/${
+                      adr.contactName
+                    }/${adr.email}/${adr.phone}/${encodeURIComponent(adr.img)}`}
+                  >
                     <i className="fas fa-edit"></i>&nbsp;Edit
                   </Link>
                   &nbsp;
@@ -64,10 +72,15 @@ const AdminViewAds = () => {
 
       <button className="btn btn-success">
         {" "}
-        <Link to="/adform" style={{ extDecoration: "none", color: "white" }}>
+        <Link
+          to="/Ads/adform"
+          style={{ extDecoration: "none", color: "white" }}
+        >
           Create New Advertisment
         </Link>
+        <br />
       </button>
+      <br />
     </div>
   );
 };
