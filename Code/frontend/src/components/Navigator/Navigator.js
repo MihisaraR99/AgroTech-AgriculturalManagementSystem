@@ -59,7 +59,9 @@ const Navigator = () => {
                         </a>
                         <ul className="dropdown">
                           <li>
-                            <a href="#">Menu One</a>
+                            <Link to="/store/store-admin-orders">
+                              <a>Store Admin</a>
+                            </Link>
                           </li>
                           <li>
                             <a href="#">Menu Two</a>

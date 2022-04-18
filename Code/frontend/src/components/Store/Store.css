@@ -149,3 +149,12 @@
   height: 50px;
   object-fit: contain;
 }
+
+.store-orders-container {
+  background: white;
+  border-radius: 8px;
+}
+
+.store-orders-container table {
+  overflow: hidden;
+}

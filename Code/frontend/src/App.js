@@ -38,6 +38,8 @@ import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import axios from "axios";
 import StorePaymentScreen from "./components/Store/StorePaymentScreen";
+import StoreAdminOrders from "./components/Store/StoreAdminOrders";
+import StoreAdminProductsEdit from "./components/Store/StoreAdminOrdersEdit";
 
 function App() {
   useEffect(() => {}, []);
@@ -74,6 +76,16 @@ function App() {
         <Route
           path="/store/product/add-product"
           element={<StoreAddProductForm />}
+        />
+
+        <Route
+          path="/store/store-admin-products"
+          element={<StoreAdminOrders />}
+        />
+
+        <Route
+          path="/store/store-admin-products/edit/:pid"
+          element={<StoreAdminProductsEdit />}
         />
 
         <Route path="/Ads/add" element={<AddProduct />} />
