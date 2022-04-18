@@ -7,7 +7,7 @@ import {getAllProducts} from '../productManagementService'
 export default function AllProducts(){
 
     const [products, setProducts] = useState([]);
-    const [searchProdName , setSearch] = useState("");
+    const [ProductSearch , setSearch] = useState("");
 
     useEffect(()=>{
         getAllProducts().then((data)=>{
@@ -16,6 +16,8 @@ export default function AllProducts(){
         })
         
     },[])
+
+  
    
     return(
         <div>
@@ -31,57 +33,60 @@ export default function AllProducts(){
 
   <input type="text"
    placeholder="Search.." 
-   className="text11"
+   className="text111"
    name="search2"
-   onChange={(e)=>{
+   onChange ={(e)=>{
        setSearch(e.target.value);
    }}
+   style={{border:"none"}}
+  
   
   />
   <button type="submit"><i class="fa fa-search"></i></button>
 
           
-
-            <table className ="table">
+            <div className="tale11">
+            <table className ="table" >
                  <thead>
-                     <tr>
-                       <th scope ="col">Supplier Id</th>
-                      <th scope ="col">Supplier Email</th>
-                      <th scope ="col">Contact Number</th>    
-                      <th scope ="col">Product ID</th> 
-                      <th scope ="col">Product Name</th> 
-                      <th scope ="col">Quentity</th> 
+                      <tr >
+                      <th className="t11" scope ="col">No of Products</th>
+                      <th className="t11" scope ="col">Supplier Id</th>
+                      <th className="t11" scope ="col">Supplier Email</th>
+                      <th className="t11" scope ="col">Contact Number</th>    
+                      <th className="t11" scope ="col">Product ID</th> 
+                      <th className="t11" scope ="col">Product Name</th> 
+                      <th className="t11" scope ="col">Quentity</th> 
                      
                     </tr> 
                 </thead> 
-                <tbody> 
+            
 
-            {products && products.filter((val)=>{
-                if(searchProdName=== ""){
+            {products && products.filter(val=>{
+                if(ProductSearch ===""){
                     return val;
                 }else if(
-                    val.PName.toLowerCase().includes(searchProdName.toLowerCase())
-                   
+                    val.PName.toLowerCase().includes(ProductSearch.toLowerCase())
                 ){
-                    return val;
+                    return val
                 }
-                
-            }).map((product)=>{
+            }).map((product,index)=>{
                 return(
                    <tr >
-                   <td>{product.SId}</td>
-                   <td>{product.SEmail}</td>
-                   <td>{product.ScontactNo}</td>
-                   <td>{product. PId}</td>
-                   <td>{product.PName}</td>
-                   <td>{product.Quentity}</td>
+                   <td className="td11">{index+1}</td>
+                   <td className="td11">{product.SId}</td>
+                   <td className="td11">{product.SEmail}</td>
+                   <td className="td11">{product.ScontactNo}</td>
+                   <td className="td11">{product. PId}</td>
+                   <td className="td11">{product.PName}</td>
+                   <td className="td11">{product.Quentity}</td>
                    </tr>
                      );
             })
              
             }
-            </tbody>
+         
             </table>
+            </div>
         </div>
         
     )    

@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from "react";
 import axios from "axios";
+import './Product.css';
 
 import {
     Link
@@ -34,25 +35,26 @@ export default function AllProducts(){
     return(
         <div>
             <center><h1>Stock Details</h1></center>
-            <table className ="table">
-                 <thead>
-                     <tr>
-                      <th scope ="col">Product No</th> 
-                      <th scope ="col">Product ID</th> 
-                      <th scope ="col">Product Name</th> 
-                      <th scope ="col">Quantity(Kg)</th> 
-                      <th scope ="col">Action</th> 
+            <div className="tablestock" style={{padding:"40px" ,marginLeft:"320px"}}>
+            <table className="table12" >
+                 <thead >
+                     <tr className="tr12">
+                      <th scope ="col" className="t12" >Product No</th> 
+                      <th scope ="col" className="t12">Product ID</th> 
+                      <th scope ="col" className="t12">Product Name</th> 
+                      <th scope ="col" className="t12">Quantity(Kg)</th> 
+                      <th scope ="col" className="t12">Action</th> 
                     </tr> 
                 </thead> 
                 <tbody>  
             {products && products.map((product,index)=>{
                 return(
-                   <tr >
-                   <td>{index+1}</td>
-                   <td>{product. PId}</td>
-                   <td>{product.PName}</td>
-                   <td>{product.Quentity}</td>
-                   <td>
+                   <tr className="tr12">
+                   <td  className="td12" style={{padding:"30px"}}>{index+1}</td>
+                   <td className="td12">{product. PId}</td>
+                   <td className="td12">{product.PName}</td>
+                   <td className="td12">{product.Quentity}</td>
+                   <td className="td12">
                             { <Link to={`/productUpdate/${product._id}/${product.PName}/${product.Quentity}`} 
                                     className ="btn btn-warning">
                                 <i className="fas fa-edit"></i>&nbsp;EDIT
@@ -72,6 +74,7 @@ export default function AllProducts(){
             }
             </tbody>
             </table>
+            </div>
         </div>
         
     )    

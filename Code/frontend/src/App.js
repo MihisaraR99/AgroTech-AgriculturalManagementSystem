@@ -49,7 +49,7 @@ function App() {
         <Route path="/companyadd" element= {<CompanyRequest/>}/>
         <Route path="/companySee" element= {<AllCompanyRequest/>}/>
         <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
-        <Route path="/stock" element= {<StockDetails/>}/>
+        <Route path="/stockDetails" element= {<StockDetails/>}/>
         <Route path="/productBill" element={<ProductBill/>}/>
       
       

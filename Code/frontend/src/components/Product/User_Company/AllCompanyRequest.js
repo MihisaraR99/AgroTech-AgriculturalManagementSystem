@@ -58,6 +58,9 @@ className="product-title">
     <p style={{ fontSize: "20px",textAlign:"left" }}>
      Contact No-<b>{company.Company_contactNo}</b>
     </p>
+    <p style={{ fontSize: "20px",textAlign:"left" }}>
+     Quantity-<b>{company.Quentity}</b>
+    </p>
     </div>
 
 <tr> 
