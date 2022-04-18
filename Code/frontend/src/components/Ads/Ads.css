@@ -1,46 +1,46 @@
 
-.card-text {
+.card-bodies .card-text {
     font-size: 20px;
     font-weight: 500;
     color: #329466;
     float: left;
 }
 
-.card-left {
+.card-bodies .card-left {
     margin: 5px;
     margin-bottom: 6px;
     color: #a3a2a2;
 }
 
-.card-title {
+.card-bodies .card-title {
     margin-top: -20px;
     
 }
 
-.card-type {
+.card-bodies .card-type {
 
     font-size: 20px;
     font-weight: 500;
 
 }
 
-.card-area {
+.card-bodies .card-area {
     margin-top: -15px;
     color: #a3a2a2;
 }
 
-.card-link{
+.card-bodies .card-link{
 
     margin-top: 20px;
 }
 
-.card {
+.card-bodies .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 40%;
   }
 
-.card:hover {
+.card-bodies .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 

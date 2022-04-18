@@ -63,9 +63,9 @@ const PropertyCatalog = () => {
 <div className="products-list row p-5" style={{backgroundColor:"#D3D3D3"}}>
         {ads &&
           ads.map((ad) => (
-            <div className="card" style={{ width: "15rem", margin: "1rem", height:"20rem" }}>
-    <div className="card-body">
-    <div className="product-image" style={{height:"10rem"}}>
+    <div className="card" style={{ width: "15rem", margin: "1rem", height:"20rem" }}>
+    <div className="card-bodies">
+    <div className="product-image" style={{height:"10rem", marginTop:"10px"}}>
         <img src={ad.img} alt="product"/>
       </div>
       <p className="card-text">Rs. {ad.priceRate} </p><p className="card-left"> Per Perch </p><br/>
