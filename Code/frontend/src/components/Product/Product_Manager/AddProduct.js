@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import img6 from "../images/img11.jpg";
+import img6 from "../images/img44.jpg";
 import axios from "axios";
 
 

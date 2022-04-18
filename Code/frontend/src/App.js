@@ -63,9 +63,25 @@ function App() {
 
   return (
     <BrowserRouter>
-     
-      {/* <Header /> */}
+     {/* <Header /> */}
       <Navigator />
+      <Routes> 
+        <Route path="/" element={<AllServices />} />
+        <Route path="/rep"      element= {<AllReports/>}    />
+        <Route path="/add"      element= {<AddReport/>}     />
+        <Route path="/del"      element= {<DeleteReport/>}  />
+        <Route path="/edit/:id" element= {<EditReport/>}    />
+        <Route path="/rep/:id"  element= {<ReportDetails/>} />
+          
+       {/* <Header /> */}
+        <Route path="/productadd" element= {<AddProduct/>}/>
+        <Route path="/productSee" element= {<AllProducts/>}/>
+        <Route path="/companyadd" element= {<CompanyRequest/>}/>
+        <Route path="/companySee" element= {<AllCompanyRequest/>}/>
+        <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
+        <Route path="/stockDetails" element= {<StockDetails/>}/>
+        <Route path="/productBill" element={<ProductBill/>}/>
+         
       <Routes>
         <Route path="/rep" element={<AllReports />} />
         <Route path="/add" element={<AddReport />} />
