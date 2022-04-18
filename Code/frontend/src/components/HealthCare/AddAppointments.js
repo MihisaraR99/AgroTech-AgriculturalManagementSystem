@@ -52,12 +52,13 @@ function sendAppointment(e){
               <div className="row">
                 <div className="col-sm">
               <div className= "addapp_content">
-                <div className="addapp-form">
-                  <h2 className="form-title"> Get an Appointment</h2><br/>
+                <div className="addapp-form" style={{boxShadow: " 4px 2px 2px rgba(63, 217, 33)" , padding:"12px",width:"450px"
+,border:"1px solid black"}}>
+                  <h2 className="form-title"  style={{paddingLeft:"75px"}}> Get an Appointment</h2><br/>
                   <div className="row">
                   <div className="col col-6">
 
-                  <div className="App-form">
+                  <div className="App-form"  style={{paddingLeft:"190px"}}>
                    
                   <form className="get-appointment" id="appointment-form"
                   onSubmit={sendAppointment}>
@@ -154,9 +155,9 @@ function sendAppointment(e){
                     </div>
                     <br/>
 
-                    <div className="form-group form-button"
+                    <div className="form-group form-button" style={{paddingLeft:"50px"}}
 >
-                      <button type="submit" class="btn btn-primary ">Submit</button>
+                      <button type="submit" class="btn btn-primary" >Submit</button>
                     </div>
 
                   </form>
@@ -166,13 +167,13 @@ function sendAppointment(e){
                 </div>
                 </div>
               </div>
-                <div className="col-sm">
+                <div className="col col-6">
 
 
                         
                     <div className="appointment-image">
                       <figure>
-                      <div className="col col-6">
+                      <div className="">
                         <img src={AddApp} alt="getAppointment pic"/>
                       </div> 
                       </figure>

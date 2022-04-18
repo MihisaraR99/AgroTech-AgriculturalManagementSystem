@@ -67,7 +67,7 @@ app.use("/api/store", storeRoutes);
 app.use("/api/wholesale", wholesaleRoutes);
 app.use("/api/companyRequest", CompanyRequest);
 app.use("/api/lab", labRoutes);
-app.use("/api/app", )
+app.use("/api/app", HealthCareAppointmentRoutes);
 
 // Health Care Appointments
 app.use("/api/app", require("./routes/HealthCareAppointmentRoutes"));

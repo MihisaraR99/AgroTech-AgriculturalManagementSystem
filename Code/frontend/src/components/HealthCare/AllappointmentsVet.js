@@ -20,7 +20,7 @@ export default function AllappointmentsVet(){
 
     return(
         <div>
-             <center><h1>All Appointments</h1> 
+             <center><h1 style={{paddingTop:"30px"}}>All Appointments</h1> 
         <div class="row">
             {appointments && appointments.map((appoint,index)=>(
               <div class="col-4">
@@ -37,6 +37,7 @@ color:"white",
 borderRadius: "30px",
 boxShadow: " 10px 10px 5px rgba(150, 168, 156)",
 width:"450px",
+backgroundColor:"green",
 padding: "5px",}}>
 
 <div className="inputdiv"
@@ -48,15 +49,16 @@ padding: "5px",}}>
     color:"black",
     margin: "2px",
     position:"center",
+    paddingBottom:"10px",
     //border:"2px solid black",
     padding: " 5px 5px 5px", }}>
-        <div style={{border: "1px ",width:"200px",height:"50px",borderRadius: "30px", float:"center",boxShadow: " 10px 10px 5px rgba(150, 168, 156)",marginBottom:"30px"}}>
-        <p style={{ fontSize: "18px",textAlign:"center"}}>
+        <div style={{border: "1px ",width:"200px",height:"40px",borderRadius: "30px", float:"center",backgroundColor:"pink",}}>
+        <p style={{ fontSize: "18px",textAlign:"center",padding:"6px"}}>
      Appointment No -<b>{index+1}</b>
     </p>
         </div>
    
-    <p style={{ fontSize: "15px",textAlign:"left" }}>
+    <p style={{ fontSize: "15px",textAlign:"left", paddingTop:"20px" }}>
      Customer Name-<b>{appoint.CustomerName}</b>
     </p>
     <p style={{ fontSize: "15px",textAlign:"left" }}>

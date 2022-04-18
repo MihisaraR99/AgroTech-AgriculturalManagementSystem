@@ -42,8 +42,11 @@ import AllReports from "./components/AllReports";
 import DeleteReport from "./components/DeleteReport";
 import EditReport from "./components/EditReport";
 import ReportDetails from "./components/ReportDetails";
+
+// User Components
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
+import Profile from "./components/Users/Profile";
 import axios from "axios";
 
 function App() {
@@ -102,7 +105,8 @@ function App() {
         {/* Users */}
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
->>>>>>> 9d3be67ca267bfcf2cc591025807a08c7e133b65
+        <Route path="/profile" element={<Profile />} />
+        
       </Routes>
       <Footer />
     </BrowserRouter>

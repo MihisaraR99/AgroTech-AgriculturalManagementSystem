@@ -31,3 +31,21 @@ boxShadow: " 10px 10px 5px rgba(150, 168, 156)",
 width:"450px",
 padding: "5px", */
 
+tr:nth-child(odd){
+  background-color: rgb(180, 240, 158);
+  padding: 15px;
+  border-color: none;
+}
+
+
+tr:nth-child(odd):hover{
+  background-color: rgb(195, 240, 207);
+  transform: scale(1.055);
+  transition: transform 300ms ease-in;
+}
+
+tr:nth-child(even):hover{
+  background-color: rgb(195, 240, 207);
+  transform: scale(1.055);
+  transition: transform 300ms ease-in;
+}
