@@ -35,15 +35,15 @@ export default function AllappointmentsManager(){
                       <table className ="table" >
                  <thead>
                      <tr>
-                      <th scope ="col" className="HRth" style={{backgroundColor:"blue"}}>No</th>  
-                      <th scope ="col" className="HRth" style={{backgroundColor:"blue"}}>Customer Name</th>
-                      <th scope ="col" className="HRth" style={{backgroundColor:"blue"}}>NIC</th>
-                      <th scope ="col" className="HRth" style={{backgroundColor:"blue"}}>Animal Type</th>     
-                      <th scope ="col" className="HRth" style={{backgroundColor:"blue"}}>Contact No</th> 
-                      <th scope ="col" className="HRth"  style={{backgroundColor:"blue"}}>Address</th> 
-                      <th scope ="col" className="HRth" style={{backgroundColor:"blue"}}>Date</th> 
-                      <th scope ="col" className="HRth" style={{backgroundColor:"blue"}}>Time</th> 
-                      <th scope ="col" className="HRtd" style={{backgroundColor:"blue"}}>Action</th> 
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>No</th>  
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Customer Name</th>
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>NIC</th>
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Animal Type</th>     
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Contact No</th> 
+                      <th scope ="col" className="HRth"  style={{backgroundColor:"#00ff00"}}>Address</th> 
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Date</th> 
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Time</th> 
+                      <th scope ="col" className="HRtd" style={{backgroundColor:"#00ff00"}}>Action</th> 
                     </tr> 
                 </thead> 
                 <tbody> 
