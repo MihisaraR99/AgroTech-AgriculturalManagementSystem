@@ -3,6 +3,7 @@ import axios from "axios";
 import adformback2 from "./img/adformback2.jpg";
 
 
+
 const AdvertiserForm = () => {
   const [type, setType] = useState("Something else here");
   const [town, setTown] = useState("");
@@ -15,6 +16,8 @@ const AdvertiserForm = () => {
   const [email, setemail] = useState("");
   const [phone, setphone] = useState("");
   const [img, setImg] = useState("");
+  const [error, setError] = useState(null);
+
 
   const sendData = async (e) => {
     const newAd = {
@@ -31,6 +34,23 @@ const AdvertiserForm = () => {
       img,
     };
 
+
+    if (
+      newAd.town.length <= 0 ||
+      newAd.AgentRef.length <= 0 ||
+      newAd.heading.length <= 0 ||
+      newAd.description.length <= 0 ||
+      newAd.sizeOfArea.length <= 0 ||
+      newAd.priceRate.length <= 0 ||
+      newAd.contactName.length <= 0 ||
+      newAd.email.length <= 0 ||
+      newAd.phone.length <= 0 ||
+      newAd.img.length <= 0
+    ) {
+      setError("All the fields are required to create an adcertisment");
+      return;
+    }
+
     axios
       .post("http://localhost:8000/api/Ads", newAd)
       .then(() => {
@@ -40,7 +60,7 @@ const AdvertiserForm = () => {
         alert(err);
       });
 
-    e.preventDefault();
+   
   };
 
   return (
@@ -56,6 +76,9 @@ const AdvertiserForm = () => {
       
       <br />
       <form onSubmit={sendData} style={{margin: "20px"}}>
+      {error && (
+              <h5 className="text-center text-danger form-text"> {error} </h5>
+            )}
         <br />
         <div className="row mb-3">
           <label class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>Type</label>
@@ -126,7 +149,7 @@ const AdvertiserForm = () => {
             <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              
+              required
               onChange={(e) => {
                 setTown(e.target.value);
               }}
@@ -141,7 +164,7 @@ const AdvertiserForm = () => {
             <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              
+              required
               onChange={(e) => {
                 setAgentRef(e.target.value);
               }}
@@ -156,7 +179,7 @@ const AdvertiserForm = () => {
             <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              
+              required
               onChange={(e) => {
                 setheading(e.target.value);
               }}
@@ -171,7 +194,7 @@ const AdvertiserForm = () => {
             <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              
+              required
               onChange={(e) => {
                 setdescription(e.target.value);
               }}
@@ -186,7 +209,7 @@ const AdvertiserForm = () => {
             <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              
+              required
               onChange={(e) => {
                 setsizeOfArea(e.target.value);
               }}
@@ -201,7 +224,7 @@ const AdvertiserForm = () => {
             <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-             
+              required
               onChange={(e) => {
                 setpriceRate(e.target.value);
               }}
@@ -217,7 +240,7 @@ const AdvertiserForm = () => {
             <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
               className="form-control"
-              
+              required
               onChange={(e) => {
                 setcontactName(e.target.value);
               }}
@@ -246,6 +269,7 @@ const AdvertiserForm = () => {
           <div className="col-sm-10">
             <input style={{backgroundColor:"#D3D3D3"}}
               type="text"
+              required
               className="form-control"
               id="inputEmail3"
               onChange={(e) => {
@@ -262,6 +286,7 @@ const AdvertiserForm = () => {
             className="form-control"
             placeholder="Image"
             value={img}
+            required
             onChange={(e) => {
               setImg(e.target.value);
             }}

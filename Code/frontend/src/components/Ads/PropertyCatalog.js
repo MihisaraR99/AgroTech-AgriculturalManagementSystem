@@ -17,6 +17,7 @@ const PropertyCatalog = () => {
     console.log(ads);
   }, []);
   
+  
 
 
   return (
@@ -30,7 +31,7 @@ const PropertyCatalog = () => {
           alt=""
         />
         <div class="middle">
-    <div class="text"><p>Lands To Buy..</p></div>
+    <div class="text"><p style={{color:"#555"}}>Lands To Buy..</p></div>
    <p className="para">Search our selection of land plots for sale in Sri Lanka. 
      Our fast-growing portfolio of properties brings you closer to your ideal home. 
      Every project is monitored and handled by detail-oriented team members 
