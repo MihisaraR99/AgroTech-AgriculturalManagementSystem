@@ -28,17 +28,22 @@ function sendData(e){
     }
    
     /*url*/
-    axios.post("http://localhost:8000/api/wholesale/add",newProduct).then(()=>{
-      alert("Product Added");
-
-     
-    }).catch((err)=>{
-      alert(err)
-      console.log(err);
-    })
-}
-
-
+    if(SId=="" || PId=="" || PName=="" || Quentity==""){
+            alert("Please fill the required fields")
+    }else{
+      axios.post("http://localhost:8000/api/wholesale/add",newProduct).then(()=>{
+        alert("Product Added");
+  
+       
+      }).catch((err)=>{
+        alert(err)
+        console.log(err);
+      })
+  }
+  
+  
+    }
+ 
 
 return(
   <center>

@@ -1,6 +1,5 @@
 import React,{useState} from "react";
-import img2 from "../images/img16.jpg";
-import img1 from "../images/img22.png";
+import img1 from "../images/financial.png";
 import './Company.css';
 import axios from "axios";
 
@@ -49,12 +48,12 @@ function sendcompanyData(e){
         <div>
           <div className="maindiv1" style={{/*border:"1px solid black",*/ margin:"20px"}} >
              
-            <div class="container12" >
+            <div class="container12" style={{/*border:"1px solid black",*/ }}>
 
-                  <div className="container11" style={{  backgroundColor:"white"}}>
+                  <div className="container11" style={{ backgroundColor:"#66ff66"}}>
                   <section class = "div11" id="sec2">
 		                  <h1>
-                         <img src={img1} alt=""   style={{ width: "100%", height: "480px",borderBlockColor: "black",marginTop:"110px",paddingLeft:"4px",paddingRight:"4px"}}/> 
+                         <img src={img1} alt=""   style={{ width: "90%", height: "480px",borderBlockColor: "black",marginTop:"110px",paddingLeft:"4px",paddingRight:"4px"}}/> 
 	                  	</h1>
 	                 </section>
                   </div>
@@ -75,7 +74,7 @@ function sendcompanyData(e){
 
 <div class="form-group">
     <div >          
-    <input type="text" class="form-control11" id="SEmail" placeholder="Company Contact Name" name="semail"  onChage={(e)=>{
+    <input type="text" class="form-control11" id="Cname" placeholder="Company Contact Name" name="sname"  onChage={(e)=>{
          setcontactname(e.target.value);
     }}/>
   </div>

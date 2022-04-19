@@ -23,6 +23,7 @@ import AllCompanyRequest from "./components/Product/User_Company/AllCompanyReque
 import UpdateProducts from "./components/Product/Product_Manager/UpdateProducts";
 import StockDetails from "./components/Product/Product_Manager/StockDetails";
 import ProductBill from "./components/Product/User_Company/ProductBill";
+import CompanyHomePage from "./components/Product/User_Company/CompanyHomePage";
 
 // Ads Components
 import AdvertiserForm from "./components/Ads/AdvertiserForm";
@@ -127,6 +128,7 @@ function App() {
         />
         <Route path="/stock" element={<StockDetails />} />
         <Route path="/productBill" element={<ProductBill />} />
+        <Route path="/companyHome" element={<CompanyHomePage />} />
 
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />
