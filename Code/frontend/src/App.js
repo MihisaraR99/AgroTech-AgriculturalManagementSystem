@@ -39,8 +39,8 @@ import AddAppointments from "./components/HealthCare/AddAppointments";
 import AllappointmentsVet from  "./components/HealthCare/AllappointmentsVet";
 import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
 import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
-
-
+import HealthHome from "./components/HealthCare/HealthHome1";
+import Happointmentinvoice from "./components/HealthCare/CustomerInvoice"
 
 // Lab Components
 import AddReport from "./components/AddReport";
@@ -83,6 +83,8 @@ function App() {
         <Route path="/HManager" element= {<AllappointmentsManager/>}/>
         <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
         <Route path="/AllAppointment" element= {<AddAppointments/>}/>
+        <Route path="/HHome" element= {<HealthHome/>}/>
+        <Route path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time" element= {<Happointmentinvoice/>}/>
 
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
