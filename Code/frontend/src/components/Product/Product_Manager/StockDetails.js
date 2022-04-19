@@ -34,8 +34,9 @@ export default function AllProducts(){
 
     return(
         <div>
-            <center><h1>Stock Details</h1></center>
+           
             <div className="tablestock" style={{padding:"40px" ,marginLeft:"320px"}}>
+            <center><h1 style={{MarginTop:"60px", paddingRight:"190px"}}>Stock Details</h1></center>
             <table className="table12" >
                  <thead >
                      <tr className="tr12">
@@ -56,12 +57,12 @@ export default function AllProducts(){
                    <td className="td12">{product.Quentity}</td>
                    <td className="td12">
                             { <Link to={`/productUpdate/${product._id}/${product.PName}/${product.Quentity}`} 
-                                    className ="btn btn-warning">
+                                    className ="btn btn-warning" style={{backgroundColor:"#987456", border:"none"}}>
                                 <i className="fas fa-edit"></i>&nbsp;EDIT
                             </Link>}
                             
                             &nbsp; 
-                            <a className ="btn btn-danger" href="#" >
+                            <a className ="btn btn-danger" href="#"  style={{backgroundColor:"#fd5e53", border:"none", margin:"10px"}}>
                                 <i className="far fa-trash-alt"></i>&nbsp;DELETE
                             </a>
                     </td>
