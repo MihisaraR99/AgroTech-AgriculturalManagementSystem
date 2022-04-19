@@ -19,11 +19,11 @@ export default function AllappointmentsVet(){
     },[])
 
     return(
-        <div>
-             <center><h1 style={{paddingTop:"30px"}}>All Appointments</h1> 
+        <div style={{backgroundColor:"#98fb98"}}>
+             <center><h1 style={{paddingTop:"30px", boxShadow: " 1px 5px 5px rgba(150, 168, 156)"}}>All Appointments</h1> 
         <div class="row">
             {appointments && appointments.map((appoint,index)=>(
-              <div class="col-4">
+              <div class="col-4" style={{paddingBottom:"30px"}}>
                           
 
 <div 
@@ -37,7 +37,7 @@ color:"white",
 borderRadius: "30px",
 boxShadow: " 10px 10px 5px rgba(150, 168, 156)",
 width:"450px",
-backgroundColor:"green",
+backgroundColor:"#ace1af",
 padding: "5px",}}>
 
 <div className="inputdiv"
@@ -52,9 +52,9 @@ padding: "5px",}}>
     paddingBottom:"10px",
     //border:"2px solid black",
     padding: " 5px 5px 5px", }}>
-        <div style={{border: "1px ",width:"200px",height:"40px",borderRadius: "30px", float:"center",backgroundColor:"pink",}}>
-        <p style={{ fontSize: "18px",textAlign:"center",padding:"6px"}}>
-     Appointment No -<b>{index+1}</b>
+        <div style={{border: "1px ",width:"200px",height:"40px",borderRadius: "30px", float:"center",backgroundColor:"#ace1af",}}>
+        <p style={{ fontSize: "22px",textAlign:"center",padding:"6px",}}>
+     <b>AppointmentNo</b>-<b>{index+1}</b>
     </p>
         </div>
    
@@ -84,7 +84,7 @@ padding: "5px",}}>
 <tr> 
 <td>
 
-<a className ="btn btn-danger" href="##"  >
+<a className ="btn btn-success" href="##"  >
     <i className="far fa-trash-alt"></i>&nbsp;CONFIRM</a>&nbsp;    
 
 <a className ="btn btn-danger" href="##" >

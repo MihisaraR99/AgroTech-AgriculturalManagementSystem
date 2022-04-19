@@ -8,7 +8,8 @@ import {getAllappointments} from './HealthCareServices'
 export default function AllappointmentsManager(){
     const navigate = useNavigate()
 
-    const [appointments, setAppointments] = useState([]);
+    const [appointments,setAppointments] = useState([]);
+    const [AppintmenttSearch , setSearch] = useState("");
 
     useEffect(()=>{
         getAllappointments().then((data)=>{
@@ -28,27 +29,53 @@ export default function AllappointmentsManager(){
 
 
     return(
-        <div>
+        <div style={{backgroundColor:"#98fb98"}}>
             <center><h1>Appointments</h1></center><br/>
+
+            <input type="text"
+                placeholder="Search.." 
+                className="text111"
+                name="search2"
+                onChange ={(e)=>{
+                setSearch(e.target.value);
+        }}
+   style={{border:"none", marginTop:"50px",
+   marginBottom:"20px",
+   width:"30%",
+   marginLeft:"20%",
+   boxShadow:" 10px 10px 5px rgba(150, 168, 156)"
+}}
+  
+  
+  />
+  <button type="submit"><i class="fa fa-search"></i></button>
            
                    <div className="container">
                       <table className ="table" >
                  <thead>
                      <tr>
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>No</th>  
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Customer Name</th>
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>NIC</th>
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Animal Type</th>     
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Contact No</th> 
-                      <th scope ="col" className="HRth"  style={{backgroundColor:"#00ff00"}}>Address</th> 
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Date</th> 
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#00ff00"}}>Time</th> 
-                      <th scope ="col" className="HRtd" style={{backgroundColor:"#00ff00"}}>Action</th> 
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>No</th>  
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Customer Name</th>
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>NIC</th>
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Animal Type</th>     
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Contact No</th> 
+                      <th scope ="col" className="HRth"  style={{backgroundColor:"#3cb371"}}>Address</th> 
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Date</th> 
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Time</th> 
+                      <th scope ="col" className="HRtd" style={{backgroundColor:"#3cb371"}}>Action</th> 
                     </tr> 
                 </thead> 
                 <tbody> 
 
-                {appointments && appointments.map((appoint,index)=>{
+                {appointments && appointments.filter(value=>{
+                    if(AppintmenttSearch ===""){
+                        return value;
+                    }else if(
+                        value.AnimalType.toLowerCase().includes(AppintmenttSearch.toLowerCase())
+                    ){
+                        return value
+                    }
+                }).map((appoint,index)=>{
                 return(
                    <tr>
                     <td className="HRtd" >{index+1}</td>
@@ -60,12 +87,13 @@ export default function AllappointmentsManager(){
                     <td className="HRtd">{appoint.Date}</td>
                     <td className="HRtd">{appoint.Time}</td>
                     <td>
-                     <div className="btn btn-primary" onClick={()=>{navigate("/HMUpdate", {
+                     <div className="btn btn-success" onClick={()=>{navigate("/HMUpdate", {
                          state:{appoint},
                      })}}>
                      <i className="fas fa-edit"></i>&nbsp;EDIT</div>&nbsp; 
 
-                     <a className ="btn btn-danger" href="##" onClick={()=> onDelete(appoint._id)}>
+                     <a className ="btn btn-danger" href="##" style={{backgroundColor:"", border:"none"}}
+                         onClick={()=> onDelete(appoint._id)}>
                      <i className="far fa-trash-alt"></i>&nbsp;DELETE</a>
                     </td> 
                     
