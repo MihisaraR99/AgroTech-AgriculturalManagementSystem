@@ -1,109 +1,4 @@
-.note
-{
-    text-align: center;
-    height: 80px;
-    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
-    color: #fff;
-    font-weight: bold;
-    line-height: 80px;
-}
-.form-content
-{
-    padding: 5%;
-    border: 1px solid #ced4da;
-    margin-bottom: 2%;
-}
-.form-control{
-    border-radius:1.5rem;
-}
-.btnSubmit
-{
-    border:none;
-    border-radius:1.5rem;
-    padding: 1%;
-    width: 20%;
-    cursor: pointer;
-    background: #0062cc;
-    color: #fff;
-    
-}
 
-.adminbody {
-    background-image: linear-gradient(to right bottom, #19ec20, #00f069, #00f198, #00f2bc, #16f0d7);
-}
-.table-responsive {
-    margin: 30px 0;
-}
-.table-wrapper {
-    width: 1200px;
-    background: #fff;
-	margin: 0 auto;
-    padding: 20px 30px 5px;
-    box-shadow: 0 0 1px 0 rgba(0,0,0,.25);
-    border-radius:20px;
-
-}
-.table-title .btn-group {
-    float: right;
-}
-.table-title .btn {
-    min-width: 90px;
-    border-radius: 10px;
-    border: none;
-    padding: 6px 20px;
-    font-size: 100%;
-    outline: none !important;
-    height: 40px;
-    float: right;
-    
-}
-.table-title {
-    min-width: 100%;
-    border-bottom: 1px solid #e9e9e9;
-    padding-bottom: 10px;
-    margin-bottom: 5px;
-    background: rgb(0, 50, 74);
-    margin: -20px -31px 10px;
-    padding: 40px 40px;
-    color: #fff;
-    border-radius:20px;
-}
-.table-title h2 {
-    margin: 20px 10px 20px;
-    font-size: 45px;
-}
-table.table {
-    min-width: 100%;
-}
-table.table tr th, table.table tr td {
-    border-color: #e9e9e9;
-    padding: 25px 15px;
-    vertical-align: middle;
-}
-table.table tr th:first-child {
-    width: 40px;
-}
-table.table tr th:last-child {
-    width: 100px;
-}
-table.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #fcfcfc;
-}
-table.table-striped.table-hover tbody tr:hover {
-    background: #f5f5f5;
-}
-table.table td a {
-    color: #2196f3;
-}
-table.table td .btn.manage {
-    padding: 2px 10px;
-    background: #37BC9B;
-    color: #fff;
-    border-radius: 2px;
-}
-table.table td .btn.manage:hover {
-    background: #2e9c81;		
-}
 /*slideshow course*/
 .carousel-inner{
     width:100%;
@@ -148,7 +43,7 @@ table.table td .btn.manage:hover {
     max-width: 100%;
     max-height: 100%;
   }
-  .card {
+  #topcrs-crd {
     margin: 0 0.5em;
     box-shadow: 2px 10px 8px 0  rgba(22, 22, 26, 0.18);
     border:none;
@@ -209,7 +104,7 @@ table.table td .btn.manage:hover {
     padding-right:30px;
 }
 /*jumbo start course*/
-.jumbotron{
+.crs-jumbotron{
     background-image: url("./eduimgs/Aqua\ Marine.jpg");
     background-size: cover;
     max-height:50%;
@@ -217,7 +112,7 @@ table.table td .btn.manage:hover {
     border-radius:20px ;
     color:aliceblue;
 }
-.jumbotron-bottom{
+.crsjumbotron-bottom{
     padding-bottom:100px;
 }
 
@@ -225,7 +120,9 @@ table.table td .btn.manage:hover {
 .modal-header {
     background-image: linear-gradient(to right top, #41de13, #00e07a, #00ddb7, #00d6de, #12cbeb);
     color: #fff;
-    border-radius: 12px;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+
     font-weight: bold;
     font-size: 20px;
 }
@@ -266,28 +163,229 @@ table.table td .btn.manage:hover {
     padding: 10px 20px;
 
 }
-.nav-dots{
-    text-align:center;
-    margin-top:40px;
+
+/*pop modal*/
+.pop-modal-header{
+    background-color:#54d5ff;
+   border-top-left-radius:15px;
+   border-top-right-radius:15px;
+    font-weight: bold;
+    font-size: 30px;
+    max-height: 30%;
+    padding-left:10px ;
 }
-.step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
+
+#pop-content{
+    width:100%;
+    max-height:100%;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+.or-padding{
+    padding-top: 15px;
+    padding-bottom:0px;
+}
+#edit-btn:hover{
+    background-color: #3e8e41
+}
+#delete-btn:hover{
+    background-color: #3e8e41
+}
+
+/*course insert */
+
+
+#insert-crd {
+    padding: 30px 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    border: none !important;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.blue-text {
+    color: #00BCD4
+}
+
+.form-control-label {
+    margin-bottom: 0
+}
+
+input,
+textarea,
+button {
+    padding: 8px 15px;
+    border-radius: 5px !important;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 18px !important;
+    font-weight:bold;
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #00BCD4;
+    outline-width: 0;
+    font-weight: 400
+}
+
+.btn-block {
+    text-transform: uppercase;
+    font-size: 15px !important;
+    font-weight: 400;
+    height: 43px;
+    cursor: pointer
+}
+
+.btn-block:hover {
+    color: #fff !important
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+.insert-header{
+    background-image: linear-gradient(to right top, #41de13, #00e07a, #00ddb7, #00d6de, #12cbeb);
+   width: 100%;
+   padding: 30px 30px 40px 30px;
+   height:20px;
+}
+.padding-bot{
+    padding-bottom: 50px;
+}
+.form-rounded {
+    border-radius: 50px;
+    }
+.input.currency {
+        text-align: right;
+        padding-right: 15px;
+    }
+#add-btn{
+    padding-top:15px;
+}
+#link-input{
+    padding-top:0px;
+}
+.alert-txt{
+ color:red;
+}
+.crstable_responsive {
+    max-width: 100%;
+    border: 1px solid #00bcd4;
+    background-color: #efefef33;
+    padding: 15px;
+    overflow: auto;
+    margin: auto;
+    border-radius: 4px;
+   
+
+
+}
+#add-crs{
+   float:right ;
+    
+}
+.addbtn-row{
+    padding-bottom:20px;
+}
+.crstable-title{
+       
+        max-width: 100%;
+        border-bottom: 1px solid #e9e9e9;
+      
+        
+        background: rgb(0, 50, 74);
+        
+        padding: 40px 40px;
+        color: #fff;
+        border-top-right-radius:10px;
+        border-top-left-radius:10px;
+
+}
+.crstable {
+    min-width: 100%;
+    font-size: 13px;
+    color: #444;
+    white-space: nowrap;
+    border-collapse: collapse;
+
+}
+.crs-thead {
+    background-color: #00bcd4;
+    color: #fff;
+}
+
+.crs-th{
+    border: 1px solid #00000017;
+    padding: 15px 65px;
+}
+.crs-td {
+    border: 1px solid #00000017;
+    padding: 5px 15px;
+}
+.crsthumimg {
     display: inline-block;
-    opacity: 0.5;
-  }
-  
-  /* Mark the active step: */
-  .step.active {
-    opacity: 1;
-  }
-  
-  /* Mark the steps that are finished and valid: */
-  .step.finish {
-    background-color: #04AA6D;
-  }
-/*insert form */
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 6px #0003;
+}
+.crsaction_btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.crsaction_btn>a {
+    text-decoration: none;
+    color: #444;
+    background: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 7px 20px;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+}
+.crsaction_btn>a:nth-child(1) {
+    border-color: #26a69a;
+}
+.crsaction_btn>a:nth-child(2) {
+    border-color: orange;
+}
+.crsaction_btn>a:hover {
+    box-shadow: 0 3px 8px #0003;
+}
+.crs-tr{
+    background-color: #fff;
+    transition: 0.3s ease-in-out;
+}
+.crs-tr:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+}
+.crs-tr:hover{
+    filter: drop-shadow(0px 2px 6px #0002);
+}
+.insert-body{
+    background-image: url("./eduimgs/Aqua\ Marine.jpg");
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%
+
+}
+#i-bold{
+    font-weight: bold;
+}
+#exampleFormControlTextarea3{
+    font-weight: bold;
+}

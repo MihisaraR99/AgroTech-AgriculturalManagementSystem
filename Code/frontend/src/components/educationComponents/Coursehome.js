@@ -82,7 +82,7 @@ function Coursehome() {
           {listOfUsers.map((courses) => {
             return (
             
-            <div class="card">
+            <div class="card" id="topcrs-crd">
               <img src={field} class="card-img-top" alt="..."/>
               <div class="card-body">
                 <h3 class="card-title">{courses.course_name}</h3>
@@ -107,7 +107,7 @@ function Coursehome() {
       <div>
         <Carousel breakPoints={breakPoints}>
       
-        <div class="card">
+        <div class="card" id="topcrs-crd">
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
@@ -119,7 +119,7 @@ function Coursehome() {
               </div>
               </a>
             </div>
-            <div class="card">
+            <div class="card"  id="topcrs-crd">
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
@@ -131,7 +131,7 @@ function Coursehome() {
               </div>
               </a>
             </div>
-            <div class="card">
+            <div class="card"  id="topcrs-crd">
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
@@ -143,7 +143,7 @@ function Coursehome() {
               </div>
               </a>
             </div>
-            <div class="card">
+            <div class="card"  id="topcrs-crd">
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
@@ -166,7 +166,7 @@ function Coursehome() {
         <div class="space-jumbo">
 
 
-<div class="jumbotron">
+<div class="crs-jumbotron" >
 
   <h1 class="display-4">Learn From Anywhere</h1>
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -178,7 +178,7 @@ function Coursehome() {
 </div>
 
 </div>
-<div class="jumbotron-bottom">
+<div class="crsjumbotron-bottom">
 
 </div>
         
