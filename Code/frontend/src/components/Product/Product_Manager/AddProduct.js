@@ -28,8 +28,12 @@ function sendData(e){
     }
    
     /*url*/
-    if(SId=="" || PId=="" || PName=="" || Quentity==""){
+    if( PId=="" || PName=="" || Quentity==""){
             alert("Please fill the required fields")
+    }else if(ScontactNo.length<=10){
+             alert("Please enter valied phone number")
+    }else if(SId==="SID"){
+      alert("Please enter valied ID")
     }else{
       axios.post("http://localhost:8000/api/wholesale/add",newProduct).then(()=>{
         alert("Product Added");
