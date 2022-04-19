@@ -1,7 +1,28 @@
-import React from 'react'
-import './eventAdmin.css';
 
-const EventAdmin = () => {
+import React, { useEffect, useState } from "react";
+import './eventAdmin.css';
+import {Link} from 'react-router-dom';
+import axios from "axios";
+
+
+
+function EventAdmin(){
+    const [event, setEvent] = useState([])
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/Addevent/all").then(res => {
+           setEvent(res.data);
+           console.log(res.data);
+        })		
+        }, [])
+
+        const Delete = (id) => {
+            axios.delete(`http://localhost:8000/api/Addevent/${id}`).then((res) => {
+              alert("Event Deleted Successfully!");
+            });
+            window.location.reload(false);
+          };
+
+
 return (
 
 <>
@@ -12,9 +33,10 @@ return (
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-6"><h2><b>Manage   </b><b>Events</b></h2></div>
+                    <div class="col-sm-6"><h2><b>Manage </b><b>Events</b></h2></div>
                 <div>
-                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-plus"></i> <span>Add New Events</span></a>
+                    <Link to="/events/add" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-plus"></i> <span>Add New Events</span></Link>
+                    
                     </div>
                 </div>
             </div>
@@ -31,52 +53,27 @@ return (
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-status="active">
-                        <td>1</td>
-                        <td>Crop protection</td>
-                        <td>Agriculture</td>
-                        <td><span class="label label-success">22th jan 2022</span></td>
-                        <td>8:30 a.m</td>
-                        <td>Colombo</td>
-                        <td><a href="#" class="btn btn-sm manage">Manage</a></td>
-                       
-                    </tr>
-                    <tr data-status="inactive">
-                        <td>2</td>
-                        <td>Animal Health</td>
-                        <td>Animal farm</td>
-                        <td><span class="label label-warning">4th april 2023</span></td>
-                        <td>10:30 a.m</td>
-                        <td>Kandy</td>
-                        <td><a href="#" class="btn btn-sm manage">Manage</a></td>
-                    </tr>
-                    <tr data-status="active">
-                        <td>3</td>
-                        <td>Agropex</td>
-                        <td>agriculture</td>
-                        <td><span class="label label-success">31st March 2023</span></td>
-                        <td>10:30 a.m</td>
-                        <td>Canada</td>
-                        <td><a href="#" class="btn btn-sm manage">Manage</a></td>
-                    </tr>
-                    <tr data-status="expired">
-                        <td>4</td>
-                        <td>Best crops</td>
-                        <td>Agriculture</td>
-                        <td><span class="label label-danger">5th March</span></td>
-                        <td>8:30 a.m</td>
-                        <td>India</td>
-                        <td><a href="#" class="btn btn-sm manage">Manage</a></td>
-                    </tr>
-                    <tr data-status="inactive">
-                        <td>5</td>
-                        <td>Greeny Stand</td>
-                        <td>Agrculture</td>
-                        <td><span class="label label-warning">21st Dec 2022</span></td>
-                        <td>10:45 a.m</td>
-                        <td>USA</td>
-                        <td><a href="#" class="btn btn-sm manage">Manage</a></td>
-                    </tr>
+                {event && event.map((ev, i) => (
+                             <tr data-status="active">
+                                <td>{ev.Event_Id}</td>
+                                <td>{ev.Event_Name}</td>
+                                <td><span class="label label-success">{ev.Category}</span></td>
+                                <td>{ev.Start_Date}</td>
+                                <td>{ev.Start_Time}</td>
+                                <td>{ev.Venue}</td>
+                                <td><Link
+                    className="btn btn-danger"
+                    to="#"
+                    onClick={() => Delete(ev._id)}
+                  >
+                    <i className="far fa-trash-alt"></i>&nbsp;Delete
+                  </Link></td>
+                                <td><button class="btn btn-sm manage"  > <Link to={`/events/update/${ev._id}`} > Update </Link>  </button></td>
+                             </tr>
+
+                         ))}
+
+                   
                 </tbody>
             </table>
         </div> 

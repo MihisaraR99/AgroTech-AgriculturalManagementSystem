@@ -8,6 +8,8 @@ import Addevent from "./components/Events/Addevent";
 import Eventshome from "./components/Events/Eventshome";
 import EventAdmin from "./components/Events/EventAdmin";
 import Eventdetail from "./components/Events/Eventdetail";
+import UpdateEvent from "./components/Events/UpdateEvent";
+import RegisterEvent from "./components/Events/RegisterEvent";
 
 
 function App() {
@@ -15,11 +17,14 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
+      
         <Route path="/" element={<AllServices />} />
         <Route path="/events/add" element={<Addevent />}  /> 
         <Route path="/events/home" element={<Eventshome />} />
         <Route path="/events/admin" element={<EventAdmin/>} />
         <Route path="/events/detail"element={<Eventdetail/>}/>
+        <Route path="/events/update/:id"element={<UpdateEvent/>}/>
+        <Route path="/events/register" element={<RegisterEvent/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
