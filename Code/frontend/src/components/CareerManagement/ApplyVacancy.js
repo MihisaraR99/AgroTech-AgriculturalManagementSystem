@@ -1,6 +1,5 @@
-import react from "react";
-import {link} from "react-router-dom";
-import React,{useState}from "react";
+import React from "react";
+import react,{useState}from "react";
 import axios from "axios"; 
 
 function ApplyVacancy(){
@@ -61,12 +60,15 @@ function ApplyVacancy(){
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject">
-                                            <option disabled="disabled" selected="selected">Choose Applying Position</option>
-                                            <option>Veterinarian</option>
-                                            <option>Warehouse Manager</option>
-                                            <option>Vegetable Supplier</option>
-                                            <option>Fruit Supplier</option>
+                                        <select name="subject" onChange={(e)=>{
+                                            setPosition(e.target.value);
+                                        }}>
+                                            <option diabled="disabled" selected="selected">Choose Applying Position</option>
+                                            <option value="Veterinarian">Veterinarian</option>
+                                            <option value="Warehouse Manager">Warehouse Manager</option>
+                                            <option value="Vegetable Supplier">Vegetable Supplier</option>
+                                            <option value="Fruit Supplier">Fruit Supplier</option>
+                                            <option value="Software Engineer">Software Engineer</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
@@ -101,26 +103,32 @@ function ApplyVacancy(){
                 }}/>
                 <h2 class="h2new">Educational Qualifications</h2>
                 <div class="select-list">
-                    <select name="course_type" id="course_type">
-                        <option slected value="">Are you Passed Advanced Level Exam ?</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
+                    <select name="advanced" id="course_type" onChange={(e)=>{
+                        setAdvanced(e.target.value);
+                    }}>
+                        <option diabled="disabled" selected="selected">Are you Passed Advanced Level Exam ?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
             </div>
             <div class="form-group-2">
                 <div class="select-list">
-                    <select name="confirm_type" id="confirm_type">
-                    <option slected value="">Are you Passed Ordinary Level Exam ?</option>
-                        <option  value="yes">Yes</option>
-                        <option value="no">No</option>
+                    <select name="ordinary" id="confirm_type" onChange={(e)=>{
+                        setOrdinary(e.target.value);
+                    }}>
+                    <option diabled="disabled" selected="selected">Are you Passed Ordinary Level Exam ?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="select-list">
-                    <select name="confirm_type" id="confirm">
-                    <option slected value="">Are you a Degree Holder ?</option>
-                        <option seleected value="yes">Yes</option>
-                        <option value="no">No</option>
+                    <select name="degree" id="confirm" onChange={(e)=>{
+                        setDegree(e.target.value);
+                    }}>
+                    <option diabled="disabled" selected="selected">Are you a Degree Holder ?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
             </div>

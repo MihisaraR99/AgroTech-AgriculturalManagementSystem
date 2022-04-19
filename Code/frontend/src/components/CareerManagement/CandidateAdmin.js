@@ -1,4 +1,4 @@
-import react,{useState, useEffect} from "react";
+import React,{useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios"; 
 
@@ -11,42 +11,43 @@ function CandidateAdmin(){
         })		
         }, []) 
 
+        const Delete = (id) => {
+            axios.delete(`http://localhost:8000/api/Candidate/${id}`).then((res) => {
+              alert("Candidate Deleted Successfully!");
+            });
+            window.location.reload(false);
+          };
+
     return(
-        <body class="adminbody">
-        <div class="container-xl">
+        <div>
         <div class="h1 text-center text-dark" id="pageHeaderTitle">Registered Candidates Dashboard</div>
 
-            <div class="table-responsive">
-                <div class="table-wrapper">
-                    <div class="table-title">
-                        <div class="row">
-                            <div class="col-sm-6"><h2><b>Manage </b><b>Candidates</b></h2></div>
-                        <div>
-                            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-plus"></i> <span>Add New Vacancies</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Name with Initials&nbsp;</th>
-                                <th>Full Name</th>
-                                <th>DOB&nbsp;</th>
-                                <th>NIC</th>
-                                <th>Address</th>
-                                <th>Mobile</th>
-                                <th>Email</th>
-                                <th>LinkedIn</th>
-                                <th>O/L</th>
-                                <th>A/L</th>
-                                <th>Degree</th>
-                                <th>CV</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        {candidate && candidate.map((candi, i) => (
+ <div class="card shodow mb-4">
+     <div class="card-header py-3">
+     </div>
+     <div class="card-body">
+         <div class="table-responsive">
+             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                 <thead>
+                     <tr>
+                         <th>Name with Initials</th>
+                         <th>Full Name</th>
+                         <th>DOB</th>
+                         <th>NIC</th>
+                         <th>Address</th>
+                         <th>Mobile</th>
+                         <th>Email</th>
+                         <th>LinkedIn</th>
+                         <th>O/L</th>
+                         <th>A/L</th>
+                         <th>Degeree</th>
+                         <th>CV</th>
+                         <th>Delete</th>
+                         <th>Call for Interview</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                 {candidate && candidate.map((candi, i) => (
                              <tr data-status="active">
                                 <td>{candi.name_with_initials}</td>
                                 <td>{candi.name_in_full}</td>
@@ -57,22 +58,32 @@ function CandidateAdmin(){
                                 <td>{candi.email}</td>
                                 <td>{candi.linked_in_profile}</td>
                                 <td>{candi.ordinarylevel}</td>
-                                <td>{candi.advancedlavel}</td>
+                                <td>{candi.advancedlevel}</td>
                                 <td>{candi.degree}</td>
                                 <td>{candi.cv}</td>
-                                <td><button class="btn btn-sm manage"> Delete </button></td>
-                                <td><button class="btn btn-sm manage"> <a href="mailto://mail.google.com/"> Call </a></button></td>
-                                
-                             </tr>
+                     <td>
+                     <Link
+                    className="btn btn-danger"
+                    to="#"
+                    onClick={() => Delete(candi._id)}
+                  >
+                    <i className="far fa-trash-alt"></i>&nbsp;Delete
+                  </Link> 
+                     </td>
+                     <td>
+                     <button className="btn btn-warning"> <a href="mailto://mail.google.com/"> Send Mail </a></button> 
+                     </td>
+                     </tr>
+                 ))}
+                 </tbody>
+             </table>
+         </div>
+     </div>
+     
+ </div>
 
-                         ))}
-                        
-                        </tbody>
-                    </table>
-                </div> 
-            </div>   
-        </div> 
-        </body>
+</div>  
+    
         );
     }
 export default CandidateAdmin;

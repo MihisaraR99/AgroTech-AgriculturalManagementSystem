@@ -1,6 +1,6 @@
 import react,{useState, useEffect} from "react";
-import {link} from "react-router-dom";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 function VacancyDisplay(){
 	const [articles, setArticles] = useState([]);
@@ -31,7 +31,7 @@ function VacancyDisplay(){
 	
   	<div class="postcard__bar"></div>
 		<div class="postcard__preview-txt">{article.jobDescription}</div>
-           <button type="button" class="btn btn-primary btn-sm">Apply Now</button><br></br>
+           <button type="button" class="btn btn-primary btn-sm"><Link to={`/ApplyVacancy/`} >Apply Now </Link></button><br></br>
 		   <button type="button" class="btns">Save Job </button> 
 	</div>
 </article>

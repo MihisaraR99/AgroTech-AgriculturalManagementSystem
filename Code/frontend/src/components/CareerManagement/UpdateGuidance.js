@@ -51,7 +51,7 @@ useEffect(() => {
     <div class="mains"> 
     <div class="wrapper">
     <div class="title">
-       Add/Update Creer Guidance Programs
+       Update Career Guidance Programs
       </div>
       <div class="form" >
         <div class="inputfield">
@@ -92,7 +92,7 @@ useEffect(() => {
          </div>
                        
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendProgrammData}>Update</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendProgrammData}> <Link to={`/GuidanceAdmin/`} >Update </Link> </button>
            
         </div>
       </div>

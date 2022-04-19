@@ -50,7 +50,7 @@ function UpdateVacancies(){
    <div class="mains"> 
     <div class="wrapper">
     <div class="title">
-       Add/Update Vacancies
+       Update Vacancy
       </div>
       <div class="form">
         <div class="inputfield">
@@ -91,7 +91,7 @@ function UpdateVacancies(){
          </div>
                        
           <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendvacancyData}>Update</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendvacancyData}> <Link to={`/VacancyAdmin/`} >Update </Link></button>
         </div>
       </div>
 </div>

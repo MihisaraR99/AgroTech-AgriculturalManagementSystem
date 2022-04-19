@@ -1,6 +1,6 @@
-import react from "react";
-import {link} from "react-router-dom";
-import React,{useState} from "react";
+import React from "react";
+import {Link} from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios"; 
 
 function AddNewGuidance(){
@@ -39,7 +39,7 @@ function AddNewGuidance(){
     <div class="mains"> 
     <div class="wrapper">
     <div class="title">
-       Add/Update Creer Guidance Programs
+       Add Career Guidance Programs
       </div>
       <div class="form" >
         <div class="inputfield">
@@ -80,7 +80,7 @@ function AddNewGuidance(){
          </div>
                        
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendProgrammData}>Add</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendProgrammData}> <Link to={`/GuidanceAdmin/`} > Add </Link></button>
            
         </div>
       </div>

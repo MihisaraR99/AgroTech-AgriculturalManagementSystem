@@ -3,7 +3,7 @@ const Candidate = require("../models/CandidateModel");
 
  const addCandidate = (req, res)=>{
 
-  const {name_with_initials,name_in_full,date_of_birth,nic,address,mobile,email,linked_in_profile,ordinarylevel,advancedlevel,degree} = req.body;
+  const {name_with_initials,name_in_full,date_of_birth,nic,address,mobile,email,linked_in_profile,ordinarylevel,advancedlevel,degree,cv} = req.body;
   
   const newCandidate = new Candidate({
 

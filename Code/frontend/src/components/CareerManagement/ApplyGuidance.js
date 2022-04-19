@@ -1,5 +1,5 @@
 import react from "react";
-import {link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import React,{useState}from "react";
 import axios from "axios"; 
 
@@ -20,7 +20,7 @@ function ApplyGuidance(){
       e.preventDefault();
       alert("Going to Apply for a Guidance Program");
   
-      const VacancyApply = {
+      const GuidanceApply = {
           program,
           name_with_in,
           nameinfull,
@@ -33,7 +33,7 @@ function ApplyGuidance(){
    }
 
    /*url*/
-   axios.post("http://localhost:8000/api/Applyguidances/",VacancyApply).then(()=>{
+   axios.post("http://localhost:8000/api/Applyguidances/",GuidanceApply).then(()=>{
       alert("Successfully Submited Your Response");
 
     }).catch((err)=>{
@@ -92,7 +92,7 @@ function ApplyGuidance(){
                     <select name="type" onChange={(e)=>{
                         setordinary(e.target.value);
                     }} >
-                        <option diabled="disabled" slected="selected">Are you Passed Ordinary Level Exam ?</option>
+                        <option diabled="disabled" selected="selected">Are you Passed Ordinary Level Exam ?</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
@@ -103,7 +103,7 @@ function ApplyGuidance(){
                 <input  type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
             </div>
-            <button type="button" class="btn btn-primary btn-sm"  onClick={sendguidanceApplyData}>Apply Now </button>
+            <button type="button" class="btn btn-primary btn-sm"  onClick={sendguidanceApplyData}>Register</button>
         </form>
     </div>
     </div>

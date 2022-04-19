@@ -1,5 +1,5 @@
-import react,{useState, useEffect} from "react";
-import {link} from "react-router-dom"
+import React,{useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 import axios from "axios";
 
 function GuidanceDisplay(){
@@ -32,7 +32,7 @@ function GuidanceDisplay(){
 	
   	<div class="postcard__bar"></div>
 		<div class="postcard__preview-txt">{article.programDescription}</div>
-           <button type="button" class="btn btn-primary btn-sm">Register to Program </button>
+           <button type="button" class="btn btn-primary btn-sm"><Link to={`/ApplyGuidance/`} > Register to Program </Link></button>
 	</div>
 </article>
 ))}

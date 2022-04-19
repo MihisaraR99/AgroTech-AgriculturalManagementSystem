@@ -1,6 +1,6 @@
-import react from "react";
-import {link} from "react-router-dom";
-import React,{useState}from "react";
+import React from "react";
+import { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 import axios from "axios"; 
 
 function AddNewVacancies(){
@@ -38,7 +38,7 @@ function AddNewVacancies(){
    <div class="mains"> 
     <div class="wrapper">
     <div class="title">
-       Add/Update Vacancies
+       Add New Vacancies
       </div>
       <div class="form">
         <div class="inputfield">
@@ -79,8 +79,8 @@ function AddNewVacancies(){
          </div>
                        
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendvacancyData}>Add</button>
-            <button type="button" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendvacancyData}> <Link to={`/VacancyAdmin/`} > Add </Link></button>
+           
         </div>
       </div>
 </div>

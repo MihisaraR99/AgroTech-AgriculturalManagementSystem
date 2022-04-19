@@ -26,6 +26,8 @@ import AddNewGuidance from "./components/CareerManagement/AddNewGuidance";
 import CandidateAdmin from "./components/CareerManagement/CandidateAdmin";
 import UpdateGuidance from "./components/CareerManagement/UpdateGuidance";
 import UpdateVacancy from "./components/CareerManagement/UpdateVacancy";
+import ApplyVacancyAdmin from "./components/CareerManagement/ApplyVacancyAdmin";
+import ApplyGuidanceAdmin from "./components/CareerManagement/ApplyGuidanceAdmin";
 
 function App() {
   return (
@@ -52,6 +54,8 @@ function App() {
         <Route path="/CandidateAdmin" element={<CandidateAdmin/>}/>
         <Route path="/UpdateGuidance/:id" element={<UpdateGuidance/>}/>
         <Route path="/UpdateVacancy/:id" element={<UpdateVacancy/>}/>
+        <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin/>}/>
+        <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin/>}/>
       
       </Routes>
       <Footer />
