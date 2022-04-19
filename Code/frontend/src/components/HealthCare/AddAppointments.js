@@ -19,8 +19,6 @@ const [Time,setTime] = useState("");
 /*02--add*/
 function sendAppointment(e){
   e.preventDefault();
-  alert("Going to add new Appointment");
-
   const newAppointment = {
     CustomerName,
     NIC,
@@ -31,19 +29,26 @@ function sendAppointment(e){
     Time
   }
  
-  /*url*/
-  axios.post("http://localhost:8000/api/app/add",newAppointment).then(()=>{
-    alert("Appointment Added");
+  if (CustomerName == "" || NIC == "" || AnimalType == "" || Address == "" || Date == "" || Time == ""){
+    alert("please fill all the required fields!")
+  }else if(ContactNo.length <=10){  alert("please enter valid phone number")
+  
+  }else{
+/*url*/
+axios.post("http://localhost:8000/api/app/add",newAppointment).then(()=>{
+  alert("Appointment Added");
 
-   
-  }).catch((err)=>{
-    alert(err)
-    console.log(err);
-  })
+ 
+}).catch((err)=>{
+  alert(err)
+  console.log(err);
+})
+  }
+
+  
 }
 
-
-   
+  
       return(
        <>  
 
@@ -52,8 +57,7 @@ function sendAppointment(e){
               <div className="row">
                 <div className="col-sm">
               <div className= "addapp_content">
-                <div className="addapp-form" style={{boxShadow: " 4px 2px 2px rgba(63, 217, 33)" , padding:"12px",width:"450px"
-,border:"1px solid black"}}>
+                <div className="addapp-form" style={{boxShadow: " 4px 2px 2px rgba(63, 217, 33)" , padding:"40px",width:"450px", backgroundColor:"#98fb98"}}>
                   <h2 className="form-title"  style={{paddingLeft:"75px"}}> Get an Appointment</h2><br/>
                   <div className="row">
                   <div className="col col-6">
@@ -71,7 +75,7 @@ function sendAppointment(e){
                     <input  type="text" name="name" id="name" autoComplete="off"
                       placeholder="Your Name" onChange={(e)=>{
                         setCustomerName(e.target.value);
-                  }}
+                  }} 
            
                     />
                     </div>
@@ -155,9 +159,9 @@ function sendAppointment(e){
                     </div>
                     <br/>
 
-                    <div className="form-group form-button" style={{paddingLeft:"50px"}}
+                    <div className="form-group form-button" style={{paddingLeft:"40px"}}
 >
-                      <button type="submit" class="btn btn-primary" >Submit</button>
+                      <button type="submit" class="btn btn-success" >Submit</button>
                     </div>
 
                   </form>
@@ -171,18 +175,24 @@ function sendAppointment(e){
 
 
                         
-                    <div className="appointment-image">
+                    <div className="appointment-image" style={{ marginBottom:"20px" }}>
+                    <NavLink to="../HealthCare/MyAppointment" className="appointment-image-link"><h1>Hi, Your Appointment Here!</h1></NavLink>
+                    
                       <figure>
                       <div className="">
                         <img src={AddApp} alt="getAppointment pic"/>
                       </div> 
                       </figure>
-                      <NavLink to="../HealthCare/MyAppointment" className="appointment-image-link">I am already get an appointment</NavLink>
                     </div>
                     </div>
 
-              </div>  
-            </div>
+
+
+                    
+              </div>
+              </div> 
+               
+            
           
         </>     
             
