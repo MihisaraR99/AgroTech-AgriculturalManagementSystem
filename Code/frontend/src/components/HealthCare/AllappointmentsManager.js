@@ -30,7 +30,7 @@ export default function AllappointmentsManager(){
 
     return(
         <div style={{backgroundColor:"#98fb98"}}>
-            <center><h1>Appointments</h1></center><br/>
+            <center><h1  style={{PaddingTop:"10px"}} >Appointments</h1></center>
 
             <input type="text"
                 placeholder="Search.." 
@@ -41,28 +41,29 @@ export default function AllappointmentsManager(){
         }}
    style={{border:"none", marginTop:"50px",
    marginBottom:"20px",
-   width:"30%",
-   marginLeft:"20%",
-   boxShadow:" 10px 10px 5px rgba(150, 168, 156)"
+   width:"40%",
+   marginLeft:"30%",
+   boxShadow:" 10px 10px 5px rgba(150, 168, 156)",
+   backgroundColor:"#98fb98"
 }}
   
   
   />
-  <button type="submit"><i class="fa fa-search"></i></button>
+  <button type="submit" style={{color:"red"}}><i class="fa fa-search"></i></button>
            
                    <div className="container">
                       <table className ="table" >
                  <thead>
                      <tr>
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>No</th>  
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Customer Name</th>
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>NIC</th>
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Animal Type</th>     
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Contact No</th> 
-                      <th scope ="col" className="HRth"  style={{backgroundColor:"#3cb371"}}>Address</th> 
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Date</th> 
-                      <th scope ="col" className="HRth" style={{backgroundColor:"#3cb371"}}>Time</th> 
-                      <th scope ="col" className="HRtd" style={{backgroundColor:"#3cb371"}}>Action</th> 
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#059033"}}>No</th>  
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#059033"}}>Customer Name</th>
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#059033"}}>NIC</th>
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#059033"}}>Animal Type</th>     
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#059033"}}>Contact No</th> 
+                      <th scope ="col" className="HRth"  style={{backgroundColor:"#059033"}}>Address</th> 
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#059033"}}>Date</th> 
+                      <th scope ="col" className="HRth" style={{backgroundColor:"#059033"}}>Time</th> 
+                      <th scope ="col" className="HRtd" style={{backgroundColor:"#059033"}}>Action</th> 
                     </tr> 
                 </thead> 
                 <tbody> 
