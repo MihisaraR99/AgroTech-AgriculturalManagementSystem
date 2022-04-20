@@ -78,8 +78,8 @@ const StoreOrderForm = () => {
     });
   };
 
-  const navigateToCheckout = () => {
-    navigate("/store/order/payment");
+  const navigateToCheckout = (id) => {
+    navigate(`/store/order/payment/${id}`);
   };
 
   const onSubmit = (e) => {
@@ -115,6 +115,7 @@ const StoreOrderForm = () => {
       .post("http://localhost:8000/api/store/orders", order)
       .then((res) => {
         alert("Order created");
+        navigateToCheckout(res.data._id);
       })
       .catch((errr) => {
         console.log("Error");
@@ -212,7 +213,7 @@ const StoreOrderForm = () => {
               }`}
               id="inputCity"
               value={order.city}
-              name="cityError"
+              name="city"
               onChange={onFormChange}
             />
             <div class="invalid-feedback">Please enter a valid city.</div>

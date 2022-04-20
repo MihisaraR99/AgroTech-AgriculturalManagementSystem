@@ -33,7 +33,7 @@ const StorePaymentScreen = () => {
     axios
       .post(`http://localhost:8000/api/store/payment`, payment)
       .then((res) => {
-        alert("Credit card");
+        alert("You have successfully paid the bill");
       });
   };
 
@@ -134,7 +134,7 @@ const StorePaymentScreen = () => {
                 onChange={(e) => {
                   setExpiration(e.target.value);
                 }}
-                type="password"
+                type="text"
                 class="form-control"
                 id="inputPassword4"
               />
@@ -148,7 +148,7 @@ const StorePaymentScreen = () => {
                 onChange={(e) => {
                   setCvv(e.target.value);
                 }}
-                type="password"
+                type="text"
                 class="form-control"
                 id="inputPassword4"
               />
