@@ -169,17 +169,19 @@ const StoreHome = () => {
       </div>
 
       <div className="latest-store-items p-4">
-        <h1 className="my-4 display-6 px-5"> Categories </h1>
+        <h1 className="my-4 display-6 px-5"> Products </h1>
         <div className="products-list row p-5">
           {products &&
             products.map((prod) => (
-              <StoreProductSingle
-                key={prod._id}
-                img={prod.image}
-                title={prod.name}
-                price={prod.price}
-                id={prod._id}
-              />
+              <div className="col mt-4">
+                <StoreProductSingle
+                  key={prod._id}
+                  img={prod.image}
+                  title={prod.name}
+                  price={prod.price}
+                  id={prod._id}
+                />
+              </div>
             ))}
         </div>
       </div>
