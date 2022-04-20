@@ -33,7 +33,7 @@ const createProduct = (req, res) => {
 
 const deleteProduct = (req, res) => {
   Product.deleteOne({ _id: req.params.pid }, (err) => {
-    if (err) return handleError(err);
+    if (err) res.status(500).json({ error: err });
 
     res.status(204).json({ status: "Product deleted!" });
   });
