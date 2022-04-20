@@ -19,7 +19,7 @@ const StoreAdminOrders = () => {
         <p> These are the orders recived inside this month </p>
 
         <table class="table mt-4 store-orders-container">
-          <thead>
+          <thead className="store-admin-table-header">
             <tr>
               <th scope="col">Order ID</th>
               <th scope="col">Customer Name</th>

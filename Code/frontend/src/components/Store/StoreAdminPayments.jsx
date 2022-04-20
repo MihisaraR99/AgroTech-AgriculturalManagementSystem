@@ -19,7 +19,7 @@ const StoreAdminPayments = () => {
         <p> These are the payments happend inside this month </p>
 
         <table class="table mt-4 store-orders-container">
-          <thead>
+          <thead className="store-admin-table-header">
             <tr>
               <th scope="col">Payment ID</th>
               <th scope="col">Payee Name</th>
