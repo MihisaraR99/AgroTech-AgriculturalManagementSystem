@@ -58,7 +58,7 @@ handleSearchArea = (e) =>{
 
     render(){
         return(
-            <div className='background1'>
+            <div className='backgroundAllLab'>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-lg-9 mt-2 mb-2'>
@@ -76,33 +76,33 @@ handleSearchArea = (e) =>{
   
                   </div>
                   <Pulse>
-            <div className='div2'>
-                 <table className ="table table-hover" style={{marginTop:'40px'}}>
+             <div className='div2'>
+                 <table className ="table table-sm" style={{marginTop:'40px'}}>
                      <thead>
-                         <tr>
-                           <th scope ="col">#</th>  
-                           <th scope ="col">Company Name</th>  
-                           <th scope ="col">Company Email</th>  
-                           <th scope ="col">Report About</th>  
-                           <th scope ="col">Lab ID</th>  
-                           <th scope ="col">Report Status</th>
-                           <th scope ="col">Action</th>    
+                         <tr className='allLabRepHead'>
+                           <th scope ="col" className='allReports'>#</th>  
+                           <th scope ="col" className='allReports'>Company Name</th>  
+                           <th scope ="col" className='allReports'>Company Email</th>  
+                           <th scope ="col" className='allReports'>Report About</th>  
+                           <th scope ="col" className='allReports'>Lab ID</th>  
+                           <th scope ="col" className='allReports'>Report Status</th>
+                           <th scope ="col" className='allReports'>Action</th>    
                          </tr>
                      </thead>
                      <tbody>
                          {this.state.reports &&
                          this.state.reports.map((reports,index)=>(
                             <tr key={index}>
-                                <th scope ="row">{index+1}</th>
+                                <th scope ="row" className='allReports'>{index+1}</th>
                                 <td>
-                                     <a href={`/rep/${reports._id}`} style ={{textDecoration:'none'}} >
+                                     <a href={`/rep/${reports._id}`} style ={{textDecoration:'none',color:'#70db70' ,fontSize:'18px'}} >
                                     {reports.cName}
                                     </a>
                                 </td>
-                                <td>{reports.cEmail}</td>
-                                <td>{reports.about}</td>
-                                <td>{reports.labId}</td>
-                                <td>{reports.reportStatus}</td>
+                                <td className='allReportsLab'>{reports.cEmail}</td>
+                                <td className='allReportsLab'>{reports.about}</td>
+                                <td className='allReportsLab'>{reports.labId}</td>
+                                <td className='allReportsLab'>{reports.reportStatus}</td>
                                 <td>
                                     <a className ="btn btn-warning" href={`/edit/${reports._id}`}>
                                         <i className="fas fa-edit"></i>&nbsp;EDIT

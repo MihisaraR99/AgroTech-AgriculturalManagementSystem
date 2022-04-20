@@ -9,7 +9,7 @@ const cors = require("cors");
 const storeRoutes = require("./routes/storeRoutes");
 
 //IT20612696 Senanayake D.B
-const labRoutes = require("./routes/labRoutes.js");
+const labRoutes = require("./routes/labRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const AdsRoutes = require("./routes/AdsRoutes");
@@ -18,7 +18,6 @@ const ApplyforVacancyRoutes = require("./routes/ApplyforVacancyRoutes");
 const ApplyforGuidanceRoutes = require("./routes/ApplyforGuidanceRoutes");
 const AddVacanciesRoutes = require("./routes/AddVacanciesRoutes");
 const AddGuidanceProgramsRoutes = require("./routes/AddGuidanceProgramsRoutes");
-const labRoutes = require("./routes/labRoutes.js");
 
 const app = express();
 dotenv.config();

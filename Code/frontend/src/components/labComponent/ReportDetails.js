@@ -38,48 +38,44 @@ class ReportDetails extends Component {
 
           
                 <div className='col-md-7 mt-5 mx-auto'>
-          <div className="box-2" > 
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+         
                 <Form className >
+                <div className="box-2" > 
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+ 
+        </div>
                 <Zoom left>
                  <div className='text-wrapper-2'>
-                    <h1 className='h3 mb-3 font-weight-normal ' style={{color:'White' ,fontSize:'30px', fontFamily:'AvenirNextCondensed-Italic',fontWeight:'bolder' ,textDecorationLine:'underline'}}> {this.state.report.cName} Lab Report Details</h1>
-                 
+                    <h1 className='spesificLab'>{this.state.report.cName} Lab Report Details</h1>
                 <br></br>
                   <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="formGridEmail" className="RepBox2">
                       <Form.Label style={{color:'white' , fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Company Name</Form.Label>
                       <Form.Control value={this.state.report.cName}    readonly/>
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridPassword">
+                    <Form.Group as={Col} controlId="formGridPassword" className="RepBox2">
                       <Form.Label style={{color:'white', fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Company Email</Form.Label>
                       <Form.Control  value={this.state.report.cEmail}   readonly />
                     </Form.Group>
                   </Row>
                   <br></br>
-                  <Form.Group className="mb-3" controlId="formGridAddress1">
+                  <Form.Group  controlId="formGridAddress1" className="RepBox2">
                     <Form.Label style={{color:'white', fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Lab Report About</Form.Label>
                     <Form.Control as="textarea" rows="3" value={this.state.report.about}   readonly />
                   </Form.Group>
                   <br></br>
                   <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridCity">
+                    <Form.Group as={Col} controlId="formGridCity" className="RepBox2">
                       <Form.Label style={{color:'white', fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Lab ID</Form.Label>
                       <Form.Control  value={this.state.report.labId}   readonly/>
                     </Form.Group>
                     <br></br>
-                    <Form.Group as={Col} controlId="formGridZip">
+                    <Form.Group as={Col} controlId="formGridZip" className="RepBox2">
                       <Form.Label style={{color:'white',fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Lab Report Status</Form.Label>
                       <Form.Control value={this.state.report.reportStatus}   readonly/>
                     </Form.Group>

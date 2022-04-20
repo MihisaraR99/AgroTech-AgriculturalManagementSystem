@@ -8,7 +8,7 @@ import './labStyles.css';
 import img1 from './labImage/farm4.jpg'
 import img2 from './labImage/farm5.jpg'
 import img3 from './labImage/farm6.jpg'
-import img4 from './labImage/card2.jpg'
+ 
 
 
 
@@ -63,7 +63,7 @@ handleSearchArea = (e) =>{
     render(){
         return(
 
-        <div className=''>
+        <div className='labUserBack'>
  
  <Carousel variant="dark">
   <Carousel.Item>

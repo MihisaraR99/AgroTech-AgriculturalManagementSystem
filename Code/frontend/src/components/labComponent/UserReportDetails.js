@@ -10,7 +10,7 @@ import Flip from 'react-reveal/Flip';
 
 
 import vid1 from './labVideo/LabVideo1.mp4'
-import img3 from './labImage/farm6.jpg'
+import imglogo from './labImage/LabLogo4.jpg'
 
 function withParams(Component) {
   return (props) => <Component {...props} params={useParams()} />;
@@ -42,7 +42,7 @@ class ReportDetails extends Component {
          
         {this.state.report && (
           <>
-                  <div className='col-md-6 mt-4 mx-auto' >
+                  <div className='col-md-7 mt-4 mx-auto' >
                   <video autoPlay loop muted className="video1"> 
                   <source src={vid1} type="video/mp4"/>
                   </video>
@@ -52,9 +52,10 @@ class ReportDetails extends Component {
                     <h1 className='h3 mb-3 font-weight-normal ' style={{color:'white',fontFamily:'AvenirNextCondensed-Italic',fontWeight:'bolder' ,textDecorationLine:'underline'}}>Lab report Details</h1>
                  <div > 
                  <img  
-                    width={700}
-                    height={200}
-                    src={img3}
+                   
+                    width={842}
+                    height={300}
+                    src={imglogo}
                     alt='company logo'
                     
                 />
@@ -63,33 +64,33 @@ class ReportDetails extends Component {
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label style={{color:'white' , fontFamily:'Georgia, serif',fontSize:'20px'}}>Company Name</Form.Label>
-                      <Form.Control value={this.state.report.cName}    readonly/>
+                      <Form.Control  style={{color:'green' ,fontSize:'19px' ,fontFamily:'Georgia, serif'}} value={this.state.report.cName}    readonly/>
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label style={{color:'white', fontFamily:'Georgia, serif',fontSize:'20px'}}>Company Email</Form.Label>
-                      <Form.Control  value={this.state.report.cEmail}   readonly />
+                      <Form.Control   style={{color:'green' ,fontSize:'19px' ,fontFamily:'Georgia, serif'}} value={this.state.report.cEmail}   readonly />
                     </Form.Group>
                   </Row>
                   <br></br>
                   <Form.Group className="mb-3" controlId="formGridAddress1">
                     <Form.Label style={{color:'white', fontFamily:'Georgia, serif',fontSize:'20px'}}>Lab Report About</Form.Label>
-                    <Form.Control  as="textarea" rows="3" value={this.state.report.about}   readonly />
+                    <Form.Control   style={{color:'green' ,fontSize:'19px' ,fontFamily:'Georgia, serif'}}  as="textarea" rows="3" value={this.state.report.about}   readonly />
                   </Form.Group>
                   <br></br>
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridCity">
                       <Form.Label style={{color:'white', fontFamily:'Georgia, serif',fontSize:'20px'}}>Lab ID</Form.Label>
-                      <Form.Control  value={this.state.report.labId}   readonly/>
+                      <Form.Control  style={{color:'green' ,fontSize:'19px' ,fontFamily:'Georgia, serif'}} value={this.state.report.labId}   readonly/>
                     </Form.Group>
                     <br></br>
                     <Form.Group as={Col} controlId="formGridZip">
                       <Form.Label style={{color:'white',fontFamily:'Georgia, serif',fontSize:'20px'}}>Lab Report Status</Form.Label>
-                      <Form.Control value={this.state.report.reportStatus}   readonly/>
+                      <Form.Control style={{color:'green' ,fontSize:'19px' ,fontFamily:'Georgia, serif'}} value={this.state.report.reportStatus}   readonly/>
                     </Form.Group>
                   </Row>
 <br></br>
-                  <Button variant="primary" type="submit" >
+                  <Button variant="success" type="submit">
                     Ok
                   </Button>
                   </div>

@@ -16,7 +16,8 @@ export default class AddReport extends Component{
             labId:"",
             reportStatus:"",
             error: null,
-            emailError :null
+            emailError :null,
+            reportStatusError: null
         }
    }
   
@@ -57,8 +58,7 @@ export default class AddReport extends Component{
             return
             
             } 
-            
-
+             
 
        const data ={
            cName:cName,
@@ -106,6 +106,9 @@ export default class AddReport extends Component{
                 {this.state.error && this.state.error.length > 0 && (
                     <h3> {this.state.error} </h3>
                     )}
+ 
+
+ 
 
 <div  >
         <ul  class="box-area">
@@ -132,6 +135,7 @@ export default class AddReport extends Component{
                         onChange={this.handleInputChange}></input>
                     </div>
                     </Bounce>
+
                     {this.state.emailError && this.state.emailError.length > 0 && (
 
                     <h3>
@@ -141,6 +145,8 @@ export default class AddReport extends Component{
                     </h3>
 
                     )}
+
+
 
                     <Bounce left>
                     <div className='form-group' style={{marginBottom:'50px'}}>

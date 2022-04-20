@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import axios from 'axios';
 import { useParams } from "react-router";
 import './labStyles.css';
+import vid2 from './labVideo/LabVideo2.mp4'
+import Slide from 'react-reveal/Slide';
 
 function withParams(Component) {
     return (props) => <Component {...props} params={useParams()} />;
@@ -85,13 +87,20 @@ class EditReport extends Component{
 
         render(){
             return(
+ 
                 <div className='col-md-8 mt-4 mx-auto'>
-                   <div className='div1'> 
-                    <h1 className='h2 mb-2 font-weight-normal' style={{color:'#bfbfbf',background:"#000000",padding:'15px',textAlign:"center",borderRadius:"35px"}}>Edit Lab Report Here!</h1>
+
+                <video autoPlay loop muted className="video2"> 
+                  <source src={vid2} type="video/mp4"/>
+                  </video>
+                  <Slide right>
+                   <div className='div1'>
+                 
+                    <h1 className='h2 mb-2 font-weight-normal' style={{color:'white',borderTopRightRadius:'20px',borderTopLeftRadius:'20px',backgroundColor:"green",textAlign:'center',padding:'10px',textDecorationLine:'underline'}}>Edit Lab Report Here!</h1>
                     <from className='need-validation' nonValidate>
                     
-                        <div className='form-group' style={{marginBottom:'15px'}}>
-                            <label className='RepLeble'>Company Name :-</label>
+                        <div className='form-group' style={{marginBottom:'50px',marginTop:'50px'}}>
+                            <label className='RepLeble' style={{marginBottom:'-10px'}} >Company Name :-</label>
                             <input type="text"
                             className='RepBox2'
                             name='cName'
@@ -100,8 +109,8 @@ class EditReport extends Component{
                             onChange={this.handleInputChange}></input>
                         </div>
 
-                        <div className='form-group' style={{marginBottom:'15px'}}>
-                            <label className='RepLeble'>Company Email:-</label>
+                        <div className='form-group' style={{marginBottom:'50px',marginTop:'50px'}}>
+                            <label className='RepLeble' style={{marginBottom:'-10px'}}>Company Email:-</label>
                             <input type="email"
                              className='RepBox2'
                             name='cEmail'
@@ -110,18 +119,18 @@ class EditReport extends Component{
                             onChange={this.handleInputChange}></input>
                         </div>
 
-                        <div className='form-group' style={{marginBottom:'15px'}}>
-                            <label className='RepLeble'>Lab Report About :-</label>
-                            <input type="text"
-                             className='RepBox2'
+                        <div className='form-group' style={{marginBottom:'50px',marginTop:'50px'}}>
+                            <label className='RepLeble' style={{marginBottom:'-10px'}}>Lab Report About :-</label>
+                            <textarea type="text"
+                            className='RepBox2'
                             name='about'
-                            placeholder=' '
+                            rows='4'
                             value={this.state.about}
-                            onChange={this.handleInputChange}></input>
+                            onChange={this.handleInputChange}></textarea>
                         </div>
 
-                        <div className='form-group' style={{marginBottom:'15px'}}>
-                            <label className='RepLeble'>Lab ID :-</label>
+                        <div className='form-group' style={{marginBottom:'50px',marginTop:'50px'}}>
+                            <label className='RepLeble' style={{marginBottom:'-10px'}}>Lab ID :-</label>
                             <input type="text"
                              className='RepBox2'
                             name='labId'
@@ -130,10 +139,11 @@ class EditReport extends Component{
                             onChange={this.handleInputChange}></input>
                         </div>
 
-                        <div className='form-group' style={{marginBottom:'15px'}}>
-                            <label className='RepLeble'>Lab Report Status :-</label>
+                        <div className='form-group' style={{marginBottom:'50px',marginTop:'50px'}}>
+                            <label className='RepLeble' style={{marginBottom:'-10px'}}>Lab Report Status :-</label>
                             <input type="text"
-                             className='RepBox2'
+                            className='RepBox2'
+                            backgroundColor='non'
                             name='reportStatus'
                             placeholder=' '
                             value={this.state.reportStatus}
@@ -144,8 +154,12 @@ class EditReport extends Component{
                 &nbsp;UPDATE 
                 </button>
                     </from>
-                    </div>
+                    
+                    </div> 
+               </Slide>
+
                 </div>
+              
             )
         }
 }
