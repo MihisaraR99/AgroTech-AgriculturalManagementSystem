@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function withParams(Component) {
   return (props) => <Component {...props} params={useParams()} />;
@@ -97,13 +97,13 @@ render() {
   <p className="mb-0">Town : {this.state.town}</p>
 </blockquote>
 <blockquote class="blockquote">
-  <p className="mb-0">Area of Land : {this.state.sizeOfArea} Perches</p>
+  <p className="mb-0" style={{marginLeft:"125px"}}>Area of Land : {this.state.sizeOfArea} Perches</p>
 </blockquote>
 <blockquote class="blockquote" style={{float: "right"}}>
   <p className="mb-0">AgentRef : {this.state.AgentRef}</p>
 </blockquote>
 <blockquote class="blockquote">
-  <p className="mb-0">Offered for : {this.state.heading}</p>
+  <p className="mb-0" style={{marginLeft:"180px"}}>Offered for : {this.state.heading}</p>
 </blockquote>
 </div>
 <br/>
@@ -111,7 +111,7 @@ render() {
 <div style={{marginRight: "19rem"}}>
 <h1 style={{marginRight: "4.5rem"}}>Property Details</h1>
 <br/>
-<p >{this.state.description}</p>
+<p style={{marginLeft:"125px", width:"70rem"}}>{this.state.description}</p>
 <p></p>
 </div>
 <br/>
@@ -119,38 +119,15 @@ render() {
   <h1 >Contact Advertiser ({this.state.contactName})</h1>
 </div>
 <div className='col-md-8 mt-4 mx-auto'>
-<form>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="" placeholder="Name"/>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="" placeholder="www.@examples.com"/>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Phone</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="" placeholder="07XXXXXXXX"/>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputMessage" class="col-sm-2 col-form-label">Message</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="" placeholder="Message"/>
-    </div>
-  </div>
-</form>
+<h5>Phone : {this.state.phone}</h5>
+<h5>Email : {this.state.email}</h5>
+
 </div>
 <br/>
-<button type="button" className="btn btn-success">
-   Send Message
-  </button>
+<button onClick={() => window.location = `mailto:${this.state.email}`} className="btn btn-success">Contact Me</button>
+  <br/>
 </div>
+<br/>
 </div>
 </div>
   )
