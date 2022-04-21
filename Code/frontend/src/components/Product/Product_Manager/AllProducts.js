@@ -51,7 +51,6 @@ export default function AllProducts(){
                       <tr >
                       <th className="t11" scope ="col">No of Products</th>
                       <th className="t11" scope ="col">Supplier Id</th>
-                      <th className="t11" scope ="col">Supplier Email</th>
                       <th className="t11" scope ="col">Contact Number</th>    
                       <th className="t11" scope ="col">Product ID</th> 
                       <th className="t11" scope ="col">Product Name</th> 
@@ -65,7 +64,8 @@ export default function AllProducts(){
                 if(ProductSearch ===""){
                     return val;
                 }else if(
-                    val.PName.toLowerCase().includes(ProductSearch.toLowerCase())
+                    val.PName.toLowerCase().includes(ProductSearch.toLowerCase()) ||
+                    val.PId.toLowerCase().includes(ProductSearch.toLowerCase())
                 ){
                     return val
                 }
@@ -74,7 +74,6 @@ export default function AllProducts(){
                    <tr >
                    <td className="td11">{index+1}</td>
                    <td className="td11">{product.SId}</td>
-                   <td className="td11">{product.SEmail}</td>
                    <td className="td11">{product.ScontactNo}</td>
                    <td className="td11">{product. PId}</td>
                    <td className="td11">{product.PName}</td>
