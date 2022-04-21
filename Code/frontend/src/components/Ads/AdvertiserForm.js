@@ -1,117 +1,310 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import adformback2 from "./img/adformback2.jpg";
 
-function AdvertiserForm() {
+
+
+const AdvertiserForm = () => {
+  const [type, setType] = useState("Something else here");
+  const [town, setTown] = useState("");
+  const [AgentRef, setAgentRef] = useState("");
+  const [heading, setheading] = useState("");
+  const [description, setdescription] = useState("");
+  const [sizeOfArea, setsizeOfArea] = useState("");
+  const [priceRate, setpriceRate] = useState("");
+  const [contactName, setcontactName] = useState("");
+  const [email, setemail] = useState("");
+  const [phone, setphone] = useState("");
+  const [img, setImg] = useState("");
+  const [error, setError] = useState(null);
+
+
+  const sendData = async (e) => {
+    const newAd = {
+      type,
+      town,
+      AgentRef,
+      heading,
+      description,
+      sizeOfArea,
+      priceRate,
+      contactName,
+      email,
+      phone,
+      img,
+    };
+
+
+    if (
+      newAd.town.length <= 0 ||
+      newAd.AgentRef.length <= 0 ||
+      newAd.heading.length <= 0 ||
+      newAd.description.length <= 0 ||
+      newAd.sizeOfArea.length <= 0 ||
+      newAd.priceRate.length <= 0 ||
+      newAd.contactName.length <= 0 ||
+      newAd.email.length <= 0 ||
+      newAd.phone.length <= 0 ||
+      newAd.img.length <= 0
+    ) {
+      setError("All the fields are required to create an adcertisment");
+      return;
+    }
+
+    axios
+      .post("http://localhost:8000/api/Ads", newAd)
+      .then(() => {
+        alert("Advertisment Added");
+      })
+      .catch((err) => {
+        alert(err);
+      });
+
+   
+  };
+
   return (
-  <div className='col-md-8 mt-4 mx-auto'>
-    <h1>Advertiser Form</h1>
-   <form>
-    <br/>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Type</label>
-    <div className="col-sm-10">
-    <div className="dropdown">
-  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Type
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button className="dropdown-item" type="button">Action</button>
-    <button className="dropdown-item" type="button">Another action</button>
-    <button className="dropdown-item" type="button">Something else here</button>
-  </div>
-</div>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Town</label>
-    <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">AgentRef</label>
-    <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Heading</label>
-    <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
-    <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Size of Area</label>
-    <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Price Rate</label>
-    <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Availability</label>
-    <div className="col-sm-10">
-    <div className="form-check form-check-inline">
-  <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
-  <label className="form-check-label" for="inlineRadio1">Available</label>
-</div>
-<div className="form-check form-check-inline">
-  <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-  <label className="form-check-label" for="inlineRadio2">Not Available</label>
-</div>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Contact Name</label>
-    <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-    <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
-    </div>
-  </div>
-  <div className="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
-    <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
-    </div>
-  </div>
-  <br/>
-  <form>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Input images of your proprty :</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1"/>
-  </div>
-  <br/>
-</form>
-  <div className="row mb-3">
-    <div className="col-sm-10 offset-sm-2">
-      <div className="form-check">
-        <input className="form-check-input" type="checkbox" id="gridCheck1"/>
-        <label className="form-check-label" for="gridCheck1">
-          I agree privacy & policies
-        </label>
+    <div style={{  backgroundImage: `url(${adformback2})`,backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat', }}>
+      <br/>
+      <h1 style={{fontFamily: "Georgia" ,fontSize: "100px", textAlign:"center", color:"white"}}>Advertiser Form</h1>
+      <br/>
+      <div >
+      
       </div>
+    <div className="col-md-8 mt-4 mx-auto" style={{ fontWeight: "bold" , fontFamily: "sans-serif", border: "3px solid green", margin: "2px"}}>
+      
+      <br />
+      <form onSubmit={sendData} style={{margin: "20px"}}>
+      {error && (
+              <h5 className="text-center text-danger form-text"> {error} </h5>
+            )}
+        <br />
+        <div className="row mb-3">
+          <label class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>Type</label>
+          <div className="col-sm-10">
+            <div class="dropdown">
+              <a
+                class="btn btn-secondary dropdown-toggle"
+                role="button"
+                id="dropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{ backgroundColor: "#1bb004" }}
+              >
+                {type}
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li
+                  onClick={(e) => {
+                    setType(e.target.textContent);
+                  }}
+                  value="action"
+                >
+                  Cinnamon
+                </li>
+                <li
+                  onClick={(e) => {
+                    setType(e.target.textContent);
+                  }}
+                >
+                  Coconut
+                </li>
+                <li
+                  onClick={(e) => {
+                    setType(e.target.textContent);
+                  }}
+                >
+                  Tea
+                </li>
+                <li
+                  onClick={(e) => {
+                    setType(e.target.textContent);
+                  }}
+                >
+                  Rubber
+                </li>
+                <li
+                  onClick={(e) => {
+                    setType(e.target.textContent);
+                  }}
+                >
+                  Waterfront
+                </li>
+                <li
+                  onClick={(e) => {
+                    setType(e.target.textContent);
+                  }}
+                >
+                  Something else here
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="row mb-3">
+          <label class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>Town</label>
+          <div className="col-sm-10">
+            <input style={{backgroundColor:"#D3D3D3"}}
+              type="text"
+              className="form-control"
+              required
+              onChange={(e) => {
+                setTown(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <div className="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
+            AgentRef
+          </label>
+          <div className="col-sm-10">
+            <input style={{backgroundColor:"#D3D3D3"}}
+              type="text"
+              className="form-control"
+              required
+              onChange={(e) => {
+                setAgentRef(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <div className="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
+            Heading
+          </label>
+          <div className="col-sm-10">
+            <input style={{backgroundColor:"#D3D3D3"}}
+              type="text"
+              className="form-control"
+              required
+              onChange={(e) => {
+                setheading(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <div className="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
+            Description
+          </label>
+          <div className="col-sm-10">
+            <input style={{backgroundColor:"#D3D3D3"}}
+              type="text"
+              className="form-control"
+              required
+              onChange={(e) => {
+                setdescription(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <div className="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
+            Size of Area
+          </label>
+          <div className="col-sm-10">
+            <input style={{backgroundColor:"#D3D3D3"}}
+              type="text"
+              className="form-control"
+              required
+              onChange={(e) => {
+                setsizeOfArea(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <div className="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
+            Price Rate
+          </label>
+          <div className="col-sm-10">
+            <input style={{backgroundColor:"#D3D3D3"}}
+              type="text"
+              className="form-control"
+              required
+              onChange={(e) => {
+                setpriceRate(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
+            Contact Name
+          </label>
+          <div className="col-sm-10">
+            <input style={{backgroundColor:"#D3D3D3"}}
+              type="text"
+              className="form-control"
+              required
+              onChange={(e) => {
+                setcontactName(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <div className="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
+            Email
+          </label>
+          <div className="col-sm-10">
+            <input style={{backgroundColor:"#D3D3D3"}}
+              type="email"
+              className="form-control"
+              id="inputEmail3"
+              onChange={(e) => {
+                setemail(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <div className="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
+            Phone
+          </label>
+          <div className="col-sm-10">
+            <input style={{backgroundColor:"#D3D3D3"}}
+              type="text"
+              required
+              className="form-control"
+              id="inputEmail3"
+              onChange={(e) => {
+                setphone(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <br />
+        <div className="form-group my-4">
+          <label className="my-1" style={{color:"#D3D3D3"}}>Image</label>
+          <input style={{backgroundColor:"#D3D3D3"}}
+            type="text"
+            className="form-control"
+            placeholder="Image"
+            value={img}
+            required
+            onChange={(e) => {
+              setImg(e.target.value);
+            }}
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="btn btn-primary"
+          style={{ backgroundColor: "#1bb004"}}
+          onClick={sendData}
+        >
+          Submit
+        </button>
+      </form>
     </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-  
-</form>
-</div>
+    </div>
   );
-}
+};
 
 export default AdvertiserForm;
