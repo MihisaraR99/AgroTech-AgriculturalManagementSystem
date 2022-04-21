@@ -19,13 +19,13 @@ const loanRoutes = require("./routes/loanRoutes");
 const RegistereventRoutes =require("./routes/RegistereventRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const AdsRoutes = require("./routes/AdsRoutes");
-
 const HealthCareAppointmentRoutes = require("./routes/HealthCareAppointmentRoutes");
 const CandidateRoutes = require("./routes/CandidateRoutes");
 const ApplyforVacancyRoutes = require("./routes/ApplyforVacancyRoutes");
 const ApplyforGuidanceRoutes = require("./routes/ApplyforGuidanceRoutes");
 const AddVacanciesRoutes = require("./routes/AddVacanciesRoutes");
 const AddGuidanceProgramsRoutes = require("./routes/AddGuidanceProgramsRoutes");
+const labRoutes = require("./routes/labRoutes.js");
 
 const app = express();
 dotenv.config();
@@ -72,6 +72,7 @@ app.use("/api/store", storeRoutes);
 app.use("/api/Addevent",require("./routes/eventRoutes"));
 app.use("/api/Addloan",require("./routes/loanRoutes"));
 app.use("/api/RegisterEvent",require("./routes/RegistereventRoutes"));
+
 
 app.use("/api/lab", labRoutes);
 app.use("/api/wholesale", wholesaleRoutes);

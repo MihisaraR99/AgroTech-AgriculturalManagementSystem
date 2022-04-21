@@ -80,7 +80,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navigator />
+     <Navigator />
       <Routes>
       
         <Route path="/" element={<AllServices />} />
@@ -90,14 +90,16 @@ function App() {
         <Route path="/events/detail"element={<Eventdetail/>}/>
         <Route path="/events/update/:id"element={<UpdateEvent/>}/>
         <Route path="/events/register" element={<RegisterEvent/>}/>
-        <Route path="/rep" element={<AllReports />} />
-        <Route path="/add" element={<AddReport />} />
-        <Route path="/edit/:id" element={<EditReport />} />
-        <Route path="/rep/:id" element={<ReportDetails />} />
-        <Route path="/" element={<AllServices />} />
-        <Route path="/Ulabs" element={<UserAllReports />} />
-        <Route path="/URepDet/:id" element={<UserReportDetails />} />
-
+          
+        <Route path="/rep"      element= {<AllReports/>}    />
+        <Route path="/add"      element= {<AddReport/>}     />
+        <Route path="/edit/:id" element= {<EditReport/>}    />
+        <Route path="/rep/:id"  element= {<ReportDetails/>} />
+        <Route path="/"         element= {<AllServices/>}   />
+        <Route path="/Ulabs"    element = {<UserAllReports/>}   /> 
+        <Route path="/URepDet/:id"    element = {<UserReportDetails/>}   /> 
+        <Route path="/del" element={<DeleteReport />} />
+          
         <Route
           path="/productUpdate/:id/:name/:quantity"
           element={<UpdateProducts />}
