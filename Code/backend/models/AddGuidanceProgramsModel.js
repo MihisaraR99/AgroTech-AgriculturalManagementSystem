@@ -4,6 +4,8 @@ const AddGuidanceProgramsSchema = mongoose.Schema({
    programNo:String,
    programName:String,
    programDescription:String,
+   programImage:String,
+   publishedDate:String,
     
 });
 
