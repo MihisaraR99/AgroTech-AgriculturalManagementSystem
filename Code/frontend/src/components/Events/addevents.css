@@ -35,6 +35,7 @@
   }
  .alert-txt{
 
-  font-style: italic;
+  font-style:initial;
+  font-family: 'Times New Roman', Times, serif;
   color: rgb(217, 0, 43);
  }

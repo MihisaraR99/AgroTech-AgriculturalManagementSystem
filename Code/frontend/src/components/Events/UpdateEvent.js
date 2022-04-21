@@ -46,6 +46,7 @@ function sendEventData(e){
      alert(err)
      console.log(err);
    })
+   window.location.href = "/events/admin";
 }
 useEffect(() => {
   axios.get(`http://localhost:8000/api/Addevent/${id}`).then(res => {
@@ -126,7 +127,7 @@ useEffect(() => {
   </div>
   
 </form>
-<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendEventData}><Link to={`/events/admin/`}>Update</Link></button>
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendEventData}>Update</button>
 </div>
 </div>
 	

@@ -33,7 +33,7 @@ return (
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-6"><h2><b>Manage </b><b>Events</b></h2></div>
+                    <div class="col-sm-6"><h2><b>Manage</b><b>Events</b></h2></div>
                 <div>
                     <Link to="/events/add" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-plus"></i> <span>Add New Events</span></Link>
                     

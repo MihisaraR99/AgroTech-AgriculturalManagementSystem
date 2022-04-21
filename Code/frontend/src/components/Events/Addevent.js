@@ -13,7 +13,7 @@ const [Venue,setVenue] = useState("");
 const [Description,setDescription] = useState("");
 const [Image,setImage] = useState("");
 const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+const [isSubmit, setIsSubmit] = useState(false);
 
 
 const handleSubmit = (e) => {
@@ -35,7 +35,6 @@ const validate=()=>{
    
 }
 
-  
   return errors;
 }
 const sub =() => {
@@ -47,12 +46,9 @@ const sub =() => {
 }
 
 
-
-
-
 function sendData(e){
   e.preventDefault();
-  alert("insert");
+  alert("Add");
 
 
   const newEvent={
@@ -155,11 +151,11 @@ function sendData(e){
 
 
   <div class="col-12">
-   <button type="submit" onClick= {handleSubmit}class="btn-block btn-primary">Add Event</button> 
-    /*<button type="submit" class="btn-block btn-primary"> Add Event</button>*/
+   
+    <button type="submit" class="btn-block btn-primary"> Add Event</button>
   </div>
 </form>
-<button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" onClick={handleSubmit}>Add Event</button>
+
 </div>
 </div>
 
