@@ -1,4 +1,3 @@
-
 .card-bodies .card-text {
     font-size: 20px;
     font-weight: 500;
@@ -43,8 +42,6 @@
 .card-bodies .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
-
-  /* Style the upper image  */
 
   .upper-images {
     position: relative;
@@ -92,9 +89,9 @@
   }
   .para{
       font-weight: 500;
-      color: #329466;
+      color: white;
       font-size: 20px;
-      text-shadow: 2px 2px #b9b0b0;
+     
       text-align: left;
       margin-left: -50px;
   }

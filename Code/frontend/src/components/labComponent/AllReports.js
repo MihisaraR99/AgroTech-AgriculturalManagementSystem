@@ -76,8 +76,8 @@ handleSearchArea = (e) =>{
   
                   </div>
                   <Pulse>
-             <div className='div2'>
-                 <table className ="table table-sm" style={{marginTop:'40px'}}>
+             <div className='Lab-div2'>
+                 <table id ='Lab-All-Tables' className ="striped bordered hover" style={{marginTop:'40px'}}>
                      <thead>
                          <tr className='allLabRepHead'>
                            <th scope ="col" className='allReports'>#</th>  

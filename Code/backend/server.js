@@ -3,6 +3,9 @@ const dotenv = require("dotenv");
 const logger = require("pino")();
 const mongoose = require("mongoose");
 const cors = require("cors");
+const eventModel = require('./models/eventsModel')
+const loanModel=require('./models/LoansModel')
+const RegistereventModel=require('./models/RegistereventModel')
 const expressSession = require("express-session");
 
 // Import routes to here
@@ -12,15 +15,17 @@ const labRoutes = require("./routes/labRoutes");
 const wholesaleRoutes = require("./routes/wholesaleRoutes");
 const CompanyRequest = require("./routes/Pr_companyRoutes");
 const eventRoutes = require("./routes/eventRoutes");
+const loanRoutes = require("./routes/loanRoutes");
+const RegistereventRoutes =require("./routes/RegistereventRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const AdsRoutes = require("./routes/AdsRoutes");
-
 const HealthCareAppointmentRoutes = require("./routes/HealthCareAppointmentRoutes");
 const CandidateRoutes = require("./routes/CandidateRoutes");
 const ApplyforVacancyRoutes = require("./routes/ApplyforVacancyRoutes");
 const ApplyforGuidanceRoutes = require("./routes/ApplyforGuidanceRoutes");
 const AddVacanciesRoutes = require("./routes/AddVacanciesRoutes");
 const AddGuidanceProgramsRoutes = require("./routes/AddGuidanceProgramsRoutes");
+const labRoutes = require("./routes/labRoutes.js");
 
 const app = express();
 dotenv.config();
@@ -64,6 +69,11 @@ app.get("/", (req, res) => {
 // Implement the routes from here
 app.use("/api/users", userRoutes);
 app.use("/api/store", storeRoutes);
+app.use("/api/Addevent",require("./routes/eventRoutes"));
+app.use("/api/Addloan",require("./routes/loanRoutes"));
+app.use("/api/RegisterEvent",require("./routes/RegistereventRoutes"));
+
+
 app.use("/api/lab", labRoutes);
 app.use("/api/wholesale", wholesaleRoutes);
 app.use("/api/companyRequest", CompanyRequest);
