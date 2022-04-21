@@ -6,11 +6,11 @@ import "./components/educationComponents/Educationstyle.css"
 import "./App.css";
 import "./components/HealthCare/Health.css";
 
-import Header from "./components/Header";
+//import Header from "./components/Header";
 import Navigator from "./components/Navigator/Navigator";
 import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
-import Courseadmin from "./components/educationComponents/Courseadmin";
+//import Courseadmin from "./components/educationComponents/Courseadmin";
 import Coursehome from "./components/educationComponents/Coursehome";
 import Courseinsert from "./components/educationComponents/Courseinsert";
 import Updatecourse from "./components/educationComponents/Updatecourse";
