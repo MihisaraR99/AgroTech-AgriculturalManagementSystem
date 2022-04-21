@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import img2 from "../images/img16.jpg";
-import img1 from "../images/img1.jpg";
+import img1 from "../images/img22.png";
 import './Company.css';
 import axios from "axios";
 
@@ -15,6 +15,7 @@ const [Company_contactNo,setcontactno] = useState("");
 const [Product_Id,setproductid] = useState("");
 const [Product_Name,setproname] = useState("");
 const [Quentity,setqueantity] = useState("");
+
 
 function sendcompanyData(e){
     e.preventDefault();
@@ -45,97 +46,94 @@ function sendcompanyData(e){
     return(
       
       <center>
+        <div>
+          <div className="maindiv1" style={{/*border:"1px solid black",*/ margin:"20px"}} >
+             
+            <div class="container12" >
 
-      <div className="maindiv1" style={{  backgroundImage: `url(${img2})`,backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat', }}>
-    
-     
-
-      <div class="container11 ">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
-    
-      <form class="form-horizontal11" onSubmit={sendcompanyData}>
-        <h2 style={{fontFamily:"courier"}}>Request Product</h2>
-        <div class="form-group" >
-          
-          <div >
-            <input type="text" class="form-control11" id="SId" placeholder="Company ID" name="sid" onChange={(e)=>{
-              setcompanyid(e.target.value);
-            }}/>
-          </div>
-        </div>
-
-        <div class="form-group">
-          
-          <div >          
-            <input type="text" class="form-control11" id="SEmail" placeholder="Company Contact Name" name="semail"  onChage={(e)=>{
-                 setcontactname(e.target.value);
-            }}/>
-          </div>
-        </div>
-    
-        <div class="form-group">
-          
-          <div >          
-            <input type="text" class="form-control11" id="SEmail" placeholder="Company Email" name="semail"   onChage={(e)=>{
-                 setcompanyEmail(e.target.value);
-            }}/>
-          </div>
-        </div>
-    
-        <div class="form-group">
-          <div >
-            <input type="text" class="form-control11" id="ScontactNo" placeholder=" Contact Number" name="scontact"   onChange={(e)=>{
-                  setcontactno(e.target.value);
-            }}/>
-          </div>
-        </div>
-        
-        <div class="form-group">
-         
-          <div>          
-            <input type="text" class="form-control11" id="PId" placeholder="Product ID" name="pid"  onChange={(e)=>{
-                  setproductid(e.target.value);
-            }}/>
-          </div>
-        </div>
-    
-        <div class="form-group">
-          <div >          
-            <input type="text" class="form-control11" id="PName" placeholder="Product Name" name="pname" onChange={(e)=>{
-                  setproname(e.target.value);
-            }}/>
-          </div>
-        </div>
-    
-        <div class="form-group">
-           <div >          
-            <input type="text" class="form-control11" id="Quentity" placeholder="Quantity" name="Quentity"  onChange={(e)=>{
-                  <div class="form-group">
-          
-                  <div >          
-                    <input type="text" class="form-control11" id="SEmail" placeholder="Supplier Email" name="semail"  onChage={(e)=>{
-                         setqueantity(e.target.value);
-                    }}/>
+                  <div className="container11" style={{  backgroundColor:"white"}}>
+                  <section class = "div11" id="sec2">
+		                  <h1>
+                         <img src={img1} alt=""   style={{ width: "100%", height: "480px",borderBlockColor: "black",marginTop:"110px",paddingLeft:"4px",paddingRight:"4px"}}/> 
+	                  	</h1>
+	                 </section>
                   </div>
-                </div>
-            }}/>
-          </div>
-        </div>
-    
-    
-    
-    
-        <div class="form-group">        
-          <div class="col-sm-offset-2 col-sm-10" >
-            <button  type="submit"  class="btn btn-success"  style={{width:"200px",}}>Submit</button>
-          </div>
-        </div>
-    
-      </form>
-    </div>
-    </div>
-  
-    </center>
+
+ <div className="container11" >
+    <section class = "div11" id="sec2">
+       <form class="form-horizontal11" onSubmit={sendcompanyData}>
+
+<h2 style={{fontFamily:"courier",marginTop:"20px"}}>Request Product</h2>
+
+<div class="form-group" >
+   <div >
+    <input type="text" class="form-control11" id="SId" placeholder="Company ID" name="sid" onChange={(e)=>{
+      setcompanyid(e.target.value);
+    }}/>
+  </div>
+</div>
+
+<div class="form-group">
+    <div >          
+    <input type="text" class="form-control11" id="SEmail" placeholder="Company Contact Name" name="semail"  onChage={(e)=>{
+         setcontactname(e.target.value);
+    }}/>
+  </div>
+</div>
+
+<div class="form-group">
+    <div >          
+    <input type="text" class="form-control11" id="SEmail" placeholder="Company Email" name="semail"   onChage={(e)=>{
+         setcompanyEmail(e.target.value);
+    }}/>
+  </div>
+</div>
+
+<div class="form-group">
+  <div >
+    <input type="text" class="form-control11" id="ScontactNo" placeholder=" Contact Number" name="scontact"   onChange={(e)=>{
+          setcontactno(e.target.value);
+    }}/>
+  </div>
+</div>
+
+<div class="form-group">
+  <div>          
+    <input type="text" class="form-control11" id="PId" placeholder="Product ID" name="pid"  onChange={(e)=>{
+          setproductid(e.target.value);
+    }}/>
+  </div>
+</div>
+
+<div class="form-group">
+  <div >          
+    <input type="text" class="form-control11" id="PName" placeholder="Product Name" name="pname" onChange={(e)=>{
+          setproname(e.target.value);
+    }}/>
+  </div>
+</div>
+
+<div class="form-group">
+   <div >          
+      <input type="text" class="form-control11" id="Quentity" placeholder="Quantity" name="Quentity"  onChange={(e)=>{ 
+    setqueantity(e.target.value)}}/>
+  </div>
+</div>
+
+
+<div class="form-group">        
+  <div className="button111" >
+    <button  type="submit"  class="btn btn-success"  style={{width:"200px"}}>Submit</button>
+  </div>
+</div>
+
+</form>
+	                  </section>
+                  </div>
+
+            </div>
+            </div>
+         </div>
+      </center>
           )
 }

@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import img6 from "../images/img11.jpg";
+import img44 from "../images/img44.jpg";
 import axios from "axios";
 
 
@@ -42,7 +42,7 @@ function sendData(e){
 
 return(
   <center>
-     <div style={{  backgroundImage: `url(${img6})`,backgroundSize: 'cover',
+     <div style={{  backgroundImage: `url(${img44})`,backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat', }}>
    
   <div class="container22">  

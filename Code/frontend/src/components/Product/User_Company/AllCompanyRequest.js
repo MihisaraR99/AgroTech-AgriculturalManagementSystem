@@ -31,17 +31,17 @@ export default function AllProducts(){
 return(
   <div>
     <center><h1>All Company Requests</h1> 
-        <div class="row">
+        <div class="row" >
             {company && company.map((company,index)=>(
-              <div class="col-4">
+              <div class="col-4" style={{paddingBottom:"30px"}}>
                           
 
 <div 
-className="product-title">
+className="product-title" >
 
-<div className="inputdiv">
+<div className="inputdiv" >
      <div className="inputdiv1">
-        <p style={{ fontSize: "20px",textAlign:"center"}}>
+        <p style={{ fontSize: "20px",textAlign:"center", paddingBottom:"30px"}}>
      Request No -<b>{index+1}</b>
     </p>
         </div>
@@ -58,12 +58,15 @@ className="product-title">
     <p style={{ fontSize: "20px",textAlign:"left" }}>
      Contact No-<b>{company.Company_contactNo}</b>
     </p>
+    <p style={{ fontSize: "20px",textAlign:"left"}}>
+     Quantity-<b>{company.Quentity}</b>
+    </p>
     </div>
 
 <tr> 
 <td>
  <a className ="btn btn-warning"  href="#" >
-    <i className="fas fa-edit"></i>&nbsp;Confirm</a>&nbsp; 
+    <i className="fas fa-edit" ></i>&nbsp;Confirm</a>&nbsp; 
 
 <a className ="btn btn-danger"  onClick={()=> onDelete(company._id)}>
     <i className="far fa-trash-alt"></i>&nbsp;DELETE</a>
