@@ -47,7 +47,7 @@ const AdvertiserForm = () => {
       newAd.phone.length <= 0 ||
       newAd.img.length <= 0
     ) {
-      setError("All the fields are required to create an adcertisment");
+      setError("All the fields are required to create an advertisement");
       return;
     }
 
@@ -203,7 +203,7 @@ const AdvertiserForm = () => {
         </div>
         <div className="row mb-3">
           <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
-            Size of Area
+            Size of Area(Perches)
           </label>
           <div className="col-sm-10">
             <input style={{backgroundColor:"#D3D3D3"}}
@@ -218,7 +218,7 @@ const AdvertiserForm = () => {
         </div>
         <div className="row mb-3">
           <label for="inputEmail3" class="col-sm-2 col-form-label" style={{color:"#D3D3D3"}}>
-            Price Rate
+            Price Rate(Per Perch)
           </label>
           <div className="col-sm-10">
             <input style={{backgroundColor:"#D3D3D3"}}

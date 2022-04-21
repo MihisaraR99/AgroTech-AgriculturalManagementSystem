@@ -25,7 +25,7 @@ const AdminViewAds = () => {
           <tr>
             <th scope="col">#</th>
             <th scope="col">Type</th>
-            <th scope="col">Price</th>
+            <th scope="col">Price(Rs.)</th>
             <th scope="col">Size(Purches)</th>
             <th scope="col">Action</th>
           </tr>

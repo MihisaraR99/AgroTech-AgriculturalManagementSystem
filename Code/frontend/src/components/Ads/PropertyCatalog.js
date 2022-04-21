@@ -21,10 +21,10 @@ const PropertyCatalog = () => {
 
 
   return (
-<div >
+<div style={{backgroundColor: "#76ad3b"}}>
 <br/>
 
-<div className="upper-images">
+<div className="upper-images" style={{border:"2px solid #e2ebd8"}}>
         <img
           className="ecommerce-slide"
           src="https://th.bing.com/th/id/R.414f0016399d8a7af8ceb1030ee66281?rik=Gcv2%2f7iMfLKn8g&pid=ImgRaw&r=0"
@@ -40,25 +40,21 @@ const PropertyCatalog = () => {
   </div>
       </div>
 
-<div className='col-md-8 mt-4 mx-auto' style={{marginBottom:"40px"}}>
+<div className='col-md-8 mt-4 mx-auto' style={{marginBottom:"40px",backgroundColor: "#76ad3b"}}>
   
-<br/>
 
-<br/><br/>
-<div className="input-group" style={{ width: "18rem" }}>
+<br/>
+<div className="input-group" style={{ width: "18rem", border:"1px solid #e2ebd8" }}>
   <input type="search" className="form-control rounded" placeholder="Type" aria-label="Search" aria-describedby="search-addon" />
-  <button type="button" className="btn btn-outline-primary">search</button>
+  <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
 </div>
 <br/>
-<div className="input-group" style={{ width: "18rem" }}>
+<div className="input-group" style={{ width: "18rem", border:"1px solid #e2ebd8" }}>
   <input type="search" className="form-control rounded" placeholder="City" aria-label="Search" aria-describedby="search-addon" />
-  <button type="button" className="btn btn-outline-primary">search</button>
+  <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
 </div>
 <br/>
 <hr></hr>
-
-<br/>
-<br/>
 <br/>
 
 <div className="products-list row p-5" style={{backgroundColor:"#D3D3D3"}}>
