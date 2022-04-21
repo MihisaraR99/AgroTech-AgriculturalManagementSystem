@@ -123,6 +123,7 @@ function App() {
           path="/store/product/add-product"
           element={<StoreAddProductForm />}
         />
+
         <Route
           path="/store/store-admin-products"
           element={<StoreAdminProducts />}
@@ -175,6 +176,7 @@ function App() {
           path="/Ads/edit/:id/:town/:agentRef/:heading/:description/:sizeofArea/:priceRate/:contactName/:email/:phone/:image"
           element={<AdminUpdateAds />}
         />
+        <Route path="/Ads/Ad/:id/:town/:agentRef/:heading/:description/:sizeofArea/:priceRate/:contactName/:email/:phone/:image" element={<DisplayAd />} />
         <Route path="/Ads/:id" element={<DisplayAd />} />
         <Route path="/Ads/AdverDetails" element={<AdvertiserDetails />} />
           
