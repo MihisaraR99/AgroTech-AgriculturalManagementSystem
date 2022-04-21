@@ -7,6 +7,13 @@ import Header from "./components/Header";
 import Navigator from "./components/Navigator/Navigator";
 import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
+import Addevent from "./components/Events/Addevent";
+import Eventshome from "./components/Events/Eventshome";
+import EventAdmin from "./components/Events/EventAdmin";
+import Eventdetail from "./components/Events/Eventdetail";
+import UpdateEvent from "./components/Events/UpdateEvent";
+import RegisterEvent from "./components/Events/RegisterEvent";
+
 
 // Store Components
 import StoreHome from "./components/Store/StoreHome";
@@ -73,16 +80,26 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navigator />
+     <Navigator />
       <Routes>
-        <Route path="/rep" element={<AllReports />} />
-        <Route path="/add" element={<AddReport />} />
-        <Route path="/edit/:id" element={<EditReport />} />
-        <Route path="/rep/:id" element={<ReportDetails />} />
+      
         <Route path="/" element={<AllServices />} />
-        <Route path="/Ulabs" element={<UserAllReports />} />
-        <Route path="/URepDet/:id" element={<UserReportDetails />} />
-
+        <Route path="/events/add" element={<Addevent />}  /> 
+        <Route path="/events/home" element={<Eventshome />} />
+        <Route path="/events/admin" element={<EventAdmin/>} />
+        <Route path="/events/detail"element={<Eventdetail/>}/>
+        <Route path="/events/update/:id"element={<UpdateEvent/>}/>
+        <Route path="/events/register" element={<RegisterEvent/>}/>
+          
+        <Route path="/rep"      element= {<AllReports/>}    />
+        <Route path="/add"      element= {<AddReport/>}     />
+        <Route path="/edit/:id" element= {<EditReport/>}    />
+        <Route path="/rep/:id"  element= {<ReportDetails/>} />
+        <Route path="/"         element= {<AllServices/>}   />
+        <Route path="/Ulabs"    element = {<UserAllReports/>}   /> 
+        <Route path="/URepDet/:id"    element = {<UserReportDetails/>}   /> 
+        <Route path="/del" element={<DeleteReport />} />
+          
         <Route
           path="/productUpdate/:id/:name/:quantity"
           element={<UpdateProducts />}

@@ -6,6 +6,7 @@ const{
     getEvent,
     updateEvent,
     removeEvent,
+    getsingleevent,
 
 } = require("../controllers/EventController");
 
@@ -17,5 +18,5 @@ router.put("/:id",updateEvent);
 
 router.delete("/:id",removeEvent);
 
-
+router.get("/:id", getsingleevent);
 module.exports = router;
