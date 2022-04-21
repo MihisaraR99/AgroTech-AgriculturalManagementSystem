@@ -40,11 +40,11 @@ import AllappointmentsManager from "./components/HealthCare/AllappointmentsManag
 import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
 
 //Lab components
-import AddReport     from "./components/labComponent/AddReport";
-import AllReports    from "./components/labComponent/AllReports";
-import EditReport    from "./components/labComponent/EditReport";
+import AddReport from "./components/labComponent/AddReport";
+import AllReports from "./components/labComponent/AllReports";
+import EditReport from "./components/labComponent/EditReport";
 import ReportDetails from "./components/labComponent/ReportDetails";
-import UserAllReports from "./components/labComponent/UserAllReports"
+import UserAllReports from "./components/labComponent/UserAllReports";
 import UserReportDetails from "./components/labComponent/UserReportDetails";
 
 // User Components
@@ -58,17 +58,16 @@ function App() {
 
   return (
     <BrowserRouter>
-     <Navigator />
-      <Routes> 
-        <Route path="/rep"      element= {<AllReports/>}    />
-        <Route path="/add"      element= {<AddReport/>}     />
-        <Route path="/edit/:id" element= {<EditReport/>}    />
-        <Route path="/rep/:id"  element= {<ReportDetails/>} />
-        <Route path="/"         element= {<AllServices/>}   />
-        <Route path="/Ulabs"    element = {<UserAllReports/>}   /> 
-        <Route path="/URepDet/:id"    element = {<UserReportDetails/>}   /> 
-        <Route path="/del" element={<DeleteReport />} />
-          
+      <Navigator />
+      <Routes>
+        <Route path="/rep" element={<AllReports />} />
+        <Route path="/add" element={<AddReport />} />
+        <Route path="/edit/:id" element={<EditReport />} />
+        <Route path="/rep/:id" element={<ReportDetails />} />
+        <Route path="/" element={<AllServices />} />
+        <Route path="/Ulabs" element={<UserAllReports />} />
+        <Route path="/URepDet/:id" element={<UserReportDetails />} />
+
         <Route
           path="/productUpdate/:id/:name/:quantity"
           element={<UpdateProducts />}
@@ -133,8 +132,7 @@ function App() {
         <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      <Footer/>
- 
+      <Footer />
     </BrowserRouter>
   );
 }

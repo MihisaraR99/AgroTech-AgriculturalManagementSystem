@@ -22,7 +22,7 @@
     "express": "^4.17.3",
     "mongoose": "^6.2.3",
     "pino": "^7.8.0",
-    "react-reveal": "^1.2.2"
+    "react-reveal": "^1.2.2",
     "express-session": "^1.17.2",
     "mongoose": "^6.2.7",
     "pino": "^7.8.0"

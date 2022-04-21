@@ -21,7 +21,6 @@ const ApplyforVacancyRoutes = require("./routes/ApplyforVacancyRoutes");
 const ApplyforGuidanceRoutes = require("./routes/ApplyforGuidanceRoutes");
 const AddVacanciesRoutes = require("./routes/AddVacanciesRoutes");
 const AddGuidanceProgramsRoutes = require("./routes/AddGuidanceProgramsRoutes");
-const labRoutes = require("./routes/labRoutes.js");
 
 const app = express();
 dotenv.config();
