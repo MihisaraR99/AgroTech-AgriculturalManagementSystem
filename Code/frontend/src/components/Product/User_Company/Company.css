@@ -1,0 +1,82 @@
+.product-title{   
+border:0.5px solid rgba(150, 168, 156);
+margin-left: 2%;
+margin-top: 70px;
+color:white;
+border-Radius: 30px;
+box-Shadow: 10px 10px 5px rgba(150, 168, 156);
+width:450px;
+padding: 5px;
+}
+
+.inputdiv{ 
+    width:400px;
+    color:black;
+    margin: 2px;
+    position:center;
+    padding: 5px 5px 5px;   
+}
+
+.inputdiv1{
+        border:1px;
+        width:400px;
+        height:50px;
+        border-Radius: 30px; 
+        float:center;
+        box-Shadow:10px 10px 5px rgba(150, 168, 156);
+        margin-Bottom:30px;
+}
+
+.pinput1{
+    font-Size: 20px;
+    text-Align:center;
+}
+
+.pinput2{
+    font-Size:20px;
+    text-Align:left;
+}
+
+.container11{
+        margin-Left: 15%;
+        color:white;
+        width:1100px;
+        padding: 40px 40px 10px 40px;
+}
+.form-horizontal11{
+    width:600px;
+    margin:10px;
+    padding: 50px 50px 20px 50px;
+    border-Radius:30px;
+    color:black;
+}
+
+.form-control11{
+     background-Color: white; 
+     width:500px;
+     padding:15px;
+     margin-Top:15px;
+     border: none;
+     border-radius: 20px;
+     box-Shadow: 8px 3px 3px rgb(137, 142, 136);
+
+}
+
+.container11{
+    background: #37e657;
+    float:left;
+    width: 680px;
+    height: 700px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container12{
+            box-Shadow: 10px 4px 4px rgb(159, 165, 152);
+            content: "";
+            display: table;
+            clear: both;
+}
+.button111{
+    margin-top: 10px;
+}
