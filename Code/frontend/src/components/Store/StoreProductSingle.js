@@ -39,13 +39,6 @@ const StoreProductSingle = ({ img, title, price, id }) => {
         >
           Details
         </button>
-
-        <button
-          onClick={deleteProduct}
-          className="details-button-danger btn btn-success"
-        >
-          Delete
-        </button>
       </div>
     </div>
   );

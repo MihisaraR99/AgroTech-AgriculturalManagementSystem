@@ -54,6 +54,29 @@ const Navigator = () => {
                         <Link to="/">
                           Services
                         </Link>
+                        <a href="#">
+                          Dropdown <i class="fa-solid fa-caret-down"></i>
+                        </a>
+                        <ul className="dropdown">
+                          <li>
+                            <Link to="/store/store-admin-products">
+                              <a>Store Products Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/store/store-admin-orders">
+                              <a>Store Orders Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/store/store-admin-payments">
+                              <a>Store Payments Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                            <a href="#">Menu Four</a>
+                          </li>
+                        </ul>
                       </li>
                     </ul>
                   </li>

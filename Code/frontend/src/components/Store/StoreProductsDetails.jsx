@@ -67,8 +67,11 @@ const StoreProductsDetails = () => {
 
                 <div className="col-4 my-3">
                   <button
+                    disabled={quantity <= 0}
                     onClick={() => {
-                      navigate("/store/order/store-order-create");
+                      navigate(
+                        `/store/order/store-order-create/${product._id}/${quantity}/${product.price}`
+                      );
                     }}
                     className="btn product-details-buy-now w-100"
                   >

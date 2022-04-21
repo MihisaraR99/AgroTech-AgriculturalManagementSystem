@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from "react";
 import axios from "axios";
 import {useLocation} from "react-router-dom"
-import { NavLink } from "react-router-dom";
+import updateimg from "./Img/update.png"
 
 export default function AddAppointments(){
 
@@ -29,7 +29,7 @@ useEffect(()=>{
 /*02--add*/
 function sendAppointment(e){
   e.preventDefault();
-  alert("Going to add new Appointment");
+  alert("Update Appointment");
 
   const newAppointment = {
     CustomerName,
@@ -55,7 +55,7 @@ function sendAppointment(e){
 
    
       return(
-       <>  
+       <div  style={{  backgroundImage: `url(${updateimg})` , paddingTop:"30px", paddingBottom:"30px", marginBottom:"30px"}}>  
 
           <section className="addapp">
             <div className="container mt-5">
@@ -166,7 +166,7 @@ function sendAppointment(e){
               </div>  
             </div>
           </section>
-        </>     
+        </div>     
             
               
         
