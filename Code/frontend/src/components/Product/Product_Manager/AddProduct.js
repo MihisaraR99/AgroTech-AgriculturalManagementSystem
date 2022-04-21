@@ -1,9 +1,11 @@
 import React,{useState} from "react";
+import img44 from "../images/img44.jpg";
 import axios from "axios";
+
 
 export default function AddProduct(){
 
-  /*create state*/
+  /*01--create state*/
 const [SId,setsid] = useState("");
 const [SEmail,setsEmail] = useState("");
 const [ScontactNo,setcono] = useState("");
@@ -11,6 +13,7 @@ const [PId,setpid] = useState("");
 const [PName,setpname] = useState("");
 const [Quentity,setQno] = useState("");
 
+/*02--add*/
 function sendData(e){
     e.preventDefault();
     alert("Going to add new product");
@@ -24,6 +27,7 @@ function sendData(e){
       Quentity
     }
    
+    /*url*/
     axios.post("http://localhost:8000/api/wholesale/add",newProduct).then(()=>{
       alert("Product Added");
 
@@ -34,78 +38,76 @@ function sendData(e){
     })
 }
 
+
+
 return(
   <center>
-  <div class="container ">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
- <h2>Add Products</h2>
-  <form class="form-horizontal" onSubmit={sendData}>
+     <div style={{  backgroundImage: `url(${img44})`,backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat', }}>
+   
+  <div class="container22">  
+<form class="form-horizontal22" onSubmit={sendData} >
+    <h2 className="h2topic22" style={{color:"white" , fontSize:"50px" }}>Add Products</h2>
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="sid">Supplier ID:</label>
-      <div class="col-sm-5">
-        <input type="text" class="form-control" id="SId" placeholder="" name="sid" onChange={(e)=>{
+    <div class="form-group" >
+       <div >
+        <input type="text" class="formcontrol22" id="SId" placeholder="Supplier ID" name="sid" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}} 
+         onChange={(e)=>{
               setsid(e.target.value);
         }}/>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="SEmail">Supplier Email:</label>
-      <div class="col-sm-5">          
-        <input type="text" class="form-control" id="SEmail" placeholder="" name="semail" onChage={(e)=>{
+      <div >          
+        <input type="text" class="formcontrol22" id="SEmail" placeholder="Supplier Email" name="semail" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}}  onChage={(e)=>{
              setsEmail(e.target.value);
         }}/>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="ScontactNo">Supplier Contact No:</label>
-      <div class="col-sm-5">
-        <input type="text" class="form-control" id="ScontactNo" placeholder="" name="scontact" onChange={(e)=>{
+      <div >
+        <input type="text" class="formcontrol22" id="ScontactNo" placeholder="Supplier Contact" name="scontact" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}}  onChange={(e)=>{
               setcono(e.target.value);
         }}/>
       </div>
     </div>
     
     <div class="form-group">
-      <label class="control-label col-sm-2" for="PId">Product ID:</label>
-      <div class="col-sm-5">          
-        <input type="text" class="form-control" id="PId" placeholder="" name="pid" onChange={(e)=>{
+     <div>          
+        <input type="text" class="formcontrol22" id="PId" placeholder="Product ID" name="pid" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}}  onChange={(e)=>{
               setpid(e.target.value);
         }}/>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="PName">Product Name:</label>
-      <div class="col-sm-5">          
-        <input type="text" class="form-control" id="PName" placeholder="" name="pname" onChange={(e)=>{
+      <div >          
+        <input type="text" class="formcontrol22" id="PName" placeholder="Product Name" name="pname" style={{ backgroundColor: " white", width:"500px", padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}} onChange={(e)=>{
               setpname(e.target.value);
         }}/>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="Quentity">Quentity:</label>
-      <div class="col-sm-5">          
-        <input type="text" class="form-control" id="Quentity" placeholder="" name="Quentity" onChange={(e)=>{
+      <div >          
+        <input type="text" class="formcontrol22" id="Quentity" placeholder="Quantity" name="Quentity" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}} onChange={(e)=>{
               setQno(e.target.value);
         }}/>
       </div>
     </div>
 
-
-
-
     <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit"  class="btn btn-success">Submit</button>
+      <div class="col-sm-offset-2 col-sm-10" >
+        <button type="submit"  className="btn btn-success"  style={{width:"200px", backgroundColor:"black",marginBottom:"10px",border:"none"}}>Submit</button>
       </div>
     </div>
 
   </form>
+  </div>
 </div>
+
 </center>
     )
 }

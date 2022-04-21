@@ -20,20 +20,26 @@ const PropertyCatalog = () => {
 
 
   return (
-<div className='col-md-8 mt-4 mx-auto'>
-<ul className="nav" style={{ marginLeft: "35rem", backgroundColor:"#1bb004", border:"2px solid black"}}>
-  <li className="nav-item" >
-    <Link className="nav-link active" to="/Ads/AdverLogin" style={{color:"#ffffff", marginRight: "20px"}}>Login</Link>
-  </li>
-  <li className="nav-item">
-    <Link className="nav-link" to="/Ads/adform" style={{color:"#ffffff", marginRight: "20px"}}>Register</Link>
-  </li>
-  <li className="nav-item">
-    <Link className="nav-link" to="/Ads/adform" style={{color:"#ffffff"}}>Post Your Ads</Link>
-  </li>
-</ul><br/>
+<div >
+<br/>
 
-<div className='col-md-8 mt-4 mx-auto'>
+<div className="upper-images">
+        <img
+          className="ecommerce-slide"
+          src="https://th.bing.com/th/id/R.414f0016399d8a7af8ceb1030ee66281?rik=Gcv2%2f7iMfLKn8g&pid=ImgRaw&r=0"
+          alt=""
+        />
+        <div class="middle">
+    <div class="text"><p>Lands To Buy..</p></div>
+   <p className="para">Search our selection of land plots for sale in Sri Lanka. 
+     Our fast-growing portfolio of properties brings you closer to your ideal home. 
+     Every project is monitored and handled by detail-oriented team members 
+     committed to serving our customers with the highest possible service to guarantee you find your dream farm.</p>
+     <button class="buttonserv"><span>Discover</span></button> 
+  </div>
+      </div>
+
+<div className='col-md-8 mt-4 mx-auto' style={{marginBottom:"40px"}}>
   
 <br/>
 
@@ -57,7 +63,7 @@ const PropertyCatalog = () => {
 <div className="products-list row p-5" style={{backgroundColor:"#D3D3D3"}}>
         {ads &&
           ads.map((ad) => (
-            <div className="card" style={{ width: "15rem", margin: "1rem", height:"rem" }}>
+            <div className="card" style={{ width: "15rem", margin: "1rem", height:"20rem" }}>
     <div className="card-body">
     <div className="product-image" style={{height:"10rem"}}>
         <img src={ad.img} alt="product"/>
@@ -66,7 +72,7 @@ const PropertyCatalog = () => {
       <p className="card-title">{ad.title}</p>
       <p className="card-type">{ad.type}</p>
       <p className="card-area">{ad.sizeOfArea} Perches</p>
-      <Link className="card-link" to={`/Ads/DisplayAd`}>more..</Link>
+      <Link className="card-link" to={`/Ads/DisplayAd/${ad._id}`}>more..</Link>
     </div>
     <div className="card-body">
     </div>
