@@ -38,6 +38,15 @@ import AddAppointments from "./components/HealthCare/AddAppointments";
 import AllappointmentsVet from "./components/HealthCare/AllappointmentsVet";
 import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
 import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
+import HealthHome from "./components/HealthCare/HealthHome1";
+import Happointmentinvoice from "./components/HealthCare/CustomerInvoice"
+
+// Lab Components
+import AddReport from "./components/AddReport";
+import AllReports from "./components/AllReports";
+import DeleteReport from "./components/DeleteReport";
+import EditReport from "./components/EditReport";
+import ReportDetails from "./components/ReportDetails";
 
 //Lab components
 import AddReport from "./components/labComponent/AddReport";
@@ -81,11 +90,17 @@ function App() {
         <Route path="/productBill" element={<ProductBill />} />
         <Route path="/" element={<AllServices />} />
 
+          {/* Health Care Appointments Routes */}
+        <Route path="/Appointments" element= {<AddAppointments/>}/>
+        <Route path="/HVet" element= {<AllappointmentsVet/>}/>
+        <Route path="/HManager" element= {<AllappointmentsManager/>}/>
+        <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
+        <Route path="/AllAppointment" element= {<AddAppointments/>}/>
+        <Route path="/HHome" element= {<HealthHome/>}/>
+        <Route path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time" element= {<Happointmentinvoice/>}/>
+
         {/* Health Care Appointments Routes */}
         <Route path="/Appointments" element={<AddAppointments />} />
-        <Route path="/HVet" element={<AllappointmentsVet />} />
-        <Route path="/HManager" element={<AllappointmentsManager />} />
-        <Route path="/HMUpdate" element={<UpdateAppointmentManager />} />
         <Route path="/AllAppointment" element={<AddAppointments />} />
 
         {/* Store Routes */}
@@ -99,12 +114,10 @@ function App() {
           path="/store/order/store-order-create/:product/:quantity/:price"
           element={<StoreOrderForm />}
         />
-
         <Route
           path="/store/order/payment/:orderId"
           element={<StorePaymentScreen />}
         />
-
         <Route
           path="/store/product/add-product"
           element={<StoreAddProductForm />}
@@ -117,12 +130,10 @@ function App() {
           path="/store/store-admin-orders"
           element={<StoreAdminOrders />}
         />
-
         <Route
           path="/store/store-admin-payments"
           element={<StoreAdminPayments />}
         />
-
         <Route
           path="/store/store-admin-products/edit/:pid"
           element={<StoreAdminProductsEdit />}
@@ -132,6 +143,15 @@ function App() {
         <Route path="/Ads/productSee" element={<AllProducts />} />
         <Route path="/Ads/company" element={<CompanyRequest />} />
 
+        {/* Product Routes  */}
+        <Route path="/productadd" element= {<AddProduct/>}/>
+        <Route path="/productSee" element= {<AllProducts/>}/>
+        <Route path="/companyadd" element= {<CompanyRequest/>}/>
+        <Route path="/companySee" element= {<AllCompanyRequest/>}/>
+        <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
+        <Route path="/stock" element= {<StockDetails/>}/>
+        <Route path="/productBill" element={<ProductBill/>}/>
+          
         {/*Product Routes*/}
         <Route path="/productadd" element={<AddProduct />} />
         <Route path="/productSee" element={<AllProducts />} />
@@ -154,8 +174,8 @@ function App() {
           element={<AdminUpdateAds />}
         />
         <Route path="/Ads/:id" element={<DisplayAd />} />
-
         <Route path="/Ads/AdverDetails" element={<AdvertiserDetails />} />
+          
         {/* Users */}
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
