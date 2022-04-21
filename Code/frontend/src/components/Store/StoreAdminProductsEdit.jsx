@@ -1,16 +1,16 @@
-import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
-const StoreAddProductForm = () => {
+const StoreAdminProductsEdit = () => {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [img, setImg] = useState("");
   const [smallDes, setSmallDes] = useState("");
   const [longDes, setLongDes] = useState("");
-  const navigate = useNavigate();
-  const [errors, setErrors] = useState("");
+
+  const { pid } = useParams();
 
   const saveProduct = async (e) => {
     e.preventDefault();
@@ -23,40 +23,29 @@ const StoreAddProductForm = () => {
       longDes,
     };
 
-    if (
-      product.name.length <= 0 ||
-      product.category.length <= 0 ||
-      product.price.length <= 0 ||
-      product.image.length <= 0 ||
-      product.smallDes.length <= 0 ||
-      product.longDes.length <= 0
-    ) {
-      setErrors(true);
-      return;
-    }
-
     axios
-      .post("http://localhost:8000/api/store/products", product)
-      .then((response) => {
-        alert("Product Added Successfully");
-        navigate(`/store/products/product/${response.data._id}`);
-      });
+      .put(`http://localhost:8000/api/store/products/${pid}`, product)
+      .then((response) => alert("Product Added Successfully"));
   };
+
+  useEffect(() => {
+    axios.get(`http://localhost:8000/api/store/product/${pid}`).then((res) => {
+      setName(res.data.product.name);
+      setImg(res.data.product.image);
+      setPrice(res.data.product.price);
+      setSmallDes(res.data.product.smallDes);
+      setLongDes(res.data.product.longDes);
+      setCategory(res.data.product.category);
+    });
+  }, [pid]);
 
   return (
     <div className="store-add-product py-4 d-flex align-items-center flex-column justify-content-center">
-      <div className=" store-form-outer-layer">
-        <h2 className="display-6"> Add Product to Store </h2>
-        <small id="emailHelp" className="form-text text-muted">
-          Enter the details of the new product
-        </small>
-
-        {errors && (
-          <div className="text-danger mt-4 text-center">
-            All the fields are required! Please fillout all the fields to add
-            product to the store
-          </div>
-        )}
+      <div className="store-admin-edit-form p-4">
+        <h2> Edit Product </h2>
+        <p id="emailHelp" className="form-text text-muted">
+          Enter the new details of the new product and click submit
+        </p>
 
         <div className="store-add-product-form-inner  py-4">
           <form>
@@ -64,7 +53,7 @@ const StoreAddProductForm = () => {
               <label className="my-1">Name</label>
               <input
                 type="email"
-                class={`form-control ${errors.nameError && "is-invalid"}`}
+                className="form-control"
                 aria-describedby="emailHelp"
                 placeholder="Name"
                 value={name}
@@ -140,8 +129,9 @@ const StoreAddProductForm = () => {
 
             <button
               type="submit"
-              className="btn product-details-buy-now w-100"
+              className="btn w-100"
               onClick={saveProduct}
+              style={{ background: "rgb(18, 175, 57)", color: "white" }}
             >
               Submit
             </button>
@@ -152,4 +142,4 @@ const StoreAddProductForm = () => {
   );
 };
 
-export default StoreAddProductForm;
+export default StoreAdminProductsEdit;

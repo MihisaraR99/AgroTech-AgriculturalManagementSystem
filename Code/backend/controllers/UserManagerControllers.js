@@ -36,6 +36,7 @@ const loginUser = (req, res) => {
 };
 
 const currentUser = (req, res) => {
+  console.log(req.session);
   if (req.session.user) {
     res.status(200).json(req.session.user);
   } else {

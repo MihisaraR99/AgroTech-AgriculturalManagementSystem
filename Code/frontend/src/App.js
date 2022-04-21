@@ -52,6 +52,11 @@ import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import Profile from "./components/Users/Profile";
 import axios from "axios";
+import StorePaymentScreen from "./components/Store/StorePaymentScreen";
+import StoreAdminProductsEdit from "./components/Store/StoreAdminProductsEdit";
+import StoreAdminProducts from "./components/Store/StoreAdminProducts";
+import StoreAdminOrders from "./components/Store/StoreAdminOrders";
+import StoreAdminPayments from "./components/Store/StoreAdminPayments";
 
 function App() {
   useEffect(() => {}, []);
@@ -91,12 +96,36 @@ function App() {
           element={<StoreProductsDetails />}
         />
         <Route
-          path="/store/order/store-order-create"
+          path="/store/order/store-order-create/:product/:quantity/:price"
           element={<StoreOrderForm />}
         />
+
+        <Route
+          path="/store/order/payment/:orderId"
+          element={<StorePaymentScreen />}
+        />
+
         <Route
           path="/store/product/add-product"
           element={<StoreAddProductForm />}
+        />
+        <Route
+          path="/store/store-admin-products"
+          element={<StoreAdminProducts />}
+        />
+        <Route
+          path="/store/store-admin-orders"
+          element={<StoreAdminOrders />}
+        />
+
+        <Route
+          path="/store/store-admin-payments"
+          element={<StoreAdminPayments />}
+        />
+
+        <Route
+          path="/store/store-admin-products/edit/:pid"
+          element={<StoreAdminProductsEdit />}
         />
 
         <Route path="/Ads/add" element={<AddProduct />} />

@@ -2,6 +2,10 @@
   background: #f5f5f5;
 }
 
+.store-carousel img {
+  width: 100%;
+}
+
 .ecommerce-slide {
   width: 100%;
   height: 450px;
@@ -10,10 +14,6 @@
 
 .store-add-product {
   background: #f5f5f5;
-}
-
-.store-add-product-form-inner {
-  width: 500px;
 }
 
 .product-details-img {
@@ -50,6 +50,12 @@
   border: none;
 }
 
+.store-admin-table-header > tr {
+  background-color: #12af39;
+  border-radius: 4px;
+  color: white;
+}
+
 .details-button-danger {
   border-radius: 20px;
   width: 50%;
@@ -69,4 +75,99 @@
   background-color: #12af39;
   color: white;
   font-weight: 500;
+}
+
+.store-form-outer-layer {
+  width: 650px;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+  padding: 40px;
+  height: 89%;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 10px 1px rgb(226, 226, 226);
+  box-shadow: 0px 0px 10px 1px rgb(226, 226, 226);
+}
+
+.store-bought-product {
+  width: 450px;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+  padding: 20px;
+  min-height: 180px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 10px 1px rgb(226, 226, 226);
+  box-shadow: 0px 0px 10px 1px rgb(226, 226, 226);
+}
+
+.store-bought-product-item > img {
+  width: 150px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.store-bought-product-item p {
+  margin: 0;
+}
+
+.store-order-form-button {
+  width: 100%;
+  background: rgb(18, 175, 57);
+  height: 40px;
+  color: white;
+}
+
+.pricing-labels-store p {
+  margin: 0;
+}
+
+.store-order-product-item {
+  background: rgb(255, 255, 255);
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #039be5;
+  outline: 0;
+  box-shadow: none;
+}
+
+/* Payments */
+.store-payment-form {
+  width: 500px;
+  min-height: 200px;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+  padding: 20px;
+  min-height: 180px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 10px 1px rgb(226, 226, 226);
+  box-shadow: 0px 0px 10px 1px rgb(226, 226, 226);
+}
+
+.store-payment-paypal {
+  width: 100%;
+}
+
+.store-payment-paypal > img {
+  width: 100%;
+  height: 50px;
+  object-fit: contain;
+}
+
+.store-orders-container {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.store-orders-container table {
+  overflow: hidden;
+}
+
+.store-admin-edit-form {
+  background: #fff;
+  border-radius: 8px;
+  width: 650px;
 }
