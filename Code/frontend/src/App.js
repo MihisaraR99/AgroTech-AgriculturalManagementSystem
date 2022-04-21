@@ -57,7 +57,7 @@ import GuidanceDisplay from "./components/CareerManagement/GuidanceDisplay";
 import VacancyAdmin from "./components/CareerManagement/VacancyAdmin";
 import GuidanceAdmin from "./components/CareerManagement/GuidanceAdmin";
 import ApplyVacancy from "./components/CareerManagement/ApplyVacancy";
-//import ApplyGuidance from "./components/CareerManagement/ApplyGuidance";
+import ApplyGuidance from "./components/CareerManagement/ApplyGuidance";
 import CandidateRegister from "./components/CareerManagement/CandidateRegister";
 import AddNewVacancies from "./components/CareerManagement/AddNewVacancies";
 import AddNewGuidance from "./components/CareerManagement/AddNewGuidance";
@@ -77,7 +77,6 @@ import AddAppointments from "./components/HealthCare/AddAppointments";
 import AllappointmentsVet from "./components/HealthCare/AllappointmentsVet";
 import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
 import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
-import HealthHome from "./components/HealthCare/HealthHome1";
 import Happointmentinvoice from "./components/HealthCare/CustomerInvoice"
 
 // Lab Components
@@ -94,6 +93,7 @@ import EditReport from "./components/labComponent/EditReport";
 import ReportDetails from "./components/labComponent/ReportDetails";
 import UserAllReports from "./components/labComponent/UserAllReports";
 import UserReportDetails from "./components/labComponent/UserReportDetails";
+//import DeleteReport from "./components/labComponent/DeleteReport";
 
 // User Components
 import Login from "./components/Users/Login";
@@ -172,7 +172,7 @@ function App() {
         <Route path="/"         element= {<AllServices/>}   />
         <Route path="/Ulabs"    element = {<UserAllReports/>}   /> 
         <Route path="/URepDet/:id"    element = {<UserReportDetails/>}   /> 
-        <Route path="/del" element={<DeleteReport />} />
+        
           {/*
           <Route
           path="/productUpdate/:id/:name/:quantity"
@@ -189,7 +189,7 @@ function App() {
         <Route path="/HManager" element= {<AllappointmentsManager/>}/>
         <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
         <Route path="/AllAppointment" element= {<AddAppointments/>}/>
-        <Route path="/HHome" element= {<HealthHome/>}/>
+        
         <Route path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time" element= {<Happointmentinvoice/>}/>
 
         {/* Health Care Appointments Routes 
