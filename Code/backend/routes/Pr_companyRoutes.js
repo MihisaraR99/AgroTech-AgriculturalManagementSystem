@@ -55,7 +55,6 @@ router.put('/update/:id',(req,res)=>{
             $set:req.body
         },
         (err,updatePrp)=>{
-            if(err){
                 if(err){
                     return res.status(400).json({error:err});
                 }
@@ -63,7 +62,7 @@ router.put('/update/:id',(req,res)=>{
                     success:"Updated Product"
                 });
             }
-        }
+        
     );
 });
 
