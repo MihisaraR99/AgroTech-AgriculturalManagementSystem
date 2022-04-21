@@ -3,6 +3,7 @@ const router = express.Router();
 const { 
     addAds,
     getAds,
+    getsingleAd,
     updateAds,
     removeAds
  } = require("../controllers/AdsController");
@@ -22,6 +23,10 @@ router.put("/:id", updateAds);
 
 //@route DELETE api/Ads/:id
 //@desc delete an Ads
-router.delete("/:id", removeAds)
+router.delete("/:id", removeAds);
+
+//@route getSpecific api/Ads/:id
+//@desc getSpecific an Ads
+router.get("/:id", getsingleAd);
 
 module.exports = router;

@@ -25,7 +25,7 @@ const AdminViewAds = () => {
           <tr>
             <th scope="col">#</th>
             <th scope="col">Type</th>
-            <th scope="col">Price</th>
+            <th scope="col">Price(Rs.)</th>
             <th scope="col">Size(Purches)</th>
             <th scope="col">Action</th>
           </tr>
@@ -37,7 +37,11 @@ const AdminViewAds = () => {
                 <th scope="row">{index + 1}</th>
                 <td>
                   <Link
-                    to={`/Ads/${adsr._id}`}
+                    to={`/Ads/Ad/${adr._id}/${adr.town}/${adr.AgentRef}/${
+                      adr.heading
+                    }/${adr.description}/${adr.sizeOfArea}/${adr.priceRate}/${
+                      adr.contactName
+                    }/${adr.email}/${adr.phone}/${encodeURIComponent(adr.img)}`}
                     style={{ textDecoration: "none" }}
                   >
                     {adr.type}

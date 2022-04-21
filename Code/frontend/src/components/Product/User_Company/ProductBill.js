@@ -1,11 +1,88 @@
 import React,{useState} from "react";
-import img6 from "../images/img19.jpg";
+import img6 from "../images/bill.jpg";
 export default function CompanyRequest(){
   
     return(
-        <div style={{  backgroundImage: `url(${img6})`,backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat', }}>
-          
+        <div style={{backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',backgroundImage:`url(${img6})`}}>
+            
+            <center>
+     <div >
+   
+  <div class="container22" style={{}}>  
+<form class="" style={{marginLeft:"250px", marginBottom:"20px",backgroundColor:"#c2d6d6", width:"500px", padding:"20px",border:"3px solid black"}}>
+    <h2 className="h2topic22" style={{color:"black" , fontSize:"50px", marginLeft:"30px" }}>Your Bill</h2>
+
+    <hr style={{color:"black"}}/>
+
+    <h6 className="h2topic22" style={{color:"black" , marginLeft:"50px" ,fontSize:"20px",}}>Billing Content</h6>
+
+    <div class="form-group">
+            <div >
+            <label style={{color:"black"}}>Name</label>  
+        <input type="text" class="hinvoice" style={{ backgroundColor: "white", width:"300px",padding:"10px",marginLeft:"70px",border:"none",borderBottom:"1px solid "}} 
+       />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div >  
+      <label style={{color:"black"}}>Company Name</label>          
+        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",border:"none",borderBottom:"1px solid"}} />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div >
+      <label style={{color:"black"}}>Email Address</label>  
+        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"20px",border:"none",borderBottom:"1px solid "}}  />
+      </div>
+    </div>
+
+    <hr style={{color:"black"}}/>
+
+    <h6 className="h2topic22" style={{color:"black" , marginLeft:"50px",fontSize:"20px", }}>Billing Summary</h6>
+    
+    <div class="form-group">
+     <div>  
+     <label style={{color:"black"}}>Name</label>          
+        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"75px",border:"none",borderBottom:"1px solid "}}  />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div >   
+      <label style={{color:"black"}}>Item ID</label>         
+        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px", padding:"10px",margin:"10px",marginLeft:"65px",border:"none",borderBottom:"1px solid "}}/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div > 
+      <label style={{color:"black"}}>Item Name</label>           
+        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"45px",border:"none",borderBottom:"1px solid "}}/>
+      </div>
+    </div>
+
+    <hr style={{color:"black"}}/>
+
+    <div class="form-group">
+      <div > 
+      <label style={{color:"black"}}>Item Name</label>           
+        <input type="text" class="hinvoice" style={{ backgroundColor: "none", width:"300px",padding:"10px",margin:"10px",marginLeft:"40px",border:"none",borderBottom:"3px solid black",borderTop:"3px solid black"}}/>
+      </div>
+    </div>
+
+    <hr style={{color:"black"}}/>
+    
+    
+
+
+  </form>
+  </div>
+</div>
+
+</center>
 
 
 

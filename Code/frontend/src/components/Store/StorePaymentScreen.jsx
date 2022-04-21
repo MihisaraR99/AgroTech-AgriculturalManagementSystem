@@ -20,8 +20,14 @@ const StorePaymentScreen = () => {
   const [expiration, setExpiration] = useState("");
   const [cvv, setCvv] = useState("");
   const [owner, setOwner] = useState("");
+  const [error, setError] = useState("");
 
   const onClick = (e) => {
+    if (paypalEmail.length <= 0 || creditCard.length <= 0) {
+      setError("You need to enter either you credit card or paypal");
+      return;
+    }
+
     const payment = {
       paymentType: paypalEmail.length > 0 ? "paypal" : "card",
       amount: order.total,
@@ -45,6 +51,8 @@ const StorePaymentScreen = () => {
           Hey, We have recieved your order! Enter your credentials to proceed
           the payment
         </p>
+
+        {error && <p> {error} </p>}
 
         <div className="store-payment-paypal">
           <img src="https://i.ibb.co/37QxMHG/Daco-472332.png" alt="" />

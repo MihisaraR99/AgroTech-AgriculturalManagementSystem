@@ -50,6 +50,16 @@ const getAds = async (req, res) => {
   }
 };
 
+const getsingleAd = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const ad = await Ads.findById(id);
+    res.status(200).json(ad);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
+
 const updateAds = async (req, res) => {
   const advID = req.params.id;
   try {
@@ -115,6 +125,7 @@ const removeAds = async (req, res) => {
 module.exports = {
   addAds,
   getAds,
+  getsingleAd,
   updateAds,
   removeAds,
 };
