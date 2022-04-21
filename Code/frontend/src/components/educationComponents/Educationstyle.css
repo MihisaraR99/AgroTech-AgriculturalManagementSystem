@@ -1,0 +1,391 @@
+
+/*slideshow course*/
+.carousel-inner{
+    width:100%;
+    max-height: 450px
+}
+
+.imgblock{
+
+    width: 100%;
+  
+    
+}
+.carousel-text{
+
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom:10%;
+  transform: translate(-50%, -50%);
+  color:#f5f5f5;
+    
+}
+.top-heading{
+    padding-top: 50px;
+    padding-bottom: 40px;
+    font-weight: bold;
+    padding-left:5px;
+}
+.course-cat{
+    padding-top:5px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    padding-left:5px;
+}
+
+/*topcourse cards*/
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .card img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  #topcrs-crd {
+    margin: 0 0.5em;
+    box-shadow: 2px 10px 8px 0  rgba(22, 22, 26, 0.18);
+    border:none;
+    border-bottom: solid #e7e3e3 ;
+    border-radius: 5px;
+
+   
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: #e1e1e1;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+ .btn-crd{
+    border-radius:4px;
+    background-color: #008CBA;
+    padding: 10px 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold
+
+ }
+ .btn-crd:hover {
+    background-color: #54d5ff; 
+    
+  }
+  .course-price{
+    padding-bottom: 5px;
+  }
+  .space-nav{
+      padding-bottom:100px;
+  }
+.category-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom:10%;
+    transform: translate(-50%, -50%);
+    color:#f5f5f5;
+
+}
+
+.crd-img {
+   width: 100%;
+   height: 100%;
+  }
+.card:hover{
+    background-color:#e7e3e3;
+}
+.space-jumbo{
+    padding-top: 50px;
+    padding-left:30px;
+    padding-right:30px;
+}
+/*jumbo start course*/
+.crs-jumbotron{
+    background-image: url("./eduimgs/Aqua\ Marine.jpg");
+    background-size: cover;
+    max-height:50%;
+    padding:50px;
+    border-radius:20px ;
+    color:aliceblue;
+}
+.crsjumbotron-bottom{
+    padding-bottom:100px;
+}
+
+/*course insert*/
+.modal-header {
+    background-image: linear-gradient(to right top, #41de13, #00e07a, #00ddb7, #00d6de, #12cbeb);
+    color: #fff;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+
+    font-weight: bold;
+    font-size: 20px;
+}
+.modal-content {
+    width:150%;
+    max-height:1000px;
+    border-radius: 20px;
+    background-color: #ffffff;
+
+}
+.courseinsert-form .item{
+	border-radius: 20px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    
+    
+}
+#upload {
+    opacity: 0;
+  
+}
+
+
+#upload-label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.required:after {
+    content: "*";
+    color: red;
+}
+.form-select{
+    border-radius: 20px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+
+}
+
+/*pop modal*/
+.pop-modal-header{
+    background-color:#54d5ff;
+   border-top-left-radius:15px;
+   border-top-right-radius:15px;
+    font-weight: bold;
+    font-size: 30px;
+    max-height: 30%;
+    padding-left:10px ;
+}
+
+#pop-content{
+    width:100%;
+    max-height:100%;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+.or-padding{
+    padding-top: 15px;
+    padding-bottom:0px;
+}
+#edit-btn:hover{
+    background-color: #3e8e41
+}
+#delete-btn:hover{
+    background-color: #3e8e41
+}
+
+/*course insert */
+
+
+#insert-crd {
+    padding: 30px 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    border: none !important;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.blue-text {
+    color: #00BCD4
+}
+
+.form-control-label {
+    margin-bottom: 0
+}
+
+input,
+textarea,
+button {
+    padding: 8px 15px;
+    border-radius: 5px !important;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 18px !important;
+    font-weight:bold;
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #00BCD4;
+    outline-width: 0;
+    font-weight: 400
+}
+
+.btn-block {
+    text-transform: uppercase;
+    font-size: 15px !important;
+    font-weight: 400;
+    height: 43px;
+    cursor: pointer
+}
+
+.btn-block:hover {
+    color: #fff !important
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+.insert-header{
+    background-image: linear-gradient(to right top, #41de13, #00e07a, #00ddb7, #00d6de, #12cbeb);
+   width: 100%;
+   padding: 30px 30px 40px 30px;
+   height:20px;
+}
+.padding-bot{
+    padding-bottom: 50px;
+}
+.form-rounded {
+    border-radius: 50px;
+    }
+.input.currency {
+        text-align: right;
+        padding-right: 15px;
+    }
+#add-btn{
+    padding-top:15px;
+}
+#link-input{
+    padding-top:0px;
+}
+.alert-txt{
+ color:red;
+}
+.crstable_responsive {
+    max-width: 100%;
+    border: 1px solid #00bcd4;
+    background-color: #efefef33;
+    padding: 15px;
+    overflow: auto;
+    margin: auto;
+    border-radius: 4px;
+   
+
+
+}
+#add-crs{
+   float:right ;
+    
+}
+.addbtn-row{
+    padding-bottom:20px;
+}
+.crstable-title{
+       
+        max-width: 100%;
+        border-bottom: 1px solid #e9e9e9;
+      
+        
+        background: rgb(0, 50, 74);
+        
+        padding: 40px 40px;
+        color: #fff;
+        border-top-right-radius:10px;
+        border-top-left-radius:10px;
+
+}
+.crstable {
+    min-width: 100%;
+    font-size: 13px;
+    color: #444;
+    white-space: nowrap;
+    border-collapse: collapse;
+
+}
+.crs-thead {
+    background-color: #00bcd4;
+    color: #fff;
+}
+
+.crs-th{
+    border: 1px solid #00000017;
+    padding: 15px 65px;
+}
+.crs-td {
+    border: 1px solid #00000017;
+    padding: 5px 15px;
+}
+.crsthumimg {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 6px #0003;
+}
+.crsaction_btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.crsaction_btn>a {
+    text-decoration: none;
+    color: #444;
+    background: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 7px 20px;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+}
+.crsaction_btn>a:nth-child(1) {
+    border-color: #26a69a;
+}
+.crsaction_btn>a:nth-child(2) {
+    border-color: orange;
+}
+.crsaction_btn>a:hover {
+    box-shadow: 0 3px 8px #0003;
+}
+.crs-tr{
+    background-color: #fff;
+    transition: 0.3s ease-in-out;
+}
+.crs-tr:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+}
+.crs-tr:hover{
+    filter: drop-shadow(0px 2px 6px #0002);
+}
+.insert-body{
+    background-image: url("./eduimgs/Aqua\ Marine.jpg");
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%
+
+}
+#i-bold{
+    font-weight: bold;
+}
+#exampleFormControlTextarea3{
+    font-weight: bold;
+}

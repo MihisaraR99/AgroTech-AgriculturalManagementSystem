@@ -1,11 +1,21 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+//import "./App.css";
+import "./components/educationComponents/Educationstyle.css"
 import "./App.css";
 import "./components/HealthCare/Health.css";
+
 import Header from "./components/Header";
 import Navigator from "./components/Navigator/Navigator";
 import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
+import Courseadmin from "./components/educationComponents/Courseadmin";
+import Coursehome from "./components/educationComponents/Coursehome";
+import Courseinsert from "./components/educationComponents/Courseinsert";
+import Updatecourse from "./components/educationComponents/Updatecourse";
+
+
 import Addevent from "./components/Events/Addevent";
 import Eventshome from "./components/Events/Eventshome";
 import EventAdmin from "./components/Events/EventAdmin";
@@ -131,6 +141,11 @@ function App() {
         <Route path="/rep/:id" element={<ReportDetails />} />
           
         <Route path="/" element={<AllServices />} />
+        <Route path="/coursehome" element={<Coursehome />} />
+        <Route path="/courseinsert" element={<Courseinsert />} />
+        <Route path="/updatecourse/:id" element={<Updatecourse/>} />
+        <Route path="/Ulabs" element={<UserAllReports />} />
+
         <Route path="/events/add" element={<Addevent />}  /> 
         <Route path="/events/home" element={<Eventshome />} />
         <Route path="/events/admin" element={<EventAdmin/>} />
@@ -249,8 +264,7 @@ function App() {
         <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      <Footer />
-    </BrowserRouter>
+      <Footer/>
   );
 }
 
