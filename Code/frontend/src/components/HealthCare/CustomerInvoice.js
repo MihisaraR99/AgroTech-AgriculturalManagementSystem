@@ -1,5 +1,5 @@
 import  React, {useState, useEffect} from "react";
-import InvoiceImg from "../HealthCare/Img/Invoice.png";
+
 import {useParams} from 'react-router-dom'
 
 export default function CustomerInvoice(){
@@ -25,7 +25,7 @@ export default function CustomerInvoice(){
   }, [params])
 
     return(
-        <div style={{  backgroundImage: `url(${InvoiceImg})`}}>
+        <div >
             <center>
         <div >
    
