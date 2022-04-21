@@ -8,6 +8,7 @@ const expressSession = require("express-session");
 // Import routes to here
 const userRoutes = require("./routes/userManageRoutes");
 const storeRoutes = require("./routes/storeRoutes");
+const labRoutes = require("./routes/labRoutes");
 const wholesaleRoutes = require("./routes/wholesaleRoutes");
 const CompanyRequest = require("./routes/Pr_companyRoutes");
 const eventRoutes = require("./routes/eventRoutes");
@@ -64,6 +65,7 @@ app.get("/", (req, res) => {
 // Implement the routes from here
 app.use("/api/users", userRoutes);
 app.use("/api/store", storeRoutes);
+app.use("/api/lab", labRoutes);
 app.use("/api/wholesale", wholesaleRoutes);
 app.use("/api/companyRequest", CompanyRequest);
 app.use("/api/lab", labRoutes);

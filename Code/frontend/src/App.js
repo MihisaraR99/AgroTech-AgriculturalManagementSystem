@@ -39,12 +39,13 @@ import AllappointmentsVet from "./components/HealthCare/AllappointmentsVet";
 import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
 import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
 
-// Lab Components
-import AddReport from "./components/AddReport";
-import AllReports from "./components/AllReports";
-import DeleteReport from "./components/DeleteReport";
-import EditReport from "./components/EditReport";
-import ReportDetails from "./components/ReportDetails";
+//Lab components
+import AddReport     from "./components/labComponent/AddReport";
+import AllReports    from "./components/labComponent/AllReports";
+import EditReport    from "./components/labComponent/EditReport";
+import ReportDetails from "./components/labComponent/ReportDetails";
+import UserAllReports from "./components/labComponent/UserAllReports"
+import UserReportDetails from "./components/labComponent/UserReportDetails";
 
 // User Components
 import Login from "./components/Users/Login";
@@ -57,37 +58,24 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <Header /> */}
-      <Navigator />
-      <Routes>
-        <Route path="/" element={<AllServices />} />
-        <Route path="/rep" element={<AllReports />} />
-        <Route path="/add" element={<AddReport />} />
+     <Navigator />
+      <Routes> 
+        <Route path="/rep"      element= {<AllReports/>}    />
+        <Route path="/add"      element= {<AddReport/>}     />
+        <Route path="/edit/:id" element= {<EditReport/>}    />
+        <Route path="/rep/:id"  element= {<ReportDetails/>} />
+        <Route path="/"         element= {<AllServices/>}   />
+        <Route path="/Ulabs"    element = {<UserAllReports/>}   /> 
+        <Route path="/URepDet/:id"    element = {<UserReportDetails/>}   /> 
         <Route path="/del" element={<DeleteReport />} />
-        <Route path="/edit/:id" element={<EditReport />} />
-        <Route path="/rep/:id" element={<ReportDetails />} />
-
-        {/* <Header /> */}
-        <Route path="/productadd" element={<AddProduct />} />
-        <Route path="/productSee" element={<AllProducts />} />
-        <Route path="/companyadd" element={<CompanyRequest />} />
-        <Route path="/companySee" element={<AllCompanyRequest />} />
+          
         <Route
           path="/productUpdate/:id/:name/:quantity"
           element={<UpdateProducts />}
         />
         <Route path="/stockDetails" element={<StockDetails />} />
         <Route path="/productBill" element={<ProductBill />} />
-
-        <Route path="/rep" element={<AllReports />} />
-        <Route path="/add" element={<AddReport />} />
-        <Route path="/del" element={<DeleteReport />} />
-        <Route path="/edit/:id" element={<EditReport />} />
-        <Route path="/rep/:id" element={<ReportDetails />} />
         <Route path="/" element={<AllServices />} />
-
-        <Route path="/adform" element={<AdvertiserForm />} />
-        <Route path="/properties" element={<PropertyCatalog />} />
 
         {/* Health Care Appointments Routes */}
         <Route path="/Appointments" element={<AddAppointments />} />
@@ -145,7 +133,8 @@ function App() {
         <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      <Footer />
+      <Footer/>
+ 
     </BrowserRouter>
   );
 }
