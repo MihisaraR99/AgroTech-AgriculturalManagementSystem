@@ -9,7 +9,7 @@ import {getAllCompany} from '../productManagementService';
 
 export default function AllProducts(){
 
-    const [company, setRequest] = useState([]);
+    const [company,setRequest] = useState([]);
 
     useEffect(()=>{
         getAllCompany().then((data)=>{
@@ -52,8 +52,11 @@ className="product-title" >
     <p style={{ fontSize: "20px",textAlign:"left" }}>
     Product Name-<b> {company.Product_Name}</b>
     </p>
+   {/* <p style={{ fontSize: "20px",textAlign:"left"}}>
+     Contact Name-<b> {company.Contact_Name}</b>
+            </p>*/}
     <p style={{ fontSize: "20px",textAlign:"left"}}>
-     Company Email-<b> {company.Company_Email}</b>
+     Company Email-<b> {company.Product_Id}</b>
     </p>
     <p style={{ fontSize: "20px",textAlign:"left" }}>
      Contact No-<b>{company.Company_contactNo}</b>
