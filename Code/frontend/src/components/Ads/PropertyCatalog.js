@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const PropertyCatalog = () => {
   
   const [ads, setAds] = useState(undefined);
+  const [AdSearch , setadSearch] = useState("");
 
   useEffect(() => {
     axios
@@ -45,12 +46,12 @@ const PropertyCatalog = () => {
 
 <br/>
 <div className="input-group" style={{ width: "18rem", border:"1px solid #e2ebd8" }}>
-  <input type="search" className="form-control rounded" placeholder="Type" aria-label="Search" aria-describedby="search-addon" />
+  <input type="search" onChange ={(e)=>{setadSearch(e.target.value); }} className="form-control rounded" placeholder="Type" aria-label="Search" aria-describedby="search-addon" />
   <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
 </div>
 <br/>
 <div className="input-group" style={{ width: "18rem", border:"1px solid #e2ebd8" }}>
-  <input type="search" className="form-control rounded" placeholder="City" aria-label="Search" aria-describedby="search-addon" />
+  <input type="search" onChange ={(e)=>{setadSearch(e.target.value); }} className="form-control rounded" placeholder="City" aria-label="Search" aria-describedby="search-addon" />
   <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
 </div>
 <br/>
@@ -58,8 +59,19 @@ const PropertyCatalog = () => {
 <br/>
 
 <div className="products-list row p-5" style={{backgroundColor:"#D3D3D3"}}>
-        {ads &&
-          ads.map((ad) => (
+{ads && ads.filter(value=>{
+            if(AdSearch ===""){
+                return value;
+            }else if(
+                value.type.toLowerCase().includes(AdSearch.toLowerCase())
+
+            );else if(
+                 value.town.toLowerCase().includes(AdSearch.toLowerCase())
+
+          ){
+                return value
+            }
+        }).map((ad) => (
     <div className="card" style={{ width: "15rem", margin: "1rem", height:"20rem" }}>
     <div className="card-bodies">
     <div className="product-image" style={{height:"10rem", marginTop:"10px"}}>
