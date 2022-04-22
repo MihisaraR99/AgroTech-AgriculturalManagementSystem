@@ -6,11 +6,11 @@ import "./components/educationComponents/Educationstyle.css"
 import "./App.css";
 import "./components/HealthCare/Health.css";
 
-import Header from "./components/Header";
+//import Header from "./components/Header";
 import Navigator from "./components/Navigator/Navigator";
 import Footer from "./components/Footer";
 import AllServices from "./components/AllServices";
-import Courseadmin from "./components/educationComponents/Courseadmin";
+//import Courseadmin from "./components/educationComponents/Courseadmin";
 import Coursehome from "./components/educationComponents/Coursehome";
 import Courseinsert from "./components/educationComponents/Courseinsert";
 import Updatecourse from "./components/educationComponents/Updatecourse";
@@ -77,15 +77,14 @@ import AddAppointments from "./components/HealthCare/AddAppointments";
 import AllappointmentsVet from "./components/HealthCare/AllappointmentsVet";
 import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
 import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
-import HealthHome from "./components/HealthCare/HealthHome1";
 import Happointmentinvoice from "./components/HealthCare/CustomerInvoice"
 
 // Lab Components
-import AddReport from "./components/AddReport";
-import AllReports from "./components/AllReports";
-import DeleteReport from "./components/DeleteReport";
-import EditReport from "./components/EditReport";
-import ReportDetails from "./components/ReportDetails";
+//import AddReport from "./components/AddReport";
+//import AllReports from "./components/AllReports";
+//import DeleteReport from "./components/DeleteReport";
+//import EditReport from "./components/EditReport";
+//import ReportDetails from "./components/ReportDetails";
 
 //Lab components
 import AddReport from "./components/labComponent/AddReport";
@@ -94,12 +93,14 @@ import EditReport from "./components/labComponent/EditReport";
 import ReportDetails from "./components/labComponent/ReportDetails";
 import UserAllReports from "./components/labComponent/UserAllReports";
 import UserReportDetails from "./components/labComponent/UserReportDetails";
+//import DeleteReport from "./components/labComponent/DeleteReport";
 
 // User Components
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import Profile from "./components/Users/Profile";
-import axios from "axios";
+
+//Store Components
 import StorePaymentScreen from "./components/Store/StorePaymentScreen";
 import StoreAdminProductsEdit from "./components/Store/StoreAdminProductsEdit";
 import StoreAdminProducts from "./components/Store/StoreAdminProducts";
@@ -114,10 +115,13 @@ function App() {
      <Navigator />
       <Routes>
         <Route path="/" element={<AllServices />} />
+        {/*  
         <Route path="/adform" element={<AdvertiserForm />} />
         <Route path="/properties" element={<PropertyCatalog />} />
         <Route path="/DisplayAd" element={<DisplayAd />} />
         <Route path="/AdverLogin" element={<AdvertiserLogin />} />
+        */}
+        
 
         /*CareerManagement*/
         <Route path="/VacancyDisplay" element={<VacancyDisplay/>} />
@@ -134,25 +138,33 @@ function App() {
         <Route path="/UpdateVacancy/:id" element={<UpdateVacancy/>}/>
         <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin/>}/>
         <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin/>}/>
-      
+      {/*
         <Route path="/rep" element={<AllReports />} />
         <Route path="/add" element={<AddReport />} />
         <Route path="/edit/:id" element={<EditReport />} />
         <Route path="/rep/:id" element={<ReportDetails />} />
           
+  */}
+
+       {/* Education course Routes */}
         <Route path="/" element={<AllServices />} />
         <Route path="/coursehome" element={<Coursehome />} />
         <Route path="/courseinsert" element={<Courseinsert />} />
         <Route path="/updatecourse/:id" element={<Updatecourse/>} />
+        {/*
         <Route path="/Ulabs" element={<UserAllReports />} />
+         */}
+        
 
+         {/* Events Routes */}
         <Route path="/events/add" element={<Addevent />}  /> 
         <Route path="/events/home" element={<Eventshome />} />
         <Route path="/events/admin" element={<EventAdmin/>} />
         <Route path="/events/detail"element={<Eventdetail/>}/>
         <Route path="/events/update/:id"element={<UpdateEvent/>}/>
         <Route path="/events/register" element={<RegisterEvent/>}/>
-          
+
+          {/* Health Lab Routes */}
         <Route path="/rep"      element= {<AllReports/>}    />
         <Route path="/add"      element= {<AddReport/>}     />
         <Route path="/edit/:id" element= {<EditReport/>}    />
@@ -160,15 +172,16 @@ function App() {
         <Route path="/"         element= {<AllServices/>}   />
         <Route path="/Ulabs"    element = {<UserAllReports/>}   /> 
         <Route path="/URepDet/:id"    element = {<UserReportDetails/>}   /> 
-        <Route path="/del" element={<DeleteReport />} />
-          
-        <Route
+        
+          {/*
+          <Route
           path="/productUpdate/:id/:name/:quantity"
           element={<UpdateProducts />}
         />
         <Route path="/stockDetails" element={<StockDetails />} />
         <Route path="/productBill" element={<ProductBill />} />
-        <Route path="/" element={<AllServices />} />
+        <Route path="/" element={<AllServices />} /> */}
+        
 
           {/* Health Care Appointments Routes */}
         <Route path="/Appointments" element= {<AddAppointments/>}/>
@@ -176,12 +189,13 @@ function App() {
         <Route path="/HManager" element= {<AllappointmentsManager/>}/>
         <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
         <Route path="/AllAppointment" element= {<AddAppointments/>}/>
-        <Route path="/HHome" element= {<HealthHome/>}/>
+        
         <Route path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time" element= {<Happointmentinvoice/>}/>
 
-        {/* Health Care Appointments Routes */}
+        {/* Health Care Appointments Routes 
         <Route path="/Appointments" element={<AddAppointments />} />
         <Route path="/AllAppointment" element={<AddAppointments />} />
+        */}
 
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
@@ -219,12 +233,14 @@ function App() {
           path="/store/store-admin-products/edit/:pid"
           element={<StoreAdminProductsEdit />}
         />
-
+{/*
         <Route path="/Ads/add" element={<AddProduct />} />
         <Route path="/Ads/productSee" element={<AllProducts />} />
         <Route path="/Ads/company" element={<CompanyRequest />} />
+        */} 
 
-        {/* Product Routes  */}
+       {/*
+
         <Route path="/productadd" element= {<AddProduct/>}/>
         <Route path="/productSee" element= {<AllProducts/>}/>
         <Route path="/companyadd" element= {<CompanyRequest/>}/>
@@ -232,6 +248,7 @@ function App() {
         <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
         <Route path="/stock" element= {<StockDetails/>}/>
         <Route path="/productBill" element={<ProductBill/>}/>
+        */} 
           
         {/*Product Routes*/}
         <Route path="/productadd" element={<AddProduct />} />
@@ -265,6 +282,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer/>
+      </BrowserRouter>
   );
 }
 
