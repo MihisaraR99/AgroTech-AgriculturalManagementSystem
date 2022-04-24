@@ -55,7 +55,7 @@ function Courseadmin(){
           <th class="crs-th">Course Name</th>
           <th class="crs-th">Category</th>
           <th class="crs-th">Institute</th>
-          <th class="crs-th">Price</th>
+          <th class="crs-th">Prices</th>
 
          
           <th class="crs-th">Action</th>
