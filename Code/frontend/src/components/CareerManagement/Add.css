@@ -16,20 +16,22 @@
       background-position: center center;
       font-weight: 400;
       font-family: 'Roboto Slab';
-      margin: 0px;}
+      margin: 0px;
+      font-family: 'Montserrat', sans-serif;}
+      
 
-    *{
+    /**{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Montserrat', sans-serif;
+       
       }
-    
-      body{
-        /*background: #fec107;*/
+    */
+   /*  body{
+        background: #fec107;
         padding: 0 10px;
       }
-    
+    */
     
       .wrapperss{
         max-width: 500px;
