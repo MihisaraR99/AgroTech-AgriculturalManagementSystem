@@ -92,11 +92,30 @@ function Header() {
                 <span className="icon-menu h3"></span>
               </a>
             </div>
-          </div>
-        </div>
-      </header>
-    </div>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
+              Event & Contact Support
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
+              Contact
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
+              Help
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    
   );
+ 
 }
 
 export default Header;

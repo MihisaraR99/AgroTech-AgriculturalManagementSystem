@@ -1,9 +1,71 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Culti from "./img/Culti.jpg";
+import React, { Component } from "react";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
-function DisplayAd() {
-  return (
+function withParams(Component) {
+  return (props) => <Component {...props} params={useParams()} />;
+}
+
+class DisplayAd extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      town: "",
+      AgentRef: "",
+      heading: "",
+      description: "",
+      sizeOfArea: "",
+      priceRate: "",
+      contactName: "",
+      email: "",
+      phone: "",
+      img: "",
+    };
+  }
+
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    this.setState({
+      ...this.state,
+      [name]: value,
+    });
+  };
+
+  componentDidMount() {
+    const {
+      town,
+      agentRef,
+      heading,
+      description,
+      sizeofArea,
+      priceRate,
+      contactName,
+      email,
+      phone,
+      image,
+    } = this.props.params;
+
+    this.setState({
+      town: town,
+      AgentRef: agentRef,
+      heading: heading,
+      description: description,
+      sizeOfArea: sizeofArea,
+      priceRate: priceRate,
+      contactName: contactName,
+      email: email,
+      phone: phone,
+      img: image,
+    });
+  }
+
+
+
+render() {
+    return (
+    <div style={{marginTop: '20px'}}>
       <div>
           <br/>
           <div class="d-grid gap-2 d-md-block">
@@ -14,7 +76,7 @@ function DisplayAd() {
         <br/>
         
         <br/>
-  <img src={Culti} class="rounded" alt="..." style={{ width: "40rem" }} />
+  <img  class="rounded" src={this.state.img} alt="..." style={{ width: "40rem" }} />
   <br/>
   <br/>
   <div className="btn-group" style={{ marginLeft: "30rem" }}>
@@ -32,16 +94,16 @@ function DisplayAd() {
   <br/>
   <div style={{marginRight: "25rem"}}>
   <blockquote class="blockquote" style={{float: "right"}}>
-  <p className="mb-0">Availability : </p>
+  <p className="mb-0">Town : {this.state.town}</p>
 </blockquote>
 <blockquote class="blockquote">
-  <p className="mb-0">Area of Land : </p>
+  <p className="mb-0" style={{marginLeft:"125px"}}>Area of Land : {this.state.sizeOfArea} Perches</p>
 </blockquote>
 <blockquote class="blockquote" style={{float: "right"}}>
-  <p className="mb-0">AgentRef : </p>
+  <p className="mb-0">AgentRef : {this.state.AgentRef}</p>
 </blockquote>
 <blockquote class="blockquote">
-  <p className="mb-0">Offered for : </p>
+  <p className="mb-0" style={{marginLeft:"180px"}}>Offered for : {this.state.heading}</p>
 </blockquote>
 </div>
 <br/>
@@ -49,48 +111,26 @@ function DisplayAd() {
 <div style={{marginRight: "19rem"}}>
 <h1 style={{marginRight: "4.5rem"}}>Property Details</h1>
 <br/>
-<p>details details detail details detail detail detail detail</p>
-<p>details details detail details detail detail detail detail</p>
-<p>details details detail details detaildetaildetail detail </p>
+<p style={{marginLeft:"125px", width:"70rem"}}>{this.state.description}</p>
+<p></p>
 </div>
 <br/>
 <div className="container p-3 my-3 bg-dark text-white">
-  <h1>Contact Advertiser</h1>
+  <h1 >Contact Advertiser ({this.state.contactName})</h1>
 </div>
 <div className='col-md-8 mt-4 mx-auto'>
-<form>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="" placeholder="Name"/>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="" placeholder="www.@examples.com"/>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Phone</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="" placeholder="07XXXXXXXX"/>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputMessage" class="col-sm-2 col-form-label">Message</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="" placeholder="Message"/>
-    </div>
-  </div>
-</form>
+<h5>Phone : {this.state.phone}</h5>
+<h5>Email : {this.state.email}</h5>
+
 </div>
 <br/>
-<button type="button" className="btn btn-success">
-   Send Message
-  </button>
+<button onClick={() => window.location = `mailto:${this.state.email}`} className="btn btn-success">Contact Me</button>
+  <br/>
+</div>
+<br/>
 </div>
 </div>
-  );
+  )
 }
-export default DisplayAd;
+}
+export default withParams(DisplayAd);

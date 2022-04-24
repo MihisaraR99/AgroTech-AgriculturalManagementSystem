@@ -1,74 +1,84 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./Ads.css";
 import { Link } from "react-router-dom";
-import bg3 from "./img/bg3.jpg";
 
-function PropertyCatalog() {
+const PropertyCatalog = () => {
+  
+  const [ads, setAds] = useState(undefined);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/Ads/all`)
+      .then((res) => {
+        setAds(res.data);
+      });
+
+    console.log(ads);
+  }, []);
+  
+  
+
+
   return (
-<div className='col-md-8 mt-4 mx-auto'>
-<ul className="nav" style={{ marginLeft: "35rem" }}>
-  <li className="nav-item">
-    <a className="nav-link active" href="#">Login</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="#">Register</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="#">Post Your Ads</a>
-  </li>
-</ul><br/>
-    <div className="btn-group" style={{ marginLeft: "40rem" }}>
-  <button type="button" className="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Radius
-  </button>
-  <div className="dropdown-menu">
-    <Link className="dropdown-item" to={"#"}>Action</Link>
-    <Link className="dropdown-item" to={"#"}>Another action</Link>
-    <Link className="dropdown-item" to={"#"}>Something else here</Link>
-    <div className="dropdown-divider"></div>
-    <Link className="dropdown-item" to={"#"}>Separated link</Link>
+<div style={{backgroundColor: "#76ad3b"}}>
+<br/>
+
+<div className="upper-images" style={{border:"2px solid #e2ebd8"}}>
+        <img
+          className="ecommerce-slide"
+          src="https://th.bing.com/th/id/R.414f0016399d8a7af8ceb1030ee66281?rik=Gcv2%2f7iMfLKn8g&pid=ImgRaw&r=0"
+          alt=""
+        />
+        <div class="middle">
+    <div class="text"><p style={{color:"#555"}}>Lands To Buy..</p></div>
+   <p className="para">Search our selection of land plots for sale in Sri Lanka. 
+     Our fast-growing portfolio of properties brings you closer to your ideal home. 
+     Every project is monitored and handled by detail-oriented team members 
+     committed to serving our customers with the highest possible service to guarantee you find your dream farm.</p>
+     <button class="buttonserv"><span>Discover</span></button> 
   </div>
-</div>
-<div className="btn-group" style={{ marginLeft: "1rem" }}>
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Price range
-  </button>
-  <div className="dropdown-menu">
-    <Link className="dropdown-item" to={"#"}>Action</Link>
-    <Link className="dropdown-item" to={"#"}>Another action</Link>
-    <Link className="dropdown-item" to={"#"}>Something else here</Link>
-    <div className="dropdown-divider"></div>
-    <Link className="dropdown-item" to={"#"}>Separated link</Link>
-  </div>
-</div>
-<br/><br/>
-<div className="input-group" style={{ width: "18rem" }}>
+      </div>
+
+<div className='col-md-8 mt-4 mx-auto' style={{marginBottom:"40px",backgroundColor: "#76ad3b"}}>
+  
+
+<br/>
+<div className="input-group" style={{ width: "18rem", border:"1px solid #e2ebd8" }}>
   <input type="search" className="form-control rounded" placeholder="Type" aria-label="Search" aria-describedby="search-addon" />
-  <button type="button" className="btn btn-outline-primary">search</button>
+  <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
 </div>
 <br/>
-<div className="input-group" style={{ width: "18rem" }}>
+<div className="input-group" style={{ width: "18rem", border:"1px solid #e2ebd8" }}>
   <input type="search" className="form-control rounded" placeholder="City" aria-label="Search" aria-describedby="search-addon" />
-  <button type="button" className="btn btn-outline-primary">search</button>
+  <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
 </div>
 <br/>
 <hr></hr>
-
-<br/>
-<br/>
 <br/>
 
-    <div className="card" style={{ width: "18rem" }}>
-    <img className="card-img-top" src={bg3} alt="Card image cap"/>
-    <div className="card-body">
-      <h5 className="card-title">Rs.3.2M Per Acre</h5>
-      <p className="card-text">Description of the land</p>
+<div className="products-list row p-5" style={{backgroundColor:"#D3D3D3"}}>
+        {ads &&
+          ads.map((ad) => (
+    <div className="card" style={{ width: "15rem", margin: "1rem", height:"20rem" }}>
+    <div className="card-bodies">
+    <div className="product-image" style={{height:"10rem", marginTop:"10px"}}>
+        <img src={ad.img} alt="product"/>
+      </div>
+      <p className="card-text">Rs. {ad.priceRate} </p><p className="card-left"> Per Perch </p><br/>
+      <p className="card-title">{ad.title}</p>
+      <p className="card-type">{ad.type}</p>
+      <p className="card-area">{ad.sizeOfArea} Perches</p>
+      <Link className="card-link"to={`/Ads/Ad/${ad._id}/${ad.town}/${ad.AgentRef}/${ad.heading}/${ad.description}/${ad.sizeOfArea}/${ad.priceRate}/${ad.contactName}/${ad.email}/${ad.phone}/${encodeURIComponent(ad.img)}`}
+      style={{ textDecoration: "none" }}>more..</Link>
     </div>
     <div className="card-body">
-      
     </div>
+  </div>
+          ))}
+      </div>
   </div>
   </div>
   );
 }
-
 export default PropertyCatalog;
