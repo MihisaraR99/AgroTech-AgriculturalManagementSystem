@@ -34,6 +34,7 @@ function UpdateVacancies(){
       alert(err)
       console.log(err);
     })
+    window.location.href = "/VacancyAdmin";
 }
    useEffect(() => {
     axios.get(`http://localhost:8000/api/AddVacancies/${id}`).then(res => {

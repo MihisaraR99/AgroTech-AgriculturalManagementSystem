@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
 import axios from "axios"; 
 
 function AddNewVacancies(){
@@ -10,19 +9,32 @@ function AddNewVacancies(){
    const [jobDescription,setDescription]=useState("");
    const [publishedDate,setPublishDate]=useState("");
    const [jobImage, setImage]=useState("");
+   const [formErrors, setFormErrors] = useState({});
+   const [vacancyNoError, setVacancyNoError]=useState({});
+   const [errors, setErrors] = useState([]);
   
    /*add*/
    function sendvacancyData(e){
       e.preventDefault();
       alert("Going to add New Vacancy");
-  
+      let hasErrors = false;
+   
+      if (vacancyNo.length <= 0) {
+         hasErrors = true;
+         setErrors((prev) => [...prev, "vacancyNoError"]);
+       }
+
+       if (hasErrors) {
+         return;
+       } else {
+
       const newVacancy = {
        vacancyNo,
        jobTitle,
        jobDescription,
        publishedDate,
        jobImage,
-   }
+   };
 
    /*url*/
    axios.post("http://localhost:8000/api/AddVacancies/",newVacancy).then(()=>{
@@ -30,61 +42,61 @@ function AddNewVacancies(){
 
     }).catch((err)=>{
       alert(err)
-      console.log(err);
-    })
+    });
+    window.location.href = "/VacancyAdmin";
+   }
 }
 
  return(  
    <div class="mains"> 
-    <div class="wrapper">
-    <div class="title">
+    <div class="wrapperss">
+    <div class="titless">
        Add New Vacancies
       </div>
-      <div class="form">
-        <div class="inputfield">
-            <label>VacancyNo</label>
-            <input type="text" class="input" required onChange={(e)=>{
-                setvacancyNo(e.target.value);
+      <div class="forms" >
+        <div class="inputfieldss">
+            <label>Vacancy No</label>
+            <input type="text" class="inputss" required onChange={(e)=>{
+               setvacancyNo(e.target.value);
             }}/>
+            {errors.includes("vacancyNoError") && (
+              <p class="alert-txt">Please Enter Valid Vacancy No</p>
+            )}
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Job Title</label>
-            <input type="text" class="input" required onChange={(e)=>{
+            <input type="text" class="inputss" required onChange={(e)=>{
                setTitle(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Description</label>
-            <input type="text" class="input" required onChange={(e)=>{
+            <input type="text" class="inputss" required onChange={(e)=>{
                setDescription(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Published Date</label>
-            <input type="date" class="input" required onChange={(e)=>{
-               setPublishDate(e.target.value);
+            <input type="date" class="inputss" required onChange={(e)=>{
+                  setPublishDate(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Image</label>
-            <input type="link" class="input" onChange={(e)=>{
-               setImage(e.target.value);
+            <input type="link" class="inputss"  onChange={(e)=>{
+                  setImage(e.target.value);
             }}/>
-            <div class="value">
-                                <div class="input-group js-input-file">
-                                    <input class="input-file" type="file" name="image" id="file"/>
-                                    <span class="input-file__info">No file chosen</span>
-                                </div> 
-                            </div>
+           
          </div>
                        
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendvacancyData}> <Link to={`/VacancyAdmin/`} > Add </Link></button>
+          <div class="modal-footers">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendvacancyData}> Add </button>
            
         </div>
       </div>
 </div>
-</div>
+    </div>
+    
     );
 }
 
