@@ -49,58 +49,54 @@ function AddNewVacancies(){
 
  return(  
    <div class="mains"> 
-    <div class="wrapper">
-    <div class="title">
+    <div class="wrapperss">
+    <div class="titless">
        Add New Vacancies
       </div>
-      <div class="form">
-        <div class="inputfield">
-            <label>VacancyNo</label>
-            <input type="text" class="input" required onChange={(e)=>{
-                setvacancyNo(e.target.value);
+      <div class="forms" >
+        <div class="inputfieldss">
+            <label>Vacancy No</label>
+            <input type="text" class="inputss" required onChange={(e)=>{
+               setvacancyNo(e.target.value);
             }}/>
-             {errors.includes("vacancyNoError") && (
+            {errors.includes("vacancyNoError") && (
               <p class="alert-txt">Please Enter Valid Vacancy No</p>
             )}
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Job Title</label>
-            <input type="text" class="input" required onChange={(e)=>{
+            <input type="text" class="inputss" required onChange={(e)=>{
                setTitle(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Description</label>
-            <input type="text" class="input" required onChange={(e)=>{
+            <input type="text" class="inputss" required onChange={(e)=>{
                setDescription(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Published Date</label>
-            <input type="date" class="input" required onChange={(e)=>{
-               setPublishDate(e.target.value);
+            <input type="date" class="inputss" required onChange={(e)=>{
+                  setPublishDate(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Image</label>
-            <input type="link" class="input" onChange={(e)=>{
-               setImage(e.target.value);
+            <input type="link" class="inputss"  onChange={(e)=>{
+                  setImage(e.target.value);
             }}/>
-            <div class="value">
-                                <div class="input-group js-input-file">
-                                    <input class="input-file" type="file" name="image" id="file"/>
-                                    <span class="input-file__info">No file chosen</span>
-                                </div> 
-                            </div>
+           
          </div>
                        
-          <div class="modal-footer">
+          <div class="modal-footers">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendvacancyData}> Add </button>
            
         </div>
       </div>
 </div>
-</div>
+    </div>
+    
     );
 }
 
