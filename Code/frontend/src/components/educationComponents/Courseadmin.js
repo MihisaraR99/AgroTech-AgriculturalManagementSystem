@@ -10,6 +10,8 @@ function Courseadmin(){
 
 
     const [listOfCourses, setlistOfCourses] = useState([]);
+    const [CourseSearch , setcrsSearch] = useState("");
+
     
     useEffect(() => {
       Axios.get("http://localhost:8000/api/course/all").then((response) => {
@@ -29,12 +31,17 @@ function Courseadmin(){
       };
 
 
+
     return(
         <div>
 <div class="crstable_responsive">
 <div class="crstable-title">
                 <div class="crs-row">
                     <div class="col-sm-6"><h2><b>Manage   </b><b>Courses</b></h2></div>
+                    <div className="input-group" style={{ width: "18rem", border:"1px solid #e2ebd8" }}>
+  <input type="search" onChange ={(e)=>{setcrsSearch(e.target.value); }} className="form-control rounded" placeholder="Type" aria-label="Search" aria-describedby="search-addon" />
+  <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
+</div>
                 <div class="addbtn-row" >
                     <a href="/Courseinsert" id="add-crs" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-plus"></i> <span>Add New Course</span></a>
                     </div>
@@ -55,7 +62,15 @@ function Courseadmin(){
         </tr>
       </thead>
       <tbody>
-      {listOfCourses && listOfCourses.map((courses, i) => (
+      {listOfCourses && listOfCourses.filter(value=>{
+            if(CourseSearch ===""){
+                return value;
+            }else if(
+                value.course_name.toLowerCase().includes(CourseSearch.toLowerCase())
+            ){
+                return value
+            }
+        }).map((courses, i) => (
            
         <tr class="crs-tr" data-status="active">
         

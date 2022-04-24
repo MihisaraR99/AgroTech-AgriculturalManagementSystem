@@ -82,7 +82,7 @@ useEffect(() => {
 
                         <div class="card" id="insert-crd">
                             <div class="insert-header">
-                                <h5 class="text-center mb-4">Add New Course</h5>
+                                <h5 class="text-center mb-4">Edit Course</h5>
                             </div>
                             <div class="padding-bot"> </div>
                             <form class="form-card">

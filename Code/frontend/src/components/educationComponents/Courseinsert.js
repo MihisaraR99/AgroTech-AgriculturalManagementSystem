@@ -143,7 +143,7 @@ const sub =() => {
                                             <option selected >Select Category</option>
                                             <option value="Animal Health">Animal Health</option>
                                             <option value="Seed Science">Seed Science</option>
-                                            <option value="Seed Science">Seed Science</option>
+                                            <option value="Seed Science">Crop Science</option>
                                             <option value="Soil Science">Soil Science</option>
                                         </select>
                                         <p class="alert-txt">{formErrors.course_category}</p>

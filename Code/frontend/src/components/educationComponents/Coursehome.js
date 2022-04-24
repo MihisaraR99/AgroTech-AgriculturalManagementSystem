@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import img1 from './eduimgs/slide1.jpg'
-import img2 from './eduimgs/slide2.jpg'
-import img3 from './eduimgs/slide3.jpg'
+import img2 from './eduimgs/slide6.jpg'
+import img3 from './eduimgs/slide2.jpg'
 import plant from'./eduimgs//plants.jpg'
 import animal from'./eduimgs/animals.jpg'
 import seed from'./eduimgs/seed.jpg'
 import agrieng from'./eduimgs/filedeng.jpg'
-import field from'./eduimgs/field.jpg'
+import img4 from'./eduimgs/slide5.jpg'
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
@@ -31,7 +31,7 @@ function Coursehome() {
   let settings={
     dots: true,
       infinite: true,
-      speed: 500,
+      speed: 2700,
       slidesToShow: 1,
       slidesToScroll: 1
   }
@@ -62,6 +62,13 @@ function Coursehome() {
 
             </div>
           </div>
+          <div class="carousel-item">
+            <img src={img4} class="imgblock" alt="..." />
+            <div class="carousel-text">
+              <h2>An educational institution is a place where people of different ages gain an education</h2>
+
+            </div>
+          </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -83,7 +90,7 @@ function Coursehome() {
             return (
             
             <div class="card" id="topcrs-crd">
-              <img src={field} class="card-img-top" alt="..."/>
+              <img src={courses.course_thumbnail} class="card-img-top" alt="..."/>
               <div class="card-body">
                 <h3 class="card-title">{courses.course_name}</h3>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
