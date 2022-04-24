@@ -17,11 +17,34 @@ function CandidateRegister(){
      const [advancedlevel, setAdvanceds]=useState("");
      const [degree, setDegrees]=useState("");
      const [cv, setCVs]=useState("");
+     const [formErrors, setFormErrors] = useState({});
+     const [nicNoError, setNicNoError]=useState({});
+     const [emailError, setEmailError]=useState({});
+     const [mobileNoError, setMobileNoError]=useState({});
+     const [errors, setErrors] = useState([]);
     
      /*add*/
      function sendCandidateData(e){
         e.preventDefault();
         alert("Going to Register as an Candidate");
+        let hasErrors = false;
+
+        if (nic.length >= 13) {
+            hasErrors = true;
+            setErrors((prev) => [...prev, "nicNoError"]);
+          }
+          if (email.length <= 0) {
+            hasErrors = true;
+            setErrors((prev) => [...prev, "emailError"]);
+          }
+          if (mobile.length >= 11) {
+            hasErrors = true;
+            setErrors((prev) => [...prev, "mobileNoError"]);
+          }
+    
+          if (hasErrors) {
+            return;
+          } else {
     
         const CandidateRegister = {
             name_with_initials,
@@ -36,7 +59,7 @@ function CandidateRegister(){
             advancedlevel,
             degree,
             cv,
-     }
+     };
   
      /*url*/
      axios.post("http://localhost:8000/api/Candidate/",CandidateRegister).then(()=>{
@@ -44,8 +67,8 @@ function CandidateRegister(){
   
       }).catch((err)=>{
         alert(err)
-        console.log(err);
-      })
+      });
+    }
   }
   
  return(  
@@ -70,6 +93,9 @@ function CandidateRegister(){
                 <input class="input" type="text" name="nic" id="nic" placeholder="NIC" required onChange={(e)=>{
                     setNic(e.target.value);
                 }}/>
+                 {errors.includes("nicNoError") && (
+              <p class="alert-txt">Please Enter Valid NIC </p>
+            )}
                 <h2 class="h2new">Contact Details</h2>
                 <input class="input" type="text" name="address" id="address" placeholder="Address" required onChange={(e)=>{
                     setAddrss(e.target.value);
@@ -77,9 +103,15 @@ function CandidateRegister(){
                 <input class="input" type="text" name="mobile" id="mobile" placeholder="Mobile" required onChange={(e)=>{
                     setMobiles(e.target.value);
                 }}/>
+                 {errors.includes("mobileNoError") && (
+              <p class="alert-txt">Please Enter Valid Mobile No</p>
+            )}
                 <input class="input" type="email" name="email" id="email" placeholder="Email" required onChange={(e)=>{
                     setEmails(e.target.value);
                 }}/>
+                {errors.includes("emailError") && (
+              <p class="alert-txt">Please Enter Valid Email</p>
+            )}
                 <input class="input" type="link" name="linkedin" id="linkedin" placeholder="LinkedIn" required onChange={(e)=>{
                     setLinkedins(e.target.value);
                 }}/>

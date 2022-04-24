@@ -1,7 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios"; 
+
 
 function AddNewGuidance(){
    /*create state*/
@@ -10,19 +10,31 @@ function AddNewGuidance(){
    const [programDescription,setDescription]=useState("");
    const [programImage, setImage]=useState("");
    const [publishedDate,setPublishDate]=useState("");
+   const [formErrors, setFormErrors] = useState({});
+   const [programNoError, setProgramNoError]=useState({});
+   const [errors, setErrors] = useState([]);
 
    /*add*/
    function sendProgrammData(e){
       e.preventDefault();
-      alert("Going to add program");
-  
+      alert("Going to add New Program");
+      let hasErrors = false;
+
+      if (programNo.length <= 0) {
+         hasErrors = true;
+         setErrors((prev) => [...prev, "programNoError"]);
+       }
+
+       if (hasErrors) {
+         return;
+       } else {
       const newProgram = {
        programNo,
        programName,
        programDescription,
        programImage,
        publishedDate,
-   }
+   };
 
    /*url*/
    axios.post("http://localhost:8000/api/AddGuidances/",newProgram).then(()=>{
@@ -31,8 +43,10 @@ function AddNewGuidance(){
      
     }).catch((err)=>{
       alert(err)
-      console.log(err);
-    })
+    });
+    window.location.href = "/GuidanceAdmin";
+   
+   }
 }
 
  return(  
@@ -47,6 +61,9 @@ function AddNewGuidance(){
             <input type="text" class="input" required onChange={(e)=>{
                setproNo(e.target.value);
             }}/>
+            {errors.includes("programNoError") && (
+              <p class="alert-txt">Please Enter Valid Program No</p>
+            )}
          </div>
          <div class="inputfield">
             <label>Program Name</label>
@@ -80,7 +97,7 @@ function AddNewGuidance(){
          </div>
                        
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendProgrammData}> <Link to={`/GuidanceAdmin/`} > Add </Link></button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendProgrammData}> Add </button>
            
         </div>
       </div>

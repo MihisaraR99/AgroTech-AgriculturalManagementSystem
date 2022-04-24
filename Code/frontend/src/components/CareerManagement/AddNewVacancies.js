@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
 import axios from "axios"; 
 
 function AddNewVacancies(){
@@ -10,19 +9,32 @@ function AddNewVacancies(){
    const [jobDescription,setDescription]=useState("");
    const [publishedDate,setPublishDate]=useState("");
    const [jobImage, setImage]=useState("");
+   const [formErrors, setFormErrors] = useState({});
+   const [vacancyNoError, setVacancyNoError]=useState({});
+   const [errors, setErrors] = useState([]);
   
    /*add*/
    function sendvacancyData(e){
       e.preventDefault();
       alert("Going to add New Vacancy");
-  
+      let hasErrors = false;
+   
+      if (vacancyNo.length <= 0) {
+         hasErrors = true;
+         setErrors((prev) => [...prev, "vacancyNoError"]);
+       }
+
+       if (hasErrors) {
+         return;
+       } else {
+
       const newVacancy = {
        vacancyNo,
        jobTitle,
        jobDescription,
        publishedDate,
        jobImage,
-   }
+   };
 
    /*url*/
    axios.post("http://localhost:8000/api/AddVacancies/",newVacancy).then(()=>{
@@ -30,8 +42,9 @@ function AddNewVacancies(){
 
     }).catch((err)=>{
       alert(err)
-      console.log(err);
-    })
+    });
+    window.location.href = "/VacancyAdmin";
+   }
 }
 
  return(  
@@ -46,6 +59,9 @@ function AddNewVacancies(){
             <input type="text" class="input" required onChange={(e)=>{
                 setvacancyNo(e.target.value);
             }}/>
+             {errors.includes("vacancyNoError") && (
+              <p class="alert-txt">Please Enter Valid Vacancy No</p>
+            )}
          </div>
          <div class="inputfield">
             <label>Job Title</label>
@@ -79,7 +95,7 @@ function AddNewVacancies(){
          </div>
                        
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendvacancyData}> <Link to={`/VacancyAdmin/`} > Add </Link></button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={sendvacancyData}> Add </button>
            
         </div>
       </div>

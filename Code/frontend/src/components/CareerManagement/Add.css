@@ -141,6 +141,9 @@
           flex-direction: row;
         }
       }
-    
+      
+    .alert-txt{
+      color: #f84d19;
+    }
     
     

@@ -13,6 +13,7 @@ import AdvertiserLogin from "./components/Ads/AdvertiserLogin";
 import "./components/CareerManagement/Display.css";
 import "./components/CareerManagement/Apply.css";
 import "./components/CareerManagement/Add.css";
+import "./components/CareerManagement/CareerHome.css";
 import "./components/CareerManagement/Admin.css";
 import VacancyDisplay from "./components/CareerManagement/VacancyDisplay";
 import GuidanceDisplay from "./components/CareerManagement/GuidanceDisplay";
@@ -28,6 +29,7 @@ import UpdateGuidance from "./components/CareerManagement/UpdateGuidance";
 import UpdateVacancy from "./components/CareerManagement/UpdateVacancy";
 import ApplyVacancyAdmin from "./components/CareerManagement/ApplyVacancyAdmin";
 import ApplyGuidanceAdmin from "./components/CareerManagement/ApplyGuidanceAdmin";
+import CareerHome from "./components/CareerManagement/CareerHome";
 
 function App() {
   return (
@@ -56,6 +58,7 @@ function App() {
         <Route path="/UpdateVacancy/:id" element={<UpdateVacancy/>}/>
         <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin/>}/>
         <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin/>}/>
+        <Route path="/CareerHome" element={<CareerHome/>}/>
       
       </Routes>
       <Footer />
