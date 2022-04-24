@@ -47,8 +47,7 @@ function Footer() {
               </small>
             </div>
           </div>
-        </div>
-      </div>
+          </div>
     </footer>
   </div>
   );
