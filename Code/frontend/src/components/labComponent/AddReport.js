@@ -3,6 +3,8 @@ import axios from 'axios';
 import './labStyles.css';
 import Roll from 'react-reveal/Roll';
 import Bounce from 'react-reveal/Bounce';
+import Jump from 'react-reveal/Jump';
+ 
  
 
 export default class AddReport extends Component{
@@ -37,7 +39,7 @@ export default class AddReport extends Component{
        const{cName,cEmail,about,labId,reportStatus} = this.state;
 
 
-       if(cName.length <= 0 || about.length <= 0|| labId.length <= 0 || reportStatus <= 0 ){
+       if(cName.length <= 0 || about.length <= 0|| labId.length <= 0 || reportStatus.length <= 0){
         this.setState({
             ...this.state,
             error: "All the fields are required"
@@ -50,14 +52,15 @@ export default class AddReport extends Component{
             
             if(!emailModel.test(cEmail)){
                 this.setState({
-            
                     ...this.state,
                     emailError: "Please enter a valid email address"
             })
             
             return
-            
             } 
+
+          
+ 
              
 
        const data ={
@@ -73,6 +76,7 @@ export default class AddReport extends Component{
 
        axios.post("http://localhost:8000/api/lab/add",data).then((res) => {
            if(res.data.success){
+            alert("Post Added Successfully")
                this.setState(
                    {
                     cName:"",
@@ -84,9 +88,6 @@ export default class AddReport extends Component{
                )
            }
        })
-
-
-
    }
   
   
@@ -98,14 +99,12 @@ export default class AddReport extends Component{
             
                 <div className='anim-back'>
                 <br></br>
-                <div className='div1'> 
+                <div className='Lab-div1'> 
                 <Roll left>
                 <h1 className='h2 mb-2 font-weight-normal' style={{color:'white',borderTopRightRadius:'20px',borderTopLeftRadius:'20px',backgroundColor:"green",textAlign:'center',padding:'10px',textDecorationLine:'underline'}}>Create New Lab report
                 </h1> 
                 </Roll>
-                {this.state.error && this.state.error.length > 0 && (
-                    <h3> {this.state.error} </h3>
-                    )}
+               
  
 
  
@@ -137,16 +136,11 @@ export default class AddReport extends Component{
                     </Bounce>
 
                     {this.state.emailError && this.state.emailError.length > 0 && (
-
-                    <h3>
-
-                    {this.state.emailError}
-
-                    </h3>
-
+                    <Jump>
+                    <h3 style={{color:'#e60000'}}>
+                        {this.state.emailError} </h3>
+                    </Jump>
                     )}
-
-
 
                     <Bounce left>
                     <div className='form-group' style={{marginBottom:'50px'}}>
@@ -195,6 +189,15 @@ export default class AddReport extends Component{
                         onChange={this.handleInputChange}></input>
                     </div>
                     </Bounce>
+
+ 
+
+
+                    {this.state.error && this.state.error.length > 0 && (
+                    <Jump>
+                    <h3 style={{color:'#e60000'}}> {this.state.error} </h3>
+                    </Jump>
+                    )}
                         <button className='btn btn-success' type="Submit" style={{marginTop:'15px'}} onClick={this.onSubmit} >
                         <i className='far fa-check-square'></i>
                         &nbsp;Save 

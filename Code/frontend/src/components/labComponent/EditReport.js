@@ -94,7 +94,7 @@ class EditReport extends Component{
                   <source src={vid2} type="video/mp4"/>
                   </video>
                   <Slide right>
-                   <div className='div1'>
+                   <div className='Lab-div1'>
                  
                     <h1 className='h2 mb-2 font-weight-normal' style={{color:'white',borderTopRightRadius:'20px',borderTopLeftRadius:'20px',backgroundColor:"green",textAlign:'center',padding:'10px',textDecorationLine:'underline'}}>Edit Lab Report Here!</h1>
                     <from className='need-validation' nonValidate>

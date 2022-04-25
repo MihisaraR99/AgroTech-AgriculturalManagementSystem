@@ -99,7 +99,7 @@ handleSearchArea = (e) =>{
                                     {reports.cName}
                                     </a>
                                 </td>
-                                <td className='allReportsLab'>{reports.cEmail}</td>
+                                <td className='allReportsLab'>{reports.cEmail}</td> 
                                 <td className='allReportsLab'>{reports.about}</td>
                                 <td className='allReportsLab'>{reports.labId}</td>
                                 <td className='allReportsLab'>{reports.reportStatus}</td>

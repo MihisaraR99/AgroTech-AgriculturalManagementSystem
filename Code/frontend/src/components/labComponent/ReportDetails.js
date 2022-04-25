@@ -54,29 +54,29 @@ class ReportDetails extends Component {
                 <br></br>
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail" className="RepBox2">
-                      <Form.Label style={{color:'white' , fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Company Name</Form.Label>
+                      <Form.Label style={{color:'black' , fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Company Name</Form.Label>
                       <Form.Control value={this.state.report.cName}    readonly/>
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridPassword" className="RepBox2">
-                      <Form.Label style={{color:'white', fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Company Email</Form.Label>
+                      <Form.Label style={{color:'black', fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Company Email</Form.Label>
                       <Form.Control  value={this.state.report.cEmail}   readonly />
                     </Form.Group>
                   </Row>
                   <br></br>
                   <Form.Group  controlId="formGridAddress1" className="RepBox2">
-                    <Form.Label style={{color:'white', fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Lab Report About</Form.Label>
+                    <Form.Label style={{color:'black', fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Lab Report About</Form.Label>
                     <Form.Control as="textarea" rows="3" value={this.state.report.about}   readonly />
                   </Form.Group>
                   <br></br>
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridCity" className="RepBox2">
-                      <Form.Label style={{color:'white', fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Lab ID</Form.Label>
+                      <Form.Label style={{color:'black', fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Lab ID</Form.Label>
                       <Form.Control  value={this.state.report.labId}   readonly/>
                     </Form.Group>
                     <br></br>
                     <Form.Group as={Col} controlId="formGridZip" className="RepBox2">
-                      <Form.Label style={{color:'white',fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Lab Report Status</Form.Label>
+                      <Form.Label style={{color:'black',fontFamily:'Georgia, serif',fontSize:'20px',fontWeight:'bolder'}}>Lab Report Status</Form.Label>
                       <Form.Control value={this.state.report.reportStatus}   readonly/>
                     </Form.Group>
                   </Row>

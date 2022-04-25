@@ -33,12 +33,12 @@
     border-bottom: 4px solid rgb(73, 172, 73);
     border-radius: 10px;
     font-size: 18px;
-    background-color: #ffffff46;
+    background-color: #ffffff94;
 }
 
 .Lab-div1 {
     opacity: 0.9;
-    background-color: #d9d9d9;
+    background-color: #d9d9d98a;
     padding: 20px;
     border-radius: 20px;  
     border:5px solid rgb(6, 7, 6)
@@ -211,7 +211,7 @@
   width: 100%;
   height:  100%;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(53, 44, 44, 0.158) 0% , rgba(61, 105, 61, 0.87) 35% ,rgba(205, 228, 214, 0.726) 100%) ;
+  background: linear-gradient(90deg, rgba(22, 20, 20, 0.781) 0% , rgba(60, 155, 60, 0.815) 35% ,rgba(30, 82, 50, 0.89) 100%) ;
 }
 
 .box-2 div{
@@ -256,9 +256,11 @@
 }
 
 .allReportsLab{
+  padding: 15px;
   color:white;
   font-size:19px;
   font-family: 'Cursive','bold';
+ 
 }
 
 .allLabRepHead{
@@ -293,6 +295,7 @@
 
 #Lab-All-Tables tr{
   background-color: unset;
+  
 }
 
 
