@@ -194,7 +194,7 @@ export default class AddReport extends Component{
 
 
                     {this.state.error && this.state.error.length > 0 && (
-                    <Jump>
+                    <Jump >
                     <h3 style={{color:'#e60000'}}> {this.state.error} </h3>
                     </Jump>
                     )}
