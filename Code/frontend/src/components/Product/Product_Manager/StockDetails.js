@@ -16,6 +16,11 @@ import {getAllProducts} from '../productManagementService'
 export default function AllProducts(){
 
     const [products, setProducts] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
+ 
+    const togglePopup = () => {
+      setIsOpen(!isOpen);
+    }
 
     useEffect(()=>{
         getAllProducts().then((data)=>{
@@ -37,7 +42,7 @@ export default function AllProducts(){
            
             <div className="tablestock" style={{padding:"40px" ,marginLeft:"320px"}}>
             <center><h1 style={{MarginTop:"60px", paddingRight:"190px"}}>Stock Details</h1></center>
-            <table className="table12" >
+            <table  >
                  <thead >
                      <tr className="tr12">
                       <th scope ="col" className="t12" >Product No</th> 
@@ -57,13 +62,13 @@ export default function AllProducts(){
                    <td className="td12">{product.Quentity}</td>
                    <td className="td12">
                             { <Link to={`/productUpdate/${product._id}/${product.PName}/${product.Quentity}`} 
-                                    className ="btn btn-warning" style={{backgroundColor:"#987456", border:"none"}}>
-                                <i className="fas fa-edit"></i>&nbsp;EDIT
+                                    className ="btn btn-warning" onClick={togglePopup} style={{backgroundColor:"white", border:"2px solid black", color:"black"}}>
+                                <i className="fas fa-edit" style={{color:"blue"}}></i>&nbsp;EDIT
                             </Link>}
                             
                             &nbsp; 
-                            <a className ="btn btn-danger" href="#"  style={{backgroundColor:"#fd5e53", border:"none", margin:"10px"}}>
-                                <i className="far fa-trash-alt"></i>&nbsp;DELETE
+                            <a className ="btn btn-danger" href="#"  style={{backgroundColor:"white", border:"2px solid black", color:"black",margin:"10px"}}>
+                                <i className="far fa-trash-alt" style={{color:"red"}}></i>&nbsp;DELETE
                             </a>
                     </td>
                     </tr>

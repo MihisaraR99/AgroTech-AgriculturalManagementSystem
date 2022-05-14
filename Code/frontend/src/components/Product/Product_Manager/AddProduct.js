@@ -1,13 +1,12 @@
 import React,{useState} from "react";
-import img44 from "../images/img44.jpg";
+import img44 from "../images/upselling.png";
 import axios from "axios";
-
+import swal from "sweetalert"
 
 export default function AddProduct(){
 
   /*01--create state*/
 const [SId,setsid] = useState("");
-const [SEmail,setsEmail] = useState("");
 const [ScontactNo,setcono] = useState("");
 const [PId,setpid] = useState("");
 const [PName,setpname] = useState("");
@@ -16,11 +15,30 @@ const [Quentity,setQno] = useState("");
 /*02--add*/
 function sendData(e){
     e.preventDefault();
-    alert("Going to add new product");
+    swal ({
+      title:"Going to add new product",
+      text:"Do you want to add?",
+      icon:"warning",
+      buttons: true,
+      dangerMode: true
+      
+    }).then(respuesta=>{
+       if(respuesta){
+        axios.post("http://localhost:8000/api/wholesale/add",newProduct).then(()=>{
+          swal({text:"Product Added",
+                icon:"success"
+                });
+    
+         
+        }).catch((err)=>{
+          alert(err)
+          console.log(err);
+        })
+       }
+    })
 
     const newProduct = {
       SId,
-      SEmail,
       ScontactNo,
       PId,
       PName,
@@ -28,12 +46,8 @@ function sendData(e){
     }
    
     /*url*/
-    if( PId=="" || PName=="" || Quentity==""){
+    /*if( PId=="" || PName=="" || Quentity==""){
             alert("Please fill the required fields")
-    }else if(ScontactNo.length<=10){
-             alert("Please enter valied phone number")
-    }else if(SId==="SID"){
-      alert("Please enter valied ID")
     }else{
       axios.post("http://localhost:8000/api/wholesale/add",newProduct).then(()=>{
         alert("Product Added");
@@ -43,7 +57,7 @@ function sendData(e){
         alert(err)
         console.log(err);
       })
-  }
+  }*/
   
   
     }
@@ -51,72 +65,80 @@ function sendData(e){
 
 return(
   <center>
-     <div style={{  backgroundImage: `url(${img44})`,backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat', }}>
-   
-  <div class="container22">  
-<form class="form-horizontal22" onSubmit={sendData} >
-    <h2 className="h2topic22" style={{color:"white" , fontSize:"50px" }}>Add Products</h2>
+  <div>
+    <div className="maindiv111" style={{/*border:"2px solid black",*/ margin:"50px"}} >
+       
+      <div class="container12" style={{border:"2px solid green",margin:"5px"}}>
 
-    <div class="form-group" >
-       <div >
-        <input type="text" class="formcontrol22" id="SId" placeholder="Supplier ID" name="sid" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}} 
-         onChange={(e)=>{
-              setsid(e.target.value);
-        }}/>
-      </div>
-    </div>
+            <div className="container11" /*style={{ }}*/ style={{border:"2px solid green", backgroundColor:"white"}}>
+            <section class = "div11" id="sec2">
+                <h1>
+                   <img src={img44} alt=""   style={{ width: "90%", height: "480px",borderBlockColor: "black",marginTop:"110px",paddingLeft:"4px",paddingRight:"4px"}}/> 
+                </h1>
+             </section>
+            </div>
 
-    <div class="form-group">
-      <div >          
-        <input type="text" class="formcontrol22" id="SEmail" placeholder="Supplier Email" name="semail" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}}  onChage={(e)=>{
-             setsEmail(e.target.value);
-        }}/>
-      </div>
-    </div>
+<div className="container11"style={{border:"2px solid green", backgroundColor:"white"}} >
+<section class = "div11" id="sec2">
+ <form class="form-horizontal11" onSubmit={sendData}>
 
-    <div class="form-group">
-      <div >
-        <input type="text" class="formcontrol22" id="ScontactNo" placeholder="Supplier Contact" name="scontact" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}}  onChange={(e)=>{
-              setcono(e.target.value);
-        }}/>
-      </div>
-    </div>
-    
-    <div class="form-group">
-     <div>          
-        <input type="text" class="formcontrol22" id="PId" placeholder="Product ID" name="pid" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}}  onChange={(e)=>{
-              setpid(e.target.value);
-        }}/>
-      </div>
-    </div>
+<h2 style={{fontFamily:"courier",marginTop:"20px"}}>Add Supplier Product Details</h2>
 
-    <div class="form-group">
-      <div >          
-        <input type="text" class="formcontrol22" id="PName" placeholder="Product Name" name="pname" style={{ backgroundColor: " white", width:"500px", padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}} onChange={(e)=>{
-              setpname(e.target.value);
-        }}/>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div >          
-        <input type="text" class="formcontrol22" id="Quentity" placeholder="Quantity" name="Quentity" style={{ backgroundColor: " white", width:"500px",padding:"10px",margin:"10px",boxShadow: " 4px 2px 2px rgba(63, 217, 33)",border:"none"}} onChange={(e)=>{
-              setQno(e.target.value);
-        }}/>
-      </div>
-    </div>
-
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10" >
-        <button type="submit"  className="btn btn-success"  style={{width:"200px", backgroundColor:"black",marginBottom:"10px",border:"none"}}>Submit</button>
-      </div>
-    </div>
-
-  </form>
-  </div>
+<div class="form-group1111" >
+<div >
+<input type="text" class="form-control11" id="SId" style={{color:"black"}} placeholder="Supplier ID" name="sid" onChange={(e)=>{
+ setsid(e.target.value);
+}}/>
+</div>
 </div>
 
+<div class="form-group1111">
+<div >          
+<input type="text" class="form-control11" id="Cname" style={{color:"black"}} placeholder="Supplier Contact No" name="sname"  onChage={(e)=>{
+   setcono(e.target.value);
+}}/>
+</div>
+</div>
+
+<div class="form-group">
+<div >          
+<input type="text" class="form-control11" id="SEmail" style={{color:"black"}} placeholder="Product ID" name="semail"   onChage={(e)=>{
+    setpid(e.target.value);
+}}/>
+</div>
+</div>
+
+<div class="form-group1111">
+<div >
+<input type="text" class="form-control11" id="ScontactNo" style={{color:"black"}}  placeholder="Product Name" name="scontact"   onChange={(e)=>{
+    setpname(e.target.value);
+}}/>
+</div>
+</div>
+
+<div class="form-group1111">
+<div>          
+<input type="text" class="form-control11" id="PId" style={{color:"black"}} placeholder="Quantity" name="pid"  onChange={(e)=>{
+    setQno(e.target.value);
+}}/>
+</div>
+</div>
+
+
+
+<div class="form-group1111">        
+<div className="button111" >
+<button  type="submit"  class="btn btn-success"  style={{width:"200px"}}>Submit</button>
+</div>
+</div>
+
+</form>
+              </section>
+            </div>
+
+      </div>
+      </div>
+   </div>
 </center>
     )
 }

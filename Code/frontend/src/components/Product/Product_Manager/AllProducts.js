@@ -38,11 +38,11 @@ export default function AllProducts(){
    onChange ={(e)=>{
        setSearch(e.target.value);
    }}
-   style={{border:"none"}}
+   style={{border:"none",color:"black"}}
   
   
   />
-  <button type="submit"><i class="fa fa-search"></i></button>
+  <button type="submit" style={{color:"black"}}><i class="fa fa-search"></i></button>
 
           
             <div className="tale11">
