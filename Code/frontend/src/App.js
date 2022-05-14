@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 //import "./App.css";
-import "./components/educationComponents/Educationstyle.css"
+//import "./components/educationComponents/Educationstyle.css"
 import "./App.css";
-import "./components/HealthCare/Health.css";
+//import "./components/HealthCare/Health.css";
 
 //import Header from "./components/Header";
 import Navigator from "./components/Navigator/Navigator";
@@ -40,6 +40,7 @@ import UpdateProducts from "./components/Product/Product_Manager/UpdateProducts"
 import StockDetails from "./components/Product/Product_Manager/StockDetails";
 import ProductBill from "./components/Product/User_Company/ProductBill";
 import CompanyHomePage from "./components/Product/User_Company/CompanyHomePage";
+import PriceCalculator from "./components/Product/User_Company/PriceCalculator";
 
 // Ads Components
 import AdvertiserForm from "./components/Ads/AdvertiserForm";
@@ -48,10 +49,10 @@ import DisplayAd from "./components/Ads/DisplayAd";
 import AdvertiserLogin from "./components/Ads/AdvertiserLogin";
 
 /*CareerManagement*/
-import "./components/CareerManagement/Display.css";
-import "./components/CareerManagement/Apply.css";
-import "./components/CareerManagement/Add.css";
-import "./components/CareerManagement/Admin.css";
+//import "./components/CareerManagement/Display.css";
+//import "./components/CareerManagement/Apply.css";
+//import "./components/CareerManagement/Add.css";
+//import "./components/CareerManagement/Admin.css";
 import VacancyDisplay from "./components/CareerManagement/VacancyDisplay";
 import GuidanceDisplay from "./components/CareerManagement/GuidanceDisplay";
 import VacancyAdmin from "./components/CareerManagement/VacancyAdmin";
@@ -262,6 +263,7 @@ function App() {
         <Route path="/stock" element={<StockDetails />} />
         <Route path="/productBill" element={<ProductBill />} />
         <Route path="/companyHome" element={<CompanyHomePage />} />
+        <Route path="/priceCal" element={<PriceCalculator/>}/>
 
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />

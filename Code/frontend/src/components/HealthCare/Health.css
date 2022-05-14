@@ -30,7 +30,7 @@ borderRadius: "30px",
 boxShadow: " 10px 10px 5px rgba(150, 168, 156)",
 width:"450px",
 padding: "5px", */
-
+/*
 tr:nth-child(odd){
   background-color: rgb(180, 240, 158);
   padding: 15px;
@@ -49,3 +49,4 @@ tr:nth-child(even):hover{
   transform: scale(1.055);
   transition: transform 300ms ease-in;
 }
+*/
