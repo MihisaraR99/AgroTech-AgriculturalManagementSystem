@@ -20,7 +20,7 @@ export default function CompanyRequest(){
     <div class="form-group">
             <div >
             <label style={{color:"black"}}>Name</label>  
-        <input type="text" class="hinvoice" style={{ backgroundColor: "white", width:"300px",padding:"10px",marginLeft:"70px",border:"none",borderBottom:"1px solid "}} 
+        <input type="text" class="hinvoice" style={{ color:"black" ,backgroundColor: "white", width:"300px",padding:"10px",marginLeft:"70px",border:"none",borderBottom:"1px solid "}} 
        />
       </div>
     </div>
@@ -28,14 +28,14 @@ export default function CompanyRequest(){
     <div class="form-group">
       <div >  
       <label style={{color:"black"}}>Company Name</label>          
-        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",border:"none",borderBottom:"1px solid"}} />
+        <input type="text" class="hinvoice" style={{ color:"black" , backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",border:"none",borderBottom:"1px solid"}} />
       </div>
     </div>
 
     <div class="form-group">
       <div >
       <label style={{color:"black"}}>Email Address</label>  
-        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"20px",border:"none",borderBottom:"1px solid "}}  />
+        <input type="text" class="hinvoice" style={{ color:"black" , backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"20px",border:"none",borderBottom:"1px solid "}}  />
       </div>
     </div>
 
@@ -46,21 +46,21 @@ export default function CompanyRequest(){
     <div class="form-group">
      <div>  
      <label style={{color:"black"}}>Name</label>          
-        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"75px",border:"none",borderBottom:"1px solid "}}  />
+        <input type="text" class="hinvoice" style={{ color:"black" , backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"75px",border:"none",borderBottom:"1px solid "}}  />
       </div>
     </div>
 
     <div class="form-group">
       <div >   
       <label style={{color:"black"}}>Item ID</label>         
-        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px", padding:"10px",margin:"10px",marginLeft:"65px",border:"none",borderBottom:"1px solid "}}/>
+        <input type="text" class="hinvoice" style={{ color:"black" , backgroundColor: " white", width:"300px", padding:"10px",margin:"10px",marginLeft:"65px",border:"none",borderBottom:"1px solid "}}/>
       </div>
     </div>
 
     <div class="form-group">
       <div > 
       <label style={{color:"black"}}>Item Name</label>           
-        <input type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"45px",border:"none",borderBottom:"1px solid "}}/>
+        <input type="text" class="hinvoice" style={{ color:"black" ,backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"45px",border:"none",borderBottom:"1px solid "}}/>
       </div>
     </div>
 
@@ -69,7 +69,7 @@ export default function CompanyRequest(){
     <div class="form-group">
       <div > 
       <label style={{color:"black"}}>Item Name</label>           
-        <input type="text" class="hinvoice" style={{ backgroundColor: "none", width:"300px",padding:"10px",margin:"10px",marginLeft:"40px",border:"none",borderBottom:"3px solid black",borderTop:"3px solid black"}}/>
+        <input type="text" class="hinvoice" style={{color:"black" , backgroundColor: "none", width:"300px",padding:"10px",margin:"10px",marginLeft:"40px",border:"none",borderBottom:"3px solid black",borderTop:"3px solid black"}}/>
       </div>
     </div>
 

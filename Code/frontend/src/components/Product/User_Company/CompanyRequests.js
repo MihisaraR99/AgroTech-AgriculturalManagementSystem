@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import img1 from "../images/financial.png";
+import img1 from "../images/aa.png";
 import './Company.css';
 import axios from "axios";
 import swal from "sweetalert";
@@ -16,6 +16,7 @@ const [Company_contactNo,setcontactno] = useState("");
 const [Product_Id,setproductid] = useState("");
 const [Product_Name,setproname] = useState("");
 const [Quentity,setqueantity] = useState("");
+const [isError,setIsError] = useState(false);
 
 const [isOpen, setIsOpen] = useState(false);
  
@@ -81,98 +82,176 @@ function sendcompanyData(e){
       
       <center>
         <div>
-          <div className="maindiv111" style={{/*border:"1px solid black",*/ margin:"20px"}} >
+          <div className="maindiv111" style={{/*border:"1px solid black",*/height:"900px", margin:"80px"}} >
              
-            <div class="container12" style={{/*border:"1px solid black",*/ }}>
+            <div class="container12" style={{/*border:"1px solid black",*/height:"800px" }}>
 
-                  <div className="container11" style={{ backgroundColor:"#66ff66"}}>
+                  <div className="container11" style={{ backgroundColor:""}}>
                   <section class = "div11" id="sec2">
 		                  <h1>
                          <img src={img1} alt=""   style={{ width: "90%", height: "480px",borderBlockColor: "black",marginTop:"110px",paddingLeft:"4px",paddingRight:"4px"}}/> 
 	                  	</h1>
 	                 </section>
-
-                   <button style={{color:"black", border:"none", padding:"10px" , height:"50px",width:"200px"}}  onClick={togglePopup}>Conditions</button>
+                   <button class="btn btn-outline-secondary"  style={{marginTop:"70px",borderRadius:"15px", fontSize:"20px" ,marginLeft:"10px",marginRight:"20px" ,height:"50px",width:"180px"}}  onClick>Calculator</button>
+                   <button class="btn btn-outline-secondary"  style={{marginTop:"70px",borderRadius:"15px", fontSize:"20px", padding:"4px" , height:"50px",width:"180px"}}  onClick={togglePopup}>Conditions</button>
+                   
                    {isOpen && <Popup 
                      content={<>
-                      <b style={{color:"black"}}>Design your Popup</b>
-                      <p style={{color:"black"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                      <button style={{color:"black", border:"none", padding:"10px" , height:"50px",width:"200px"}}  onClick={togglePopup} href="#">Test button</button>
-                    </>}
-                    handleClose={togglePopup}
-                   
-                   ></Popup> }
-                  </div>
+                      <h2 style={{color:"green"}}>Product Summary</h2>
+                      <div class="container111" style={{marginTop:"30px" ,fontSize:"20px", color:"black"}}>
+                      <div class="row">
+
+  <div class="col-sm-4">
+    <div class="card bg-light mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Fruits</h5>
+        <p class="card-text">We can Supply fresh fruits for you</p>
+        <center>
+        <h5>FRU01-Mango</h5>
+        <h5>FRU02-Banana</h5>
+        <h5>FRU03-Guwawa</h5>
+        <h5>FRU04-Orange</h5>
+        <h5>FRU05-Pineapple</h5>
+        </center>
+        <a href="#" class="btn btn-outline-success">Back To Form</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card bg-light mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Vegetables</h5>
+        <p class="card-text">We can Supply fresh fruits for you</p>
+        <center>
+        <h5>VEG01-Pumpkin</h5>
+        <h5>VEG02-Potato</h5>
+        <h5>VEG03-Carrot</h5>
+        <h5>VEG04-Tomato</h5>
+        <h5>VEG05-Eggplant</h5>
+        </center>
+        <a href="#" class="btn btn-outline-success">Back To Form</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card bg-light mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Seeds</h5>
+        <p class="card-text">We can Supply fresh fruits for you</p>
+        <center>
+        <h5>SEED01-Corn Seed</h5>
+        <h5>SEED02-Cocoa Beans</h5>
+        <h5>SEED03-Coffee Seed</h5>
+        <h5>SEED04-Soy Seed</h5>
+        <h5>SEED05-Pumpkin Seed</h5>
+        </center>
+        <a href="#" class="btn btn-outline-success">Back To Form</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <p>rtbrg btrn bh hntu m6um rtbrg btrn bh hntu m6um rtbrg btrn bh hntu m6um rtbrg btrn bh hntu m6um</p>
+</div>
+     
+      <button style={{color:"black",marginTop:"30px" ,border:"none", padding:"10px" , height:"50px",width:"200px"}}  onClick={togglePopup} href="#">Test button</button>
+       </>}handleClose={togglePopup}></Popup> }
+</div>
 
  <div className="container11" >
     <section class = "div11" id="sec2">
-       <form class="form-horizontal11" onSubmit={sendcompanyData}>
 
-<h2 style={{fontFamily:"courier",marginTop:"20px"}}>Request Product</h2>
+    <h2 style={{fontFamily:"courier",marginTop:"90px",color:"black"}}>Request wholesale Product</h2>
 
-<div class="form-group1111" >
-   <div >
-    <input type="text" class="form-control11" id="SId" style={{color:"black"}} placeholder="Company ID" name="sid" onChange={(e)=>{
-      setcompanyid(e.target.value);
-    }}/>
-  </div>
-</div>
+    <form onSubmit={sendcompanyData}>
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"60px"}}>
+      
+      <input  onChange={(e)=>{setcompanyid(e.target.value);}}
+       class="form-control" 
+       id="exampleInputEmail1" 
+       aria-describedby="emailHelp" 
+       placeholder="Company ID" 
+       maxLength={5}
+       required/>
+    </div>
 
-<div class="form-group1111">
-    <div >          
-    <input type="text" class="form-control11" id="Cname" style={{color:"black"}} placeholder="Company Contact Name" name="sname"  onChage={(e)=>{
-         setcontactname(e.target.value);
-    }}/>
-  </div>
-</div>
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px"}}>
+   
+      <input type="text" 
+      error = {isError}
+      onChange={(e)=>{setcontactname(e.target.value);
+      if(e.target.value.length >10){
+        setIsError(true);
+      }}} 
+      class="form-control" id="exampleInputPassword1" 
+      placeholder="Company Contact No" 
+      required/>
+    </div>
 
-<div class="form-group">
-    <div >          
-    <input type="text" class="form-control11" id="SEmail" style={{color:"black"}} placeholder="Company Email" name="semail"   onChage={(e)=>{
-         setcompanyEmail(e.target.value);
-    }}/>
-  </div>
-</div>
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px"}}>
+     
+      <input type="email" 
+      onChange={(e)=>{setcompanyEmail(e.target.value);}} 
+      class="form-control" id="exampleInputEmail1" 
+      aria-describedby="emailHelp" 
+      placeholder="Company Email" 
+      required/>
+    </div>
 
-<div class="form-group1111">
-  <div >
-    <input type="text" class="form-control11" id="ScontactNo" style={{color:"black"}}  placeholder=" Contact Number" name="scontact"   onChange={(e)=>{
-          setcontactno(e.target.value);
-    }}/>
-  </div>
-</div>
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px"}}>
+   
+   <input type="text" 
+   onChange={(e)=>{setcontactno(e.target.value);}} 
+   class="form-control" 
+   id="exampleInputPassword1" 
+   placeholder="Contact No"
+   required/>
+ </div>
 
-<div class="form-group1111">
-  <div>          
-    <input type="text" class="form-control11" id="PId" style={{color:"black"}} placeholder="Product ID" name="pid"  onChange={(e)=>{
-          setproductid(e.target.value);
-    }}/>
-  </div>
-</div>
+ <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px"}}>
+     
+ <select id="inputState" class="form-control" onChange={(e)=>{setproductid(e.target.value);}} required>
+        <option selected placeholder="">Choose ProductID...</option>
+        <option>Mango-FRU1</option>
+        <option>Banana-FRU2</option>
+        <option>Guwawa-FRU3</option>
+        <option>Beans-VEG1</option>
+        <option>Carrot-VEG2</option>
+        <option>Tomato-VEG3</option>
+        <option>Potato-VEG4</option>
+        <option>Pumpkin-VEG5</option>
+      </select>
+ </div>
 
-<div class="form-group1111">
-  <div >          
-    <input type="text" class="form-control11" id="PName" style={{color:"black"}} placeholder="Product Name" name="pname" onChange={(e)=>{
-          setproname(e.target.value);
-    }}/>
-  </div>
-</div>
+ 
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px"}}>
+      
+      <select id="inputState" class="form-control" onChange={(e)=>{setproname(e.target.value);}} required>
+        <option selected placeholder="">Choose Product...</option>
+        <option>Mango</option>
+        <option>Banana</option>
+        <option>Guwawa</option>
+        <option>Beans</option>
+        <option>Carrot</option>
+        <option>Tomato</option>
+        <option>Potato</option>
+        <option>Pumpkin</option>
+      </select>
+    </div>
 
-<div class="form-group1111">
-   <div >          
-      <input type="text" class="form-control11" id="Quentity" style={{color:"black"}}  placeholder="Quantity" name="Quentity"  onChange={(e)=>{ 
-    setqueantity(e.target.value)}}/>
-  </div>
-</div>
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px",marginBottom:"50px"}}>
+      
+      <input type="text" 
+      onChange={(e)=>{setqueantity(e.target.value);}} 
+      class="form-control" 
+      id="exampleInputPassword1" 
+      placeholder="Quantity" 
+      required/>
+    </div>
 
+  
+       <button type="submit"  class="btn btn-success"  style={{width:"200px"}}>Submit</button>
+   </form>
 
-<div class="form-group1111">        
-  <div className="button111" >
-    <button  type="submit"  class="btn btn-success"  style={{width:"200px"}}>Submit</button>
-  </div>
-</div>
-
-</form>
 	                  </section>
                   </div>
 

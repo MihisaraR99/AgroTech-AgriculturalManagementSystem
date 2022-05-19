@@ -21,7 +21,7 @@ const [Pquantity, setQuantity] = useState();
 
 
 useEffect(() => {  
-  setId(id);
+   setId(id);
    setName(name); 
    setQuantity(quantity) 
 }, [])

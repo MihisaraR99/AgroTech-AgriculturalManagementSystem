@@ -69,7 +69,7 @@ function PriceCalculator() {
   return (
     <div className="appCal">
       <div className='containerCal11'>
-        <h2 className='centerCal11'>Price Calculator</h2>
+        <h2 className='centerCal11'>Wolesale Product Price Calculator</h2>
         <form onSubmit={calcprice}>
         <div>
             <label>Enter Product ID</label>

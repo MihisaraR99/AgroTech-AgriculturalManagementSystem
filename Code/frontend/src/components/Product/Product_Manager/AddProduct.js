@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import img44 from "../images/upselling.png";
+import img44 from "../images/upselling.jpg";
 import axios from "axios";
 import swal from "sweetalert"
 
@@ -44,6 +44,10 @@ function sendData(e){
       PName,
       Quentity
     }
+
+
+    /*Add Validations*/
+    
    
     /*url*/
     /*if( PId=="" || PName=="" || Quentity==""){
@@ -68,9 +72,9 @@ return(
   <div>
     <div className="maindiv111" style={{/*border:"2px solid black",*/ margin:"50px"}} >
        
-      <div class="container12" style={{border:"2px solid green",margin:"5px"}}>
+      <div class="container12" style={{/*border:"2px solid green",*/margin:"5px"}}>
 
-            <div className="container11" /*style={{ }}*/ style={{border:"2px solid green", backgroundColor:"white"}}>
+            <div className="container11" /*style={{ }}*/ style={{ backgroundColor:"white"}}>
             <section class = "div11" id="sec2">
                 <h1>
                    <img src={img44} alt=""   style={{ width: "90%", height: "480px",borderBlockColor: "black",marginTop:"110px",paddingLeft:"4px",paddingRight:"4px"}}/> 
@@ -78,67 +82,61 @@ return(
              </section>
             </div>
 
-<div className="container11"style={{border:"2px solid green", backgroundColor:"white"}} >
-<section class = "div11" id="sec2">
- <form class="form-horizontal11" onSubmit={sendData}>
+<div className="container11"style={{ backgroundColor:"white"}} >
 
-<h2 style={{fontFamily:"courier",marginTop:"20px"}}>Add Supplier Product Details</h2>
+  <section class = "div11" id="sec2">
 
-<div class="form-group1111" >
-<div >
-<input type="text" class="form-control11" id="SId" style={{color:"black"}} placeholder="Supplier ID" name="sid" onChange={(e)=>{
- setsid(e.target.value);
-}}/>
-</div>
-</div>
+    <h2 style={{fontFamily:"courier",marginTop:"90px",color:"black"}}>Add Supplier wholesale Product Details</h2>
 
-<div class="form-group1111">
-<div >          
-<input type="text" class="form-control11" id="Cname" style={{color:"black"}} placeholder="Supplier Contact No" name="sname"  onChage={(e)=>{
-   setcono(e.target.value);
-}}/>
-</div>
-</div>
+    <form onSubmit={sendData}>
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"60px"}}>
+      
+      <input  onChange={(e)=>{setsid(e.target.value);}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Supplier ID" required/>
+    </div>
 
-<div class="form-group">
-<div >          
-<input type="text" class="form-control11" id="SEmail" style={{color:"black"}} placeholder="Product ID" name="semail"   onChage={(e)=>{
-    setpid(e.target.value);
-}}/>
-</div>
-</div>
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px"}}>
+   
+      <input type="text" onChange={(e)=>{setcono(e.target.value);}} class="form-control" id="exampleInputPassword1" placeholder="Supplier Contact No" required/>
+    </div>
 
-<div class="form-group1111">
-<div >
-<input type="text" class="form-control11" id="ScontactNo" style={{color:"black"}}  placeholder="Product Name" name="scontact"   onChange={(e)=>{
-    setpname(e.target.value);
-}}/>
-</div>
-</div>
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px"}}>
+     
+      <input type="text" onChange={(e)=>{setpid(e.target.value);}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Product ID" required/>
+    </div>
 
-<div class="form-group1111">
-<div>          
-<input type="text" class="form-control11" id="PId" style={{color:"black"}} placeholder="Quantity" name="pid"  onChange={(e)=>{
-    setQno(e.target.value);
-}}/>
+ 
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px"}}>
+      
+      <select id="inputState" class="form-control" onChange={(e)=>{setpname(e.target.value);}} required>
+        <option selected placeholder="">Choose Product...</option>
+        <option>Mango</option>
+        <option>Banana</option>
+        <option>Guwawa</option>
+        <option>Beans</option>
+        <option>Carrot</option>
+        <option>Tomato</option>
+        <option>Potato</option>
+        <option>Pumpkin</option>
+      </select>
+    </div>
+
+    <div class="form-group col-sm-6 flex-column d-flex" style={{marginTop:"30px",marginBottom:"50px"}}>
+       <input type="text" onChange={(e)=>{setQno(e.target.value);}} class="form-control" id="exampleInputPassword1" placeholder="Quantity" required/>
+       <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>   
+    </div>
+     
+  
+       <button type="submit"  class="btn btn-success"  style={{width:"200px"}}>Submit</button>
+   </form>
+
+  </section>
+     </div>
+
+    </div>
+  </div>
 </div>
-</div>
-
-
-
-<div class="form-group1111">        
-<div className="button111" >
-<button  type="submit"  class="btn btn-success"  style={{width:"200px"}}>Submit</button>
-</div>
-</div>
-
-</form>
-              </section>
-            </div>
-
-      </div>
-      </div>
-   </div>
 </center>
     )
 }
