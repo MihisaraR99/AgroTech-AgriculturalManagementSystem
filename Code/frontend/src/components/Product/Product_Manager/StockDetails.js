@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from "react";
 import axios from "axios";
 import './Product.css';
+import swal from "sweetalert"
 
 import {
     Link
@@ -29,6 +30,26 @@ export default function AllProducts(){
         })
         
     },[])
+
+    /*Delete Unwanted Products*/
+    
+    const onDelete= (id)=>{
+        axios.delete(`http://localhost:8000/api/wholesale/delete/${id}`).then((response)=>{
+          swal ({
+              title:"Delete Unwanted Products",
+              text:"Do you want to delete?",
+              icon:"warning",
+              buttons: true,
+              dangerMode: true
+          }).then(response=>{
+              swal({text:"Product Deleted",
+              icon:"success"
+              });
+          })
+          
+        })
+  };
+
 
     
     /*update*/
@@ -67,7 +88,7 @@ export default function AllProducts(){
                             </Link>}
                             
                             &nbsp; 
-                            <a className ="btn btn-danger" href="#"  style={{backgroundColor:"white", border:"2px solid red", color:"red",margin:"10px"}}>
+                            <a className ="btn btn-danger" href="#"  style={{backgroundColor:"white", border:"2px solid red", color:"red",margin:"10px"}} onClick={()=> onDelete(product._id)}>
                                 <i className="far fa-trash-alt" style={{color:"red"}}></i>&nbsp;DELETE
                             </a>
                     </td>
@@ -81,6 +102,11 @@ export default function AllProducts(){
             </tbody>
             </table>
             </div>
+            { <Link to={`/productSee`} 
+                      className ="btn btn-outline-secondary" onClick={togglePopup} 
+                      style={{marginTop:"40px",border:"1px solid green",marginBottom:"70px",borderRadius:"15px", fontSize:"20px" ,marginLeft:"700px",marginRight:"20px" ,height:"50px",width:"180px"}}>
+                      Report
+            </Link>}
         </div>
         
     )    

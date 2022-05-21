@@ -19,6 +19,12 @@ export default function AllProducts(){
 
     const [products, setProducts] = useState([]);
     const [ProductSearch , setSearch] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
+ 
+    const togglePopup = () => {
+      setIsOpen(!isOpen);
+    }
+
 
     useEffect(()=>{
         getAllProducts().then((data)=>{
@@ -96,7 +102,7 @@ export default function AllProducts(){
 
   <div class="container-fluid" style={{ marginBottom:"40px" ,marginTop:"60px" }} >
   <MaterialTable  style={{background:"#bdf2c9", marginBottom:"40px"}}
-              title="All Salary Details "
+              title="AGROTEC- All Salary Details "
               columns={columns}
               data={products}
               actions={[
@@ -115,6 +121,11 @@ export default function AllProducts(){
                     actionsColumnIndex: -1}}/>      
   </div>
   </div>
+                   { <Link to={`/productadd`} 
+                      class="btn btn-success" onClick={togglePopup} 
+                      style={{marginTop:"40px",border:"1px solid green",marginBottom:"70px",borderRadius:"5px", fontSize:"20px" ,marginLeft:"10px",marginRight:"20px" ,height:"45px",width:"180px"}}>
+                       Add Product
+                   </Link>}
   </div>
         
     )    

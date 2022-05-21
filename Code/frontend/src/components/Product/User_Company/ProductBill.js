@@ -1,16 +1,17 @@
 import React,{useState} from "react";
 import img6 from "../images/bill.jpg";
 export default function CompanyRequest(){
+
+  
   
     return(
-        <div style={{backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',backgroundImage:`url(${img6})`}}>
+        <div>
             
             <center>
      <div >
    
   <div class="container22" style={{}}>  
-<form class="" style={{marginLeft:"250px", marginBottom:"20px",backgroundColor:"#c2d6d6", width:"500px", padding:"20px",border:"3px solid black"}}>
+<form class="" style={{marginLeft:"450px", marginBottom:"20px", width:"500px", padding:"20px",border:"3px solid black"}}>
     <h2 className="h2topic22" style={{color:"black" , fontSize:"50px", marginLeft:"30px" }}>Your Bill</h2>
 
     <hr style={{color:"black"}}/>
@@ -45,21 +46,21 @@ export default function CompanyRequest(){
     
     <div class="form-group">
      <div>  
-     <label style={{color:"black"}}>Name</label>          
+     <label style={{color:"black"}}>Product</label>          
         <input type="text" class="hinvoice" style={{ color:"black" , backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"75px",border:"none",borderBottom:"1px solid "}}  />
       </div>
     </div>
 
     <div class="form-group">
       <div >   
-      <label style={{color:"black"}}>Item ID</label>         
+      <label style={{color:"black"}}>Quantity</label>         
         <input type="text" class="hinvoice" style={{ color:"black" , backgroundColor: " white", width:"300px", padding:"10px",margin:"10px",marginLeft:"65px",border:"none",borderBottom:"1px solid "}}/>
       </div>
     </div>
 
     <div class="form-group">
       <div > 
-      <label style={{color:"black"}}>Item Name</label>           
+      <label style={{color:"black"}}>Price(1kg)</label>           
         <input type="text" class="hinvoice" style={{ color:"black" ,backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"45px",border:"none",borderBottom:"1px solid "}}/>
       </div>
     </div>
@@ -68,7 +69,7 @@ export default function CompanyRequest(){
 
     <div class="form-group">
       <div > 
-      <label style={{color:"black"}}>Item Name</label>           
+      <label style={{color:"black"}}>Total</label>           
         <input type="text" class="hinvoice" style={{color:"black" , backgroundColor: "none", width:"300px",padding:"10px",margin:"10px",marginLeft:"40px",border:"none",borderBottom:"3px solid black",borderTop:"3px solid black"}}/>
       </div>
     </div>

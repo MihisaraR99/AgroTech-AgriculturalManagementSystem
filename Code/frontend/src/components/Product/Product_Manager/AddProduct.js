@@ -2,6 +2,10 @@ import React,{useState} from "react";
 import img44 from "../images/upselling.jpg";
 import axios from "axios";
 import swal from "sweetalert"
+import {
+  Link
+} from "react-router-dom"
+
 
 export default function AddProduct(){
 
@@ -68,8 +72,9 @@ function sendData(e){
  
 
 return(
-  <center>
+  
   <div>
+    <center>
     <div className="maindiv111" style={{/*border:"2px solid black",*/ margin:"50px"}} >
        
       <div class="container12" style={{/*border:"2px solid green",*/margin:"5px"}}>
@@ -127,7 +132,6 @@ return(
       </div>   
     </div>
      
-  
        <button type="submit"  class="btn btn-success"  style={{width:"200px"}}>Submit</button>
    </form>
 
@@ -136,7 +140,12 @@ return(
 
     </div>
   </div>
+  </center>
+  { <Link to={`/stock`} 
+     class="btn btn-success"   style={{marginTop:"10px",marginBottom:"30px",borderRadius:"5px", fontSize:"20px",marginLeft:"150px" ,marginRight:"20px" ,height:"45px",width:"180px"}}>
+       Stock Details
+  </Link>}
 </div>
-</center>
+
     )
 }

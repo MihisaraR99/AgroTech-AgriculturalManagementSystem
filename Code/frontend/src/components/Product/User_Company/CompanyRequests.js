@@ -4,6 +4,9 @@ import './Company.css';
 import axios from "axios";
 import swal from "sweetalert";
 import Popup from "./Popup";
+import {
+  Link
+} from "react-router-dom"
 
 export default function CompanyRequest(){
 
@@ -92,7 +95,13 @@ function sendcompanyData(e){
                          <img src={img1} alt=""   style={{ width: "90%", height: "480px",borderBlockColor: "black",marginTop:"110px",paddingLeft:"4px",paddingRight:"4px"}}/> 
 	                  	</h1>
 	                 </section>
-                   <button class="btn btn-outline-secondary"  style={{marginTop:"70px",borderRadius:"15px", fontSize:"20px" ,marginLeft:"10px",marginRight:"20px" ,height:"50px",width:"180px"}}  onClick>Calculator</button>
+                   
+
+                   { <Link to={`/priceCal`} 
+                      className ="btn btn-outline-secondary" onClick={togglePopup} style={{marginTop:"70px",borderRadius:"15px", fontSize:"20px" ,marginLeft:"10px",marginRight:"20px" ,height:"50px",width:"180px"}}>
+                      Calculator
+                   </Link>}
+
                    <button class="btn btn-outline-secondary"  style={{marginTop:"70px",borderRadius:"15px", fontSize:"20px", padding:"4px" , height:"50px",width:"180px"}}  onClick={togglePopup}>Conditions</button>
                    
                    {isOpen && <Popup 
