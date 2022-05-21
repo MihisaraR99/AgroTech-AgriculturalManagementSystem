@@ -133,18 +133,18 @@ const sub =() => {
                                 <div class="row justify-content-between text-left">
 
                                     <div class="form-group col-sm-6 flex-column d-flex">
-                                    <label class="form-control-label px-3">Course ID<span class="text-danger"> *</span></label>  <p><input placeholder="Course Id" id="i-bold" onChange={(event) => {setcrsid(event.target.value);}} class="form-control border-2" oninput="this.className = ''" name="fname" /></p>
+                                    <label class="form-control-label px-3">Course ID<span class="text-danger"> *</span></label>  <p><input placeholder="Course Id" id="i-bold" onChange={(event) => {setcrsid(event.target.value);}} class="form-control border-2" oninput="this.className = ''" /></p>
 
-                                        <label class="form-control-label px-3">Course Name<span class="text-danger"> *</span></label>  <p><input placeholder="Course Name" id="i-bold" onChange={(event) => {setcrsName(event.target.value);}} class="form-control border-2" oninput="this.className = ''" name="fname" /></p>
+                                        <label class="form-control-label px-3">Course Name<span class="text-danger"> *</span></label>  <p><input placeholder="Course Name" id="i-bold" onChange={(event) => {setcrsName(event.target.value);}} class="form-control border-2" oninput="this.className = ''"  /></p>
                                         <p class="alert-txt">{formErrors.course_name}</p></div>
                                     <div class="form-group col-sm-6 flex-column d-flex">
                                         <label class="form-control-label px-3">Course Category<span class="text-danger"> *</span></label>
-                                        <p><select class="form-select border-2" placeholder="Course C" onChange={(event) => {setcategory(event.target.value);}} aria-label="Default select example">
+                                        <p><select id="select-bar" class="form-select border-2" placeholder="Course Category" onChange={(event) => {setcategory(event.target.value);}} aria-label="Default select example">
                                             <option selected >Select Category</option>
-                                            <option value="Animal Health">Animal Health</option>
-                                            <option value="Seed Science">Seed Science</option>
-                                            <option value="Seed Science">Crop Science</option>
-                                            <option value="Soil Science">Soil Science</option>
+                                            <option value="Anima lHealth">Animal Health</option>
+                                            <option value="CropS cience">Crop Science</option>
+                                            <option value="Plant Science">Plant Science</option>
+                                            <option value="Field Engineering">Field Engineering</option>
                                         </select>
                                         <p class="alert-txt">{formErrors.course_category}</p>
                                         </p>
@@ -152,12 +152,12 @@ const sub =() => {
                                     </div>
                                 </div>
                                 <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Thumbnail<span class="text-danger"> *</span></label> <input type="text" id="mob"  onChange={(event) => {setthumbnail(event.target.value);}}name="mob" placeholder="Course Thumbnail" onblur="validate(4)" /><p>{formErrors.course_thumbnail}</p> </div>
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Provide Institute<span class="text-danger"> *</span></label> <input type="text" id="mob"  onChange={(event) => {setinstitute(event.target.value);}}name="mob" placeholder="Provide Institute" onblur="validate(4)" /><p>{formErrors.course_institute}</p> </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Thumbnail<span class="text-danger"> *</span></label> <input type="text" id="i-bold"  onChange={(event) => {setthumbnail(event.target.value);}}name="mob" placeholder="Course Thumbnail" onblur="validate(4)" /><p>{formErrors.course_thumbnail}</p> </div>
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Provide Institute<span class="text-danger"> *</span></label> <input type="text" id="i-bold"  onChange={(event) => {setinstitute(event.target.value);}}name="mob" placeholder="Provide Institute" onblur="validate(4)" /><p>{formErrors.course_institute}</p> </div>
                                 </div>
                                
                                     
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Price<span class="text-danger"> *</span></label> <input type="text"  onChange={(event) => {setcrsprice(event.target.value);}}id="job" name="job" placeholder="Course Price" onblur="validate(5)" />
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Price<span class="text-danger"> *</span></label> <input type="text" id="i-bold" onChange={(event) => {setcrsprice(event.target.value);}} name="job" placeholder="Course Price" onblur="validate(5)" />
                                     <p class="alert-txt">{formErrors.course_price}</p>
                                     </div>
                                 
@@ -180,8 +180,8 @@ const sub =() => {
 
 
                                 <div class="row justify-content-between text-left">
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Source<span class="text-danger"> *</span></label> <p><select class="form-select border-2"  onChange={(event) => {setsource(event.target.value);}} aria-label="Default select example">
-                                        <option selected >Select Source</option>
+                                    <div class="form-group col-sm-5 flex-column d-flex"> <label class="form-control-label px-3">Course Source<span class="text-danger"> *</span></label> <p><select class="form-select border-2" id="select-bar" onChange={(event) => {setsource(event.target.value);}} aria-label="Default select example">
+                                        <option selected  >Select Source</option>
                                         <option value="Youtube">Youtube</option>
                                         <option value="External Url ">External Url </option>
                                         <option value="Html5(mp4)">Html5(mp4)</option>
@@ -194,7 +194,7 @@ const sub =() => {
                                 </div>
 
                                 <div class="row justify-content-between text-left" id="link-input">
-                                    <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Source Link<span class="text-danger"> *</span></label> <input type="text"  onChange={(event) => {setlink(event.target.value);}} id="ans" name="ans" placeholder="Source Link" onblur="validate(6)" /> </div>
+                                    <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Source Link<span class="text-danger"> *</span></label> <input type="text"  onChange={(event) => {setlink(event.target.value);}} id="i-bold" name="ans" placeholder="Source Link" onblur="validate(6)" /> </div>
                                     <p class="alert-txt">{formErrors.video_link}</p>
                                 </div>
 

@@ -32,7 +32,7 @@ function AllServices() {
         <p className="card-text">
         Agriculture Education Services & Technology, Inc.offers industry certifications in agriculture. A trusted
         </p>
-        <button class="buttonserv"><span>more</span></button> 
+       <a href="/coursehome"><button class="buttonserv"><span>more</span></button> </a>
       </div>
       
       <div className="card-body">

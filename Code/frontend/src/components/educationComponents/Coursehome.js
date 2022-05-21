@@ -39,6 +39,7 @@ function Coursehome() {
 
   return (
     <div>
+      <body class="crshome-bdy">
       <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -86,7 +87,7 @@ function Coursehome() {
 
       <div>
       <Carousel breakPoints={breakPoints}>
-          {listOfUsers.map((courses) => {
+          {listOfUsers && listOfUsers.map((courses,i) => {
             return (
             
             <div class="card" id="topcrs-crd">
@@ -95,19 +96,33 @@ function Coursehome() {
                 <h3 class="card-title">{courses.course_name}</h3>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <h2 class="course-price">{courses. course_price}</h2>
-                <a href="#" class="btn-crd">Start Today</a>
+                <span class="crsaction_btn">
+                <Link to={`/coursecontent/${courses._id}`} >Start Today</Link>
+            </span>
+               
               </div>
+
+            <div>
+ 
+
+
+
+
+
+
+
+            </div>
+
             </div>
           
-            
+        
            
             );
           
           })}
       </Carousel>
-  
-        </div>
-
+   </div>
+       
         <div class="course-cat">
           <h1>Top Categories</h1>
         </div>
@@ -115,6 +130,7 @@ function Coursehome() {
         <Carousel breakPoints={breakPoints}>
       
         <div class="card" id="topcrs-crd">
+        <Link to={"/ccategory/Field Engniering"} >
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
@@ -125,20 +141,24 @@ function Coursehome() {
             </div>
               </div>
               </a>
+              </Link>
             </div>
             <div class="card"  id="topcrs-crd">
+            <Link to={"/ccategory/Crop Science"} >
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
               <img src={seed} class="crd-img"  alt="..."/>
               <div class="category-text">
-              <h2>Seed Science</h2>
+              <h2>Crop Science</h2>
 
             </div>
               </div>
               </a>
+              </Link>
             </div>
             <div class="card"  id="topcrs-crd">
+            <Link to={"/ccategory/Animal Health"} >
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
@@ -149,18 +169,23 @@ function Coursehome() {
             </div>
               </div>
               </a>
+              </Link>
             </div>
             <div class="card"  id="topcrs-crd">
-    <a class="card-block stretched-link text-decoration-none" href="/">
+            <Link to={"/ccategory/Plant Science"} >
+    <a class="card-block stretched-link text-decoration-none" >
               
               <div class="card-body">
+            
               <img src={plant} class="crd-img" alt="..."/>
+            
               <div class="category-text">
               <h2>Plant Science</h2>
 
             </div>
               </div>
               </a>
+              </Link>
             </div>
           <div class="space-nav">
 
@@ -188,7 +213,7 @@ function Coursehome() {
 <div class="crsjumbotron-bottom">
 
 </div>
-        
+</body>
 
       </div>
 

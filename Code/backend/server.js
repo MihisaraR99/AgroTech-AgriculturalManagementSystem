@@ -84,6 +84,7 @@ app.use("/api/app", HealthCareAppointmentRoutes);
 app.use("/api/app", require("./routes/HealthCareAppointmentRoutes"));
 app.use("/api/Addevent", require("./routes/eventRoutes"));
 app.use("/api/course", require("./routes/courseRoutes"));
+
 app.use("/api/Ads", require("./routes/AdsRoutes"));
 app.use("/api/Applyvacancies", require("./routes/ApplyforVacancyRoutes"));
 app.use("/api/Applyguidances", require("./routes/ApplyforGuidanceRoutes"));

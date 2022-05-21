@@ -36,6 +36,7 @@ function Updatecourse() {
     course_institute,
     lessons,
     video_source,
+    video_link,
   
  }
  Axios.put(`http://localhost:8000/api/course/${id}`,newCourse).then(()=>{
@@ -97,9 +98,9 @@ useEffect(() => {
                                         <p><select value={course_category} class="form-select border-2" id="i-bold" onChange={(event) => {setcategory(event.target.value);}} aria-label="Default select example">
                                             <option selected >Select Category</option>
                                             <option value="Animal Health">Animal Health</option>
-                                            <option value="Seed Science">Seed Science</option>
-                                            <option value="Seed Science">Seed Science</option>
-                                            <option value="Soil Science">Soil Science</option>
+                                            <option value="Crop Science">Crop Science</option>
+                                            <option value="Plant Science">Plant Science</option>
+                                            <option value="Field Engineering">Field Engineering</option>
                                         </select>
                                       
                                         </p>
@@ -107,7 +108,7 @@ useEffect(() => {
                                     </div>
                                 </div>
                                 <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Thumbnail<span class="text-danger"> *</span></label> <input type="text"value={course_thumbnail} id="mob"  onChange={(event) => {setthumbnail(event.target.value);}}name="mob" placeholder="Course Thumbnail" onblur="validate(4)" /> </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Thumbnail<span class="text-danger"> *</span></label> <input type="text"value={course_thumbnail} id="i-bold"  onChange={(event) => {setthumbnail(event.target.value);}}name="mob" placeholder="Course Thumbnail" onblur="validate(4)" /> </div>
                                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Provide Institute<span class="text-danger"> *</span></label> <input value={course_institute} type="text" id="i-bold"  onChange={(event) => {setinstitute(event.target.value);}} /> </div>
                                 </div>
                                

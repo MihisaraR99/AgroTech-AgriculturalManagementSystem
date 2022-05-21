@@ -14,7 +14,10 @@ import AllServices from "./components/AllServices";
 import Coursehome from "./components/educationComponents/Coursehome";
 import Courseinsert from "./components/educationComponents/Courseinsert";
 import Updatecourse from "./components/educationComponents/Updatecourse";
-
+import Courseadmin from "./components/educationComponents/Courseadmin";
+import Coursecontent from "./components/educationComponents/Coursecontent";
+import Crspayment from "./components/educationComponents/Crspayment";
+import CourseCategory from "./components/educationComponents/CourseCategory"
 
 import Addevent from "./components/Events/Addevent";
 import Eventshome from "./components/Events/Eventshome";
@@ -125,7 +128,7 @@ function App() {
         */}
         
 
-        /*CareerManagement*/
+       
         <Route path="/VacancyDisplay" element={<VacancyDisplay/>} />
         <Route path="/GuidanceDisplay" element={<GuidanceDisplay/>}/>
         <Route path="/VacancyAdmin" element={<VacancyAdmin/>}/>
@@ -155,6 +158,10 @@ function App() {
         <Route path="/coursehome" element={<Coursehome />} />
         <Route path="/courseinsert" element={<Courseinsert />} />
         <Route path="/updatecourse/:id" element={<Updatecourse/>} />
+        <Route path="/courseadmin" element={<Courseadmin/>} />
+        <Route path="/coursecontent/:id" element={<Coursecontent/>} />
+        <Route path="/cpayment" element={<Crspayment/>} />
+        <Route path="/ccategory/:cat" element={<CourseCategory/>} />
         {/*
         <Route path="/Ulabs" element={<UserAllReports />} />
          */}
@@ -285,7 +292,7 @@ function App() {
         <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      <Footer/>
+     <Footer/>
       </BrowserRouter>
   );
 }

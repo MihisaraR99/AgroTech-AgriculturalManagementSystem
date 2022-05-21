@@ -83,6 +83,19 @@ const addCourses =(req, res)=>{
       res.status(400).json(error);
     }
   };
+
+  //find category courses
+
+  const getcategory = async (req, res) => {
+    try {
+      const cat = req.params.cat;
+      console.log(cat);
+      const couRse = await course.find({course_category:cat});
+      res.status(200).json(couRse);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  };
   
 
   
@@ -92,4 +105,5 @@ const addCourses =(req, res)=>{
     updateCourse,
     removeCourse,
     getsinglecourse,
+    getcategory,
   }

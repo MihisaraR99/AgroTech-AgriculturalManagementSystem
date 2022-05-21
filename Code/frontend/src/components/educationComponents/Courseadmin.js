@@ -37,10 +37,10 @@ function Courseadmin(){
 <div class="crstable_responsive">
 <div class="crstable-title">
                 <div class="crs-row">
-                    <div class="col-sm-6"><h2><b>Manage   </b><b>Courses</b></h2></div>
-                    <div className="input-group" style={{ width: "18rem", border:"1px solid #e2ebd8" }}>
-  <input type="search" onChange ={(e)=>{setcrsSearch(e.target.value); }} className="form-control rounded" placeholder="Type" aria-label="Search" aria-describedby="search-addon" />
-  <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
+                    <div class="col-sm-6" id="col"><h2><b>Manage   </b><b>Courses</b></h2></div>
+                    <div className="input-group" style={{ width: "20rem",  }}>
+  <input type="search"  onChange ={(e)=>{setcrsSearch(e.target.value); }} className="form-control rounded" placeholder="Course Name" aria-label="Search" aria-describedby="search-addon" />
+  <button type="button" id="srbttn"  className="btn btn-col" style={{color:"white"}}><i class="fa fa-search"></i></button>
 </div>
                 <div class="addbtn-row" >
                     <a href="/Courseinsert" id="add-crs" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-plus"></i> <span>Add New Course</span></a>
@@ -55,7 +55,7 @@ function Courseadmin(){
           <th class="crs-th">Course Name</th>
           <th class="crs-th">Category</th>
           <th class="crs-th">Institute</th>
-          <th class="crs-th">Prices</th>
+          <th class="crs-th">Price</th>
 
          
           <th class="crs-th">Action</th>
