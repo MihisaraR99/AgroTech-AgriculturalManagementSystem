@@ -35,6 +35,7 @@ function UpdateGuidance(){
       alert(err)
       console.log(err);
     })
+    window.location.href = "/GuidanceAdmin";
 }
 useEffect(() => {
     axios.get(`http://localhost:8000/api/AddGuidances/${id}`).then(res => {

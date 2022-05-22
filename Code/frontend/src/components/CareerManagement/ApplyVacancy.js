@@ -17,11 +17,34 @@ function ApplyVacancy(){
      const [Advancedlevel, setAdvanced]=useState("");
      const [Degree, setDegree]=useState("");
      const [CV, setCV]=useState("");
+     const [formErrors, setFormErrors] = useState({});
+     const [nicNoError, setNicNoError]=useState({});
+     const [emailError, setEmailError]=useState({});
+     const [mobileNoError, setMobileNoError]=useState({});
+     const [errors, setErrors] = useState([]);
     
      /*add*/
      function sendvacancyApplyData(e){
         e.preventDefault();
         alert("Going to Apply for a Vacancy");
+        let hasErrors = false;
+
+        if (nicNo.length >= 13) {
+            hasErrors = true;
+            setErrors((prev) => [...prev, "nicNoError"]);
+          }
+          if (Email.length <= 0) {
+            hasErrors = true;
+            setErrors((prev) => [...prev, "emailError"]);
+          }
+          if (Mobile.length >= 11) {
+            hasErrors = true;
+            setErrors((prev) => [...prev, "mobileNoError"]);
+          }
+    
+          if (hasErrors) {
+            return;
+          } else {
     
         const VacancyApply = {
             position,
@@ -37,7 +60,7 @@ function ApplyVacancy(){
             Advancedlevel,
             Degree,
             CV,
-     }
+     };
   
      /*url*/
      axios.post("http://localhost:8000/api/Applyvacancies/",VacancyApply).then(()=>{
@@ -45,8 +68,8 @@ function ApplyVacancy(){
   
       }).catch((err)=>{
         alert(err)
-        console.log(err);
-      })
+      });
+    }
   }
   
 
@@ -88,6 +111,9 @@ function ApplyVacancy(){
                 <input class="input" type="text" name="nic" id="nic" placeholder="NIC" required onChange={(e)=>{
                     setNIC(e.target.value);
                 }}/>
+                 {errors.includes("nicNoError") && (
+              <p class="alert-txt">Please Enter Valid NIC </p>
+            )}
                 <h2 class="h2new">Contact Details</h2>
                 <input class="input" type="text" name="address" id="address" placeholder="Address" required onChange={(e)=>{
                     setAddress(e.target.value);
@@ -95,9 +121,15 @@ function ApplyVacancy(){
                 <input class="input" type="text" name="mobile" id="mobile" placeholder="Mobile" required onChange={(e)=>{
                     setMobile(e.target.value);
                 }}/>
+                 {errors.includes("mobileNoError") && (
+              <p class="alert-txt">Please Enter Valid Mobile No</p>
+            )}
                 <input class="input" type="email" name="email" id="email" placeholder="Email" required onChange={(e)=>{
                     setEmail(e.target.value);
                 }}/> 
+                 {errors.includes("emailError") && (
+              <p class="alert-txt">Please Enter Valid Email</p>
+            )}
                 <input class="input" type="link" name="linkedin" id="linkedin" placeholder="LinkedIn" required onChange={(e)=>{
                     setLinkedin(e.target.value);
                 }}/>

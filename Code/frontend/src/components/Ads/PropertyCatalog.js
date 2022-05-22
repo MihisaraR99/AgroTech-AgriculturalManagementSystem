@@ -50,10 +50,6 @@ const PropertyCatalog = () => {
   <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
 </div>
 <br/>
-<div className="input-group" style={{ width: "18rem", border:"1px solid #e2ebd8" }}>
-  <input type="search" onChange ={(e)=>{setadSearch(e.target.value); }} className="form-control rounded" placeholder="City" aria-label="Search" aria-describedby="search-addon" />
-  <button type="button" className="btn btn-outline-primary" style={{color:"black"}}>search</button>
-</div>
 <br/>
 <hr></hr>
 <br/>
@@ -64,11 +60,7 @@ const PropertyCatalog = () => {
                 return value;
             }else if(
                 value.type.toLowerCase().includes(AdSearch.toLowerCase())
-
-            );else if(
-                 value.town.toLowerCase().includes(AdSearch.toLowerCase())
-
-          ){
+            ){
                 return value
             }
         }).map((ad) => (

@@ -46,10 +46,13 @@ import DisplayAd from "./components/Ads/DisplayAd";
 import AdvertiserLogin from "./components/Ads/AdvertiserLogin";
 
 /*CareerManagement*/
-// import "./components/CareerManagement/Display.css";
-// import "./components/CareerManagement/Apply.css";
-// import "./components/CareerManagement/Add.css";
-// import "./components/CareerManagement/Admin.css";
+
+import "./components/CareerManagement/Display.css";
+import "./components/CareerManagement/Apply.css";
+import "./components/CareerManagement/Add.css";
+import "./components/CareerManagement/CareerHome.css";
+import "./components/CareerManagement/Admin.css";
+
 import VacancyDisplay from "./components/CareerManagement/VacancyDisplay";
 import GuidanceDisplay from "./components/CareerManagement/GuidanceDisplay";
 import VacancyAdmin from "./components/CareerManagement/VacancyAdmin";
@@ -64,6 +67,7 @@ import UpdateGuidance from "./components/CareerManagement/UpdateGuidance";
 import UpdateVacancy from "./components/CareerManagement/UpdateVacancy";
 import ApplyVacancyAdmin from "./components/CareerManagement/ApplyVacancyAdmin";
 import ApplyGuidanceAdmin from "./components/CareerManagement/ApplyGuidanceAdmin";
+import CareerHome from "./components/CareerManagement/CareerHome";
 
 import AdminViewAds from "./components/Ads/AdminViewAds";
 import AdminUpdateAds from "./components/Ads/AdminUpdateAds";
@@ -119,27 +123,24 @@ function App() {
         <Route path="/AdverLogin" element={<AdvertiserLogin />} />
         */}
 
-        <Route path="/VacancyDisplay" element={<VacancyDisplay />} />
-        <Route path="/GuidanceDisplay" element={<GuidanceDisplay />} />
-        <Route path="/VacancyAdmin" element={<VacancyAdmin />} />
-        <Route path="/GuidanceAdmin" element={<GuidanceAdmin />} />
-        <Route path="/ApplyVacancy" element={<ApplyVacancy />} />
-        <Route path="/ApplyGuidance" element={<ApplyGuidance />} />
-        <Route path="/CandidateRegister" element={<CandidateRegister />} />
-        <Route path="/AddNewVacancies" element={<AddNewVacancies />} />
-        <Route path="/AddNewGuidance" element={<AddNewGuidance />} />
-        <Route path="/CandidateAdmin" element={<CandidateAdmin />} />
-        <Route path="/UpdateGuidance/:id" element={<UpdateGuidance />} />
-        <Route path="/UpdateVacancy/:id" element={<UpdateVacancy />} />
-        <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin />} />
-        <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin />} />
-        {/*
-        <Route path="/rep" element={<AllReports />} />
-        <Route path="/add" element={<AddReport />} />
-        <Route path="/edit/:id" element={<EditReport />} />
-        <Route path="/rep/:id" element={<ReportDetails />} />
-          
-  */}
+
+        /*CareerManagement*/
+        <Route path="/VacancyDisplay" element={<VacancyDisplay/>} />
+        <Route path="/GuidanceDisplay" element={<GuidanceDisplay/>}/>
+        <Route path="/VacancyAdmin" element={<VacancyAdmin/>}/>
+        <Route path="/GuidanceAdmin" element={<GuidanceAdmin/>}/>
+        <Route path="/ApplyVacancy" element={<ApplyVacancy/>}/>
+        <Route path="/ApplyGuidance" element={<ApplyGuidance/>}/>
+        <Route path="/CandidateRegister" element={<CandidateRegister/>}/>
+        <Route path="/AddNewVacancies" element={<AddNewVacancies/>}/>
+        <Route path="/AddNewGuidance" element={<AddNewGuidance/>}/>
+        <Route path="/CandidateAdmin" element={<CandidateAdmin/>}/>
+        <Route path="/UpdateGuidance/:id" element={<UpdateGuidance/>}/>
+        <Route path="/UpdateVacancy/:id" element={<UpdateVacancy/>}/>
+        <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin/>}/>
+        <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin/>}/>
+        <Route path="/CareerHome" element={<CareerHome/>}/>
+
         {/* Education course Routes */}
         <Route path="/" element={<AllServices />} />
         <Route path="/coursehome" element={<Coursehome />} />

@@ -1,6 +1,5 @@
-import react from "react";
-import {Link} from "react-router-dom";
-import React,{useState}from "react";
+import React from "react";
+import react,{useState}from "react";
 import axios from "axios"; 
 
 function ApplyGuidance(){
@@ -13,13 +12,35 @@ function ApplyGuidance(){
    const [mobile_no, setmobile]=useState("");
    const [email_g, setemail]=useState("");
    const [Ordinarylevel, setordinary]=useState("");
-   
+   const [formErrors, setFormErrors] = useState({});
+   const [nicNoError, setNicNoError]=useState({});
+   const [emailError, setEmailError]=useState({});
+   const [mobileNoError, setMobileNoError]=useState({});
+   const [errors, setErrors] = useState([]);
   
    /*add*/
    function sendguidanceApplyData(e){
       e.preventDefault();
       alert("Going to Apply for a Guidance Program");
+      let hasErrors = false;
   
+      if (nic_no.length >= 13) {
+        hasErrors = true;
+        setErrors((prev) => [...prev, "nicNoError"]);
+      }
+      if (email_g.length <= 0) {
+        hasErrors = true;
+        setErrors((prev) => [...prev, "emailError"]);
+      }
+      if (mobile_no.length >= 11) {
+        hasErrors = true;
+        setErrors((prev) => [...prev, "mobileNoError"]);
+      }
+
+      if (hasErrors) {
+        return;
+      } else {
+
       const GuidanceApply = {
           program,
           name_with_in,
@@ -30,7 +51,7 @@ function ApplyGuidance(){
           email_g,
           Ordinarylevel,
           
-   }
+   };
 
    /*url*/
    axios.post("http://localhost:8000/api/Applyguidances/",GuidanceApply).then(()=>{
@@ -38,8 +59,9 @@ function ApplyGuidance(){
 
     }).catch((err)=>{
       alert(err)
-      console.log(err);
-    })
+    });
+
+}
 }
 
 
@@ -76,6 +98,9 @@ function ApplyGuidance(){
                 <input class="input" type="text" name="nic" id="nic" placeholder="NIC" required onChange={(e)=>{
                     setnic(e.target.value);
                 }}/>
+                 {errors.includes("nicNoError") && (
+              <p class="alert-txt">Please Enter Valid NIC </p>
+            )}
                 <h2 class="h2new">Contact Details</h2>
                 <input class="input" type="text" name="address" id="address" placeholder="Address" required onChange={(e)=>{
                     setaddress(e.target.value);
@@ -83,10 +108,15 @@ function ApplyGuidance(){
                 <input class="input" type="text" name="mobile" id="mobile" placeholder="Mobile" required onChange={(e)=>{
                     setmobile(e.target.value);
                 }}/>
+                  {errors.includes("mobileNoError") && (
+              <p class="alert-txt">Please Enter Valid Mobile No</p>
+            )}
                 <input class="input" type="email" name="email" id="email" placeholder="Email" required onChange={(e)=>{
                     setemail(e.target.value);
                 }}/>
-            
+                  {errors.includes("emailError") && (
+              <p class="alert-txt">Please Enter Valid Email</p>
+            )}
                 <h2 class="h2new" >Educational Qualifications</h2>
                 <div class="select-list">
                     <select name="type" onChange={(e)=>{
