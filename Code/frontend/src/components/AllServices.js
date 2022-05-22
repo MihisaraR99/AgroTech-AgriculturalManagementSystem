@@ -63,7 +63,7 @@ function AllServices() {
       </div>
       
       <div className="card-body" >
-        <Link to="/" className="card-link">
+        <Link to="/Appointments" className="card-link">
           Card link
         </Link>
         <Link to="/" className="card-link">

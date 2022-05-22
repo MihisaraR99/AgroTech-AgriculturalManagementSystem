@@ -174,9 +174,7 @@ axios.post("http://localhost:8000/api/app/add",newAppointment).then(()=>{
                 </div>
               </div>
                 <div className="col col-6">
-
-
-                        
+    
                     <div className="appointment-image" style={{ marginBottom:"20px" }}>
                     <NavLink to="/HVet" style={{color:"green"}} className="appointment-image-link"><h1>Hi, Your Appointment Here!</h1></NavLink>
                     
