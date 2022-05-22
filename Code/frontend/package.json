@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "material-table": "^1.69.3",
+    "@material-ui/icons": "^4.11.3",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -20,7 +22,6 @@
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
-    "styled-components": "^5.3.5",
     "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.2"
   },
