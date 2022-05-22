@@ -18,9 +18,10 @@ import {
 export default function AllProducts(){
 
     const [products, setProducts] = useState([]);
-    const [ProductSearch , setSearch] = useState("");
     const [isOpen, setIsOpen] = useState(false);
- 
+    
+    
+    /*popup messages*/
     const togglePopup = () => {
       setIsOpen(!isOpen);
     }
@@ -50,7 +51,9 @@ export default function AllProducts(){
           
         })
   };*/}
+  
 
+  /*get data from database*/
   const columns=[
     {title: "Supplier Id" , field:"SId" , type:"string"},
     {title: "Contact Number" , field:"ScontactNo" , type:"string"},
@@ -59,7 +62,8 @@ export default function AllProducts(){
     {title: "Quentity" , field:"Quentity" , type:"string"},
     
 ]
-
+ 
+/*downlord PDF function*/
   const downloadPdf = () => {
     const doc = new jsPDF()
     doc.text("Product Details", 30, 10)
@@ -72,7 +76,7 @@ export default function AllProducts(){
   }
 
   
-   
+   /*return*/
     return(
         <div>
              <div className="img11pp"> <img
@@ -102,7 +106,7 @@ export default function AllProducts(){
 
   <div class="container-fluid" style={{ marginBottom:"40px" ,marginTop:"60px" }} >
   <MaterialTable  style={{background:"#bdf2c9", marginBottom:"40px"}}
-              title="AGROTEC- All Salary Details "
+              title="AGROTEC- All Product Details "
               columns={columns}
               data={products}
               actions={[

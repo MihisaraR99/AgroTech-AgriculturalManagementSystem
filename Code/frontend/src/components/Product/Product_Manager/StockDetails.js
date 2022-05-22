@@ -18,6 +18,7 @@ export default function AllProducts(){
 
     const [products, setProducts] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
+    const [ProductSearch , setSearch] = useState("");
  
     const togglePopup = () => {
       setIsOpen(!isOpen);
@@ -60,6 +61,19 @@ export default function AllProducts(){
 
     return(
         <div>
+
+<input type="text"
+   placeholder="Search.." 
+   className="text111"
+   name="search2"
+   onChange ={(e)=>{
+       setSearch(e.target.value);
+   }}
+   style={{border:"none",color:"black"}}
+  
+  
+  />
+  <button type="submit" style={{color:"black"}}><i class="fa fa-search"></i></button>
            
             <div className="tablestock" >
             <center><h1 style={{MarginTop:"80px", paddingRight:"190px"}}>Stock Details</h1></center>
@@ -74,7 +88,16 @@ export default function AllProducts(){
                     </tr> 
                 </thead> 
                 <tbody>  
-            {products && products.map((product,index)=>{
+            {products && products.filter(val=>{
+                if(ProductSearch ===""){
+                    return val;
+                }else if(
+                    val.PName.toLowerCase().includes(ProductSearch.toLowerCase()) ||
+                    val.PId.toLowerCase().includes(ProductSearch.toLowerCase())
+                ){
+                    return val
+                }
+            }).map((product,index)=>{
                 return(
                    <tr >
                    <td   >{index+1}</td>

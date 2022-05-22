@@ -42,8 +42,9 @@ function sendcompanyData(e){
         {
           if( Company_Id=="" || Product_Id=="" || Quentity==""){
            alert("Please fill the required fields")}
-
-          else{
+          else if(Company_contactNo.length<=9){
+            alert("Please Enter valied phone number") 
+          }else{
           axios.post("http://localhost:8000/api/companyRequest/add",newProduct).then(()=>{
             swal({text:"Company  Added",
                       icon:"success"
