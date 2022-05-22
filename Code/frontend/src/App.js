@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+//import "./components/HealthCare/Health.css";
+import Header from "./components/Header";
 import "./App.css";
 import "./components/educationComponents/Educationstyle.css";
 // import "./App.css";
@@ -75,17 +77,19 @@ import AdvertiserDetails from "./components/Ads/AdvertiserDetails";
 
 // Appointments Components - Healthcare
 import AddAppointments from "./components/HealthCare/AddAppointments";
-import AllappointmentsVet from "./components/HealthCare/AllappointmentsVet";
+import AllappointmentsVet from "./components/HealthCare/AllappointmentsUser";
 import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
 import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
+import HealthHome from "./components/HealthCare/HealthHome1";
 import Happointmentinvoice from "./components/HealthCare/CustomerInvoice";
+import AllAppointmentReport from "./components/HealthCare/AllAppointmentReport";
 
-// Lab Components
-//import AddReport from "./components/AddReport";
-//import AllReports from "./components/AllReports";
-//import DeleteReport from "./components/DeleteReport";
-//import EditReport from "./components/EditReport";
-//import ReportDetails from "./components/ReportDetails";
+// // Lab Components
+// import AddReport from "./components/AddReport";
+// import AllReports from "./components/AllReports";
+// import DeleteReport from "./components/DeleteReport";
+// import EditReport from "./components/EditReport";
+// import ReportDetails from "./components/ReportDetails";
 
 //Lab components
 import AddReport from "./components/labComponent/AddReport";
@@ -171,21 +175,19 @@ function App() {
         />
         <Route path="/stockDetails" element={<StockDetails />} />
         <Route path="/productBill" element={<ProductBill />} />
-        <Route path="/" element={<AllServices />} /> */}
-        {/* Health Care Appointments Routes */}
-        <Route path="/Appointments" element={<AddAppointments />} />
-        <Route path="/HVet" element={<AllappointmentsVet />} />
-        <Route path="/HManager" element={<AllappointmentsManager />} />
-        <Route path="/HMUpdate" element={<UpdateAppointmentManager />} />
-        <Route path="/AllAppointment" element={<AddAppointments />} />
-        <Route
-          path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time"
-          element={<Happointmentinvoice />}
-        />
-        {/* Health Care Appointments Routes 
-        <Route path="/Appointments" element={<AddAppointments />} />
-        <Route path="/AllAppointment" element={<AddAppointments />} />
-        */}
+        <Route path="/" element={<AllServices />} />
+
+          {/* Health Care Appointments Routes */}
+        <Route path="/Appointments" element= {<AddAppointments/>}/>
+        <Route path="/HVet" element= {<AllappointmentsVet/>}/>
+        <Route path="/HManager" element= {<AllappointmentsManager/>}/>
+        <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
+        <Route path="/AllAppointment" element= {<AddAppointments/>}/>
+        <Route path="/HHome" element= {<HealthHome/>}/>
+        <Route path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time" element= {<Happointmentinvoice/>}/>
+        <Route path="/AllAppointmentReport" element={<AllAppointmentReport />} />
+
+
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
         <Route path="/store/products/:category" element={<StoreProducts />} />
