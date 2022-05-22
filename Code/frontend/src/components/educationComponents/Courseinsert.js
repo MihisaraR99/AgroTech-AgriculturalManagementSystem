@@ -13,7 +13,7 @@ function Courseinsert() {
   const [ course_category, setcategory] = useState("");
   const [course_thumbnail, setthumbnail] = useState("");
   const [course_description, setdescription] = useState("");
-  const [course_price, setcrsprice] = useState("");
+  const [ course_provideemail, setcourse_provideemail] = useState("");
   const [course_institute, setinstitute] = useState("");
   const [lessons, setlessons] = useState("");
   const [video_source, setsource] = useState("");
@@ -31,6 +31,7 @@ function Courseinsert() {
 
   const validate=()=>{
     const errors = {};
+    const emailModel = /\S+@\S+\.\S+/;
     if(!course_name){
         errors.course_name = "Coursename is required!";
        
@@ -38,11 +39,11 @@ function Courseinsert() {
     if(!course_category){
         errors.course_category = "Course Category is required!";
     }
-    if(!course_price){
-        errors.course_price = "Course price is required!";
-    }
-    if(course_price.charAt(0)!="$"){
-        errors.course_price = "Please Enter $ sign!";
+    if(!course_provideemail){
+        errors.course_provideemail = "Email is required!";
+    }else
+    if(!emailModel.test(course_provideemail)){
+        errors.course_provideemail = "Please Enter valid email";
     }
 
     if(!course_institute){
@@ -76,7 +77,7 @@ const sub =() => {
         course_category,
         course_thumbnail,
         course_description,
-        course_price,
+        course_provideemail,
         course_institute,
         lessons,
         video_source,
@@ -89,7 +90,7 @@ const sub =() => {
             course_category,
             course_thumbnail,
             course_description,
-            course_price,
+            course_provideemail,
             course_institute,
             lessons,
             video_source,
@@ -141,10 +142,10 @@ const sub =() => {
                                         <label class="form-control-label px-3">Course Category<span class="text-danger"> *</span></label>
                                         <p><select id="select-bar" class="form-select border-2" placeholder="Course Category" onChange={(event) => {setcategory(event.target.value);}} aria-label="Default select example">
                                             <option selected >Select Category</option>
-                                            <option value="Anima lHealth">Animal Health</option>
-                                            <option value="CropS cience">Crop Science</option>
+                                            <option value="Anima Health">Animal Health</option>
+                                            <option value="Crop Science">Crop Science</option>
                                             <option value="Plant Science">Plant Science</option>
-                                            <option value="Field Engineering">Field Engineering</option>
+                                            <option value="Field Engniering">Field Engineering</option>
                                         </select>
                                         <p class="alert-txt">{formErrors.course_category}</p>
                                         </p>
@@ -152,13 +153,13 @@ const sub =() => {
                                     </div>
                                 </div>
                                 <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Thumbnail<span class="text-danger"> *</span></label> <input type="text" id="i-bold"  onChange={(event) => {setthumbnail(event.target.value);}}name="mob" placeholder="Course Thumbnail" onblur="validate(4)" /><p>{formErrors.course_thumbnail}</p> </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Thumbnail<span class="text-danger"> *</span></label> <input type="text" id="i-bold"  onChange={(event) => {setthumbnail(event.target.value);}}name="mob" placeholder="Course Thumbnail" onblur="validate(4)" /><p class="alert-txt">{formErrors.course_thumbnail}</p> </div>
                                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Provide Institute<span class="text-danger"> *</span></label> <input type="text" id="i-bold"  onChange={(event) => {setinstitute(event.target.value);}}name="mob" placeholder="Provide Institute" onblur="validate(4)" /><p>{formErrors.course_institute}</p> </div>
                                 </div>
                                
                                     
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Price<span class="text-danger"> *</span></label> <input type="text" id="i-bold" onChange={(event) => {setcrsprice(event.target.value);}} name="job" placeholder="Course Price" onblur="validate(5)" />
-                                    <p class="alert-txt">{formErrors.course_price}</p>
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Institute Email<span class="text-danger"> *</span></label> <input type="text" id="i-bold" onChange={(event) => {setcourse_provideemail(event.target.value);}} name="job" placeholder="Institute Email" onblur="validate(5)" />
+                                    <p class="alert-txt">{formErrors.course_provideemail}</p>
                                     </div>
                                 
                                 <div class="row justify-content-between text-left">
@@ -199,7 +200,7 @@ const sub =() => {
                                 </div>
 
                                 <div class="row justify-content-end" id="add-btn">
-                                    <div class="form-group col-sm-4"><Link to="./Courseadmin"> <button type="submit" onClick= {handleSubmit}class="btn-block btn-primary">Add Course</button></Link> </div>
+                                    <div class="form-group col-sm-4"><Link to="./Courseadmin"> <button type="submit"  onClick= {handleSubmit}class="btn-block btn-primary">Add Course</button></Link> </div>
                                 </div>
                             </form>
                         </div>

@@ -22,6 +22,7 @@ function Courseadmin(){
     }, [])
 
     const Delete = (id) => {
+      alert("You want to delete Course")
         Axios.delete(`http://localhost:8000/api/course/${id}`).then((res) => {
           alert("Program Deleted Successfully!");
           
@@ -42,7 +43,14 @@ function Courseadmin(){
   <input type="search"  onChange ={(e)=>{setcrsSearch(e.target.value); }} className="form-control rounded" placeholder="Course Name" aria-label="Search" aria-describedby="search-addon" />
   <button type="button" id="srbttn"  className="btn btn-col" style={{color:"white"}}><i class="fa fa-search"></i></button>
 </div>
-                <div class="addbtn-row" >
+<Link to={"/coursereport"} >
+<button type="button" class="re-btn" style={{marginTop:"20px"}} >
+  <span class="button__text">Report</span>
+  <span class="button__icon">
+  <i class="fa fa-file"></i>
+  </span>
+</button>
+    </Link>            <div class="addbtn-row" >
                     <a href="/Courseinsert" id="add-crs" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-plus"></i> <span>Add New Course</span></a>
                     </div>
                 </div>
@@ -55,7 +63,7 @@ function Courseadmin(){
           <th class="crs-th">Course Name</th>
           <th class="crs-th">Category</th>
           <th class="crs-th">Institute</th>
-          <th class="crs-th">Price</th>
+          <th class="crs-th">Institute Email</th>
 
          
           <th class="crs-th">Action</th>
@@ -79,7 +87,7 @@ function Courseadmin(){
           <td className="crs-td">{courses.course_name}</td>
           <td className="crs-td">{courses.course_category}</td>
           <td className="crs-td">{courses.course_institute}</td>
-          <td className="crs-td">{courses.course_price}</td>
+          <td className="crs-td">{courses.course_provideemail}</td>
           <td className="crs-td">
             <span class="crsaction_btn">
             <Link to={`/updatecourse/${courses._id}`} > Update </Link> 

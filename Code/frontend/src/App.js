@@ -18,6 +18,7 @@ import Courseadmin from "./components/educationComponents/Courseadmin";
 import Coursecontent from "./components/educationComponents/Coursecontent";
 import Crspayment from "./components/educationComponents/Crspayment";
 import CourseCategory from "./components/educationComponents/CourseCategory"
+import Course_report from "./components/educationComponents/Course_report";
 
 import Addevent from "./components/Events/Addevent";
 import Eventshome from "./components/Events/Eventshome";
@@ -162,6 +163,7 @@ function App() {
         <Route path="/coursecontent/:id" element={<Coursecontent/>} />
         <Route path="/cpayment" element={<Crspayment/>} />
         <Route path="/ccategory/:cat" element={<CourseCategory/>} />
+        <Route path="/coursereport" element={<Course_report/>} />
         {/*
         <Route path="/Ulabs" element={<UserAllReports />} />
          */}

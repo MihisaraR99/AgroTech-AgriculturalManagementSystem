@@ -82,20 +82,20 @@ function Coursehome() {
       </div>
 
       <div class="top-heading">
-        <h1>Top Courses</h1>
+        <h1>Top Course Programs</h1>
       </div>
-
+    <div style={{marginBottom:"50px"}}></div>
       <div>
       <Carousel breakPoints={breakPoints}>
           {listOfUsers && listOfUsers.map((courses,i) => {
             return (
-            
+             
             <div class="card" id="topcrs-crd">
               <img src={courses.course_thumbnail} class="card-img-top" alt="..."/>
               <div class="card-body">
                 <h3 class="card-title">{courses.course_name}</h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <h2 class="course-price">{courses. course_price}</h2>
+                <p class="card-text">{courses.course_description}</p>
+                <h2 class="course-price">{courses.course_institute}</h2>
                 <span class="crsaction_btn">
                 <Link to={`/coursecontent/${courses._id}`} >Start Today</Link>
             </span>

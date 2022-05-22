@@ -1,7 +1,7 @@
 const course=require("../models/CourseModel");
 const addCourses =(req, res)=>{
 
-    const {course_id,course_name,course_category,course_thumbnail,course_description,course_price,course_institute,lessons,video_source,video_link,course_video} = req.body;
+    const {course_id,course_name,course_category,course_thumbnail,course_description, course_provideemail,course_institute,lessons,video_source,video_link,course_video} = req.body;
     
   
     const newCourse = new course({
@@ -10,7 +10,7 @@ const addCourses =(req, res)=>{
         course_category,
         course_thumbnail,
         course_description,
-        course_price,
+        course_provideemail,
         course_institute,
         lessons,
         video_source,

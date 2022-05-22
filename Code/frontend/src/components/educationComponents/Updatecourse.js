@@ -14,7 +14,7 @@ function Updatecourse() {
   const [ course_category, setcategory] = useState("");
   const [course_thumbnail, setthumbnail] = useState("");
   const [course_description, setdescription] = useState("");
-  const [course_price, setcrsprice] = useState("");
+  const [course_provideemail, setcourse_provideemail] = useState("");
   const [course_institute, setinstitute] = useState("");
   const [lessons, setlessons] = useState("");
   const [video_source, setsource] = useState("");
@@ -32,7 +32,7 @@ function Updatecourse() {
     course_category,
     course_thumbnail,
     course_description,
-    course_price,
+    course_provideemail,
     course_institute,
     lessons,
     video_source,
@@ -63,7 +63,7 @@ useEffect(() => {
     setcrsName(res.data.course_name);
     setcategory(res.data.course_category);
     setthumbnail(res.data.course_thumbnail);
-      setcrsprice(res.data.course_price);
+      setcourse_provideemail(res.data.course_provideemail);
       setsource(res.data.video_source);
       setlink(res.data.video_link);
       setlessons(res.data.lessons);
@@ -100,7 +100,7 @@ useEffect(() => {
                                             <option value="Animal Health">Animal Health</option>
                                             <option value="Crop Science">Crop Science</option>
                                             <option value="Plant Science">Plant Science</option>
-                                            <option value="Field Engineering">Field Engineering</option>
+                                            <option value="Field Engniering">Field Enginering</option>
                                         </select>
                                       
                                         </p>
@@ -113,7 +113,7 @@ useEffect(() => {
                                 </div>
                                
                                     
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Price<span class="text-danger"> *</span></label> <input value={course_price} type="text"  onChange={(event) => {setcrsprice(event.target.value);}} id="i-bold" name="job" placeholder="" onblur="validate(5)" />
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Institute Email<span class="text-danger"> *</span></label> <input value={course_provideemail} type="text"  onChange={(event) => {setcourse_provideemail(event.target.value);}} id="i-bold" name="job" placeholder="" onblur="validate(5)" />
                                     
                                     </div>
                                 

@@ -2,7 +2,7 @@ import React from "react";
 import { Link,useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Axios from "axios";
-
+import swal from 'sweetalert';
 
 function Coursecontent(){
     const {id} = useParams();
@@ -16,6 +16,39 @@ function Coursecontent(){
   const [lessons, setlessons] = useState("");
   const [video_source, setsource] = useState("");
   const [video_link, setlink] = useState("");
+  const [listOffeedback, setlistOffeedback] = useState([]);
+  const[cuser_name,setcuser_name]=useState("");
+  const[c_feedback,setc_feedback]=useState("");
+
+
+ const createcFeedback = () => {
+    Axios.post("http://localhost:8000/api/cfeedback/", {
+        id,
+        cuser_name,
+        c_feedback,
+    }).then((response) => {
+        setlistOffeedback([
+        ...listOffeedback,
+        {    id,
+             cuser_name,
+            c_feedback,
+        },
+      ]);
+    });
+    swal({
+        title: "Feedback Added Successfuly!",
+        icon: "success",
+        confirmButtonText: "OK",
+          }).then(function () {
+              // Redirect the user
+              window.location.href = "#";
+            });
+       
+ 
+
+  };
+
+
   
     useEffect(() => {
         Axios.get(`http://localhost:8000/api/course/${id}`).then(res => {
@@ -33,6 +66,7 @@ function Coursecontent(){
             })		
         }, [])
 
+
     return(
          <div >
         <div class="course_head">
@@ -46,7 +80,7 @@ function Coursecontent(){
         <center>
         <div class="video-wrapper">
         <iframe width="1000" height="500"
-src="https://www.youtube.com/embed/tgbNymZ7vqY">
+             src={video_link}>
 </iframe>
         </div>
         </center>
@@ -60,12 +94,14 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
         </div>
         <div   style={{paddingTop:"20px",paddingLeft:"30px"}}> <h2> Student Feedbacks</h2></div>
         <div class="feed-box">
+       
         <div class="input-group"style={{marginBottom:"40px"}}>
-  <input type="text"  style={{border:"solid black"}} class="form-control"placeholder="Add your feedack"/>
-  <span class="input-group-btn">
-    <button class="btn btn-default" id="add-feed"  style={{backgroundColor:"black",border:"solid black",color:"white"}}type="button">ADD</button>
-  </span>
+        <input type="text"  style={{border:"solid black"}} class="form-control"placeholder="Name" onChange={(event) => {setcuser_name(event.target.value);}} /><p>&nbsp;</p>
+  <input type="text"  style={{border:"solid black"}} class="form-control"placeholder="Add your feedack" onChange={(event) => {setc_feedback(event.target.value);}}/>
+    <button  type="submit" onClick={createcFeedback} class="btn btn-default" id="add-feed" data-bs-dismiss="modal"  style={{backgroundColor:"black",border:"solid black",color:"white"}}>ADD</button>
+  
 </div>
+
 
         </div>
           
