@@ -74,7 +74,29 @@ const Navigator = () => {
                             </Link>
                           </li>
                           <li>
-                            <a href="#">Menu Four</a>
+                          <Link to="/VacancyAdmin">
+                              <a>Vacancy Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                          <Link to="/GuidanceAdmin">
+                              <a>Guidance Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                          <Link to="/ApplyVacancyAdmin">
+                              <a>Apply Vacancy Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                          <Link to="/ApplyGuidanceAdmin">
+                              <a>Apply Guidamce Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                          <Link to="/CandidateAdmin">
+                              <a>Candidate Admin</a>
+                            </Link>
                           </li>
                         </ul>
                       </li>

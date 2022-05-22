@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 //import "./App.css";
-import "./components/educationComponents/Educationstyle.css"
-import "./App.css";
-import "./components/HealthCare/Health.css";
+//import "./components/educationComponents/Educationstyle.css"
+//import "./App.css";
+//import "./components/HealthCare/Health.css";
 
 //import Header from "./components/Header";
 import Navigator from "./components/Navigator/Navigator";
@@ -68,6 +68,8 @@ import UpdateVacancy from "./components/CareerManagement/UpdateVacancy";
 import ApplyVacancyAdmin from "./components/CareerManagement/ApplyVacancyAdmin";
 import ApplyGuidanceAdmin from "./components/CareerManagement/ApplyGuidanceAdmin";
 import CareerHome from "./components/CareerManagement/CareerHome";
+
+
 
 
 import AdminViewAds from "./components/Ads/AdminViewAds";
@@ -141,6 +143,7 @@ function App() {
         <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin/>}/>
         <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin/>}/>
         <Route path="/CareerHome" element={<CareerHome/>}/>
+      
       
       {/*
         <Route path="/rep" element={<AllReports />} />

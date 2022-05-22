@@ -4,6 +4,8 @@ import axios from "axios";
 
 function GuidanceAdmin(){
     const [guidance, setGuidance] = useState([])
+    const [GuidanceSearch , setcrsSearch] = useState("");
+
     useEffect(() => {
         axios.get("http://localhost:8000/api/AddGuidances/all").then(res => {
            setGuidance(res.data);
@@ -27,7 +29,14 @@ function GuidanceAdmin(){
       <div>
                    <button  class="btn btn-success" data-toggle="modal"  > <Link to={`/AddNewGuidance/`} > Add New Programs</Link>  </button>
                    </div>
+
+                   <div className="input-group" style={{ width: "30rem",  }}>
+                       <div class="srch"> <input type="search"  onChange ={(e)=>{setcrsSearch(e.target.value); }} className="form-control rounded" placeholder="Search Program" aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" id="srbttn"  className="btn btn-col" style={{color:"white"}}><i class="fa fa-search"></i></button></div>
+  
+</div>
     </div>
+    
    <div class="card-body">
    <div class="table-responsive">
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -44,7 +53,16 @@ function GuidanceAdmin(){
                 </thead>
                 <tbody>
 
-                {guidance && guidance.map((guide, i) => (
+                {guidance && guidance.filter(value=>{
+            if(GuidanceSearch ===""){
+                return value;
+            }else if(
+                value.programName.toLowerCase().includes(GuidanceSearch.toLowerCase())
+            ){
+                return value
+            }
+        }).map((guide, i) => (
+
                      <tr data-status="active">
                         <td>{guide.programNo}</td>
                         <td>{guide.programName}</td>

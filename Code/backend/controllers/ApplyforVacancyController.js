@@ -41,7 +41,7 @@ const addApply = (req, res) => {
       res.status(200).json(createdApply);
     })
     .catch((err) => {
-      console.log(error);
+      console.log(err);
     });
 };
 
