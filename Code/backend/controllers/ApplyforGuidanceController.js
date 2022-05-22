@@ -6,9 +6,10 @@ const addApplyGuidance = (req, res) => {
     nameinfull,
     nic_no,
     address_g,
-    mobile_g,
+    mobile_no,
     email_g,
     program,
+    Ordinarylevel,
     
   } = req.body;
 
@@ -19,9 +20,10 @@ const addApplyGuidance = (req, res) => {
     nameinfull,
     nic_no,
     address_g,
-    mobile_g,
+    mobile_no,
     email_g,
     program,
+    Ordinarylevel,
   });
 
   newApplyGuidance

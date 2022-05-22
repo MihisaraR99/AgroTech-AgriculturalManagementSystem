@@ -4,10 +4,14 @@ const {
   addVacancy,
   updateVacancy,
   removeVacancy,
+  getsinglevacancy,
+
 } = require("../controllers/AddVacanciesController");
 const router = express.Router();
 
 router.get("/all", getvacancy);
+
+router.get("/:id", getsinglevacancy);
 
 router.post("/", addVacancy);
 

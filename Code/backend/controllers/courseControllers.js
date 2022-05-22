@@ -1,10 +1,11 @@
 const course=require("../models/CourseModel");
 const addCourses =(req, res)=>{
 
-    const {course_name,course_category,course_thumbnail,course_description,course_price,course_institute,lessons,video_source,video_link,course_video} = req.body;
+    const {course_id,course_name,course_category,course_thumbnail,course_description,course_price,course_institute,lessons,video_source,video_link,course_video} = req.body;
     
   
     const newCourse = new course({
+        course_id,
         course_name,
         course_category,
         course_thumbnail,
@@ -45,9 +46,9 @@ const addCourses =(req, res)=>{
         return res.status(404).json("There is a no Courses");
       }
   
-      const {course_name,course_category,course_thumbnail,course_description,course_price,course_institute,lessons,video_source,video_link,course_video} = req.body;
+      const {course_id,course_name,course_category,course_thumbnail,course_description,course_price,course_institute,lessons,video_source,video_link,course_video} = req.body;
       
-      const cor = await course.findByIdAndUpdate(courseId, {course_name,course_category,course_thumbnail,course_description,course_price,course_institute,lessons,video_source,video_link,course_video});
+      const cor = await course.findByIdAndUpdate(courseId, {course_id,course_name,course_category,course_thumbnail,course_description,course_price,course_institute,lessons,video_source,video_link,course_video});
   
     } catch (error) { 
       res.status(400).json(error.message);
@@ -72,6 +73,16 @@ const addCourses =(req, res)=>{
   
     }
   }
+  //find one id
+  const getsinglecourse = async (req, res) => {
+    try {
+      const id = req.params.id;
+      const couRse = await course.findById(id);
+      res.status(200).json(couRse);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  };
   
 
   
@@ -80,5 +91,5 @@ const addCourses =(req, res)=>{
     getCourses,
     updateCourse,
     removeCourse,
-
+    getsinglecourse,
   }

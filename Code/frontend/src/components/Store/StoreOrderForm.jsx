@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 const StoreOrderForm = () => {
   const { product: paramsProduct, quantity, price } = useParams();
@@ -47,8 +48,6 @@ const StoreOrderForm = () => {
       .then((res) => {
         setProduct(res.data.product);
       });
-
-    console.log("Use effect");
   }, [paramsProduct, price, quantity]);
 
   useEffect(() => {
@@ -65,7 +64,16 @@ const StoreOrderForm = () => {
         });
       })
       .catch((error) => {
-        console.log("User not found");
+        swal({
+          title:
+            "Sorry, You haven't login to the application, Please login to continue",
+          icon: "warning",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#12af39",
+          className: "store-swal-button",
+        }).then(() => {
+          navigate("/login");
+        });
       });
   }, []);
 
@@ -83,43 +91,80 @@ const StoreOrderForm = () => {
   };
 
   const onSubmit = (e) => {
+    setValid([]);
+
     e.preventDefault();
-    if (order.firstName.length <= 0) {
+
+    const onlyLetters = /[a-zA-Z]+/;
+    const onlyNumeric = /^\d+$/;
+
+    if (order.firstName.length <= 0 || !onlyLetters.test(order.firstName)) {
       setValid((prev) => [...prev, "fNameError"]);
     }
 
-    if (order.lastName.length <= 0) {
+    if (order.lastName.length <= 0 || !onlyLetters.test(order.lastName)) {
       setValid((prev) => [...prev, "lNameError"]);
     }
 
-    if (order.address1.length <= 0) {
+    if (order.address1.length <= 0 || !onlyLetters.test(order.firstName)) {
       setValid((prev) => [...prev, "ad1Error"]);
     }
 
-    if (order.address2.length <= 0) {
+    if (order.address2.length <= 0 || !onlyLetters.test(order.firstName)) {
       setValid((prev) => [...prev, "ad2Error"]);
     }
 
-    if (order.city.length <= 0) {
+    if (order.city.length <= 0 || !onlyLetters.test(order.firstName)) {
       setValid((prev) => [...prev, "cityError"]);
     }
 
     if (order.state.length <= 0) {
       setValid((prev) => [...prev, "stateError"]);
     }
-    if (order.zipCode.length <= 0) {
+    if (order.zipCode.length <= 0 || !onlyNumeric.test(order.zipCode)) {
       setValid((prev) => [...prev, "zipError"]);
     }
+
+    if (valid.length > 0) {
+      return;
+    } else {
+      setValid([]);
+    }
+
     e.preventDefault();
     axios
       .post("http://localhost:8000/api/store/orders", order)
       .then((res) => {
-        alert("Order created");
-        navigateToCheckout(res.data._id);
+        swal({
+          title:
+            "Order created Successfully! Click Ok to navigate to payment page!",
+          icon: "success",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#12af39",
+          className: "store-swal-button",
+        }).then(() => {
+          navigateToCheckout(res.data._id);
+        });
       })
       .catch((errr) => {
         console.log("Error");
       });
+  };
+
+  const demo = () => {
+    setOrder({
+      firstName: "Pasindu",
+      lastName: "Prabhashitha",
+      address1: "45/5",
+      address2: "Mountain View",
+      city: "California",
+      state: "USA",
+      zipCode: "11481",
+      product: "625ebd8857dfb813960dbb1e",
+      quantity: "1",
+      total: "2.13",
+      user: "625796e1c1d4278fec9bd2b4",
+    });
   };
 
   return (
@@ -131,6 +176,7 @@ const StoreOrderForm = () => {
           Please enter your shipping details, We'll deliver your items to your
           doorstep
         </p>
+
         <hr />
         <form class="row g-3 mt-3">
           <div class="col-md-6">
@@ -257,8 +303,18 @@ const StoreOrderForm = () => {
               type="submit"
               onClick={onSubmit}
               class="btn store-order-form-button "
+              id="product-details-buy-now"
             >
               Place Order
+            </button>
+
+            <button
+              type="button"
+              onClick={demo}
+              class="btn store-order-form-button my-4"
+              id="product-details-buy-now"
+            >
+              Demo
             </button>
           </div>
         </form>

@@ -28,6 +28,18 @@ const getEvent = async(req,res)=>{
     }
 }
 
+const getsingleevent = async (req, res) => {
+    try {
+      const id = req.params.id;
+      const event = await Event.findById(id);
+      res.status(200).json(event);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  };
+
+
+
 const updateEvent = async(req, res) =>{
 const Event_id =req.params.id;
 
@@ -76,5 +88,6 @@ const removeEvent = async (req, res)=> {
      addEvent,
      getEvent,
      updateEvent,
+     getsingleevent,
      removeEvent
     }

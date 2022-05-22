@@ -3,7 +3,7 @@ const Candidate = require("../models/CandidateModel");
 
  const addCandidate = (req, res)=>{
 
-  const {name_with_initials,name_in_full,date_of_birth,nic,address,mobile,email,linked_in_profile,ordinarylevel,advancedlevel,degree} = req.body;
+  const {name_with_initials,name_in_full,date_of_birth,nic,address,mobile,email,linked_in_profile,ordinarylevel,advancedlevel,degree,cv} = req.body;
   
   const newCandidate = new Candidate({
 
@@ -18,7 +18,7 @@ const Candidate = require("../models/CandidateModel");
     ordinarylevel,
     advancedlevel,
     degree,
-  
+    cv,
   });
 
    newCandidate.save().then((createdCandidate)=>{
@@ -49,9 +49,13 @@ const updateCandidate = async (req, res) => {
       return res.status(404).json("There is a no candidate");
     }
 
-    const {name_with_initials,name_in_full,date_of_birth,nic,address,mobile,email,linked_in_profile,ordinarylevel,advancedlevel,degree} = req.body;
+    const {name_with_initials,name_in_full,date_of_birth,nic,address,mobile,email,linked_in_profile,ordinarylevel,advancedlevel,degree,cv} = req.body;
     
-    const candi = await Candidate.findByIdAndUpdate(candidateId, {name_with_initials,name_in_full,date_of_birth,nic,address,mobile,email,linked_in_profile,ordinarylevel,advancedlevel,degree});
+    const candi = await Candidate.findByIdAndUpdate(candidateId, {name_with_initials,name_in_full,date_of_birth,nic,address,mobile,email,linked_in_profile,ordinarylevel,advancedlevel,degree,cv});
+
+    res.status(201).json({
+      "Updated": true
+    })
 
   } catch (error) { 
     res.status(400).json(error.message);
