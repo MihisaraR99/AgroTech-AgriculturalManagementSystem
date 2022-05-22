@@ -12,6 +12,7 @@ const CandidateSchema = mongoose.Schema({
     ordinarylevel:String,
     advancedlevel:String,
     degree:String,
+    cv:String,
     
 });
 

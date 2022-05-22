@@ -5,6 +5,8 @@ const addGuidance = (req, res) => {
     programNo,
     programName,
     programDescription,
+    programImage,
+    publishedDate,
   } = req.body;
 
   console.log(req.body);
@@ -12,7 +14,9 @@ const addGuidance = (req, res) => {
   const newGuidance = new Guidance({
    programNo,
    programName,
-   programDescription
+   programDescription,
+   programImage,
+   publishedDate,
   });
 
   newGuidance
@@ -35,6 +39,16 @@ const getguidance = async (req, res) => {
   }
 };
 
+const getsingleguidance = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const guidance = await Guidance.findById(id);
+    res.status(200).json(guidance);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
+
 const updateGuidance = async (req, res) => {
   const guidanceId = req.params.id;
 
@@ -45,9 +59,9 @@ const updateGuidance = async (req, res) => {
        res.status(404).json("There is a no Programs");
     }
 
-    const {programNo,programName,programDescription} = req.body;
+    const {programNo,programName,programDescription,programImage,publishedDate} = req.body;
     
-    const progr = await Guidance.findByIdAndUpdate(guidanceId, {programNo,programName,programDescription});
+    const progr = await Guidance.findByIdAndUpdate(guidanceId, {programNo,programName,programDescription,programImage,publishedDate});
 
     res.status(201).json({
       "Updated": true
@@ -81,4 +95,5 @@ module.exports = {
   getguidance,
   updateGuidance,
   removeGuidance,
+  getsingleguidance,
 };

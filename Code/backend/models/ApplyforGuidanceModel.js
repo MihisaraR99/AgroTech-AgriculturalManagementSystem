@@ -8,6 +8,7 @@ const ApplyforGuidanceSchema = mongoose.Schema({
     mobile_no:String,
     email_g:String,
     program:String,
+    Ordinarylevel:String,
 
 });
 

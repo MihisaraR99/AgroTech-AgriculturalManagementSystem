@@ -120,9 +120,9 @@ handleSearchArea = (e) =>{
                   
                         {this.state.reports.map((reports,index)=>(
                              <>
-                           <div   key={index} >
+                           <div  key={index} >
                            <Fade left>
-                           <Card className="text-center" style={{border:'5px solid green' ,borderRadius:'15px'}}> 
+                           <Card className="text-center" style={{border:'5px solid green' ,borderRadius:'15px',width:'100%'}}> 
                                   <Card.Header style={{color:'white',backgroundColor:'#19803b' ,fontSize:'27px',fontFamily:"cursive",borderRadius:"15px",border:'4px solid white',textDecorationLine:'underline'}}>{reports.cName}</Card.Header>
                                   <Card.Body style={{color:'Black' ,fontSize:'22px',borderRadius:"15px" ,backgroundImage:'img4',border:'5px solid green'}}  >
                                     

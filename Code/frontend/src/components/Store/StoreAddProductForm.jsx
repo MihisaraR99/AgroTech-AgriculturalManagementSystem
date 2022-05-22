@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import swal from "sweetalert";
 
 const StoreAddProductForm = () => {
   const [name, setName] = useState("");
@@ -38,8 +39,15 @@ const StoreAddProductForm = () => {
     axios
       .post("http://localhost:8000/api/store/products", product)
       .then((response) => {
-        alert("Product Added Successfully");
-        navigate(`/store/products/product/${response.data._id}`);
+        swal({
+          title: "Product Added Successfully!",
+          icon: "success",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#12af39",
+          className: "store-swal-button",
+        }).then(() => {
+          navigate(`/store/products/product/${response.data._id}`);
+        });
       });
   };
 
@@ -60,7 +68,7 @@ const StoreAddProductForm = () => {
 
         <div className="store-add-product-form-inner  py-4">
           <form>
-            <div className="form-group my-2">
+            <div id="store-form-group" className="form-group mt-2">
               <label className="my-1">Name</label>
               <input
                 type="email"
@@ -73,11 +81,11 @@ const StoreAddProductForm = () => {
                 }}
               />
             </div>
-            <div className="form-group my-4">
+            <div className="form-group mt-4">
               <label className="my-1">Category</label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control mb-2"
                 value={category}
                 onChange={(e) => {
                   setCategory(e.target.value);
@@ -140,6 +148,7 @@ const StoreAddProductForm = () => {
 
             <button
               type="submit"
+              id="product-details-buy-now"
               className="btn product-details-buy-now w-100"
               onClick={saveProduct}
             >

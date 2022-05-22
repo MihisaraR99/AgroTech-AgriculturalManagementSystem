@@ -38,7 +38,7 @@ const Navigator = () => {
                   <li className="has-children">
                     <a href="about.html">
                       <span>
-                        Dropdown <i class="fa-solid fa-caret-down mx-2"></i>
+                        All Services <i class="fa-solid fa-caret-down mx-2"></i>
                       </span>{" "}
                     </a>
                     <ul className="dropdown arrow-top">
@@ -48,12 +48,12 @@ const Navigator = () => {
                         </Link>
                       </li>
                       <li>
-                        <a href="#">Classifields</a>
-                      </li>
-                      <li>
-                        <a href="#">Education</a>
+                        <a href="/Ads/company">For Companies</a>
                       </li>
                       <li className="has-children">
+                        <Link to="/">
+                          Services
+                        </Link>
                         <a href="#">
                           Dropdown <i class="fa-solid fa-caret-down"></i>
                         </a>

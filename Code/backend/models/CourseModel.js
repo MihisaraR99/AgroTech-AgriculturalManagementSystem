@@ -1,7 +1,7 @@
 const mongoose=require('mongoose')
 
 const CourseSchema=new mongoose.Schema({
-
+    course_id:String,
     course_name:String,
    
     course_category:String,

@@ -3,8 +3,9 @@ const mongoose = require('mongoose')
 const AddVacanciesSchema = mongoose.Schema({
    vacancyNo:String,
    jobTitle:String,
-   location:String,
    jobDescription:String,
+   jobImage:String,
+   publishedDate:String,
     
 });
 

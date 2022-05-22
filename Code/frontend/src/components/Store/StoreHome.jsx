@@ -107,7 +107,10 @@ const StoreHome = () => {
       {/* Categories */}
 
       <div className="categories p-4">
-        <h1 className="my-4 display-6 px-5"> Categories </h1>
+        <h1 className="my-4 display-6 px-5">
+          {" "}
+          <b>Categories</b>{" "}
+        </h1>
 
         <div className="category-list row gy-4 px-5">
           <div className="category col-3">
@@ -168,8 +171,20 @@ const StoreHome = () => {
         </div>
       </div>
 
+      {/* <div className="latest-store-cover my-4">
+        <img src="https://i.ibb.co/XJSwxr6/Cover1.jpg" alt="" />
+      </div> */}
+      <div className="latest-store-cover my-4">
+        <img src="https://i.ibb.co/XJSwxr6/Cover1.jpg" alt="" />
+      </div>
+
       <div className="latest-store-items p-4">
-        <h1 className="my-4 display-6 px-5"> Products </h1>
+        <h1 className="display-6 px-5">
+          <p>
+            {" "}
+            <b> Latest Products </b>{" "}
+          </p>
+        </h1>
         <div className="products-list row p-5">
           {products &&
             products.map((prod) => (
@@ -183,6 +198,10 @@ const StoreHome = () => {
                 />
               </div>
             ))}
+        </div>
+
+        <div className="latest-store-cover my-4">
+          <img src="https://i.ibb.co/Tqz0hW4/banner3sjndjs.jpg" alt="" />
         </div>
       </div>
     </div>
