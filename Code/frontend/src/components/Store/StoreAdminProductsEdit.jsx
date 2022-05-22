@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import swal from "sweetalert";
 
 const StoreAdminProductsEdit = () => {
   const [name, setName] = useState("");
@@ -9,6 +10,7 @@ const StoreAdminProductsEdit = () => {
   const [img, setImg] = useState("");
   const [smallDes, setSmallDes] = useState("");
   const [longDes, setLongDes] = useState("");
+  const navigate = useNavigate();
 
   const { pid } = useParams();
 
@@ -25,7 +27,17 @@ const StoreAdminProductsEdit = () => {
 
     axios
       .put(`http://localhost:8000/api/store/products/${pid}`, product)
-      .then((response) => alert("Product Added Successfully"));
+      .then((response) => {
+        swal({
+          title: "Product Updated Successfully!",
+          icon: "success",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#12af39",
+          className: "store-swal-button",
+        }).then(() => {
+          navigate(-1);
+        });
+      });
   };
 
   useEffect(() => {
@@ -42,10 +54,10 @@ const StoreAdminProductsEdit = () => {
   return (
     <div className="store-add-product py-4 d-flex align-items-center flex-column justify-content-center">
       <div className="store-admin-edit-form p-4">
-        <h2> Edit Product </h2>
-        <p id="emailHelp" className="form-text text-muted">
-          Enter the new details of the new product and click submit
-        </p>
+        <h2 className="display-6"> Edit Product on Store </h2>
+        <small id="emailHelp" className="form-text text-muted">
+          Enter thenew details that you need to edit
+        </small>
 
         <div className="store-add-product-form-inner  py-4">
           <form>

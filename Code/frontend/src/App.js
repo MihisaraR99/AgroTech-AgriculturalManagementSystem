@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-//import "./App.css";
-import "./components/educationComponents/Educationstyle.css"
 import "./App.css";
+import "./components/educationComponents/Educationstyle.css";
+// import "./App.css";
 import "./components/HealthCare/Health.css";
 
 //import Header from "./components/Header";
@@ -15,14 +15,12 @@ import Coursehome from "./components/educationComponents/Coursehome";
 import Courseinsert from "./components/educationComponents/Courseinsert";
 import Updatecourse from "./components/educationComponents/Updatecourse";
 
-
 import Addevent from "./components/Events/Addevent";
 import Eventshome from "./components/Events/Eventshome";
 import EventAdmin from "./components/Events/EventAdmin";
 import Eventdetail from "./components/Events/Eventdetail";
 import UpdateEvent from "./components/Events/UpdateEvent";
 import RegisterEvent from "./components/Events/RegisterEvent";
-
 
 // Store Components
 import StoreHome from "./components/Store/StoreHome";
@@ -48,10 +46,10 @@ import DisplayAd from "./components/Ads/DisplayAd";
 import AdvertiserLogin from "./components/Ads/AdvertiserLogin";
 
 /*CareerManagement*/
-import "./components/CareerManagement/Display.css";
-import "./components/CareerManagement/Apply.css";
-import "./components/CareerManagement/Add.css";
-import "./components/CareerManagement/Admin.css";
+// import "./components/CareerManagement/Display.css";
+// import "./components/CareerManagement/Apply.css";
+// import "./components/CareerManagement/Add.css";
+// import "./components/CareerManagement/Admin.css";
 import VacancyDisplay from "./components/CareerManagement/VacancyDisplay";
 import GuidanceDisplay from "./components/CareerManagement/GuidanceDisplay";
 import VacancyAdmin from "./components/CareerManagement/VacancyAdmin";
@@ -67,7 +65,6 @@ import UpdateVacancy from "./components/CareerManagement/UpdateVacancy";
 import ApplyVacancyAdmin from "./components/CareerManagement/ApplyVacancyAdmin";
 import ApplyGuidanceAdmin from "./components/CareerManagement/ApplyGuidanceAdmin";
 
-
 import AdminViewAds from "./components/Ads/AdminViewAds";
 import AdminUpdateAds from "./components/Ads/AdminUpdateAds";
 import AdvertiserDetails from "./components/Ads/AdvertiserDetails";
@@ -77,7 +74,7 @@ import AddAppointments from "./components/HealthCare/AddAppointments";
 import AllappointmentsVet from "./components/HealthCare/AllappointmentsVet";
 import AllappointmentsManager from "./components/HealthCare/AllappointmentsManager";
 import UpdateAppointmentManager from "./components/HealthCare/UpdateAppointmentManager";
-import Happointmentinvoice from "./components/HealthCare/CustomerInvoice"
+import Happointmentinvoice from "./components/HealthCare/CustomerInvoice";
 
 // Lab Components
 //import AddReport from "./components/AddReport";
@@ -112,7 +109,7 @@ function App() {
 
   return (
     <BrowserRouter>
-     <Navigator />
+      <Navigator />
       <Routes>
         <Route path="/" element={<AllServices />} />
         {/*  
@@ -121,59 +118,52 @@ function App() {
         <Route path="/DisplayAd" element={<DisplayAd />} />
         <Route path="/AdverLogin" element={<AdvertiserLogin />} />
         */}
-        
 
-        /*CareerManagement*/
-        <Route path="/VacancyDisplay" element={<VacancyDisplay/>} />
-        <Route path="/GuidanceDisplay" element={<GuidanceDisplay/>}/>
-        <Route path="/VacancyAdmin" element={<VacancyAdmin/>}/>
-        <Route path="/GuidanceAdmin" element={<GuidanceAdmin/>}/>
-        <Route path="/ApplyVacancy" element={<ApplyVacancy/>}/>
-        <Route path="/ApplyGuidance" element={<ApplyGuidance/>}/>
-        <Route path="/CandidateRegister" element={<CandidateRegister/>}/>
-        <Route path="/AddNewVacancies" element={<AddNewVacancies/>}/>
-        <Route path="/AddNewGuidance" element={<AddNewGuidance/>}/>
-        <Route path="/CandidateAdmin" element={<CandidateAdmin/>}/>
-        <Route path="/UpdateGuidance/:id" element={<UpdateGuidance/>}/>
-        <Route path="/UpdateVacancy/:id" element={<UpdateVacancy/>}/>
-        <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin/>}/>
-        <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin/>}/>
-      {/*
+        <Route path="/VacancyDisplay" element={<VacancyDisplay />} />
+        <Route path="/GuidanceDisplay" element={<GuidanceDisplay />} />
+        <Route path="/VacancyAdmin" element={<VacancyAdmin />} />
+        <Route path="/GuidanceAdmin" element={<GuidanceAdmin />} />
+        <Route path="/ApplyVacancy" element={<ApplyVacancy />} />
+        <Route path="/ApplyGuidance" element={<ApplyGuidance />} />
+        <Route path="/CandidateRegister" element={<CandidateRegister />} />
+        <Route path="/AddNewVacancies" element={<AddNewVacancies />} />
+        <Route path="/AddNewGuidance" element={<AddNewGuidance />} />
+        <Route path="/CandidateAdmin" element={<CandidateAdmin />} />
+        <Route path="/UpdateGuidance/:id" element={<UpdateGuidance />} />
+        <Route path="/UpdateVacancy/:id" element={<UpdateVacancy />} />
+        <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin />} />
+        <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin />} />
+        {/*
         <Route path="/rep" element={<AllReports />} />
         <Route path="/add" element={<AddReport />} />
         <Route path="/edit/:id" element={<EditReport />} />
         <Route path="/rep/:id" element={<ReportDetails />} />
           
   */}
-
-       {/* Education course Routes */}
+        {/* Education course Routes */}
         <Route path="/" element={<AllServices />} />
         <Route path="/coursehome" element={<Coursehome />} />
         <Route path="/courseinsert" element={<Courseinsert />} />
-        <Route path="/updatecourse/:id" element={<Updatecourse/>} />
+        <Route path="/updatecourse/:id" element={<Updatecourse />} />
         {/*
         <Route path="/Ulabs" element={<UserAllReports />} />
          */}
-        
-
-         {/* Events Routes */}
-        <Route path="/events/add" element={<Addevent />}  /> 
+        {/* Events Routes */}
+        <Route path="/events/add" element={<Addevent />} />
         <Route path="/events/home" element={<Eventshome />} />
-        <Route path="/events/admin" element={<EventAdmin/>} />
-        <Route path="/events/detail"element={<Eventdetail/>}/>
-        <Route path="/events/update/:id"element={<UpdateEvent/>}/>
-        <Route path="/events/register" element={<RegisterEvent/>}/>
-
-          {/* Health Lab Routes */}
-        <Route path="/rep"      element= {<AllReports/>}    />
-        <Route path="/add"      element= {<AddReport/>}     />
-        <Route path="/edit/:id" element= {<EditReport/>}    />
-        <Route path="/rep/:id"  element= {<ReportDetails/>} />
-        <Route path="/"         element= {<AllServices/>}   />
-        <Route path="/Ulabs"    element = {<UserAllReports/>}   /> 
-        <Route path="/URepDet/:id"    element = {<UserReportDetails/>}   /> 
-        
-          {/*
+        <Route path="/events/admin" element={<EventAdmin />} />
+        <Route path="/events/detail" element={<Eventdetail />} />
+        <Route path="/events/update/:id" element={<UpdateEvent />} />
+        <Route path="/events/register" element={<RegisterEvent />} />
+        {/* Health Lab Routes */}
+        <Route path="/rep" element={<AllReports />} />
+        <Route path="/add" element={<AddReport />} />
+        <Route path="/edit/:id" element={<EditReport />} />
+        <Route path="/rep/:id" element={<ReportDetails />} />
+        <Route path="/" element={<AllServices />} />
+        <Route path="/Ulabs" element={<UserAllReports />} />
+        <Route path="/URepDet/:id" element={<UserReportDetails />} />
+        {/*
           <Route
           path="/productUpdate/:id/:name/:quantity"
           element={<UpdateProducts />}
@@ -181,22 +171,20 @@ function App() {
         <Route path="/stockDetails" element={<StockDetails />} />
         <Route path="/productBill" element={<ProductBill />} />
         <Route path="/" element={<AllServices />} /> */}
-        
-
-          {/* Health Care Appointments Routes */}
-        <Route path="/Appointments" element= {<AddAppointments/>}/>
-        <Route path="/HVet" element= {<AllappointmentsVet/>}/>
-        <Route path="/HManager" element= {<AllappointmentsManager/>}/>
-        <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
-        <Route path="/AllAppointment" element= {<AddAppointments/>}/>
-        
-        <Route path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time" element= {<Happointmentinvoice/>}/>
-
+        {/* Health Care Appointments Routes */}
+        <Route path="/Appointments" element={<AddAppointments />} />
+        <Route path="/HVet" element={<AllappointmentsVet />} />
+        <Route path="/HManager" element={<AllappointmentsManager />} />
+        <Route path="/HMUpdate" element={<UpdateAppointmentManager />} />
+        <Route path="/AllAppointment" element={<AddAppointments />} />
+        <Route
+          path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time"
+          element={<Happointmentinvoice />}
+        />
         {/* Health Care Appointments Routes 
         <Route path="/Appointments" element={<AddAppointments />} />
         <Route path="/AllAppointment" element={<AddAppointments />} />
         */}
-
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
         <Route path="/store/products/:category" element={<StoreProducts />} />
@@ -216,7 +204,6 @@ function App() {
           path="/store/product/add-product"
           element={<StoreAddProductForm />}
         />
-
         <Route
           path="/store/store-admin-products"
           element={<StoreAdminProducts />}
@@ -233,13 +220,12 @@ function App() {
           path="/store/store-admin-products/edit/:pid"
           element={<StoreAdminProductsEdit />}
         />
-{/*
+        {/*
         <Route path="/Ads/add" element={<AddProduct />} />
         <Route path="/Ads/productSee" element={<AllProducts />} />
         <Route path="/Ads/company" element={<CompanyRequest />} />
-        */} 
-
-       {/*
+        */}
+        {/*
 
         <Route path="/productadd" element= {<AddProduct/>}/>
         <Route path="/productSee" element= {<AllProducts/>}/>
@@ -248,8 +234,7 @@ function App() {
         <Route path="/productUpdate/:id/:name/:quantity" element= {<UpdateProducts/>}/>
         <Route path="/stock" element= {<StockDetails/>}/>
         <Route path="/productBill" element={<ProductBill/>}/>
-        */} 
-          
+        */}
         {/*Product Routes*/}
         <Route path="/productadd" element={<AddProduct />} />
         <Route path="/productSee" element={<AllProducts />} />
@@ -262,7 +247,6 @@ function App() {
         <Route path="/stock" element={<StockDetails />} />
         <Route path="/productBill" element={<ProductBill />} />
         <Route path="/companyHome" element={<CompanyHomePage />} />
-
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />
         <Route path="/Ads/properties" element={<PropertyCatalog />} />
@@ -272,17 +256,19 @@ function App() {
           path="/Ads/edit/:id/:town/:agentRef/:heading/:description/:sizeofArea/:priceRate/:contactName/:email/:phone/:image"
           element={<AdminUpdateAds />}
         />
-        <Route path="/Ads/Ad/:id/:town/:agentRef/:heading/:description/:sizeofArea/:priceRate/:contactName/:email/:phone/:image" element={<DisplayAd />} />
+        <Route
+          path="/Ads/Ad/:id/:town/:agentRef/:heading/:description/:sizeofArea/:priceRate/:contactName/:email/:phone/:image"
+          element={<DisplayAd />}
+        />
         <Route path="/Ads/:id" element={<DisplayAd />} />
         <Route path="/Ads/AdverDetails" element={<AdvertiserDetails />} />
-          
         {/* Users */}
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      <Footer/>
-      </BrowserRouter>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
