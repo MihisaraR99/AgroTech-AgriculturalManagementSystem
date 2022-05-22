@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import './labStyles.css';
 import vid2 from './labVideo/LabVideo2.mp4'
 import Slide from 'react-reveal/Slide';
+import Swal from 'sweetalert2';
 
 function withParams(Component) {
     return (props) => <Component {...props} params={useParams()} />;
@@ -52,7 +53,7 @@ class EditReport extends Component{
 
        axios.put(`http://localhost:8000/api/lab/update/${id}`,data).then((res) => {
            if(res.data.success){
-               alert("Post Edited Successfully")
+               //alert("Post Edited Successfully")
                this.setState(
                    {
                     cName:"",
@@ -60,12 +61,27 @@ class EditReport extends Component{
                     about:"",
                     labId:"",
                     reportStatus:""
-                   }
-               )
+                   });
            }
-       })
+       });
+       const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Lab Report Edited Successfully'
+      })
 
-   }
+   };
 
 
         componentDidMount() {
@@ -94,7 +110,7 @@ class EditReport extends Component{
                   <source src={vid2} type="video/mp4"/>
                   </video>
                   <Slide right>
-                   <div className='div1'>
+                   <div className='Lab-div1'>
                  
                     <h1 className='h2 mb-2 font-weight-normal' style={{color:'white',borderTopRightRadius:'20px',borderTopLeftRadius:'20px',backgroundColor:"green",textAlign:'center',padding:'10px',textDecorationLine:'underline'}}>Edit Lab Report Here!</h1>
                     <from className='need-validation' nonValidate>
