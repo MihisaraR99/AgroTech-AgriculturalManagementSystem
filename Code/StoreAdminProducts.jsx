@@ -49,13 +49,14 @@ const StoreAdminOrders = () => {
     html2canvas(input).then((canvas) => {
       var img = new Image();
       const doc = new jsPDF("p", "mm", "a4");
-      doc.setTextColor(20, 30, 39);
+      doc.setTextColor(255, 0, 0);
       doc.setFontSize(28);
-      doc.setTextColor(20, 30, 39);
+      doc.setTextColor(0, 0, 255);
       doc.setFontSize(16);
-      doc.text(5, 20, "Agrotec LLC - Reports");
+      doc.text(10, 70, "Agrotec LLC");
+      doc.setTextColor(0, 255, 0);
       doc.setFontSize(12);
-      doc.text(5, 30, "Generated Time :");
+      doc.text(145, 85, "Signature :");
       //Date
       var m_names = new Array(
         "January",
@@ -94,24 +95,13 @@ const StoreAdminOrders = () => {
         seconds +
         "sec";
       var newdat = today;
-      doc.setTextColor(20, 30, 39);
+      doc.setTextColor(0, 0, 0);
       doc.setFontSize(11);
-      doc.text(5, 35, newdat);
-
-      doc.text(
-        5,
-        50,
-        "Following are the products currently available inside the store"
-      );
-
+      doc.text(130, 93, newdat);
       var imgHeight = (canvas.height * 200) / canvas.width;
       const imgData = canvas.toDataURL("image/png");
-      doc.addImage(imgData, "JPEG", 5, 60, 200, imgHeight);
-      doc.text(5, 200, "_______________");
-      doc.text(5, 205, "Signature");
-
+      doc.addImage(imgData, "JPEG", 5, 100, 200, imgHeight);
       const date = Date().split(" ");
-
       // we use a date string to generate our filename.
       const dateStr =
         "Agrotec Reports" + date[0] + date[1] + date[2] + date[3] + date[4];
@@ -126,16 +116,10 @@ const StoreAdminOrders = () => {
           <h3 onClick={printPdf}> Store Products Admin </h3>
           <p> These are the products exists inside the store </p>
 
-          <div className="d-flex">
+          <div>
             <Link to="/store/product/add-product">
-              <button className="btn btn-success">
-                <i class="fa-solid fa-plus mx-2"></i> Add Product to Store
-              </button>
+              <button className="btn btn-success">Add Product to Store</button>
             </Link>
-
-            <button onClick={printPdf} className="btn btn-success mx-4">
-              <i class="fa-solid fa-file-pdf mx-2"></i> Download Products As PDF
-            </button>
           </div>
 
           <table
