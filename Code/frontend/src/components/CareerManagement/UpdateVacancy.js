@@ -1,7 +1,8 @@
 import react,{useEffect} from "react";
 import {Link,useParams} from "react-router-dom";
 import React,{useState} from "react";
-import axios from "axios"; 
+import axios from "axios";
+import swal from 'sweetalert'; 
 
 function UpdateVacancies(){
 
@@ -28,13 +29,20 @@ function UpdateVacancies(){
 
    /*url*/
    axios.put(`http://localhost:8000/api/AddVacancies/${id}`,newVacancy).then(()=>{
-      alert("Vacancy Updated");
 
     }).catch((err)=>{
       alert(err)
       console.log(err);
     })
-    window.location.href = "/VacancyAdmin";
+    swal({
+      title: "Vacancy is Successfully Updated.",
+      icon: "success",
+      confirmButtonText: "OK",
+        }).then(function () {
+            // Redirect the user
+            window.location.href = "/VacancyAdmin";
+          });
+    
 }
    useEffect(() => {
     axios.get(`http://localhost:8000/api/AddVacancies/${id}`).then(res => {
@@ -49,46 +57,41 @@ function UpdateVacancies(){
 
  return(  
    <div class="mains"> 
-    <div class="wrapper">
-    <div class="title">
+    <div class="wrapperss">
+    <div class="titless">
        Update Vacancy
       </div>
-      <div class="form">
-        <div class="inputfield">
+      <div class="forms">
+        <div class="inputfieldss">
             <label>VacancyNo</label>
-            <input value={vacancyNo} type="text" class="input" required onChange={(e)=>{
+            <input value={vacancyNo} type="text" class="inputss" required onChange={(e)=>{
                 setvacancyNo(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Job Title</label>
-            <input value={jobTitle} type="text" class="input" required onChange={(e)=>{
+            <input value={jobTitle} type="text" class="inputss" required onChange={(e)=>{
                setTitle(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Description</label>
-            <input value={jobDescription} type="text" class="input" required onChange={(e)=>{
+            <input value={jobDescription} type="text" class="inputss" required onChange={(e)=>{
                setDescription(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Published Date</label>
-            <input value={publishedDate} type="date" class="input" required onChange={(e)=>{
+            <input value={publishedDate} type="date" class="inputss" required onChange={(e)=>{
                setPublishDate(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Image</label>
-            <input value={jobImage} type="link" class="input" onChange={(e)=>{
+            <input value={jobImage} type="link" class="inputss" onChange={(e)=>{
                setImage(e.target.value);
             }}/>
-            <div class="value">
-                                <div class="input-group js-input-file">
-                                    <input class="input-file" type="file" name="image" id="file"/>
-                                    <span class="input-file__info">No file chosen</span>
-                                </div> 
-                            </div>
+            
          </div>
                        
           <div class="modal-footer">

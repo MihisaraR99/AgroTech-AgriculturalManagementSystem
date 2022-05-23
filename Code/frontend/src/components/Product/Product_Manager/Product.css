@@ -1,4 +1,4 @@
-.text111{
+/*.text111{
         margin-Top:50px;
         margin-Bottom:20px;
         width:30%;
@@ -99,8 +99,10 @@ tr.td11:nth-child(even):hover{
         padding-bottom: 40px;
         text-align: center;
 }
+*/
 
 /*stock table*/
+/*
 th.t12{
         background-color: #36e365;
         padding: 25px;
@@ -154,6 +156,7 @@ tr.tr12:nth-child(even):hover{
         padding-bottom: 40px;
         text-align: center;     
 }
+*/
 /*
 button.buttondelete1{
      background-color: rgb(184, 193, 192);  

@@ -2,6 +2,7 @@ import react,{useEffect} from "react";
 import {Link,useParams} from "react-router-dom";
 import React,{useState} from "react";
 import axios from "axios"; 
+import swal from 'sweetalert';
 
 function UpdateGuidance(){
     
@@ -29,13 +30,20 @@ function UpdateGuidance(){
   
    /*url*/
    axios.put(`http://localhost:8000/api/AddGuidances/${id}`,newProgram).then(()=>{
-      alert("Program Updated");
+      
 
     }).catch((err)=>{
       alert(err)
       console.log(err);
     })
-    window.location.href = "/GuidanceAdmin";
+    swal({
+      title: "Program is Successfully Updated.",
+      icon: "success",
+      confirmButtonText: "OK",
+        }).then(function () {
+            // Redirect the user
+            window.location.href = "/GuidanceAdmin";
+          });
 }
 useEffect(() => {
     axios.get(`http://localhost:8000/api/AddGuidances/${id}`).then(res => {
@@ -50,46 +58,40 @@ useEffect(() => {
 
  return(  
     <div class="mains"> 
-    <div class="wrapper">
-    <div class="title">
+    <div class="wrapperss">
+    <div class="titless">
        Update Career Guidance Programs
       </div>
-      <div class="form" >
-        <div class="inputfield">
+      <div class="forms" >
+        <div class="inputfieldss">
             <label>Program No</label>
-            <input value={programNo} type="text" class="input" required onChange={(e)=>{
+            <input value={programNo} type="text" class="inputss" required onChange={(e)=>{
                setproNo(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Program Name</label>
-            <input value={programName} type="text" class="input" required onChange={(e)=>{
+            <input value={programName} type="text" class="inputss" required onChange={(e)=>{
                setproName(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Description</label>
-            <input value={programDescription} type="text" class="input" required onChange={(e)=>{
+            <input value={programDescription} type="text" class="inputss" required onChange={(e)=>{
                setDescription(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Published Date</label>
-            <input value={publishedDate} type="date" class="input" required onChange={(e)=>{
+            <input value={publishedDate} type="date" class="inputss" required onChange={(e)=>{
                   setPublishDate(e.target.value);
             }}/>
          </div>
-         <div class="inputfield">
+         <div class="inputfieldss">
             <label>Image</label>
-            <input value={programImage} type="link" class="input"  onChange={(e)=>{
+            <input value={programImage} type="link" class="inputss"  onChange={(e)=>{
                   setImage(e.target.value);
             }}/>
-            <div class="value">
-                                <div class="input-group js-input-file">
-                                    <input class="input-file" type="file" name="image" id="file"  />
-                                    <span class="input-file__info">No file chosen</span>
-                                </div> 
-                            </div>
          </div>
                        
           <div class="modal-footer">

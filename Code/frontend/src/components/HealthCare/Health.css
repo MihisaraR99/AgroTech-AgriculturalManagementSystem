@@ -1,4 +1,4 @@
-/* h2.form-title {
+ /*h2.form-title {
     border: 5px outset red;
     background-color: black;
     text-align: center;
@@ -30,6 +30,8 @@ borderRadius: "30px",
 boxShadow: " 10px 10px 5px rgba(150, 168, 156)",
 width:"450px",
 padding: "5px", */
+
+/*tr:nth-child(odd){
 /*
 tr:nth-child(odd){
   background-color: rgb(180, 240, 158);

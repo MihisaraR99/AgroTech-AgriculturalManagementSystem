@@ -86,9 +86,6 @@ function Courseadmin(){
  
     );
 
-
-
-
     }
 
 export default Courseadmin;

@@ -4,6 +4,8 @@ import axios from "axios";
 
 function GuidanceDisplay(){
 	const [articles, setArticles] = useState([]);
+	const [GuidanceSearch , setcrsSearch] = useState("");
+
 	useEffect(() => {
 
 		axios.get("http://localhost:8000/api/AddGuidances/all").then(res => {
@@ -14,11 +16,27 @@ function GuidanceDisplay(){
 		}, [])
 
     return(
-        <div>
+		<body className="bodys">
+            <div>
 	<div class="container py-2 vacancycontainer">
 		<div class="h1 text-center text-dark" id="pageHeaderTitle">Career Guidance Programs</div>
+
+		<div className="input-group" style={{ width: "30rem",  }}>
+                       <div class="srchs"> <input type="search"  onChange ={(e)=>{setcrsSearch(e.target.value); }} className="form-control rounded" placeholder="Search Programs" aria-label="Search" aria-describedby="search-addon" />
+					   <button type="button" id="srbttn"  className="btn btn-col" style={{color:"white"}}><i class="fa fa-search"></i></button>
+                </div>
+         </div>
        
-		{articles && articles.map((article, i) => (
+		{articles && articles.filter(value=>{
+            if(GuidanceSearch ===""){
+                return value;
+            }else if(
+                value.programName.toLowerCase().includes(GuidanceSearch.toLowerCase())
+            ){
+                return value
+            }
+        }).map((article, i) => (
+
         <article key={i} class="postcard light blue">
 			<a class="postcard__img_link" href="#">
 				<img class="postcard__img" src={article.programImage} alt="Image Title" />
@@ -38,6 +56,8 @@ function GuidanceDisplay(){
 ))}
 	</div>
  </div>
+		</body>
+       
     );
     }
 export default GuidanceDisplay;
