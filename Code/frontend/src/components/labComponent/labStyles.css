@@ -33,12 +33,12 @@
     border-bottom: 4px solid rgb(73, 172, 73);
     border-radius: 10px;
     font-size: 18px;
-    background-color: #ffffff46;
+    background-color: #ffffff94;
 }
 
 .Lab-div1 {
     opacity: 0.9;
-    background-color: #d9d9d9;
+    background-color: #d9d9d98a;
     padding: 20px;
     border-radius: 20px;  
     border:5px solid rgb(6, 7, 6)
@@ -113,7 +113,7 @@
   height: 100%;
  padding: 20px;
  margin-top: 10px;
- background-color:  rgba(41, 116, 52, 0.514);
+ background-color:  rgba(252, 253, 252, 0.534);
  display: inline-block;
  border: 5px solid rgb(252, 249, 249);
  border-radius: 5px; 
@@ -211,7 +211,7 @@
   width: 100%;
   height:  100%;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(53, 44, 44, 0.158) 0% , rgba(61, 105, 61, 0.87) 35% ,rgba(205, 228, 214, 0.726) 100%) ;
+  background: linear-gradient(90deg, rgba(22, 20, 20, 0.781) 0% , rgba(60, 155, 60, 0.815) 35% ,rgba(30, 82, 50, 0.89) 100%) ;
 }
 
 .box-2 div{
@@ -249,20 +249,28 @@
 }
  
 .allReports{
-  color:white;
+  color:rgb(14, 13, 13);
+  font-size: 21px;
+  font-family: 'Cursive','bold';
+  
+}
+.allReports1{
+  color:rgb(255, 255, 255);
   font-size: 21px;
   font-family: 'Cursive','bold';
   
 }
 
 .allReportsLab{
-  color:white;
+  padding: 15px;
+  color:rgb(15, 13, 13);
   font-size:19px;
   font-family: 'Cursive','bold';
+ 
 }
 
 .allLabRepHead{
-  background: linear-gradient(900deg, rgba(240, 229, 229, 0.397) 0% , rgba(88, 136, 88, 0.87) 35% ,rgba(205, 228, 214, 0.726) 100%) ;
+  background: linear-gradient(900deg, #218a21e0 0% , rgba(40, 153, 40, 0.87) 35% ,rgba(46, 146, 46, 0.726) 100%) ;
 }
 
 .spesificLab{
@@ -292,7 +300,9 @@
 }
 
 #Lab-All-Tables tr{
-  background-color: unset;
+  background-color: rgba(255, 255, 255, 0.733);
+  color:rgb(15, 13, 13);
+  padding: 30px;
 }
 
 

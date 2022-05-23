@@ -90,8 +90,9 @@ class ReportDetails extends Component {
                     </Form.Group>
                   </Row>
 <br></br>
-                  <Button variant="success" type="submit">
+                  <Button variant="success" type="submit"><a href="/Ulabs" style={{color:'White' , backgroundColor:'green' , paddingLeft:'50px' , paddingRight:'50px' , fontSize:'15px' ,borderBlockColor:'white'}} >
                     Ok
+                    </a>
                   </Button>
                   </div>
                 </Form>
