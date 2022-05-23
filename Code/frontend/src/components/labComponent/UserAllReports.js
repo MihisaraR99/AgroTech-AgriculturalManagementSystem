@@ -4,13 +4,11 @@ import{Carousel} from'react-bootstrap'
 import Fade from 'react-reveal/Fade';
 import { Card } from 'react-bootstrap';
 import './labStyles.css';
+import Swal from 'sweetalert2';
 
 import img1 from './labImage/farm4.jpg'
 import img2 from './labImage/farm5.jpg'
 import img3 from './labImage/farm6.jpg'
- 
-
-
 
 export default class UserAllReports extends Component {
 
@@ -22,6 +20,20 @@ constructor(props){
 }
 
 componentDidMount(){
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  Toast.fire({
+    title: 'Wellcome to lab Report page'
+  })
     this.retrieveReports();
 } 
 
@@ -48,8 +60,6 @@ filterData(reports,searchKey){
 }
 
 
-
-
 handleSearchArea = (e) =>{
    const searchKey = e.target.value ;
    axios.get('http://localhost:8000/api/lab/all').then(res =>{
@@ -60,10 +70,14 @@ handleSearchArea = (e) =>{
 
 }
 
+
     render(){
         return(
 
+
+          
         <div className='labUserBack'>
+          
  
  <Carousel variant="dark">
   <Carousel.Item>
@@ -72,6 +86,8 @@ handleSearchArea = (e) =>{
       src={img1}
       alt="First slide"
     />
+
+    
     <Carousel.Caption>
       <div alignContent='center'>
       <h5 style={{color:'white'}}>We Provide Reports for Vegitables</h5>

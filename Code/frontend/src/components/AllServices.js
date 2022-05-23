@@ -50,7 +50,12 @@ function AllServices() {
       </div>
       
       <div className="card-body" >
-        
+        <Link to="/Appointments" className="card-link">
+          Card link
+        </Link>
+        <Link to="/" className="card-link">
+          Another link
+        </Link>
       </div>
     </div>
     </div>
