@@ -73,6 +73,11 @@ const Navigator = () => {
                           <a>Products Management</a>
                         </Link>
                       </li>
+                      <li>
+                        <Link to="/events/home">
+                          <a>Events</a>
+                        </Link>
+                      </li>
                       <li className="has-children">
                         <Link to="/">Services</Link>
                         <a href="#">
