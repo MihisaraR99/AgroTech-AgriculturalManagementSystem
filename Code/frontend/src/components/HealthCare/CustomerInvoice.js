@@ -1,5 +1,4 @@
 import  React, {useState, useEffect} from "react";
-//import InvoiceImg from "../HealthCare/Img/Invoice.png";
 import {useParams} from 'react-router-dom'
 
 export default function CustomerInvoice(){
@@ -25,103 +24,95 @@ export default function CustomerInvoice(){
   }, [params])
 
     return(
-        <div >
-            <center>
-        <div >
-   
-        <div class="container" style={{padding:"20px"}}>  
-        <form class="HealthFormInvoice" style={{marginLeft:"100px", marginBottom:"20px",boxShadow: " 1px 5px 5px green", padding:"50px", width:"700px"}}>
-            <h2 className="h2topic22" style={{color:"black" , fontSize:"50px", marginLeft:"60px" }}>Invoice</h2>
 
-            
-              <div class="form-group">
-                <div >
-                  <label style={{color:"black"}}>Name-</label>  
-                  <input 
-                    value={CustomerName} 
+ <div style={{backgroundColor:""}}>
+      
+<div style={{marginLeft:"200px", width:"800px", paddingBottom:"30px", paddingTop:"60px"}}>
+<div className="addapp-form" style={{backgroundColor:"#98fb98",marginLeft:"180px", border: "1px solid", 
+  boxShadow: "5px 10px #888888",width:"600px", paddingBottom:"30px", paddingTop:"30px"}}>
+<center>
+<form>
+
+ <h1 style={{paddingLeft:"20px"}}>INVOICE</h1>
+
+<div class="form-group row" style={{paddingLeft:"140px", paddingTop:"30px"}}>
+    <label for="inputPassword" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-6">
+      <input value={CustomerName} 
                     onChange={(e) => {
                       setCustomerName(e.target.value);
-                    }} 
-                    type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"20px",marginLeft:"60px",border:"none",borderBottom:"3px solid #56f74a"}} 
-                  />
-              </div>
-        </div>
+                    }} class="form-control" id="iName" />
+    </div>
+  </div>
 
-          <div class="form-group">
-            <div>  
-              <label style={{color:"black"}}>NIC-</label>          
-              <input 
-                value={NIC} 
+  <div class="form-group row" style={{paddingLeft:"140px", paddingTop:"30px"}} >
+    <label for="inputPassword" class="col-sm-2 col-form-label">NIC</label>
+    <div class="col-sm-6">
+      <input value={NIC} 
                 onChange={(e) => {
                   setNIC(e.target.value);
-                }} 
-              type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"70px",border:"none",borderBottom:"3px solid #56f74a"}} />
-            </div>
-          </div>
+                }} class="form-control" id="iNIC"/>
+    </div>
+  </div>
 
-          <div class="form-group">
-            <div >
-            <label style={{color:"black"}}>Animal Type-</label>  
-              <input 
-                value={AnimalType} 
+  <div class="form-group row"  style={{paddingLeft:"140px",paddingTop:"30px"}}>
+    <label for="inputPassword" class="col-sm-2 col-form-label">Breed</label>
+    <div class="col-sm-6">
+      <input value={AnimalType} 
                 onChange={(e) => {
                   setAnimalType(e.target.value);
-                }} 
-                type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"15px",border:"none",borderBottom:"3px solid #56f74a"}}  />
-            </div>
-          </div>
-    
-          <div class="form-group">
-            <div>  
-            <label style={{color:"black"}}>ContactNo-</label>          
-              <input                
-                value={ContactNo} 
+                }} class="form-control" id="iBreed" />
+    </div>
+  </div>
+
+  <div class="form-group row" style={{paddingLeft:"140px",paddingTop:"30px"}} >
+    <label for="inputPassword" class="col-sm-2 col-form-label">Contact</label>
+    <div class="col-sm-6">
+      <input value={ContactNo} 
                 onChange={(e) => {
                   setContactNo(e.target.value);
-                }}  
-                type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"30px",border:"none",borderBottom:"3px solid 56f74a"}}  />
-            </div>
-          </div>
+                }} class="form-control" id="iContact" />
+    </div>
+  </div>
 
-          <div class="form-group">
-            <div >   
-            <label style={{color:"black"}}>Address-</label>         
-              <input
-              value={Address}
+  <div class="form-group row" style={{paddingLeft:"140px",paddingTop:"30px"}}   >
+    <label for="inputPassword" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-6">
+      <input value={Address}
               onChange={(e) => {
                 setAddress(e.target.value)
-              }}
-              type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px", padding:"10px",margin:"10px",marginLeft:"40px",border:"none",borderBottom:"3px solid #56f74a"}}/>
-            </div>
-          </div>
+              }} class="form-control" id="iAddress" />
+    </div>
+  </div>
 
-          <div class="form-group">
-            <div >   
-            <label style={{color:"black"}}>Address-</label>         
-              <input
-              value={date}
+  <div class="form-group row"style={{paddingLeft:"140px",paddingTop:"30px"}} >
+    <label for="inputPassword" class="col-sm-2 col-form-label">Date</label>
+    <div class="col-sm-6">
+      <input value={date}
               onChange={(e) => {
                 setDate(e.target.value)
-              }}
-              type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px", padding:"10px",margin:"10px",marginLeft:"40px",border:"none",borderBottom:"3px solid #56f74a"}}/>
-            </div>
-          </div>
+              }} class="form-control" id="iDate" />
+    </div>
+  </div>
 
-          <div class="form-group">
-            <div > 
-            <label style={{color:"black"}}>Name-</label>           
-              <input 
-              value={Time} 
+  <div class="form-group row"style={{paddingLeft:"140px",paddingTop:"30px"}} >
+    <label for="inputPassword" class="col-sm-2 col-form-label">Time</label>
+    <div class="col-sm-6">
+      <input value={Time} 
               onChange={(e) => {
                 setTime(e.target.value)
-              }} type="text" class="hinvoice" style={{ backgroundColor: " white", width:"300px",padding:"10px",margin:"10px",marginLeft:"60px",border:"none",borderBottom:"3px solid #56f74a"}}/>
-            </div>
-          </div>
-        </form>
-      </div>
+              }} class="form-control" id="iTime" />
     </div>
-    </center>
-    </div>
+  </div>
+
+</form>
+
+  </center>
+  </div>
+  </div> 
+  </div>  
   )
-}
+} 
+
+
  
