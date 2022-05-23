@@ -92,14 +92,13 @@ tr.td11:nth-child(even):hover{
         transform: scale(1.055);
         transition: transform 300ms ease-in;
 }*/
-.tale11{
-        padding-top: 40px;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-bottom: 40px;
-        text-align: center;
+.tale11 {
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+  text-align: center;
 }
-*/
 
 /*stock table*/
 /*
@@ -149,17 +148,15 @@ tr.tr12:nth-child(even):hover{
         transition: transform 300ms ease-in;
 }*/
 
-.tablestock{
-        padding-top: 40px;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-bottom: 40px;
-        text-align: center;     
+.tablestock {
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+  text-align: center;
 }
-*/
 /*
 button.buttondelete1{
      background-color: rgb(184, 193, 192);  
      border: none;   
 }*/
-
