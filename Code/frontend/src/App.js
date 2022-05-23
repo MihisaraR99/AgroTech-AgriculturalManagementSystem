@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 //import "./App.css";
 //import "./components/educationComponents/Educationstyle.css"
 //import "./App.css";
+import "./App.css";
 //import "./components/HealthCare/Health.css";
 
 //import Header from "./components/Header";
@@ -38,6 +39,7 @@ import UpdateProducts from "./components/Product/Product_Manager/UpdateProducts"
 import StockDetails from "./components/Product/Product_Manager/StockDetails";
 import ProductBill from "./components/Product/User_Company/ProductBill";
 import CompanyHomePage from "./components/Product/User_Company/CompanyHomePage";
+import PriceCalculator from "./components/Product/User_Company/PriceCalculator";
 
 // Ads Components
 import AdvertiserForm from "./components/Ads/AdvertiserForm";
@@ -248,6 +250,8 @@ function App() {
         <Route path="/stock" element={<StockDetails />} />
         <Route path="/productBill" element={<ProductBill />} />
         <Route path="/companyHome" element={<CompanyHomePage />} />
+        <Route path="/priceCal" element={<PriceCalculator/>}/>
+
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />
         <Route path="/Ads/properties" element={<PropertyCatalog />} />

@@ -32,6 +32,8 @@ width:"450px",
 padding: "5px", */
 
 /*tr:nth-child(odd){
+/*
+tr:nth-child(odd){
   background-color: rgb(180, 240, 158);
   padding: 15px;
   border-color: none;

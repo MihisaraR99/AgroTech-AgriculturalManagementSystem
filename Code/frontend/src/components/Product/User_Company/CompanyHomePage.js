@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import img6 from "../images/img44.jpg";
+//import img6 from "../images/img44.jpg";
 import React, { Component } from 'react'
 import vegetale from "../images/vegetable.jpg";
 import fruit from "../images/fruits.jpg";
