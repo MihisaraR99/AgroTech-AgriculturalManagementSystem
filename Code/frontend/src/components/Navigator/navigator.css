@@ -88,6 +88,7 @@ a:hover {
   -webkit-transition: 0.2s 0s;
   -o-transition: 0.2s 0s;
   transition: 0.2s 0s;
+  left: 0;
 }
 .site-navbar .site-navigation .site-menu .has-children .dropdown.arrow-top {
   position: absolute;
