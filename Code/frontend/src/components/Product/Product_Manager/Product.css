@@ -28,6 +28,7 @@
           width:500px;
           padding:10px;
           margin-Top:5px;
+          color: black;
           box-Shadow: 4px 2px 2px rgba(63, 217, 33);
           border-color: "none";
 }
@@ -79,7 +80,7 @@ td.td11{
         border-collapse: collapse;
 }
 
-
+/*
 tr.t11:nth-child(odd):hover{
         background-color: rgb(195, 240, 207);
         transform: scale(1.055);
@@ -90,7 +91,7 @@ tr.td11:nth-child(even):hover{
         background-color: rgb(195, 240, 207);
         transform: scale(1.055);
         transition: transform 300ms ease-in;
-}
+}*/
 .tale11{
         padding-top: 40px;
         padding-left: 30px;
@@ -111,7 +112,7 @@ th.t12{
 }
 
 tr.tr12:nth-child(odd){
-        background-color: #87e3bc;
+        background-color: #bec8c4;
         padding: 15px;
         margin: 20px;
         border-color: none;
@@ -119,7 +120,7 @@ tr.tr12:nth-child(odd){
 
 tr.tr12:nth-child(even){
         padding: 15px;
-        background-color: #99e6b3;
+        background-color: #ced3d0;
         padding: 15px;
         border-color: none;
 }
@@ -133,7 +134,7 @@ tr.td12{
         border-color: none;
 
 }
-
+/*
 tr.tr12:nth-child(odd):hover{
         background-color: rgb(133, 254, 165);
         transform: scale(1.055);
@@ -144,7 +145,8 @@ tr.tr12:nth-child(even):hover{
         background-color: rgb(133, 254, 165);
         transform: scale(1.055);
         transition: transform 300ms ease-in;
-}
+}*/
+
 .tablestock{
         padding-top: 40px;
         padding-left: 30px;
@@ -157,3 +159,4 @@ button.buttondelete1{
      background-color: rgb(184, 193, 192);  
      border: none;   
 }*/
+

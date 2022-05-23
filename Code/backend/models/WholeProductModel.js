@@ -5,10 +5,7 @@ const postsSchema = new mongoose.Schema({
         type: String,
        
     },
-    SEmail:{
-        type: String,
-        
-    },
+    
    ScontactNo:{
        type: String,
       
