@@ -31,7 +31,7 @@ const Navigator = () => {
               >
                 <ul className="site-menu js-clone-nav mr-auto d-none d-lg-block">
                   <li>
-                    <a href="index.html">
+                    <a href="/coursehome">
                       <span>Home</span>
                     </a>
                   </li>
@@ -59,8 +59,8 @@ const Navigator = () => {
                         </a>
                         <ul className="dropdown">
                           <li>
-                            <Link to="/store/store-admin-products">
-                              <a>Store Products Admin</a>
+                            <Link to="/courseadmin">
+                              <a>Course Admin</a>
                             </Link>
                           </li>
                           <li>

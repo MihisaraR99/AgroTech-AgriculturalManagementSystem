@@ -205,7 +205,7 @@ function Coursehome() {
   <hr class="my-4"/>
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Start Course</a>
+    
   </p>
 </div>
 
