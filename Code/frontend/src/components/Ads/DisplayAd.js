@@ -66,17 +66,19 @@ class DisplayAd extends Component {
 render() {
     return (
     <div style={{marginTop: '20px'}}>
-      <div>
+      <div >
           <br/>
-          <div class="d-grid gap-2 d-md-block">
-  <button class="btn btn-primary" type="button" style={{marginLeft:"22rem"}}>Back</button>
+          <div class="d-grid gap-2 d-md-block" style={{marginLeft:"-240px"}}>
+  <button class="btn btn-primary" type="button" style={{marginLeft:"22rem", marginBottom:"30px", width:"150px", height:"50px",backgroundColor:"#12af39", fontWeight:"700"}}>Back</button>
 </div>
-    <div class="text-center" >
+    <div class="text-center" style={{border:"2px solid black", marginRight:"110px",marginLeft:"110px"}}>
     
         <br/>
         
         <br/>
+        
   <img  class="rounded" src={this.state.img} alt="..." style={{ width: "40rem" }} />
+
   <br/>
   <br/>
   <div className="btn-group" style={{ marginLeft: "30rem" }}>
@@ -92,24 +94,24 @@ render() {
 <br/>
   <hr></hr>
   <br/>
-  <div style={{marginRight: "25rem"}}>
+  <div style={{marginRight: "21rem", fontWeight:"700"}}>
   <blockquote class="blockquote" style={{float: "right"}}>
-  <p className="mb-0">Town : {this.state.town}</p>
+  <p className="mb-0" style={{marginRight:"-70px"}}>Town : <span className="bg-secondary p-1 px-4 rounded text-white">{this.state.town}</span></p>
 </blockquote>
 <blockquote class="blockquote">
-  <p className="mb-0" style={{marginLeft:"125px"}}>Area of Land : {this.state.sizeOfArea} Perches</p>
+  <p className="mb-0" style={{marginLeft:"125px"}}>Area of Land : <span className="bg-secondary p-1 px-4 rounded text-white">{this.state.sizeOfArea} Perches</span></p>
 </blockquote>
 <blockquote class="blockquote" style={{float: "right"}}>
-  <p className="mb-0">AgentRef : {this.state.AgentRef}</p>
+  <p className="mb-0" style={{marginRight:"-70px"}}>AgentRef : <span className="bg-secondary p-1 px-4 rounded text-white">{this.state.AgentRef}</span></p>
 </blockquote>
 <blockquote class="blockquote">
-  <p className="mb-0" style={{marginLeft:"180px"}}>Offered for : {this.state.heading}</p>
+  <p className="mb-0" style={{marginLeft:"230px"}}>Offered for : <span className="bg-secondary p-1 px-4 rounded text-white">{this.state.heading}</span></p>
 </blockquote>
 </div>
 <br/>
 <hr></hr>
 <div style={{marginRight: "19rem"}}>
-<h1 style={{marginRight: "4.5rem"}}>Property Details</h1>
+<h1 style={{marginRight: "1.5rem", fontWeight:"700"}}>Property Details</h1>
 <br/>
 <p style={{marginLeft:"125px", width:"70rem"}}>{this.state.description}</p>
 <p></p>
@@ -119,12 +121,13 @@ render() {
   <h1 >Contact Advertiser ({this.state.contactName})</h1>
 </div>
 <div className='col-md-8 mt-4 mx-auto'>
-<h5>Phone : {this.state.phone}</h5>
-<h5>Email : {this.state.email}</h5>
+<h5>Phone : <span className="bg-secondary p-1 px-4 rounded text-white">{this.state.phone}</span></h5>
+<br/>
+<h5 style={{marginLeft:"68px"}}>Email : <span className="bg-secondary p-1 px-4 rounded text-white">{this.state.email}</span></h5>
 
 </div>
 <br/>
-<button onClick={() => window.location = `mailto:${this.state.email}`} className="btn btn-success">Contact Me</button>
+<button onClick={() => window.location = `mailto:${this.state.email}`} className="btn btn-success" style={{marginBottom:"20px"}}>Contact Me</button>
   <br/>
 </div>
 <br/>

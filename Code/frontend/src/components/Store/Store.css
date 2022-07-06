@@ -43,11 +43,15 @@
   object-fit: cover !important;
 }
 
-.details-button {
-  border-radius: 20px;
+#store-store-details-button {
+  border-radius: 20px !important;
   width: 50%;
   background-color: #12af39;
   border: none;
+}
+
+.store-product-details-container {
+  padding: 40px 120px;
 }
 
 .store-admin-table-header > tr {
@@ -63,18 +67,18 @@
   border: none;
 }
 
-.product-title {
+.store-store-product-title {
   padding: 0 20px;
 }
 
-.product-title > hr {
+.store-store-product-title > hr {
   border-bottom: none;
 }
 
-.product-details-buy-now {
+#product-details-buy-now {
   background-color: #12af39;
   color: white;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .store-form-outer-layer {
@@ -86,6 +90,15 @@
   border-radius: 8px;
   -webkit-box-shadow: 0px 0px 10px 1px rgb(226, 226, 226);
   box-shadow: 0px 0px 10px 1px rgb(226, 226, 226);
+}
+
+.latest-store-details-cover {
+  position: relative;
+}
+
+.latest-store-details-cover > div > p {
+  color: rgb(73, 73, 73);
+  font-weight: 600;
 }
 
 .store-bought-product {
@@ -128,7 +141,7 @@
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #039be5;
+  border-color: rgb(18, 175, 57) !important;
   outline: 0;
   box-shadow: none;
 }
@@ -170,4 +183,46 @@
   background: #fff;
   border-radius: 8px;
   width: 650px;
+}
+
+#app-store-admin-table-header-44512135 tr {
+  background-color: unset;
+  color: unset;
+}
+
+#app-store-admin-table-header-44512135 tr {
+  background-color: unset;
+  padding: 0 !important;
+}
+
+#store-orders-container {
+  padding: 0 !important;
+}
+
+#app-store-admin-table-header-44512135 thead {
+  background: rgb(18, 175, 57);
+  color: white;
+}
+
+#store-admin-admin456412123 > table.table tr th,
+#store-admin-admin456412123 > table.table tr th {
+  padding: 15px !important;
+}
+
+#store-admin-admin456412123 > table.table td {
+  padding: 15px !important;
+}
+
+#app-store-admin-table-header-44512135 tr:hover {
+  transition: unset;
+  transform: unset;
+}
+
+.store-add-product-form-inner .form-group {
+  display: block !important;
+  margin-top: 10px !important;
+}
+
+.store-swal-button button {
+  background-color: #12af39;
 }

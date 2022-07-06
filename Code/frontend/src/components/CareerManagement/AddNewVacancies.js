@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios"; 
+import swal from 'sweetalert';
 
 function AddNewVacancies(){
    /*create state*/
@@ -38,12 +39,18 @@ function AddNewVacancies(){
 
    /*url*/
    axios.post("http://localhost:8000/api/AddVacancies/",newVacancy).then(()=>{
-      alert("Vacancy Added");
-
+     
     }).catch((err)=>{
       alert(err)
     });
-    window.location.href = "/VacancyAdmin";
+    swal({
+      title: "Vacancy is Successfully Added.",
+      icon: "success",
+      confirmButtonText: "OK",
+        }).then(function () {
+            // Redirect the user
+            window.location.href = "/VacancyAdmin";
+          });
    }
 }
 
@@ -86,7 +93,6 @@ function AddNewVacancies(){
             <input type="link" class="inputss"  onChange={(e)=>{
                   setImage(e.target.value);
             }}/>
-           
          </div>
                        
           <div class="modal-footers">

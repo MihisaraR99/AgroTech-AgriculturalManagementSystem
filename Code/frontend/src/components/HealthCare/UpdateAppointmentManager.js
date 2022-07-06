@@ -1,7 +1,8 @@
 import React,{useEffect, useState} from "react";
 import axios from "axios";
+import UpdateApp from "../HealthCare/Img/gappointment.jpg";
 import {useLocation} from "react-router-dom"
-import updateimg from "./Img/update.png"
+import swal from 'sweetalert'
 
 export default function AddAppointments(){
 
@@ -26,10 +27,10 @@ useEffect(()=>{
     setTime(state.appoint.Time)
 },[])
 
-/*02--add*/
+
 function sendAppointment(e){
   e.preventDefault();
-  alert("Update Appointment");
+  swal({text:"Appointment Updated", icon:"success"});
 
   const newAppointment = {
     CustomerName,
@@ -43,7 +44,7 @@ function sendAppointment(e){
  
   /*url*/
   axios.put(`http://localhost:8000/api/app/update/${state.appoint._id}`,newAppointment).then(()=>{
-    alert("Appointment Updated");
+    swal({text:"Appointment Updated", icon:"success"});
 
    
   }).catch((err)=>{
@@ -55,121 +56,91 @@ function sendAppointment(e){
 
    
       return(
-       <div  style={{  backgroundImage: `url(${updateimg})` , paddingTop:"30px", paddingBottom:"30px", marginBottom:"30px"}}>  
+       
+        <div style={{paddingTop:"30px", paddingLeft:"290px"}}>
+       <div style={{marginLeft:"110px", boxShadow: "5px 10px #888888",paddingTop:"80px", paddingBottom:"30px",width:"600px", marginBottom:"30px", border:"1px solid black"}}>  
 
-          <section className="addapp">
-            <div className="container mt-5">
-              <div className= "addapp_content">
-                <div className="addapp-form">
-                  <h2 className="form-title">Update An Appointment</h2><br/>
-                  <div className="row">
-                  <div className="col col-6">
+          
+          
+              
+                
                   <form className="get-appointment" id="appointment-form"
                   onSubmit={sendAppointment}>
+                    
+                    <h2 style={{paddingLeft:"110px"}}>Update An Appointment</h2>
 
-
-                    <div class="form-group">
-                    {/* <label htmlFor="name">
-                      <i class="zmdi zmdi-account material-icons-name zmdi-hc-2x"></i>
-                    </label> */}
-                    <input type="text" name="name" id="name" autoComplete="off"
-                      placeholder="Your Name" value={CustomerName}
-                    disabled
-           
-                    />
+                    <div class="form-group row"style={{paddingLeft:"140px",paddingTop:"30px"}} >
+                      <label htmlFor="name" class="col-sm-2 col-form-label" >Name</label>
+                      <div class="col-sm-6">
+                        <input type="text" name="name" id="name" autoComplete="off"
+                          placeholder="Your Name" value={CustomerName}
+                          disabled />
+                      </div>
                     </div>
-                    <br/>
-
-                    <div class="form-group">
-                    {/* <label htmlFor="NIC">
-                      <i class="zmdi zmdi-assignment-account material-icons-name zmdi-hc-2x"></i>
-                    </label> */}
-                    <input type="text" name="NIC" id="NIC" autoComplete="off"
-                      placeholder="Your NIC" value={NIC}
-                      disabled
-          
-                    />
+                    
+                    <div class="form-group row"style={{paddingLeft:"140px",paddingTop:"30px"}} >
+                      <label htmlFor="name" class="col-sm-2 col-form-label">NIC</label>
+                      <div class="col-sm-6">
+                        <input type="text" name="NIC" id="NIC" autoComplete="off"
+                          placeholder="Your NIC" value={NIC}
+                          disabled />                   
+                      </div>
                     </div>
-                    <br/>
-
-                    <div class="form-group">
-                    {/* <label htmlFor="AnimalType">
-                      <i class="zmdi zmdi-face material-icons-name zmdi-hc-2x"></i>
-                    </label> */}
-                    <input type="text" name="AnimalType" id="AnimalType" autoComplete="off"
-                      placeholder="Breed" value={AnimalType}
-                      disabled
-          
-                    />
+                  
+                    <div class="form-group row"style={{paddingLeft:"140px",paddingTop:"30px"}} >
+                      <label htmlFor="name" class="col-sm-2 col-form-label">Breed</label>
+                      <div class="col-sm-6">
+                        <input type="text" name="AnimalType" id="AnimalType" autoComplete="off"
+                          placeholder="Breed" value={AnimalType}
+                          disabled />                    
+                      </div>
                     </div>
-                    <br/>
-
-                    <div class="form-group">
-                    {/* <label htmlFor="ContactNo">
-                      <i class="zmdi zmdi-phone-in-talk material-icons-name zmdi-hc-2x"></i>
-                    </label> */}
-                    <input type="text" name="ContactNo" id="ContactNo" autoComplete="off"
-                      placeholder="Your Mobile No" value={ContactNo}
-                      disabled
-          
-                    />
+                    
+                    <div class="form-group row"style={{paddingLeft:"140px",paddingTop:"30px"}} >
+                      <label htmlFor="name" class="col-sm-2 col-form-label">Contact</label>
+                      <div class="col-sm-6">
+                        <input type="text" name="ContactNo" id="ContactNo" autoComplete="off"
+                          placeholder="Your Mobile No" value={ContactNo}
+                          disabled />
+                      </div>
                     </div>
-                    <br/>
 
-                    <div class="form-group">
-                    {/* <label htmlFor="Address">
-                      <i class="zmdi zmdi-home material-icons-name zmdi-hc-2x"></i>
-                    </label> */}
-                    <input type="text" name="Address" id="Address" autoComplete="off"
-                      placeholder="Your Address" value={Address}
-                      disabled
-          
-                    />
+                    <div class="form-group row"style={{paddingLeft:"140px",paddingTop:"30px"}} >
+                      <label htmlFor="name" class="col-sm-2 col-form-label">Address</label>
+                      <div class="col-sm-6">
+                        <input type="text" name="Address" id="Address" autoComplete="off"
+                          placeholder="Your Address" value={Address}
+                          disabled />
+                      </div>
                     </div>
-                    <br/>
-
-                    <div class="form-group">
-                    {/* <label htmlFor="Date">
-                      <i class="zmdi zmdi-calendar material-icons-name zmdi-hc-2x"></i>
-                    </label> */}
-                    <input type="text" name="Date" id="Date" autoComplete="off"
-                      placeholder="Date Required" value={Date} onChange={(e)=>{
-                        setDate(e.target.value);
-                  }}
-          
-                    />
+                                     
+                    <div class="form-group row"style={{paddingLeft:"140px",paddingTop:"30px"}} >
+                      <label htmlFor="name" class="col-sm-2 col-form-label">Date</label>
+                      <div class="col-sm-6">
+                        <input type="text" name="Date" id="Date" autoComplete="off"
+                          placeholder="Date Required" value={Date} onChange={(e)=>{setDate(e.target.value);
+                          }} />
+                      </div>
                     </div>
-                    <br/>
-
-                    <div class="form-group">
-                    {/* <label htmlFor="Time">
-                      <i class="zmdi zmdi-time material-icons-name zmdi-hc-2x"></i>
-                    </label> */}
-                    <input type="text" name="Time" id="Time" autoComplete="off"
-                      placeholder="Time Required" value={Time} onChange={(e)=>{
-                        setTime(e.target.value);
-                  }}
-          
-                    />
+ 
+                    <div class="form-group row"style={{paddingLeft:"140px",paddingTop:"30px"}} >
+                      <label htmlFor="name" class="col-sm-2 col-form-label">Time</label>
+                      <div class="col-sm-6">
+                        <input type="text" name="Time" id="Time" autoComplete="off"
+                          placeholder="Time Required" value={Time} onChange={(e)=>{setTime(e.target.value);
+                          }} />           
+                      </div>
                     </div>
-                    <br/>
-
-                    <div className="form-group form-button">
-                    <button type="submit" class="btn btn-primary">Update</button>
+                  
+                    <div className="form-group form-button" style={{paddingLeft:"210px",paddingTop:"30px"}}>
+                      <button type="submit" class="btn btn-primary">Update</button>
                     </div>
 
                   </form>
-                  </div>
-                  </div>
-                </div>
-
-              </div>  
-            </div>
-          </section>
-        </div>     
-            
-              
-        
+      
+      </div>
+      </div>            
+                          
     )
 }
 

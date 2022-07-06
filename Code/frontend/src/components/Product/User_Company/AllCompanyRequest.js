@@ -2,6 +2,8 @@ import React, {useState,useEffect} from "react";
 //import img1 from "./img1.png";
 import axios from "axios";
 //import PropTypes from 'prop-types'
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 
 import {getAllCompany} from '../productManagementService';
@@ -22,9 +24,19 @@ export default function AllProducts(){
     
 
       const onDelete= (id)=>{
-          axios.delete(`http://localhost:8000/api/companyRequest/delete/${id}`).then(()=>{
-             alert("Deleted succesfully");
-             //getAllCompany();
+          axios.delete(`http://localhost:8000/api/companyRequest/delete/${id}`).then((response)=>{
+            swal ({
+                title:"Delete Company Requests",
+                text:"Do you want to delete?",
+                icon:"warning",
+                buttons: true,
+                dangerMode: true
+            }).then(response=>{
+                swal({text:"Company Request Deleted",
+                icon:"success"
+                });
+            })
+            
           })
     };
 
@@ -36,11 +48,10 @@ return(
               <div class="col-4" style={{paddingBottom:"30px"}}>
                           
 
-<div 
-className="product-title" >
+<div className="product-title123" style={{border:"2px solid green"}} >
 
-<div className="inputdiv" >
-     <div className="inputdiv1">
+<div className="inputdiv12" >
+     <div className="inputdiv123">
         <p style={{ fontSize: "20px",textAlign:"center", paddingBottom:"30px"}}>
      Request No -<b>{index+1}</b>
     </p>
@@ -56,7 +67,7 @@ className="product-title" >
      Contact Name-<b> {company.Contact_Name}</b>
             </p>*/}
     <p style={{ fontSize: "20px",textAlign:"left"}}>
-     Company Email-<b> {company.Product_Id}</b>
+     Product ID-<b> {company.Product_Id}</b>
     </p>
     <p style={{ fontSize: "20px",textAlign:"left" }}>
      Contact No-<b>{company.Company_contactNo}</b>
@@ -66,12 +77,12 @@ className="product-title" >
     </p>
     </div>
 
-<tr> 
-<td>
- <a className ="btn btn-warning"  href="#" >
-    <i className="fas fa-edit" ></i>&nbsp;Confirm</a>&nbsp; 
+<tr className="button222"> 
+<td className="button ">
+ <a className ="btn btn-warning" style={{backgroundColor:"white", border:"3px solid green", color:"green",margin:"10px"}} href="https://outlook.office.com/mail/" >
+    <i className="fas fa-edit"  ></i>&nbsp;Confirm</a>&nbsp; 
 
-<a className ="btn btn-danger"  onClick={()=> onDelete(company._id)}>
+<a className ="btn btn-danger" style={{backgroundColor:"white", border:"3px solid green", color:"green",margin:"10px"}} onClick={()=> onDelete(company._id)}>
     <i className="far fa-trash-alt"></i>&nbsp;DELETE</a>
 </td>
 </tr>

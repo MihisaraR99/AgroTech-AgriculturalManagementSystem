@@ -61,6 +61,7 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+     
       }
       
       .wrapperss .forms .inputfieldss label{
@@ -68,6 +69,7 @@
          color: #757575;
          margin-right: 10px;
         font-size: 14px;
+        color: #000000;
       }
     
       .wrapperss .forms .inputfieldss .inputss,
@@ -79,6 +81,7 @@
       padding: 8px 10px;
       border-radius: 3px;
       transition: all 0.3s ease;
+      color: #000000;
     }
     
     .wrapperss .forms .inputfieldss .textarea{
@@ -115,6 +118,7 @@
         font-size: 15px;
         border: 1px solid #d5dbd9;
         border-radius: 3px;
+        
       }
     
       

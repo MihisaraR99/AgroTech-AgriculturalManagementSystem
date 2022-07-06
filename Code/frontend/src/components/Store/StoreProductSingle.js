@@ -21,7 +21,7 @@ const StoreProductSingle = ({ img, title, price, id }) => {
       </div>
 
       <div
-        className="product-title"
+        className="store-store-product-title"
         style={{ color: "#6d6d6d", textAlign: "center" }}
       >
         <p className="my-2" style={{ fontSize: "18px", color: "#333" }}>
@@ -35,7 +35,8 @@ const StoreProductSingle = ({ img, title, price, id }) => {
           onClick={() => {
             navigate(`/store/products/product/${id}`);
           }}
-          className="details-button btn btn-success"
+          id="store-store-details-button"
+          className="btn btn-success"
         >
           Details
         </button>

@@ -7,6 +7,13 @@
   font-size: 16px;
   text-rendering: optimizeLegibility;
   font-weight: initial;
+  
+}
+.bodyz{
+  background-image:url("https://static1.shine.com/l/m/images/blog/agriculture-jobs.jpg");
+}
+.bodys{
+  background-image:url("https://m.agcareers.com/career-profiles/creative/assets/categories/agriculture-business-pathway.png");
 }
 
 #pageHeaderTitle {
@@ -333,9 +340,20 @@ a:hover {
    
   }
 
-
+.srch{
+ align:right;
+ padding-right: 100px;
+ width:1500px;
+ padding-top:20px;
+}
   
- 
+ .srchs{
+  align:right;
+  padding-right: 100px;
+  width:1500px;
+  padding-top:5px;
+  padding-bottom: 15px;
+ }
 
   
 

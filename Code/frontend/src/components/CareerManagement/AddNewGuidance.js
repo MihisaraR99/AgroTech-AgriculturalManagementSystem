@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios"; 
+import swal from 'sweetalert';
 
 
 function AddNewGuidance(){
@@ -38,14 +39,18 @@ function AddNewGuidance(){
 
    /*url*/
    axios.post("http://localhost:8000/api/AddGuidances/",newProgram).then(()=>{
-      alert("Program Added");
-
      
     }).catch((err)=>{
       alert(err)
     });
-    window.location.href = "/GuidanceAdmin";
-   
+    swal({
+      title: "Program is Successfully Added.",
+      icon: "success",
+      confirmButtonText: "OK",
+        }).then(function () {
+            // Redirect the user
+            window.location.href = "/GuidanceAdmin";
+          });
    }
 }
 

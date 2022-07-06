@@ -18,11 +18,7 @@ const Navigator = () => {
         <div style={{ backgroundColor: "#12af39" }} className="px-3">
           <div className="align-items-center justify-content-between d-flex">
             <div className="">
-              <h1 className="mb-0 site-logo">
-                <a href="index.html" className="text-white mb-0">
-                  Agrotec
-                </a>
-              </h1>
+              <h1 className="mb-0 site-logo text-white">Agrotec</h1>
             </div>
             <div className="d-none d-xl-block  ">
               <nav
@@ -31,9 +27,9 @@ const Navigator = () => {
               >
                 <ul className="site-menu js-clone-nav mr-auto d-none d-lg-block">
                   <li>
-                    <a href="/coursehome">
+                    <Link to="/">
                       <span>Home</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="has-children">
                     <a href="about.html">
@@ -48,14 +44,44 @@ const Navigator = () => {
                         </Link>
                       </li>
                       <li>
-                        <a href="/Ads/company">For Companies</a>
+                        <Link to="/Ulabs">
+                          <a>Labs</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/coursehome">
+                          <a>Education</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/HHome">
+                          <a>Healthcare</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/CareerHome">
+                          <a>Career Management</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/Ads/propertiess">
+                          <a>Lands</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/productSee">
+                          <a>Products Management</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/events/home">
+                          <a>Events</a>
+                        </Link>
                       </li>
                       <li className="has-children">
-                        <Link to="/">
-                          Services
-                        </Link>
+                        <Link to="/">Services</Link>
                         <a href="#">
-                          Dropdown <i class="fa-solid fa-caret-down"></i>
+                          Admins <i class="fa-solid fa-caret-down"></i>
                         </a>
                         <ul className="dropdown">
                           <li>
@@ -74,7 +100,29 @@ const Navigator = () => {
                             </Link>
                           </li>
                           <li>
-                            <a href="#">Menu Four</a>
+                            <Link to="/VacancyAdmin">
+                              <a>Vacancy Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/GuidanceAdmin">
+                              <a>Guidance Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/ApplyVacancyAdmin">
+                              <a>Apply Vacancy Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/ApplyGuidanceAdmin">
+                              <a>Apply Guidamce Admin</a>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/CandidateAdmin">
+                              <a>Candidate Admin</a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
