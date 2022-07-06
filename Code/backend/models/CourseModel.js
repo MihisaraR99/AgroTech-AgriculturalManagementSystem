@@ -10,7 +10,7 @@ const CourseSchema=new mongoose.Schema({
     
     course_description:String,
    
-    course_price:String,
+    course_provideemail:String,
    
     course_institute:String,
   

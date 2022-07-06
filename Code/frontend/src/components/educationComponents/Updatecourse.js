@@ -14,7 +14,7 @@ function Updatecourse() {
   const [ course_category, setcategory] = useState("");
   const [course_thumbnail, setthumbnail] = useState("");
   const [course_description, setdescription] = useState("");
-  const [course_price, setcrsprice] = useState("");
+  const [course_provideemail, setcourse_provideemail] = useState("");
   const [course_institute, setinstitute] = useState("");
   const [lessons, setlessons] = useState("");
   const [video_source, setsource] = useState("");
@@ -32,10 +32,11 @@ function Updatecourse() {
     course_category,
     course_thumbnail,
     course_description,
-    course_price,
+    course_provideemail,
     course_institute,
     lessons,
     video_source,
+    video_link,
   
  }
  Axios.put(`http://localhost:8000/api/course/${id}`,newCourse).then(()=>{
@@ -62,7 +63,7 @@ useEffect(() => {
     setcrsName(res.data.course_name);
     setcategory(res.data.course_category);
     setthumbnail(res.data.course_thumbnail);
-      setcrsprice(res.data.course_price);
+      setcourse_provideemail(res.data.course_provideemail);
       setsource(res.data.video_source);
       setlink(res.data.video_link);
       setlessons(res.data.lessons);
@@ -82,7 +83,7 @@ useEffect(() => {
 
                         <div class="card" id="insert-crd">
                             <div class="insert-header">
-                                <h5 class="text-center mb-4">Add New Course</h5>
+                                <h5 class="text-center mb-4">Edit Course</h5>
                             </div>
                             <div class="padding-bot"> </div>
                             <form class="form-card">
@@ -97,9 +98,9 @@ useEffect(() => {
                                         <p><select value={course_category} class="form-select border-2" id="i-bold" onChange={(event) => {setcategory(event.target.value);}} aria-label="Default select example">
                                             <option selected >Select Category</option>
                                             <option value="Animal Health">Animal Health</option>
-                                            <option value="Seed Science">Seed Science</option>
-                                            <option value="Seed Science">Seed Science</option>
-                                            <option value="Soil Science">Soil Science</option>
+                                            <option value="Crop Science">Crop Science</option>
+                                            <option value="Plant Science">Plant Science</option>
+                                            <option value="Field Engniering">Field Enginering</option>
                                         </select>
                                       
                                         </p>
@@ -107,12 +108,12 @@ useEffect(() => {
                                     </div>
                                 </div>
                                 <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Thumbnail<span class="text-danger"> *</span></label> <input type="text"value={course_thumbnail} id="mob"  onChange={(event) => {setthumbnail(event.target.value);}}name="mob" placeholder="Course Thumbnail" onblur="validate(4)" /> </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Thumbnail<span class="text-danger"> *</span></label> <input type="text"value={course_thumbnail} id="i-bold"  onChange={(event) => {setthumbnail(event.target.value);}}name="mob" placeholder="Course Thumbnail" onblur="validate(4)" /> </div>
                                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Provide Institute<span class="text-danger"> *</span></label> <input value={course_institute} type="text" id="i-bold"  onChange={(event) => {setinstitute(event.target.value);}} /> </div>
                                 </div>
                                
                                     
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Course Price<span class="text-danger"> *</span></label> <input value={course_price} type="text"  onChange={(event) => {setcrsprice(event.target.value);}} id="i-bold" name="job" placeholder="" onblur="validate(5)" />
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Institute Email<span class="text-danger"> *</span></label> <input value={course_provideemail} type="text"  onChange={(event) => {setcourse_provideemail(event.target.value);}} id="i-bold" name="job" placeholder="" onblur="validate(5)" />
                                     
                                     </div>
                                 

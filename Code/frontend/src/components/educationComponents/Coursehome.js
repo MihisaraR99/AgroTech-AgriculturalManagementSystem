@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import img1 from './eduimgs/slide1.jpg'
-import img2 from './eduimgs/slide2.jpg'
-import img3 from './eduimgs/slide3.jpg'
+import img2 from './eduimgs/slide6.jpg'
+import img3 from './eduimgs/slide2.jpg'
 import plant from'./eduimgs//plants.jpg'
 import animal from'./eduimgs/animals.jpg'
 import seed from'./eduimgs/seed.jpg'
 import agrieng from'./eduimgs/filedeng.jpg'
-import field from'./eduimgs/field.jpg'
+import img4 from'./eduimgs/slide5.jpg'
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
@@ -31,7 +31,7 @@ function Coursehome() {
   let settings={
     dots: true,
       infinite: true,
-      speed: 500,
+      speed: 2700,
       slidesToShow: 1,
       slidesToScroll: 1
   }
@@ -39,6 +39,7 @@ function Coursehome() {
 
   return (
     <div>
+      <body class="crshome-bdy">
       <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -62,6 +63,13 @@ function Coursehome() {
 
             </div>
           </div>
+          <div class="carousel-item">
+            <img src={img4} class="imgblock" alt="..." />
+            <div class="carousel-text">
+              <h2>An educational institution is a place where people of different ages gain an education</h2>
+
+            </div>
+          </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -74,33 +82,47 @@ function Coursehome() {
       </div>
 
       <div class="top-heading">
-        <h1>Top Courses</h1>
+        <h1>Top Course Programs</h1>
       </div>
-
+    <div style={{marginBottom:"50px"}}></div>
       <div>
       <Carousel breakPoints={breakPoints}>
-          {listOfUsers.map((courses) => {
+          {listOfUsers && listOfUsers.map((courses,i) => {
             return (
-            
+             
             <div class="card" id="topcrs-crd">
-              <img src={field} class="card-img-top" alt="..."/>
+              <img src={courses.course_thumbnail} class="card-img-top" alt="..."/>
               <div class="card-body">
                 <h3 class="card-title">{courses.course_name}</h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <h2 class="course-price">{courses. course_price}</h2>
-                <a href="#" class="btn-crd">Start Today</a>
+                <p class="card-text">{courses.course_description}</p>
+                <h2 class="course-price">{courses.course_institute}</h2>
+                <span class="crsaction_btn">
+                <Link to={`/coursecontent/${courses._id}`} >Start Today</Link>
+            </span>
+               
               </div>
+
+            <div>
+ 
+
+
+
+
+
+
+
+            </div>
+
             </div>
           
-            
+        
            
             );
           
           })}
       </Carousel>
-  
-        </div>
-
+   </div>
+       
         <div class="course-cat">
           <h1>Top Categories</h1>
         </div>
@@ -108,6 +130,7 @@ function Coursehome() {
         <Carousel breakPoints={breakPoints}>
       
         <div class="card" id="topcrs-crd">
+        <Link to={"/ccategory/Field Engniering"} >
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
@@ -118,20 +141,24 @@ function Coursehome() {
             </div>
               </div>
               </a>
+              </Link>
             </div>
             <div class="card"  id="topcrs-crd">
+            <Link to={"/ccategory/Crop Science"} >
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
               <img src={seed} class="crd-img"  alt="..."/>
               <div class="category-text">
-              <h2>Seed Science</h2>
+              <h2>Crop Science</h2>
 
             </div>
               </div>
               </a>
+              </Link>
             </div>
             <div class="card"  id="topcrs-crd">
+            <Link to={"/ccategory/Animal Health"} >
     <a class="card-block stretched-link text-decoration-none" href="/">
               
               <div class="card-body">
@@ -142,18 +169,23 @@ function Coursehome() {
             </div>
               </div>
               </a>
+              </Link>
             </div>
             <div class="card"  id="topcrs-crd">
-    <a class="card-block stretched-link text-decoration-none" href="/">
+            <Link to={"/ccategory/Plant Science"} >
+    <a class="card-block stretched-link text-decoration-none" >
               
               <div class="card-body">
+            
               <img src={plant} class="crd-img" alt="..."/>
+            
               <div class="category-text">
               <h2>Plant Science</h2>
 
             </div>
               </div>
               </a>
+              </Link>
             </div>
           <div class="space-nav">
 
@@ -173,7 +205,7 @@ function Coursehome() {
   <hr class="my-4"/>
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Start Course</a>
+    
   </p>
 </div>
 
@@ -181,7 +213,7 @@ function Coursehome() {
 <div class="crsjumbotron-bottom">
 
 </div>
-        
+</body>
 
       </div>
 

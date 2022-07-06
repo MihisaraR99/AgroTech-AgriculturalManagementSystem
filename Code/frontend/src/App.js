@@ -15,6 +15,11 @@ import AllServices from "./components/AllServices";
 import Coursehome from "./components/educationComponents/Coursehome";
 import Courseinsert from "./components/educationComponents/Courseinsert";
 import Updatecourse from "./components/educationComponents/Updatecourse";
+import Courseadmin from "./components/educationComponents/Courseadmin";
+import Coursecontent from "./components/educationComponents/Coursecontent";
+import Crspayment from "./components/educationComponents/Crspayment";
+import CourseCategory from "./components/educationComponents/CourseCategory";
+import Course_report from "./components/educationComponents/Course_report";
 
 import Addevent from "./components/Events/Addevent";
 import Eventshome from "./components/Events/Eventshome";
@@ -127,29 +132,32 @@ function App() {
         <Route path="/AdverLogin" element={<AdvertiserLogin />} />
         */}
 
-
-        /*CareerManagement*/
-        <Route path="/VacancyDisplay" element={<VacancyDisplay/>} />
-        <Route path="/GuidanceDisplay" element={<GuidanceDisplay/>}/>
-        <Route path="/VacancyAdmin" element={<VacancyAdmin/>}/>
-        <Route path="/GuidanceAdmin" element={<GuidanceAdmin/>}/>
-        <Route path="/ApplyVacancy" element={<ApplyVacancy/>}/>
-        <Route path="/ApplyGuidance" element={<ApplyGuidance/>}/>
-        <Route path="/CandidateRegister" element={<CandidateRegister/>}/>
-        <Route path="/AddNewVacancies" element={<AddNewVacancies/>}/>
-        <Route path="/AddNewGuidance" element={<AddNewGuidance/>}/>
-        <Route path="/CandidateAdmin" element={<CandidateAdmin/>}/>
-        <Route path="/UpdateGuidance/:id" element={<UpdateGuidance/>}/>
-        <Route path="/UpdateVacancy/:id" element={<UpdateVacancy/>}/>
-        <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin/>}/>
-        <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin/>}/>
-        <Route path="/CareerHome" element={<CareerHome/>}/>
+        <Route path="/VacancyDisplay" element={<VacancyDisplay />} />
+        <Route path="/GuidanceDisplay" element={<GuidanceDisplay />} />
+        <Route path="/VacancyAdmin" element={<VacancyAdmin />} />
+        <Route path="/GuidanceAdmin" element={<GuidanceAdmin />} />
+        <Route path="/ApplyVacancy" element={<ApplyVacancy />} />
+        <Route path="/ApplyGuidance" element={<ApplyGuidance />} />
+        <Route path="/CandidateRegister" element={<CandidateRegister />} />
+        <Route path="/AddNewVacancies" element={<AddNewVacancies />} />
+        <Route path="/AddNewGuidance" element={<AddNewGuidance />} />
+        <Route path="/CandidateAdmin" element={<CandidateAdmin />} />
+        <Route path="/UpdateGuidance/:id" element={<UpdateGuidance />} />
+        <Route path="/UpdateVacancy/:id" element={<UpdateVacancy />} />
+        <Route path="/ApplyVacancyAdmin" element={<ApplyVacancyAdmin />} />
+        <Route path="/ApplyGuidanceAdmin" element={<ApplyGuidanceAdmin />} />
+        <Route path="/CareerHome" element={<CareerHome />} />
 
         {/* Education course Routes */}
         <Route path="/" element={<AllServices />} />
         <Route path="/coursehome" element={<Coursehome />} />
         <Route path="/courseinsert" element={<Courseinsert />} />
         <Route path="/updatecourse/:id" element={<Updatecourse />} />
+        <Route path="/courseadmin" element={<Courseadmin />} />
+        <Route path="/coursecontent/:id" element={<Coursecontent />} />
+        <Route path="/cpayment" element={<Crspayment />} />
+        <Route path="/ccategory/:cat" element={<CourseCategory />} />
+        <Route path="/coursereport" element={<Course_report />} />
         {/*
         <Route path="/Ulabs" element={<UserAllReports />} />
          */}
@@ -178,15 +186,20 @@ function App() {
         <Route path="/" element={<AllServices />} />
 
           {/* Health Care Appointments Routes */}
-        <Route path="/Appointments" element= {<AddAppointments/>}/>
-        <Route path="/HVet" element= {<AllappointmentsVet/>}/>
-        <Route path="/HManager" element= {<AllappointmentsManager/>}/>
-        <Route path="/HMUpdate" element= {<UpdateAppointmentManager/>}/>
-        <Route path="/AllAppointment" element= {<AddAppointments/>}/>
-        <Route path="/HHome" element= {<HealthHome/>}/>
-        <Route path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time" element= {<Happointmentinvoice/>}/>
-        <Route path="/AllAppointmentReport" element={<AllAppointmentReport />} />
-
+        <Route path="/Appointments" element={<AddAppointments />} />
+        <Route path="/HVet" element={<AllappointmentsVet />} />
+        <Route path="/HManager" element={<AllappointmentsManager />} />
+        <Route path="/HMUpdate" element={<UpdateAppointmentManager />} />
+        <Route path="/AllAppointment" element={<AddAppointments />} />
+        <Route path="/HHome" element={<HealthHome />} />
+        <Route
+          path="/HInvoice/:CustomerName/:NIC/:AnimalType/:ContactNo/:Address/:date/:Time"
+          element={<Happointmentinvoice />}
+        />
+        <Route
+          path="/AllAppointmentReport"
+          element={<AllAppointmentReport />}
+        />
 
         {/* Store Routes */}
         <Route path="/store" element={<StoreHome />} />
@@ -250,7 +263,7 @@ function App() {
         <Route path="/stock" element={<StockDetails />} />
         <Route path="/productBill" element={<ProductBill />} />
         <Route path="/companyHome" element={<CompanyHomePage />} />
-        <Route path="/priceCal" element={<PriceCalculator/>}/>
+        <Route path="/priceCal" element={<PriceCalculator />} />
 
         {/* Ads Routes */}
         <Route path="/Ads/adform" element={<AdvertiserForm />} />

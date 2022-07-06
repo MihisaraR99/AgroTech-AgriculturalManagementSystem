@@ -85,8 +85,8 @@ const Navigator = () => {
                         </a>
                         <ul className="dropdown">
                           <li>
-                            <Link to="/store/store-admin-products">
-                              <a>Store Products Admin</a>
+                            <Link to="/courseadmin">
+                              <a>Course Admin</a>
                             </Link>
                           </li>
                           <li>

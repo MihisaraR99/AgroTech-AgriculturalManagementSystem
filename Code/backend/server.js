@@ -25,6 +25,7 @@ const ApplyforVacancyRoutes = require("./routes/ApplyforVacancyRoutes");
 const ApplyforGuidanceRoutes = require("./routes/ApplyforGuidanceRoutes");
 const AddVacanciesRoutes = require("./routes/AddVacanciesRoutes");
 const AddGuidanceProgramsRoutes = require("./routes/AddGuidanceProgramsRoutes");
+const  CourseFeedbackRoutes=require("./routes/CourseFeedbackRoutes")
 //const labRoutes = require("./routes/labRoutes.js");
 
 const app = express();
@@ -84,6 +85,9 @@ app.use("/api/app", HealthCareAppointmentRoutes);
 app.use("/api/app", require("./routes/HealthCareAppointmentRoutes"));
 app.use("/api/Addevent", require("./routes/eventRoutes"));
 app.use("/api/course", require("./routes/courseRoutes"));
+app.use("/api/cfeedback", require("./routes/CourseFeedbackRoutes"));
+
+
 app.use("/api/Ads", require("./routes/AdsRoutes"));
 app.use("/api/Applyvacancies", require("./routes/ApplyforVacancyRoutes"));
 app.use("/api/Applyguidances", require("./routes/ApplyforGuidanceRoutes"));

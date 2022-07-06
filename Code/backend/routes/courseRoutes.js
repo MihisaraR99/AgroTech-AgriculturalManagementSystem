@@ -6,6 +6,7 @@ const {
     updateCourse,
     removeCourse,
     getsinglecourse,
+    getcategory,
  } = require("../controllers/courseControllers");
 
 
@@ -27,5 +28,5 @@ router.delete("/:id",removeCourse);
 
 router.get("/:id",getsinglecourse);
 
-
+router.get("/cat/:cat",getcategory)
 module.exports = router;

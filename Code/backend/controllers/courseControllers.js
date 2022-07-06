@@ -1,7 +1,7 @@
 const course=require("../models/CourseModel");
 const addCourses =(req, res)=>{
 
-    const {course_id,course_name,course_category,course_thumbnail,course_description,course_price,course_institute,lessons,video_source,video_link,course_video} = req.body;
+    const {course_id,course_name,course_category,course_thumbnail,course_description, course_provideemail,course_institute,lessons,video_source,video_link,course_video} = req.body;
     
   
     const newCourse = new course({
@@ -10,7 +10,7 @@ const addCourses =(req, res)=>{
         course_category,
         course_thumbnail,
         course_description,
-        course_price,
+        course_provideemail,
         course_institute,
         lessons,
         video_source,
@@ -83,6 +83,19 @@ const addCourses =(req, res)=>{
       res.status(400).json(error);
     }
   };
+
+  //find category courses
+
+  const getcategory = async (req, res) => {
+    try {
+      const cat = req.params.cat;
+      console.log(cat);
+      const couRse = await course.find({course_category:cat});
+      res.status(200).json(couRse);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  };
   
 
   
@@ -92,4 +105,5 @@ const addCourses =(req, res)=>{
     updateCourse,
     removeCourse,
     getsinglecourse,
+    getcategory,
   }
